@@ -12,7 +12,7 @@
 */
 
 const SITE = {
-  behance: https://www.behance.net/waterboys1
+  behance: "https://www.behance.net/waterboys1"
 };
 
 const PROJECTS = [
