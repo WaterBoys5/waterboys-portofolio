@@ -917,3 +917,14 @@ nav a:hover,
 .hero-card {
   width: 260px;
 }
+/* KECILKAN FOTO PROFIL */
+
+.hero-card {
+  width: 300px !important;
+  max-width: 300px !important;
+  justify-self: center;
+}
+
+.hero-card-image {
+  aspect-ratio: 3 / 4 !important;
+}
