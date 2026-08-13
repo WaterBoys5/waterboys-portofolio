@@ -17,11 +17,16 @@ const SITE = {
 
 const PROJECTS = [
   {
-      title: "Stereo Wall",
-  category: "STAGE PHOTOGRAPHY",
-  year: "2026",
-  description: "Stage photography for Stereo Wall.",
-  image: "assets/images/stereo-wall-01.jpg"
+   title: "Stereo Wall",
+    category: "STAGE PHOTOGRAPHY",
+    year: "2026",
+    description: "Stage photography for Stereo Wall.",
+    image: "assets/images/20140119-DSC05804blek.jpg",
+    gallery: [
+        "assets/images/20140119-DSC05804blek.jpg",
+        "assets/images/20140119-DSC05809blek.jpg",
+        "assets/images/20140119-DSC05845blek.jpg",
+        "assets/images/20140119-DSC05862blek.jpg"
   },
   {
     title: "TITANS — Creative Campaign",
