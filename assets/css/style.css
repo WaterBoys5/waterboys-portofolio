@@ -39,8 +39,11 @@ button {
   --text: #f4f4f0;
   --muted: #999994;
   --line: rgba(255, 255, 255, 0.13);
+
   --glass: rgba(12, 12, 12, 0.55);
+
   --max-width: 1240px;
+
   --radius: 24px;
 }
 
@@ -61,52 +64,90 @@ button {
   content: "";
   position: absolute;
   inset: -20%;
+
   background: rgba(0, 0, 0, 0.35);
+
   backdrop-filter: blur(70px) saturate(120%);
   -webkit-backdrop-filter: blur(70px) saturate(120%);
 }
 
 .blob {
   position: absolute;
+
   border-radius: 50%;
+
   filter: blur(20px);
+
   opacity: 0.65;
+
   mix-blend-mode: screen;
 }
 
 .blob-a {
   width: 40vw;
   height: 40vw;
+
   left: -10vw;
   top: 0;
-  background: radial-gradient(circle, #c7c7c7 0%, transparent 65%);
+
+  background:
+    radial-gradient(
+      circle,
+      #c7c7c7 0%,
+      transparent 65%
+    );
+
   animation: blobA 18s ease-in-out infinite;
 }
 
 .blob-b {
   width: 34vw;
   height: 34vw;
+
   right: -6vw;
   top: 15vh;
-  background: radial-gradient(circle, #777 0%, transparent 65%);
+
+  background:
+    radial-gradient(
+      circle,
+      #777 0%,
+      transparent 65%
+    );
+
   animation: blobB 22s ease-in-out infinite;
 }
 
 .blob-c {
   width: 36vw;
   height: 36vw;
+
   left: 25vw;
   bottom: -20vw;
-  background: radial-gradient(circle, #555 0%, transparent 65%);
+
+  background:
+    radial-gradient(
+      circle,
+      #555 0%,
+      transparent 65%
+    );
+
   animation: blobC 25s ease-in-out infinite;
 }
 
 .blob-d {
   width: 22vw;
   height: 22vw;
+
   right: 25vw;
   bottom: 10vh;
-  background: radial-gradient(circle, #999 0%, transparent 65%);
+
+  background:
+    radial-gradient(
+      circle,
+      #999 0%,
+      transparent 65%
+    );
+
   animation: blobD 18s ease-in-out infinite;
 }
 
@@ -137,7 +178,9 @@ button {
 .glass-noise {
   position: absolute;
   inset: 0;
+
   opacity: 0.04;
+
   background-image:
     url("data:image/svg+xml,%3Csvg viewBox='0 0 160 160' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E");
 }
@@ -166,10 +209,13 @@ button {
 
 .site-header {
   height: 88px;
+
   display: flex;
   align-items: center;
   justify-content: space-between;
+
   border-bottom: 1px solid var(--line);
+
   position: relative;
   z-index: 10;
 }
@@ -178,25 +224,33 @@ button {
   display: flex;
   align-items: center;
   gap: 10px;
+
   font-size: 12px;
   font-weight: 600;
+
   letter-spacing: 0.16em;
 }
 
 .brand-mark {
   width: 31px;
   height: 31px;
+
   display: grid;
   place-items: center;
+
   border: 1px solid var(--line);
+
   border-radius: 50%;
+
   font-size: 11px;
 }
 
 nav {
   display: flex;
   gap: 30px;
+
   color: #bdbdb8;
+
   font-size: 13px;
 }
 
@@ -212,15 +266,19 @@ nav a:hover,
 
 .nav-cta {
   padding: 10px 15px;
+
   border: 1px solid var(--line);
+
   border-radius: 999px;
+
   background: rgba(255, 255, 255, 0.04);
+
   font-size: 12px;
 }
 
 
 /* =========================================================
-   GENERAL
+   GENERAL SECTION
 ========================================================= */
 
 .section {
@@ -229,9 +287,13 @@ nav a:hover,
 
 .eyebrow {
   margin: 0 0 20px;
+
   color: #999;
+
   font-family: "DM Mono", monospace;
+
   font-size: 10px;
+
   letter-spacing: 0.18em;
 }
 
@@ -247,20 +309,24 @@ nav a:hover,
 
   grid-template-columns:
     minmax(0, 1fr)
-    200px;
+    140px;
 
   align-items: center;
 
-  gap: 80px;
+  gap: 70px;
 
   padding-top: 80px;
 }
 
 .hero h1 {
   margin: 0;
+
   font-size: clamp(54px, 7vw, 100px);
+
   line-height: 0.92;
+
   letter-spacing: -0.07em;
+
   font-weight: 600;
 }
 
@@ -270,26 +336,37 @@ nav a:hover,
 
 .hero-text {
   max-width: 520px;
+
   margin: 30px 0;
+
   color: var(--muted);
+
   font-size: 15px;
+
   line-height: 1.7;
 }
 
 .hero-actions {
   display: flex;
   align-items: center;
+
   gap: 24px;
+
   flex-wrap: wrap;
 }
 
 .button {
   display: inline-flex;
   align-items: center;
+
   gap: 20px;
+
   padding: 14px 18px;
+
   border-radius: 999px;
+
   font-size: 12px;
+
   font-weight: 600;
 }
 
@@ -300,8 +377,11 @@ nav a:hover,
 
 .text-link {
   color: #999;
+
   font-size: 12px;
+
   border-bottom: 1px solid #555;
+
   padding-bottom: 3px;
 }
 
@@ -312,7 +392,9 @@ nav a:hover,
 
 .glass-card {
   background: var(--glass);
+
   border: 1px solid var(--line);
+
   border-radius: var(--radius);
 
   box-shadow:
@@ -324,35 +406,49 @@ nav a:hover,
 }
 
 .hero-card {
-  width: 200px;
-  max-width: 200px;
-  padding: 8px;
+  width: 140px;
+  max-width: 140px;
+
+  padding: 6px;
+
   justify-self: center;
+
   transform: rotate(2deg);
 }
 
 .hero-card-top,
 .hero-card-bottom {
   display: flex;
+
   justify-content: space-between;
-  padding: 10px 6px;
+
+  padding: 8px 5px;
+
   color: #888;
+
   font-family: "DM Mono", monospace;
-  font-size: 9px;
+
+  font-size: 8px;
 }
 
 .hero-card-image {
   width: 100%;
+
   aspect-ratio: 3 / 4;
+
   overflow: hidden;
-  border-radius: 14px;
+
+  border-radius: 11px;
+
   background: #111;
 }
 
 .hero-card-image img {
   width: 100%;
   height: 100%;
+
   display: block;
+
   object-fit: cover;
 }
 
@@ -362,6 +458,7 @@ nav a:hover,
 
   display: flex;
   flex-direction: column;
+
   justify-content: center;
   align-items: center;
 
@@ -377,17 +474,23 @@ nav a:hover,
 }
 
 .hero-placeholder span {
-  font-size: 38px;
+  font-size: 28px;
+
   line-height: 0.9;
+
   font-weight: 600;
+
   letter-spacing: 0.08em;
 }
 
 .hero-placeholder small {
-  margin-top: 18px;
+  margin-top: 12px;
+
   color: #aaa;
+
   font-family: "DM Mono", monospace;
-  font-size: 10px;
+
+  font-size: 8px;
 }
 
 
@@ -401,10 +504,13 @@ nav a:hover,
 
 .section-heading {
   display: flex;
+
   justify-content: space-between;
+
   align-items: end;
 
   padding-bottom: 20px;
+
   margin-bottom: 70px;
 
   border-bottom: 1px solid var(--line);
@@ -416,28 +522,36 @@ nav a:hover,
   font-size: clamp(44px, 6vw, 78px);
 
   line-height: 0.95;
+
   letter-spacing: -0.06em;
 }
 
 .section-note {
   max-width: 260px;
+
   margin: 0;
+
   color: #888;
+
   font-size: 12px;
+
   line-height: 1.6;
 }
 
 
 /* =========================================================
-   CATEGORY GRID
+   PROJECT CATEGORY
 ========================================================= */
 
 #project-grid {
   width: 100%;
+
   max-width: 980px;
 
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
 
   gap: 18px;
 
@@ -453,12 +567,15 @@ nav a:hover,
   position: relative;
 
   width: 100%;
+
   aspect-ratio: 3 / 4;
+
   max-height: 520px;
 
   overflow: hidden;
 
   border: 1px solid var(--line);
+
   border-radius: 20px;
 
   background: #111;
@@ -474,7 +591,9 @@ nav a:hover,
 
 .category-card:hover {
   transform: translateY(-4px);
-  border-color: rgba(255,255,255,.3);
+
+  border-color:
+    rgba(255,255,255,.3);
 }
 
 
@@ -484,6 +603,7 @@ nav a:hover,
 
 .category-image {
   position: absolute;
+
   inset: 0;
 
   width: 100%;
@@ -513,12 +633,15 @@ nav a:hover,
 
 .category-overlay {
   position: absolute;
+
   inset: 0;
 
   z-index: 2;
 
   display: flex;
+
   flex-direction: column;
+
   justify-content: space-between;
 
   padding: 18px;
@@ -545,6 +668,7 @@ nav a:hover,
   color: rgba(255,255,255,.65);
 
   font-family: "DM Mono", monospace;
+
   font-size: 9px;
 
   letter-spacing: .12em;
@@ -556,6 +680,7 @@ nav a:hover,
   color: #fff;
 
   font-size: 21px;
+
   line-height: 1;
 
   letter-spacing: -.04em;
@@ -569,6 +694,7 @@ nav a:hover,
   color: rgba(255,255,255,.65);
 
   font-size: 10px;
+
   line-height: 1.45;
 }
 
@@ -579,9 +705,11 @@ nav a:hover,
   height: 32px;
 
   display: grid;
+
   place-items: center;
 
   border: 1px solid rgba(255,255,255,.22);
+
   border-radius: 50%;
 
   background: rgba(0,0,0,.3);
@@ -598,12 +726,15 @@ nav a:hover,
 
 .category-modal {
   position: fixed;
+
   inset: 0;
 
   z-index: 9000;
 
   display: flex;
+
   align-items: center;
+
   justify-content: center;
 
   padding: 24px;
@@ -613,17 +744,19 @@ nav a:hover,
 
 .category-modal-backdrop {
   position: absolute;
+
   inset: 0;
 
   background: rgba(0,0,0,.82);
 
   backdrop-filter: blur(18px);
+
   -webkit-backdrop-filter: blur(18px);
 }
 
 
 /* =========================================================
-   CATEGORY MODAL WINDOW
+   MODAL WINDOW
 ========================================================= */
 
 .category-modal-window {
@@ -632,6 +765,7 @@ nav a:hover,
   z-index: 2;
 
   width: min(1100px, 100%);
+
   max-height: 88vh;
 
   overflow-y: auto;
@@ -639,6 +773,7 @@ nav a:hover,
   padding: 26px;
 
   border: 1px solid var(--line);
+
   border-radius: 22px;
 
   background: rgba(12,12,12,.96);
@@ -649,7 +784,7 @@ nav a:hover,
 
 
 /* =========================================================
-   PROJECT LIST
+   PROJECTS
 ========================================================= */
 
 .category-projects {
@@ -676,6 +811,7 @@ nav a:hover,
   overflow: hidden;
 
   border: 1px solid var(--line);
+
   border-radius: 18px;
 
   background: #111;
@@ -691,7 +827,9 @@ nav a:hover,
 
 .category-project-card:hover {
   transform: translateY(-3px);
-  border-color: rgba(255,255,255,.3);
+
+  border-color:
+    rgba(255,255,255,.3);
 }
 
 .category-project-image {
@@ -700,7 +838,9 @@ nav a:hover,
   aspect-ratio: 3 / 4;
 
   background-position: center;
+
   background-size: cover;
+
   background-repeat: no-repeat;
 
   pointer-events: none;
@@ -710,6 +850,7 @@ nav a:hover,
   display: flex;
 
   justify-content: space-between;
+
   align-items: flex-end;
 
   gap: 20px;
@@ -758,12 +899,15 @@ nav a:hover,
 
 .gallery-modal {
   position: fixed;
+
   inset: 0;
 
   z-index: 10000;
 
   display: flex;
+
   align-items: center;
+
   justify-content: center;
 
   padding: 24px;
@@ -773,11 +917,13 @@ nav a:hover,
 
 .gallery-backdrop {
   position: absolute;
+
   inset: 0;
 
-  background: rgba(0, 0, 0, 0.88);
+  background: rgba(0,0,0,.88);
 
   backdrop-filter: blur(20px);
+
   -webkit-backdrop-filter: blur(20px);
 }
 
@@ -787,6 +933,7 @@ nav a:hover,
   z-index: 2;
 
   width: min(1000px, 95vw);
+
   max-height: 92vh;
 
   overflow: hidden;
@@ -794,12 +941,13 @@ nav a:hover,
   padding: 18px;
 
   border: 1px solid var(--line);
+
   border-radius: 22px;
 
-  background: rgba(12, 12, 12, 0.97);
+  background: rgba(12,12,12,.97);
 
   box-shadow:
-    0 40px 120px rgba(0, 0, 0, 0.7);
+    0 40px 120px rgba(0,0,0,.7);
 }
 
 .gallery-image-wrap {
@@ -808,7 +956,9 @@ nav a:hover,
   width: 100%;
 
   display: flex;
+
   align-items: center;
+
   justify-content: center;
 
   background: #080808;
@@ -822,6 +972,7 @@ nav a:hover,
   display: block;
 
   width: 100%;
+
   max-height: 70vh;
 
   object-fit: contain;
@@ -833,17 +984,21 @@ nav a:hover,
   position: absolute;
 
   top: 28px;
+
   right: 28px;
 
   z-index: 5;
 
   width: 38px;
+
   height: 38px;
 
   display: grid;
+
   place-items: center;
 
   border: 1px solid rgba(255,255,255,.25);
+
   border-radius: 50%;
 
   background: rgba(0,0,0,.65);
@@ -864,12 +1019,15 @@ nav a:hover,
   transform: translateY(-50%);
 
   width: 44px;
+
   height: 44px;
 
   display: grid;
+
   place-items: center;
 
   border: 1px solid rgba(255,255,255,.25);
+
   border-radius: 50%;
 
   background: rgba(0,0,0,.55);
@@ -901,6 +1059,7 @@ nav a:hover,
   display: flex;
 
   justify-content: space-between;
+
   align-items: flex-end;
 
   gap: 20px;
@@ -948,14 +1107,14 @@ nav a:hover,
   .hero {
     grid-template-columns:
       minmax(0, 1fr)
-      180px;
+      125px;
 
     gap: 40px;
   }
 
   .hero-card {
-    width: 180px;
-    max-width: 180px;
+    width: 125px;
+    max-width: 125px;
   }
 
   #project-grid {
@@ -1004,6 +1163,7 @@ nav a:hover,
 
   nav {
     gap: 12px;
+
     font-size: 11px;
   }
 
@@ -1016,16 +1176,21 @@ nav a:hover,
 
     grid-template-columns: 1fr;
 
-    gap: 40px;
+    gap: 32px;
 
     padding-top: 50px;
   }
 
   .hero-card {
-    width: 180px;
-    max-width: 180px;
+    width: 120px;
+    max-width: 120px;
 
     justify-self: start;
+  }
+
+  .hero-card-top,
+  .hero-card-bottom {
+    font-size: 7px;
   }
 
   #project-grid {
@@ -1038,6 +1203,7 @@ nav a:hover,
 
   .category-card {
     aspect-ratio: 3 / 4;
+
     max-height: none;
   }
 
@@ -1051,6 +1217,7 @@ nav a:hover,
 
   .category-modal-window {
     max-height: 94vh;
+
     padding: 18px;
   }
 
@@ -1060,7 +1227,9 @@ nav a:hover,
 
   .gallery-window {
     width: 100%;
+
     padding: 10px;
+
     border-radius: 16px;
   }
 
@@ -1070,13 +1239,16 @@ nav a:hover,
 
   .gallery-close {
     top: 18px;
+
     right: 18px;
   }
 
   .gallery-prev,
   .gallery-next {
     width: 38px;
+
     height: 38px;
+
     font-size: 22px;
   }
 
