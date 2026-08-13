@@ -20,7 +20,7 @@ const PROJECTS = [
    title: "Stereo Wall",
     category: "STAGE PHOTOGRAPHY",
     year: "2026",
-    description: "Stage photography for Stereo Wall.",
+    description: "Stage photography for Stereo Wall at trilogigs 2025.",
     image: "assets/images/20140119-DSC05804blek.jpg",
     gallery: [
         "assets/images/20140119-DSC05804blek.jpg",
