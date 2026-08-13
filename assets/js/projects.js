@@ -82,7 +82,26 @@ const CATEGORIES = [
           "assets/images/wka-simpati-09.jpg",
           "assets/images/wka-simpati-10.jpg"
         ]
-      }
+      },
+      {
+  title: "Vishgazine Issue",
+  year: "2026",
+  description: "Fashion campaign photography for Vish by Nevertoolavish, Vishgazine Issue.",
+
+  image: "assets/images/vishgazine-01.jpg",
+
+  gallery: [
+    "assets/images/vishgazine-01.jpg",
+    "assets/images/vishgazine-02.jpg",
+    "assets/images/vishgazine-03.jpg",
+    "assets/images/vishgazine-04.jpg",
+    "assets/images/vishgazine-05.jpg",
+    "assets/images/vishgazine-06.jpg",
+    "assets/images/vishgazine-07.jpg",
+    "assets/images/vishgazine-08.jpg",
+    "assets/images/vishgazine-09.jpg"
+  ]
+}
     ]
   }
 ];
