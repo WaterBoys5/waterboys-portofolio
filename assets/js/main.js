@@ -1,35 +1,44 @@
 document.addEventListener("DOMContentLoaded", () => {
 
   const year = document.getElementById("year");
-  if (year) year.textContent = new Date().getFullYear();
+
+  if (year) {
+    year.textContent = new Date().getFullYear();
+  }
 
   const behance = document.getElementById("behance-link");
+
   if (behance && typeof SITE !== "undefined") {
     behance.href = SITE.behance;
   }
 
   const grid = document.getElementById("project-grid");
 
-  if (!grid || typeof CATEGORIES === "undefined") return;
+  if (!grid || typeof CATEGORIES === "undefined") {
+    return;
+  }
 
-  CATEGORIES.forEach(category => {
+  CATEGORIES.forEach((category) => {
 
-    const section = document.createElement("section");
-    section.className = "project-category";
+    const categorySection = document.createElement("section");
+    categorySection.className = "project-category";
 
-    section.innerHTML = `
-      <div class="section-heading">
-        <div>
-          <p class="eyebrow">${category.title}</p>
-          <p class="section-note">${category.description}</p>
-        </div>
-      </div>
+    const heading = document.createElement("div");
+    heading.className = "category-heading";
+
+    heading.innerHTML = `
+      <p class="eyebrow">${category.title}</p>
+      <p class="category-description">
+        ${category.description}
+      </p>
     `;
 
-    const projects = document.createElement("div");
-    projects.className = "project-grid";
+    categorySection.appendChild(heading);
 
-    category.projects.forEach(project => {
+    const categoryGrid = document.createElement("div");
+    categoryGrid.className = "project-grid";
+
+    category.projects.forEach((project) => {
 
       const images =
         Array.isArray(project.gallery) && project.gallery.length
@@ -63,10 +72,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
       card.appendChild(image);
       card.appendChild(overlay);
-      projects.appendChild(card);
+      categoryGrid.appendChild(card);
 
       /*
-       * RANDOM SLIDESHOW
+       * RANDOM THUMBNAIL SLIDESHOW
        */
 
       if (images.length > 1) {
@@ -81,10 +90,7 @@ document.addEventListener("DOMContentLoaded", () => {
             next = Math.floor(
               Math.random() * images.length
             );
-          } while (
-            images.length > 1 &&
-            next === current
-          );
+          } while (next === current);
 
           current = next;
 
@@ -92,6 +98,7 @@ document.addEventListener("DOMContentLoaded", () => {
             `url("${images[current]}")`;
 
         }, 3500);
+
       }
 
       /*
@@ -99,29 +106,37 @@ document.addEventListener("DOMContentLoaded", () => {
        */
 
       card.addEventListener("click", () => {
+
         openGallery(
           project.title,
           project.description,
           images
         );
+
       });
 
     });
 
-    section.appendChild(projects);
-    grid.appendChild(section);
+    categorySection.appendChild(categoryGrid);
+    grid.appendChild(categorySection);
 
   });
 
 
   function openGallery(title, description, images) {
 
-    const old = document.querySelector(".gallery-modal");
-    if (old) old.remove();
+    const oldModal =
+      document.querySelector(".gallery-modal");
+
+    if (oldModal) {
+      oldModal.remove();
+    }
 
     let current = 0;
 
-    const modal = document.createElement("div");
+    const modal =
+      document.createElement("div");
+
     modal.className = "gallery-modal";
 
     modal.innerHTML = `
@@ -129,7 +144,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
       <div class="gallery-window">
 
-        <button class="gallery-close">
+        <button
+          class="gallery-close"
+          type="button">
           ×
         </button>
 
@@ -141,11 +158,15 @@ document.addEventListener("DOMContentLoaded", () => {
             alt="${title}"
           >
 
-          <button class="gallery-prev">
+          <button
+            class="gallery-prev"
+            type="button">
             ‹
           </button>
 
-          <button class="gallery-next">
+          <button
+            class="gallery-next"
+            type="button">
             ›
           </button>
 
@@ -176,7 +197,7 @@ document.addEventListener("DOMContentLoaded", () => {
       modal.querySelector(".gallery-counter");
 
 
-    function update() {
+    function updateGallery() {
 
       mainImage.src = images[current];
 
@@ -197,7 +218,7 @@ document.addEventListener("DOMContentLoaded", () => {
           (current - 1 + images.length) %
           images.length;
 
-        update();
+        updateGallery();
 
       });
 
@@ -210,7 +231,7 @@ document.addEventListener("DOMContentLoaded", () => {
           (current + 1) %
           images.length;
 
-        update();
+        updateGallery();
 
       });
 
@@ -218,24 +239,24 @@ document.addEventListener("DOMContentLoaded", () => {
     modal
       .querySelector(".gallery-close")
       .addEventListener("click", () => {
+
         modal.remove();
+
       });
 
 
     modal
       .querySelector(".gallery-backdrop")
       .addEventListener("click", () => {
+
         modal.remove();
+
       });
 
 
-    function keyboard(event) {
+    document.addEventListener("keydown", function keyboard(event) {
 
       if (!document.body.contains(modal)) {
-        document.removeEventListener(
-          "keydown",
-          keyboard
-        );
         return;
       }
 
@@ -249,7 +270,7 @@ document.addEventListener("DOMContentLoaded", () => {
           (current + 1) %
           images.length;
 
-        update();
+        updateGallery();
 
       }
 
@@ -259,16 +280,11 @@ document.addEventListener("DOMContentLoaded", () => {
           (current - 1 + images.length) %
           images.length;
 
-        update();
+        updateGallery();
 
       }
 
-    }
-
-    document.addEventListener(
-      "keydown",
-      keyboard
-    );
+    });
 
   }
 
