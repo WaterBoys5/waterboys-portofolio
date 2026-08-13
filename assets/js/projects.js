@@ -17,11 +17,11 @@ const SITE = {
 
 const PROJECTS = [
   {
-    title: "Nevertoolavish — Custom Sneakers",
-    category: "PRODUCT / COMMERCIAL",
-    year: "2026",
-    description: "Still life photography untuk menampilkan detail custom artwork dan material sepatu.",
-    image: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=1600&q=85"
+      title: "Stereo Wall",
+  category: "STAGE PHOTOGRAPHY",
+  year: "2026",
+  description: "Stage photography for Stereo Wall.",
+  image: "assets/images/stereo-wall-01.jpg"
   },
   {
     title: "TITANS — Creative Campaign",
