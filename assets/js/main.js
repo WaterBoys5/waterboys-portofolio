@@ -24,26 +24,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   /* =========================
-     CLEAR PROJECT AREA
-  ========================= */
-
-  projectGrid.innerHTML = "";
-
-
-  /* =========================
-     CATEGORY CARDS
+     MAIN CATEGORY CARDS
+     ONLY THESE SLIDESHOW
   ========================= */
 
   CATEGORIES.forEach((category) => {
 
-    /*
-     * Satu kategori = satu box.
-     * Semua gallery dari semua project
-     * di dalam kategori digabung menjadi
-     * satu kumpulan gambar.
-     */
+    const categoryCard = document.createElement("article");
 
-    const images = [];
+    categoryCard.className = "category-card";
+
+
+    /* Collect ALL images from this category
+       ONLY for the category thumbnail */
+
+    const categoryImages = [];
 
     category.projects.forEach((project) => {
 
@@ -51,170 +46,102 @@ document.addEventListener("DOMContentLoaded", () => {
         Array.isArray(project.gallery) &&
         project.gallery.length
       ) {
-
-        project.gallery.forEach((image) => {
-          images.push(image);
-        });
-
+        categoryImages.push(...project.gallery);
       } else if (project.image) {
-
-        images.push(project.image);
-
+        categoryImages.push(project.image);
       }
 
     });
 
 
-    /* Hapus gambar duplikat */
+    categoryCard.innerHTML = `
+      <div class="category-image"></div>
 
-    const uniqueImages = [...new Set(images)];
+      <div class="category-overlay">
 
+        <div>
+          <p class="category-number">
+            ${String(CATEGORIES.indexOf(category) + 1).padStart(2, "0")}
+          </p>
 
-    if (!uniqueImages.length) {
-      return;
-    }
+          <h3 class="category-title">
+            ${category.title}
+          </h3>
 
-
-    /* =========================
-       CATEGORY SECTION
-    ========================= */
-
-    const categorySection =
-      document.createElement("section");
-
-    categorySection.className =
-      "project-category";
-
-
-    /* =========================
-       CATEGORY HEADER
-    ========================= */
-
-    const categoryHeader =
-      document.createElement("div");
-
-    categoryHeader.className =
-      "category-heading";
-
-    categoryHeader.innerHTML = `
-      <div>
-        <p class="eyebrow">
-          ${category.title}
-        </p>
-
-        <p class="category-description">
-          ${category.description}
-        </p>
-      </div>
-    `;
-
-    categorySection.appendChild(categoryHeader);
-
-
-    /* =========================
-       ONE BOX FOR CATEGORY
-    ========================= */
-
-    const categoryGrid =
-      document.createElement("div");
-
-    categoryGrid.className =
-      "project-grid-inner";
-
-
-    const card =
-      document.createElement("article");
-
-    card.className =
-      "project-card";
-
-
-    /* =========================
-       RANDOM START IMAGE
-    ========================= */
-
-    let current =
-      Math.floor(
-        Math.random() * uniqueImages.length
-      );
-
-
-    card.innerHTML = `
-      <div class="project-image"></div>
-
-      <div class="project-overlay">
-
-        <div class="project-meta">
-
-          <div>
-            <p class="project-title">
-              ${category.title}
-            </p>
-
-            <p class="project-desc">
-              ${category.description}
-            </p>
-          </div>
-
-          <div class="project-type">
-            ${uniqueImages.length} IMAGES
-          </div>
-
+          <p class="category-description">
+            ${category.description}
+          </p>
         </div>
 
+        <span class="category-arrow">↗</span>
+
       </div>
     `;
 
 
-    const image =
-      card.querySelector(".project-image");
+    projectGrid.appendChild(categoryCard);
 
 
     /* =========================
-       SHOW IMAGE
+       CATEGORY SLIDESHOW
+       RANDOM IMAGE
     ========================= */
 
-    function showRandomImage() {
+    const categoryImage =
+      categoryCard.querySelector(".category-image");
 
-      if (uniqueImages.length <= 1) {
-        return;
-      }
-
-      let next;
-
-      do {
-
-        next =
-          Math.floor(
-            Math.random() *
-            uniqueImages.length
-          );
-
-      } while (next === current);
+    let currentImage = 0;
 
 
-      current = next;
+    if (categoryImages.length > 0) {
 
-      image.style.backgroundImage =
-        `url("${uniqueImages[current]}")`;
+      currentImage =
+        Math.floor(
+          Math.random() * categoryImages.length
+        );
+
+      categoryImage.style.backgroundImage =
+        `url("${categoryImages[currentImage]}")`;
     }
 
 
-    /* Initial image */
-
-    image.style.backgroundImage =
-      `url("${uniqueImages[current]}")`;
-
-
-    /* =========================
-       RANDOM SLIDESHOW
-    ========================= */
-
-    if (uniqueImages.length > 1) {
+    if (categoryImages.length > 1) {
 
       setInterval(() => {
 
-        showRandomImage();
+        let nextImage;
+
+        do {
+
+          nextImage =
+            Math.floor(
+              Math.random() * categoryImages.length
+            );
+
+        } while (
+          nextImage === currentImage &&
+          categoryImages.length > 1
+        );
+
+
+        currentImage = nextImage;
+
+
+        categoryImage.classList.add(
+          "changing"
+        );
+
+
+        setTimeout(() => {
+
+          categoryImage.style.backgroundImage =
+            `url("${categoryImages[currentImage]}")`;
+
+          categoryImage.classList.remove(
+            "changing"
+          );
+
+        }, 250);
 
       }, 3500);
 
@@ -222,31 +149,227 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* =========================
-       OPEN CATEGORY GALLERY
+       OPEN CATEGORY
     ========================= */
 
-    card.addEventListener("click", () => {
+    categoryCard.addEventListener(
+      "click",
+      () => {
 
-      openGallery(
-        category.title,
-        category.description,
-        uniqueImages
-      );
+        openCategory(category);
 
-    });
-
-
-    categoryGrid.appendChild(card);
-
-    categorySection.appendChild(categoryGrid);
-
-    projectGrid.appendChild(categorySection);
+      }
+    );
 
   });
 
 
   /* =========================
-     GALLERY
+     CATEGORY WINDOW
+  ========================= */
+
+  function openCategory(category) {
+
+    closeCategory();
+
+
+    const modal =
+      document.createElement("div");
+
+    modal.className =
+      "category-modal";
+
+
+    modal.innerHTML = `
+
+      <div class="category-modal-backdrop"></div>
+
+      <div class="category-modal-window">
+
+        <div class="category-modal-header">
+
+          <div>
+
+            <p class="eyebrow">
+              PROJECTS
+            </p>
+
+            <h2>
+              ${category.title}
+            </h2>
+
+            <p>
+              ${category.description}
+            </p>
+
+          </div>
+
+          <button
+            class="category-modal-close"
+            type="button"
+            aria-label="Close">
+            ×
+          </button>
+
+        </div>
+
+
+        <div class="category-projects"></div>
+
+      </div>
+
+    `;
+
+
+    document.body.appendChild(modal);
+
+
+    const projectsContainer =
+      modal.querySelector(
+        ".category-projects"
+      );
+
+
+    /* =========================
+       PROJECTS INSIDE CATEGORY
+       NO SLIDESHOW HERE
+    ========================= */
+
+    category.projects.forEach((project) => {
+
+      const images =
+        Array.isArray(project.gallery) &&
+        project.gallery.length
+          ? project.gallery
+          : [project.image];
+
+
+      const projectCard =
+        document.createElement("article");
+
+      projectCard.className =
+        "category-project-card";
+
+
+      projectCard.innerHTML = `
+
+        <div
+          class="category-project-image"
+          style="background-image:url('${images[0]}')">
+        </div>
+
+        <div class="category-project-info">
+
+          <div>
+
+            <h3>
+              ${project.title}
+            </h3>
+
+            <p>
+              ${project.description}
+            </p>
+
+          </div>
+
+          <span>
+            ${project.year}
+          </span>
+
+        </div>
+
+      `;
+
+
+      projectsContainer.appendChild(
+        projectCard
+      );
+
+
+      /* =========================
+         OPEN PROJECT GALLERY
+      ========================= */
+
+      projectCard.addEventListener(
+        "click",
+        () => {
+
+          openGallery(
+            project.title,
+            project.description,
+            images
+          );
+
+        }
+      );
+
+    });
+
+
+    /* CLOSE */
+
+    modal
+      .querySelector(
+        ".category-modal-close"
+      )
+      .addEventListener(
+        "click",
+        closeCategory
+      );
+
+
+    modal
+      .querySelector(
+        ".category-modal-backdrop"
+      )
+      .addEventListener(
+        "click",
+        closeCategory
+      );
+
+
+    document.addEventListener(
+      "keydown",
+      categoryKeyboard
+    );
+
+
+    function categoryKeyboard(event) {
+
+      if (event.key === "Escape") {
+
+        closeCategory();
+
+      }
+
+    }
+
+  }
+
+
+  function closeCategory() {
+
+    const modal =
+      document.querySelector(
+        ".category-modal"
+      );
+
+
+    if (modal) {
+      modal.remove();
+    }
+
+
+    document.removeEventListener(
+      "keydown",
+      categoryKeyboard
+    );
+
+  }
+
+
+  /* =========================
+     PROJECT GALLERY
   ========================= */
 
   function openGallery(
@@ -255,11 +378,14 @@ document.addEventListener("DOMContentLoaded", () => {
     images
   ) {
 
-    const oldModal =
-      document.querySelector(".gallery-modal");
+    const oldGallery =
+      document.querySelector(
+        ".gallery-modal"
+      );
 
-    if (oldModal) {
-      oldModal.remove();
+
+    if (oldGallery) {
+      oldGallery.remove();
     }
 
 
@@ -285,6 +411,7 @@ document.addEventListener("DOMContentLoaded", () => {
           ×
         </button>
 
+
         <div class="gallery-image-wrap">
 
           <img
@@ -305,6 +432,7 @@ document.addEventListener("DOMContentLoaded", () => {
           </button>
 
         </div>
+
 
         <div class="gallery-info">
 
@@ -331,10 +459,12 @@ document.addEventListener("DOMContentLoaded", () => {
     `;
 
 
-    document.body.appendChild(modal);
+    document.body.appendChild(
+      modal
+    );
 
 
-    const mainImage =
+    const image =
       modal.querySelector(
         ".gallery-main-image"
       );
@@ -346,16 +476,12 @@ document.addEventListener("DOMContentLoaded", () => {
       );
 
 
-    /* =========================
-       UPDATE GALLERY
-    ========================= */
-
     function updateGallery() {
 
-      mainImage.src =
+      image.src =
         images[current];
 
-      mainImage.alt =
+      image.alt =
         `${title} - image ${current + 1}`;
 
       counter.textContent =
@@ -364,73 +490,94 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-    /* =========================
-       PREVIOUS
-    ========================= */
+    /* PREVIOUS */
 
     modal
-      .querySelector(".gallery-prev")
-      .addEventListener("click", () => {
+      .querySelector(
+        ".gallery-prev"
+      )
+      .addEventListener(
+        "click",
+        () => {
 
-        current =
-          (current - 1 + images.length) %
-          images.length;
+          current =
+            (
+              current -
+              1 +
+              images.length
+            ) %
+            images.length;
 
-        updateGallery();
+          updateGallery();
 
-      });
-
-
-    /* =========================
-       NEXT
-    ========================= */
-
-    modal
-      .querySelector(".gallery-next")
-      .addEventListener("click", () => {
-
-        current =
-          (current + 1) %
-          images.length;
-
-        updateGallery();
-
-      });
+        }
+      );
 
 
-    /* =========================
-       CLOSE
-    ========================= */
+    /* NEXT */
 
     modal
-      .querySelector(".gallery-close")
-      .addEventListener("click", () => {
+      .querySelector(
+        ".gallery-next"
+      )
+      .addEventListener(
+        "click",
+        () => {
 
-        modal.remove();
+          current =
+            (
+              current +
+              1
+            ) %
+            images.length;
 
-      });
+          updateGallery();
+
+        }
+      );
+
+
+    /* CLOSE */
+
+    modal
+      .querySelector(
+        ".gallery-close"
+      )
+      .addEventListener(
+        "click",
+        () => {
+
+          modal.remove();
+
+        }
+      );
 
 
     modal
-      .querySelector(".gallery-backdrop")
-      .addEventListener("click", () => {
+      .querySelector(
+        ".gallery-backdrop"
+      )
+      .addEventListener(
+        "click",
+        () => {
 
-        modal.remove();
+          modal.remove();
 
-      });
+        }
+      );
 
 
-    /* =========================
-       KEYBOARD
-    ========================= */
+    /* KEYBOARD */
 
-    function keyboardHandler(event) {
+    function keyboard(event) {
 
-      if (!document.body.contains(modal)) {
+      if (
+        !document.body.contains(modal)
+      ) {
 
         document.removeEventListener(
           "keydown",
-          keyboardHandler
+          keyboard
         );
 
         return;
@@ -448,7 +595,9 @@ document.addEventListener("DOMContentLoaded", () => {
       if (event.key === "ArrowRight") {
 
         current =
-          (current + 1) %
+          (
+            current + 1
+          ) %
           images.length;
 
         updateGallery();
@@ -459,7 +608,11 @@ document.addEventListener("DOMContentLoaded", () => {
       if (event.key === "ArrowLeft") {
 
         current =
-          (current - 1 + images.length) %
+          (
+            current -
+            1 +
+            images.length
+          ) %
           images.length;
 
         updateGallery();
@@ -471,7 +624,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     document.addEventListener(
       "keydown",
-      keyboardHandler
+      keyboard
     );
 
   }
