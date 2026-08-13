@@ -1184,8 +1184,9 @@ nav a:hover,
 }
 /* FOTO PROFIL - UKURAN KECIL */
 .hero-card {
-  width: 220px !important;
-  max-width: 220px !important;
+  width: 180px !important;
+  max-width: 180px !important;
+}
   padding: 8px !important;
   justify-self: center;
 }
