@@ -880,3 +880,164 @@ nav a:hover,.contact-links a:hover,.text-link:hover{color:#fff}
   }
 
 }
+/* =========================
+   PROJECT CATEGORIES
+========================= */
+
+.project-category {
+  margin-bottom: 110px;
+}
+
+.project-grid-inner {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 18px;
+}
+
+.category-heading {
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 20px;
+  margin-bottom: 30px;
+}
+
+.category-heading .eyebrow {
+  margin-bottom: 10px;
+}
+
+.category-description {
+  margin: 0;
+  max-width: 500px;
+  color: #999;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+
+/* =========================
+   PROJECT SLIDESHOW
+========================= */
+
+.project-image.slideshow {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.project-slide {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transform: scale(1.02);
+  transition:
+    opacity .7s ease,
+    transform .8s ease;
+}
+
+.project-slide.active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+
+/* =========================
+   SLIDESHOW CONTROLS
+========================= */
+
+.project-slideshow-controls {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 14px;
+  pointer-events: none;
+  z-index: 4;
+}
+
+.project-slideshow-controls button {
+  pointer-events: auto;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,.25);
+  background: rgba(0,0,0,.35);
+  color: white;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  cursor: pointer;
+  font-size: 22px;
+  opacity: 0;
+  transition:
+    opacity .25s ease,
+    background .25s ease;
+}
+
+.project-card:hover .project-slideshow-controls button {
+  opacity: 1;
+}
+
+.project-slideshow-controls button:hover {
+  background: rgba(255,255,255,.18);
+}
+
+
+/* =========================
+   SLIDESHOW DOTS
+========================= */
+
+.project-dots {
+  position: absolute;
+  left: 50%;
+  bottom: 18px;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 5px;
+  z-index: 5;
+}
+
+.project-dot {
+  width: 5px;
+  height: 5px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(255,255,255,.35);
+  cursor: pointer;
+  transition:
+    width .25s ease,
+    background .25s ease;
+}
+
+.project-dot.active {
+  width: 18px;
+  border-radius: 999px;
+  background: rgba(255,255,255,.9);
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 850px) {
+
+  .project-category {
+    margin-bottom: 80px;
+  }
+
+  .project-grid-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .project-grid-inner .project-card {
+    grid-column: auto;
+    min-height: 460px;
+  }
+
+  .project-slideshow-controls button {
+    opacity: 1;
+  }
+
+}
