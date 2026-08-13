@@ -538,7 +538,6 @@ nav a:hover,
 /* =========================================================
    CATEGORY CARD
    FASHION / STAGE / PRODUCT
-   THUMBNAIL SAJA YANG SLIDESHOW
 ========================================================= */
 
 .category-card {
@@ -561,6 +560,7 @@ nav a:hover,
 
 /* =========================================================
    CATEGORY THUMBNAIL
+   HANYA THUMBNAIL UTAMA YANG SLIDESHOW
 ========================================================= */
 
 .category-image {
@@ -589,94 +589,7 @@ nav a:hover,
 
 
 /* =========================================================
-   CATEGORY OVERLAY
-========================================================= */
-
-.category-overlay {
-  position: absolute;
-  inset: 0;
-
-  z-index: 2;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-
-  padding: 22px;
-
-  background:
-    linear-gradient(
-      to bottom,
-      rgba(0, 0, 0, 0.28),
-      transparent 38%,
-      rgba(0, 0, 0, 0.88) 100%
-    );
-
-  pointer-events: none;
-}
-
-
-/* =========================================================
-   CATEGORY TEXT
-========================================================= */
-
-.category-number {
-  margin: 0;
-
-  color: rgba(255, 255, 255, 0.65);
-
-  font-family: "DM Mono", monospace;
-  font-size: 10px;
-
-  letter-spacing: 0.12em;
-}
-
-.category-title {
-  margin: 0;
-
-  color: #fff;
-
-  font-size: clamp(22px, 2.4vw, 32px);
-
-  line-height: 1;
-  letter-spacing: -0.045em;
-}
-
-.category-description {
-  margin: 9px 0 0;
-
-  max-width: 250px;
-
-  color: rgba(255, 255, 255, 0.65);
-
-  font-size: 11px;
-
-  line-height: 1.5;
-}
-
-.category-arrow {
-  align-self: flex-end;
-
-  width: 38px;
-  height: 38px;
-
-  display: grid;
-  place-items: center;
-
-  border: 1px solid rgba(255, 255, 255, 0.22);
-  border-radius: 50%;
-
-  background: rgba(0, 0, 0, 0.3);
-
-  color: #fff;
-
-  font-size: 17px;
-}
-
-
-/* =========================================================
    CATEGORY MODAL
-   MUNCUL SAAT FASHION / STAGE / PRODUCT DIKLIK
 ========================================================= */
 
 .category-modal {
@@ -724,87 +637,8 @@ nav a:hover,
 
 
 /* =========================================================
-   MODAL HEADER
-========================================================= */
-
-.category-modal-header {
-  display: flex;
-
-  justify-content: space-between;
-  align-items: flex-start;
-
-  gap: 30px;
-
-  padding-bottom: 25px;
-  margin-bottom: 25px;
-
-  border-bottom: 1px solid var(--line);
-}
-
-.category-modal-header .eyebrow {
-  margin-bottom: 12px;
-}
-
-.category-modal-header h2 {
-  margin: 0 0 10px;
-
-  color: #fff;
-
-  font-size: clamp(32px, 5vw, 58px);
-
-  line-height: 0.95;
-  letter-spacing: -0.05em;
-}
-
-.category-modal-header p:last-child {
-  max-width: 450px;
-
-  margin: 0;
-
-  color: #888;
-
-  font-size: 12px;
-
-  line-height: 1.6;
-}
-
-
-/* CLOSE BUTTON */
-
-.category-modal-close {
-  flex: 0 0 auto;
-
-  width: 42px;
-  height: 42px;
-
-  display: grid;
-  place-items: center;
-
-  border: 1px solid var(--line);
-  border-radius: 50%;
-
-  background: transparent;
-
-  color: #fff;
-
-  cursor: pointer;
-
-  font-size: 22px;
-
-  transition:
-    background 0.25s ease,
-    border-color 0.25s ease;
-}
-
-.category-modal-close:hover {
-  background: rgba(255, 255, 255, 0.08);
-  border-color: rgba(255, 255, 255, 0.3);
-}
-
-
-/* =========================================================
-   PROJECTS INSIDE CATEGORY
-   TIDAK ADA SLIDESHOW DI SINI
+   PROJECT-PROJECT DI DALAM KATEGORI
+   TIDAK ADA SLIDESHOW
 ========================================================= */
 
 .category-projects {
@@ -817,11 +651,6 @@ nav a:hover,
   margin: 0;
 }
 
-
-/* =========================================================
-   INDIVIDUAL PROJECT
-   LV / TITANS / WKA / VISH / DLL
-========================================================= */
 
 .category-project-card {
   overflow: hidden;
@@ -841,12 +670,9 @@ nav a:hover,
 .category-project-card:hover {
   transform: translateY(-4px);
 
-  border-color:
-    rgba(255, 255, 255, 0.3);
+  border-color: rgba(255, 255, 255, 0.3);
 }
 
-
-/* PROJECT IMAGE */
 
 .category-project-image {
   width: 100%;
@@ -858,8 +684,6 @@ nav a:hover,
   background-repeat: no-repeat;
 }
 
-
-/* PROJECT INFO */
 
 .category-project-info {
   display: flex;
@@ -878,9 +702,7 @@ nav a:hover,
   color: #fff;
 
   font-size: 18px;
-
   line-height: 1.1;
-
   letter-spacing: -0.03em;
 }
 
@@ -892,7 +714,6 @@ nav a:hover,
   color: #888;
 
   font-size: 11px;
-
   line-height: 1.5;
 }
 
@@ -908,7 +729,7 @@ nav a:hover,
 
 
 /* =========================================================
-   MOBILE / TABLET
+   RESPONSIVE
 ========================================================= */
 
 @media (max-width: 900px) {
@@ -923,7 +744,6 @@ nav a:hover,
 
 }
 
-
 @media (max-width: 650px) {
 
   #project-grid {
@@ -936,47 +756,6 @@ nav a:hover,
 
   .category-projects {
     grid-template-columns: 1fr;
-  }
-
-  .category-modal {
-    padding: 12px;
-  }
-
-  .category-modal-window {
-    max-height: 94vh;
-    padding: 18px;
-  }
-
-  .category-modal-header {
-    display: block;
-  }
-
-  .category-modal-close {
-    position: absolute;
-
-    top: 18px;
-    right: 18px;
-  }
-
-  .category-project-image {
-    aspect-ratio: 3 / 4;
-  }
-
-}
-
-
-/* =========================================================
-   REDUCE MOTION
-========================================================= */
-
-@media (prefers-reduced-motion: reduce) {
-
-  .category-image {
-    transition: none;
-  }
-
-  .category-card:hover .category-image {
-    transform: none;
   }
 
 }
