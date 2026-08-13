@@ -35,7 +35,20 @@ const CATEGORIES = [
   {
     title: "PRODUCT PHOTOGRAPHY",
     description: "Commercial product photography, still life, and brand visuals.",
-    projects: []
+    projects: [{
+  title: "Louis Vuitton Wallet — Hardthirteen",
+  year: "2026",
+  description: "Product photography featuring a custom Louis Vuitton wallet by Hardthirteen from Nevertoolavish.",
+
+  image: "assets/images/lv-wallet-01.jpg",
+
+  gallery: [
+    "assets/images/lv-wallet-01.jpg",
+    "assets/images/lv-wallet-02.jpg",
+    "assets/images/lv-wallet-03.jpg",
+    "assets/images/lv-wallet-04.jpg"
+  ]
+}]
   },
 
   {
