@@ -26,7 +26,17 @@ const PROJECTS = [
         "assets/images/20140119-DSC05804blek.jpg",
         "assets/images/20140119-DSC05809blek.jpg",
         "assets/images/20140119-DSC05845blek.jpg",
-        "assets/images/20140119-DSC05862blek.jpg"
+        "assets/images/20140119-DSC05862blek.jpg",
+        "assets/images/20140119-DSC05865blek.jpg",
+        "assets/images/20140119-DSC05880blek.jpg",
+        "assets/images/20140119-DSC05898blek.jpg",
+        "assets/images/20140119-DSC05899blek.jpg",
+        "assets/images/20140119-DSC05901blek.jpg",
+        "assets/images/20140119-DSC05904blek.jpg",
+        "assets/images/20140119-DSC05907blek.jpg",
+        "assets/images/20140119-DSC05908blek.jpg",
+        "assets/images/20140119-DSC05912blek.jpg",
+        "assets/images/20140119-DSC05914blek.jpg"
   },
   {
     title: "TITANS — Creative Campaign",
