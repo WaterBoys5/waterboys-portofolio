@@ -47,7 +47,7 @@ const CATEGORIES = [
     description: "Portraits, fashion editorials, artist profiles, and creative campaigns.",
 
     projects: [
-      {
+            {
         title: "Peron.id Long Sleeve T-Shirt",
         year: "2026",
         description: "Fashion portrait photography featuring Peron.id long sleeve T-shirt.",
@@ -60,6 +60,27 @@ const CATEGORIES = [
           "assets/images/peron-long-sleeve-03.jpg",
           "assets/images/peron-long-sleeve-04.jpg",
           "assets/images/peron-long-sleeve-05.jpg"
+        ]
+      },
+
+      {
+        title: "WKA × Simpati",
+        year: "2026",
+        description: "Fashion campaign photography for WKA × Simpati.",
+
+        image: "assets/images/wka-simpati-01.jpg",
+
+        gallery: [
+          "assets/images/wka-simpati-01.jpg",
+          "assets/images/wka-simpati-02.jpg",
+          "assets/images/wka-simpati-03.jpg",
+          "assets/images/wka-simpati-04.jpg",
+          "assets/images/wka-simpati-05.jpg",
+          "assets/images/wka-simpati-06.jpg",
+          "assets/images/wka-simpati-07.jpg",
+          "assets/images/wka-simpati-08.jpg",
+          "assets/images/wka-simpati-09.jpg",
+          "assets/images/wka-simpati-10.jpg"
         ]
       }
     ]
