@@ -24,34 +24,54 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   /* =========================
+     KEYBOARD HANDLERS
+  ========================= */
+
+  let categoryKeyboard = null;
+  let galleryKeyboard = null;
+
+
+  /* =========================
      MAIN CATEGORY CARDS
      ONLY THESE SLIDESHOW
   ========================= */
 
-  CATEGORIES.forEach((category) => {
+  CATEGORIES.forEach((category, categoryIndex) => {
 
     const categoryCard = document.createElement("article");
 
     categoryCard.className = "category-card";
 
 
-    /* Collect ALL images from this category
-       ONLY for the category thumbnail */
+    /* Collect ALL images from category
+       ONLY for category thumbnail */
 
     const categoryImages = [];
 
-    category.projects.forEach((project) => {
+    if (Array.isArray(category.projects)) {
 
-      if (
-        Array.isArray(project.gallery) &&
-        project.gallery.length
-      ) {
-        categoryImages.push(...project.gallery);
-      } else if (project.image) {
-        categoryImages.push(project.image);
-      }
+      category.projects.forEach((project) => {
 
-    });
+        if (
+          Array.isArray(project.gallery) &&
+          project.gallery.length
+        ) {
+
+          categoryImages.push(
+            ...project.gallery
+          );
+
+        } else if (project.image) {
+
+          categoryImages.push(
+            project.image
+          );
+
+        }
+
+      });
+
+    }
 
 
     categoryCard.innerHTML = `
@@ -60,8 +80,9 @@ document.addEventListener("DOMContentLoaded", () => {
       <div class="category-overlay">
 
         <div>
+
           <p class="category-number">
-            ${String(CATEGORIES.indexOf(category) + 1).padStart(2, "0")}
+            ${String(categoryIndex + 1).padStart(2, "0")}
           </p>
 
           <h3 class="category-title">
@@ -71,6 +92,7 @@ document.addEventListener("DOMContentLoaded", () => {
           <p class="category-description">
             ${category.description}
           </p>
+
         </div>
 
         <span class="category-arrow">↗</span>
@@ -79,7 +101,9 @@ document.addEventListener("DOMContentLoaded", () => {
     `;
 
 
-    projectGrid.appendChild(categoryCard);
+    projectGrid.appendChild(
+      categoryCard
+    );
 
 
     /* =========================
@@ -88,20 +112,27 @@ document.addEventListener("DOMContentLoaded", () => {
     ========================= */
 
     const categoryImage =
-      categoryCard.querySelector(".category-image");
+      categoryCard.querySelector(
+        ".category-image"
+      );
 
     let currentImage = 0;
 
 
-    if (categoryImages.length > 0) {
+    if (
+      categoryImage &&
+      categoryImages.length > 0
+    ) {
 
       currentImage =
         Math.floor(
-          Math.random() * categoryImages.length
+          Math.random() *
+          categoryImages.length
         );
 
       categoryImage.style.backgroundImage =
         `url("${categoryImages[currentImage]}")`;
+
     }
 
 
@@ -115,12 +146,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
           nextImage =
             Math.floor(
-              Math.random() * categoryImages.length
+              Math.random() *
+              categoryImages.length
             );
 
         } while (
-          nextImage === currentImage &&
-          categoryImages.length > 1
+          nextImage === currentImage
         );
 
 
@@ -170,7 +201,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function openCategory(category) {
 
+    /* Remove existing category modal */
+
     closeCategory();
+
+
+    /* Close any old gallery */
+
+    const oldGallery =
+      document.querySelector(
+        ".gallery-modal"
+      );
+
+    if (oldGallery) {
+      oldGallery.remove();
+    }
 
 
     const modal =
@@ -184,7 +229,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
       <div class="category-modal-backdrop"></div>
 
-      <div class="category-modal-window">
+      <div
+        class="category-modal-window"
+        role="dialog"
+        aria-modal="true"
+      >
 
         <div class="category-modal-header">
 
@@ -221,7 +270,9 @@ document.addEventListener("DOMContentLoaded", () => {
     `;
 
 
-    document.body.appendChild(modal);
+    document.body.appendChild(
+      modal
+    );
 
 
     const projectsContainer =
@@ -235,106 +286,146 @@ document.addEventListener("DOMContentLoaded", () => {
        NO SLIDESHOW HERE
     ========================= */
 
-    category.projects.forEach((project) => {
+    if (
+      Array.isArray(category.projects)
+    ) {
 
-      const images =
-        Array.isArray(project.gallery) &&
-        project.gallery.length
-          ? project.gallery
-          : [project.image];
+      category.projects.forEach(
+        (project) => {
 
-
-      const projectCard =
-        document.createElement("article");
-
-      projectCard.className =
-        "category-project-card";
-
-
-      projectCard.innerHTML = `
-
-        <div
-          class="category-project-image"
-          style="background-image:url('${images[0]}')">
-        </div>
-
-        <div class="category-project-info">
-
-          <div>
-
-            <h3>
-              ${project.title}
-            </h3>
-
-            <p>
-              ${project.description}
-            </p>
-
-          </div>
-
-          <span>
-            ${project.year}
-          </span>
-
-        </div>
-
-      `;
+          const images =
+            Array.isArray(project.gallery) &&
+            project.gallery.length
+              ? project.gallery
+              : project.image
+                ? [project.image]
+                : [];
 
 
-      projectsContainer.appendChild(
-        projectCard
-      );
+          const projectCard =
+            document.createElement(
+              "article"
+            );
+
+          projectCard.className =
+            "category-project-card";
 
 
-      /* =========================
-         OPEN PROJECT GALLERY
-      ========================= */
+          projectCard.innerHTML = `
 
-      projectCard.addEventListener(
-        "click",
-        () => {
+            <div
+              class="category-project-image"
+              style="background-image:url('${images[0] || ""}')">
+            </div>
 
-          openGallery(
-            project.title,
-            project.description,
-            images
+            <div class="category-project-info">
+
+              <div>
+
+                <h3>
+                  ${project.title || ""}
+                </h3>
+
+                <p>
+                  ${project.description || ""}
+                </p>
+
+              </div>
+
+              <span>
+                ${project.year || ""}
+              </span>
+
+            </div>
+
+          `;
+
+
+          projectsContainer.appendChild(
+            projectCard
           );
+
+
+          /* =========================
+             OPEN PROJECT GALLERY
+          ========================= */
+
+          if (images.length > 0) {
+
+            projectCard.addEventListener(
+              "click",
+              (event) => {
+
+                event.preventDefault();
+                event.stopPropagation();
+
+                openGallery(
+                  project.title || "",
+                  project.description || "",
+                  images
+                );
+
+              }
+            );
+
+          }
 
         }
       );
 
-    });
+    }
 
 
-    /* CLOSE */
+    /* =========================
+       CLOSE BUTTON
+    ========================= */
 
-    modal
-      .querySelector(
+    const closeButton =
+      modal.querySelector(
         ".category-modal-close"
-      )
-      .addEventListener(
-        "click",
-        closeCategory
       );
 
+    if (closeButton) {
 
-    modal
-      .querySelector(
+      closeButton.addEventListener(
+        "click",
+        (event) => {
+
+          event.preventDefault();
+          event.stopPropagation();
+
+          closeCategory();
+
+        }
+      );
+
+    }
+
+
+    /* =========================
+       BACKDROP
+    ========================= */
+
+    const backdrop =
+      modal.querySelector(
         ".category-modal-backdrop"
-      )
-      .addEventListener(
+      );
+
+    if (backdrop) {
+
+      backdrop.addEventListener(
         "click",
         closeCategory
       );
 
-
-    document.addEventListener(
-      "keydown",
-      categoryKeyboard
-    );
+    }
 
 
-    function categoryKeyboard(event) {
+    /* =========================
+       ESC KEY
+    ========================= */
+
+    categoryKeyboard = (event) => {
 
       if (event.key === "Escape") {
 
@@ -342,10 +433,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
       }
 
-    }
+    };
+
+
+    document.addEventListener(
+      "keydown",
+      categoryKeyboard
+    );
 
   }
 
+
+  /* =========================
+     CLOSE CATEGORY
+  ========================= */
 
   function closeCategory() {
 
@@ -360,10 +461,16 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-    document.removeEventListener(
-      "keydown",
-      categoryKeyboard
-    );
+    if (categoryKeyboard) {
+
+      document.removeEventListener(
+        "keydown",
+        categoryKeyboard
+      );
+
+      categoryKeyboard = null;
+
+    }
 
   }
 
@@ -378,14 +485,38 @@ document.addEventListener("DOMContentLoaded", () => {
     images
   ) {
 
+    if (
+      !Array.isArray(images) ||
+      images.length === 0
+    ) {
+      return;
+    }
+
+
+    /* Remove old gallery */
+
     const oldGallery =
       document.querySelector(
         ".gallery-modal"
       );
 
-
     if (oldGallery) {
       oldGallery.remove();
+    }
+
+
+    /* Remove category keyboard
+       while gallery is open */
+
+    if (categoryKeyboard) {
+
+      document.removeEventListener(
+        "keydown",
+        categoryKeyboard
+      );
+
+      categoryKeyboard = null;
+
     }
 
 
@@ -403,11 +534,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
       <div class="gallery-backdrop"></div>
 
-      <div class="gallery-window">
+      <div
+        class="gallery-window"
+        role="dialog"
+        aria-modal="true"
+      >
 
         <button
           class="gallery-close"
-          type="button">
+          type="button"
+          aria-label="Close">
           ×
         </button>
 
@@ -417,17 +553,20 @@ document.addEventListener("DOMContentLoaded", () => {
           <img
             class="gallery-main-image"
             src="${images[0]}"
-            alt="${title}">
+            alt="${title}"
+          >
 
           <button
             class="gallery-prev"
-            type="button">
+            type="button"
+            aria-label="Previous image">
             ‹
           </button>
 
           <button
             class="gallery-next"
-            type="button">
+            type="button"
+            aria-label="Next image">
             ›
           </button>
 
@@ -476,6 +615,10 @@ document.addEventListener("DOMContentLoaded", () => {
       );
 
 
+    /* =========================
+       UPDATE IMAGE
+    ========================= */
+
     function updateGallery() {
 
       image.src =
@@ -490,15 +633,23 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-    /* PREVIOUS */
+    /* =========================
+       PREVIOUS
+    ========================= */
 
-    modal
-      .querySelector(
+    const previousButton =
+      modal.querySelector(
         ".gallery-prev"
-      )
-      .addEventListener(
+      );
+
+    if (previousButton) {
+
+      previousButton.addEventListener(
         "click",
-        () => {
+        (event) => {
+
+          event.preventDefault();
+          event.stopPropagation();
 
           current =
             (
@@ -513,16 +664,26 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       );
 
+    }
 
-    /* NEXT */
 
-    modal
-      .querySelector(
+    /* =========================
+       NEXT
+    ========================= */
+
+    const nextButton =
+      modal.querySelector(
         ".gallery-next"
-      )
-      .addEventListener(
+      );
+
+    if (nextButton) {
+
+      nextButton.addEventListener(
         "click",
-        () => {
+        (event) => {
+
+          event.preventDefault();
+          event.stopPropagation();
 
           current =
             (
@@ -536,40 +697,80 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       );
 
+    }
 
-    /* CLOSE */
 
-    modal
-      .querySelector(
+    /* =========================
+       CLOSE GALLERY
+    ========================= */
+
+    function closeGallery() {
+
+      if (modal) {
+        modal.remove();
+      }
+
+
+      if (galleryKeyboard) {
+
+        document.removeEventListener(
+          "keydown",
+          galleryKeyboard
+        );
+
+        galleryKeyboard = null;
+
+      }
+
+    }
+
+
+    const closeButton =
+      modal.querySelector(
         ".gallery-close"
-      )
-      .addEventListener(
-        "click",
-        () => {
+      );
 
-          modal.remove();
+    if (closeButton) {
+
+      closeButton.addEventListener(
+        "click",
+        (event) => {
+
+          event.preventDefault();
+          event.stopPropagation();
+
+          closeGallery();
 
         }
       );
 
+    }
 
-    modal
-      .querySelector(
+
+    /* =========================
+       BACKDROP
+    ========================= */
+
+    const backdrop =
+      modal.querySelector(
         ".gallery-backdrop"
-      )
-      .addEventListener(
-        "click",
-        () => {
-
-          modal.remove();
-
-        }
       );
 
+    if (backdrop) {
 
-    /* KEYBOARD */
+      backdrop.addEventListener(
+        "click",
+        closeGallery
+      );
 
-    function keyboard(event) {
+    }
+
+
+    /* =========================
+       KEYBOARD
+    ========================= */
+
+    galleryKeyboard = (event) => {
 
       if (
         !document.body.contains(modal)
@@ -577,8 +778,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
         document.removeEventListener(
           "keydown",
-          keyboard
+          galleryKeyboard
         );
+
+        galleryKeyboard = null;
 
         return;
 
@@ -587,7 +790,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
       if (event.key === "Escape") {
 
-        modal.remove();
+        closeGallery();
+
+        return;
 
       }
 
@@ -596,11 +801,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
         current =
           (
-            current + 1
+            current +
+            1
           ) %
           images.length;
 
         updateGallery();
+
+        return;
 
       }
 
@@ -619,13 +827,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
       }
 
-    }
+    };
 
 
     document.addEventListener(
       "keydown",
-      keyboard
+      galleryKeyboard
     );
+
+
+    /* Make sure first image is loaded */
+
+    updateGallery();
 
   }
 
