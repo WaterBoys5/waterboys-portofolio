@@ -31,25 +31,43 @@ const CATEGORIES = [
       }
     ]
   },
+{
+  title: "PRODUCT PHOTOGRAPHY",
+  description: "Commercial product photography, still life, and brand visuals.",
 
-  {
-    title: "PRODUCT PHOTOGRAPHY",
-    description: "Commercial product photography, still life, and brand visuals.",
-    projects: [
-      {
-        title: "Hardthirteen from Nevertoolavish",
-        year: "2026",
-        description: "Custom Louis Vuitton wallet by Hardthirteen from Nevertoolavish.",
-        image: "assets/images/lv-wallet-01.jpg",
-        gallery: [
-          "assets/images/lv-wallet-01.jpg",
-          "assets/images/lv-wallet-02.jpg",
-          "assets/images/lv-wallet-03.jpg",
-          "assets/images/lv-wallet-04.jpg"
-        ]
-      }
-    ]
-  },
+  projects: [
+    {
+      title: "Hardthirteen from Nevertoolavish",
+      year: "2026",
+      description: "Custom Louis Vuitton wallet by Hardthirteen from Nevertoolavish, documented through product photography.",
+      image: "assets/images/lv-wallet-01.jpg",
+      gallery: [
+        "assets/images/lv-wallet-01.jpg",
+        "assets/images/lv-wallet-02.jpg",
+        "assets/images/lv-wallet-03.jpg",
+        "assets/images/lv-wallet-04.jpg"
+      ]
+    },
+
+    {
+  title: "TITANS Spray Paint",
+  year: "2026",
+  description: "Product photography for TITANS spray paint, highlighting the product and its visual character.",
+  image: "assets/images/titans-01.jpg",
+  gallery: [
+    "assets/images/titans-01.jpg",
+    "assets/images/titans-02.jpg",
+    "assets/images/titans-03.jpg",
+    "assets/images/titans-04.jpg",
+    "assets/images/titans-05.jpg",
+    "assets/images/titans-06.jpg",
+    "assets/images/titans-07.jpg",
+    "assets/images/titans-08.jpg",
+    "assets/images/titans-09.jpg"
+  ]
+},
+  ]
+},
 
   {
     title: "PORTRAIT / FASHION PHOTOGRAPHY",
