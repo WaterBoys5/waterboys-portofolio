@@ -1,5 +1,9 @@
 document.addEventListener("DOMContentLoaded", () => {
 
+  /* =========================
+     BASIC SITE
+  ========================= */
+
   const year = document.getElementById("year");
 
   if (year) {
@@ -18,115 +22,238 @@ document.addEventListener("DOMContentLoaded", () => {
     return;
   }
 
+
+  /* =========================
+     CLEAR PROJECT AREA
+  ========================= */
+
+  projectGrid.innerHTML = "";
+
+
+  /* =========================
+     CATEGORY CARDS
+  ========================= */
+
   CATEGORIES.forEach((category) => {
 
-    const categorySection = document.createElement("section");
-    categorySection.className = "project-category";
+    /*
+     * Satu kategori = satu box.
+     * Semua gallery dari semua project
+     * di dalam kategori digabung menjadi
+     * satu kumpulan gambar.
+     */
 
-    const categoryHeader = document.createElement("div");
-    categoryHeader.className = "category-heading";
+    const images = [];
+
+    category.projects.forEach((project) => {
+
+      if (
+        Array.isArray(project.gallery) &&
+        project.gallery.length
+      ) {
+
+        project.gallery.forEach((image) => {
+          images.push(image);
+        });
+
+      } else if (project.image) {
+
+        images.push(project.image);
+
+      }
+
+    });
+
+
+    /* Hapus gambar duplikat */
+
+    const uniqueImages = [...new Set(images)];
+
+
+    if (!uniqueImages.length) {
+      return;
+    }
+
+
+    /* =========================
+       CATEGORY SECTION
+    ========================= */
+
+    const categorySection =
+      document.createElement("section");
+
+    categorySection.className =
+      "project-category";
+
+
+    /* =========================
+       CATEGORY HEADER
+    ========================= */
+
+    const categoryHeader =
+      document.createElement("div");
+
+    categoryHeader.className =
+      "category-heading";
 
     categoryHeader.innerHTML = `
-      <p class="eyebrow">${category.title}</p>
-      <p class="category-description">${category.description}</p>
+      <div>
+        <p class="eyebrow">
+          ${category.title}
+        </p>
+
+        <p class="category-description">
+          ${category.description}
+        </p>
+      </div>
     `;
 
     categorySection.appendChild(categoryHeader);
 
-    const categoryGrid = document.createElement("div");
-    categoryGrid.className = "project-grid-inner";
 
-    categorySection.appendChild(categoryGrid);
+    /* =========================
+       ONE BOX FOR CATEGORY
+    ========================= */
 
-    category.projects.forEach((project) => {
+    const categoryGrid =
+      document.createElement("div");
 
-      const images =
-        Array.isArray(project.gallery) && project.gallery.length
-          ? project.gallery
-          : [project.image];
+    categoryGrid.className =
+      "project-grid-inner";
 
-      const card = document.createElement("article");
-      card.className = "project-card";
 
-      card.innerHTML = `
-        <div class="project-image"></div>
+    const card =
+      document.createElement("article");
 
-        <div class="project-overlay">
-          <div class="project-meta">
+    card.className =
+      "project-card";
 
-            <div>
-              <p class="project-title">${project.title}</p>
-              <p class="project-desc">${project.description}</p>
-            </div>
 
-            <div class="project-type">
-              ${project.year}
-            </div>
+    /* =========================
+       RANDOM START IMAGE
+    ========================= */
 
+    let current =
+      Math.floor(
+        Math.random() * uniqueImages.length
+      );
+
+
+    card.innerHTML = `
+      <div class="project-image"></div>
+
+      <div class="project-overlay">
+
+        <div class="project-meta">
+
+          <div>
+            <p class="project-title">
+              ${category.title}
+            </p>
+
+            <p class="project-desc">
+              ${category.description}
+            </p>
           </div>
+
+          <div class="project-type">
+            ${uniqueImages.length} IMAGES
+          </div>
+
         </div>
-      `;
 
-      const image = card.querySelector(".project-image");
+      </div>
+    `;
 
-      let current = 0;
 
-      image.style.backgroundImage =
-        `url("${images[current]}")`;
+    const image =
+      card.querySelector(".project-image");
 
-      /*
-       * RANDOM THUMBNAIL
-       */
 
-      if (images.length > 1) {
+    /* =========================
+       SHOW IMAGE
+    ========================= */
 
-        setInterval(() => {
+    function showRandomImage() {
 
-          let next;
-
-          do {
-            next = Math.floor(
-              Math.random() * images.length
-            );
-          } while (next === current);
-
-          current = next;
-
-          image.style.backgroundImage =
-            `url("${images[current]}")`;
-
-        }, 3500);
-
+      if (uniqueImages.length <= 1) {
+        return;
       }
 
-      /*
-       * OPEN GALLERY
-       */
+      let next;
 
-      card.addEventListener("click", () => {
+      do {
 
-        openGallery(
-          project.title,
-          project.description,
-          images
-        );
+        next =
+          Math.floor(
+            Math.random() *
+            uniqueImages.length
+          );
 
-      });
+      } while (next === current);
 
-      categoryGrid.appendChild(card);
+
+      current = next;
+
+      image.style.backgroundImage =
+        `url("${uniqueImages[current]}")`;
+    }
+
+
+    /* Initial image */
+
+    image.style.backgroundImage =
+      `url("${uniqueImages[current]}")`;
+
+
+    /* =========================
+       RANDOM SLIDESHOW
+    ========================= */
+
+    if (uniqueImages.length > 1) {
+
+      setInterval(() => {
+
+        showRandomImage();
+
+      }, 3500);
+
+    }
+
+
+    /* =========================
+       OPEN CATEGORY GALLERY
+    ========================= */
+
+    card.addEventListener("click", () => {
+
+      openGallery(
+        category.title,
+        category.description,
+        uniqueImages
+      );
 
     });
+
+
+    categoryGrid.appendChild(card);
+
+    categorySection.appendChild(categoryGrid);
 
     projectGrid.appendChild(categorySection);
 
   });
 
 
-  /*
-   * GALLERY
-   */
+  /* =========================
+     GALLERY
+  ========================= */
 
-  function openGallery(title, description, images) {
+  function openGallery(
+    title,
+    description,
+    images
+  ) {
 
     const oldModal =
       document.querySelector(".gallery-modal");
@@ -135,14 +262,19 @@ document.addEventListener("DOMContentLoaded", () => {
       oldModal.remove();
     }
 
+
     let current = 0;
+
 
     const modal =
       document.createElement("div");
 
-    modal.className = "gallery-modal";
+    modal.className =
+      "gallery-modal";
+
 
     modal.innerHTML = `
+
       <div class="gallery-backdrop"></div>
 
       <div class="gallery-window">
@@ -177,8 +309,15 @@ document.addEventListener("DOMContentLoaded", () => {
         <div class="gallery-info">
 
           <div>
-            <h3>${title}</h3>
-            <p>${description}</p>
+
+            <h3>
+              ${title}
+            </h3>
+
+            <p>
+              ${description}
+            </p>
+
           </div>
 
           <span class="gallery-counter">
@@ -188,20 +327,33 @@ document.addEventListener("DOMContentLoaded", () => {
         </div>
 
       </div>
+
     `;
+
 
     document.body.appendChild(modal);
 
+
     const mainImage =
-      modal.querySelector(".gallery-main-image");
+      modal.querySelector(
+        ".gallery-main-image"
+      );
+
 
     const counter =
-      modal.querySelector(".gallery-counter");
+      modal.querySelector(
+        ".gallery-counter"
+      );
 
+
+    /* =========================
+       UPDATE GALLERY
+    ========================= */
 
     function updateGallery() {
 
-      mainImage.src = images[current];
+      mainImage.src =
+        images[current];
 
       mainImage.alt =
         `${title} - image ${current + 1}`;
@@ -211,6 +363,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     }
 
+
+    /* =========================
+       PREVIOUS
+    ========================= */
 
     modal
       .querySelector(".gallery-prev")
@@ -225,17 +381,26 @@ document.addEventListener("DOMContentLoaded", () => {
       });
 
 
+    /* =========================
+       NEXT
+    ========================= */
+
     modal
       .querySelector(".gallery-next")
       .addEventListener("click", () => {
 
         current =
-          (current + 1) % images.length;
+          (current + 1) %
+          images.length;
 
         updateGallery();
 
       });
 
+
+    /* =========================
+       CLOSE
+    ========================= */
 
     modal
       .querySelector(".gallery-close")
@@ -253,6 +418,61 @@ document.addEventListener("DOMContentLoaded", () => {
         modal.remove();
 
       });
+
+
+    /* =========================
+       KEYBOARD
+    ========================= */
+
+    function keyboardHandler(event) {
+
+      if (!document.body.contains(modal)) {
+
+        document.removeEventListener(
+          "keydown",
+          keyboardHandler
+        );
+
+        return;
+
+      }
+
+
+      if (event.key === "Escape") {
+
+        modal.remove();
+
+      }
+
+
+      if (event.key === "ArrowRight") {
+
+        current =
+          (current + 1) %
+          images.length;
+
+        updateGallery();
+
+      }
+
+
+      if (event.key === "ArrowLeft") {
+
+        current =
+          (current - 1 + images.length) %
+          images.length;
+
+        updateGallery();
+
+      }
+
+    }
+
+
+    document.addEventListener(
+      "keydown",
+      keyboardHandler
+    );
 
   }
 
