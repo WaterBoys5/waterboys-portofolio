@@ -6,12 +6,15 @@ const CATEGORIES = [
   {
     title: "STAGE PHOTOGRAPHY",
     description: "Live performances, concerts, and stage documentation.",
+
     projects: [
       {
         title: "Stereo Wall",
         year: "2026",
         description: "Stage photography for Stereo Wall at Trilogigs 2025.",
+
         image: "assets/images/20140119-DSC05804blek.jpg",
+
         gallery: [
           "assets/images/20140119-DSC05804blek.jpg",
           "assets/images/20140119-DSC05809blek.jpg",
@@ -32,32 +35,6 @@ const CATEGORIES = [
     ]
   },
 
-  {
-    title: "PRODUCT PHOTOGRAPHY",
-    description: "Commercial product photography, still life, and brand visuals.",
-    projects: []
-  },
-
-  {
-    title: "PORTRAIT / FASHION PHOTOGRAPHY",
-    description: "Portraits, fashion editorials, artist profiles, and creative campaigns.",
-    projects: [
-      {
-        title: "Peron.id Long Sleeve T-Shirt",
-        year: "2026",
-        description: "Fashion portrait photography featuring Peron.id long sleeve T-shirt.",
-        image: "assets/images/peron-long-sleeve-01.jpg",
-        gallery: [
-          "assets/images/peron-long-sleeve-01.jpg",
-          "assets/images/peron-long-sleeve-02.jpg",
-          "assets/images/peron-long-sleeve-03.jpg",
-          "assets/images/peron-long-sleeve-04.jpg",
-          "assets/images/peron-long-sleeve-05.jpg"
-        ]
-      }
-    ]
-  }
-];
   {
     title: "PRODUCT PHOTOGRAPHY",
     description: "Commercial product photography, still life, and brand visuals.",
