@@ -571,8 +571,8 @@ nav a:hover,
 
 .project-grid-inner {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 18px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
 }
 
 
@@ -582,20 +582,16 @@ nav a:hover,
 
 .project-card {
   position: relative;
-
-  min-height: 540px;
-
+  aspect-ratio: 4 / 5;
   overflow: hidden;
 
   border: 1px solid var(--line);
-
   border-radius: var(--radius);
 
   background: #111;
 
   cursor: pointer;
 }
-
 .project-image {
   position: absolute;
 
