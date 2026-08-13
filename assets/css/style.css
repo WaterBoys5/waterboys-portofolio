@@ -1184,21 +1184,307 @@ nav a:hover,
 }
 /* HERO PHOTO - SMALL */
 
+/* =========================================================
+   HERO PHOTO - FINAL SIZE
+========================================================= */
+
 .hero {
   grid-template-columns:
     minmax(0, 1fr)
-    200px;
+    180px;
+
+  gap: 60px;
 }
 
 .hero-card {
-  width: 200px !important;
-  max-width: 200px !important;
+  width: 180px !important;
+  max-width: 180px !important;
+
   padding: 8px;
+
   justify-self: center;
+
+  transform: rotate(2deg);
 }
 
 .hero-card-image {
   width: 100%;
+
   aspect-ratio: 3 / 4;
+
   border-radius: 14px;
+
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   PROJECT GALLERY
+========================================================= */
+
+.gallery-modal {
+  position: fixed;
+  inset: 0;
+
+  z-index: 10000;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 24px;
+
+  pointer-events: auto;
+}
+
+.gallery-backdrop {
+  position: absolute;
+  inset: 0;
+
+  background: rgba(0, 0, 0, 0.88);
+
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.gallery-window {
+  position: relative;
+
+  z-index: 2;
+
+  width: min(1000px, 95vw);
+  max-height: 92vh;
+
+  overflow: hidden;
+
+  padding: 18px;
+
+  border: 1px solid var(--line);
+  border-radius: 22px;
+
+  background: rgba(12, 12, 12, 0.97);
+
+  box-shadow:
+    0 40px 120px rgba(0, 0, 0, 0.7);
+}
+
+.gallery-image-wrap {
+  position: relative;
+
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #080808;
+
+  border-radius: 16px;
+
+  overflow: hidden;
+}
+
+.gallery-main-image {
+  display: block;
+
+  width: 100%;
+  max-height: 70vh;
+
+  object-fit: contain;
+
+  border-radius: 16px;
+}
+
+.gallery-close {
+  position: absolute;
+
+  top: 28px;
+  right: 28px;
+
+  z-index: 5;
+
+  width: 38px;
+  height: 38px;
+
+  display: grid;
+  place-items: center;
+
+  border: 1px solid rgba(255,255,255,.25);
+  border-radius: 50%;
+
+  background: rgba(0,0,0,.65);
+
+  color: white;
+
+  font-size: 24px;
+
+  cursor: pointer;
+}
+
+.gallery-prev,
+.gallery-next {
+  position: absolute;
+
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  width: 44px;
+  height: 44px;
+
+  display: grid;
+  place-items: center;
+
+  border: 1px solid rgba(255,255,255,.25);
+  border-radius: 50%;
+
+  background: rgba(0,0,0,.55);
+
+  color: white;
+
+  font-size: 28px;
+
+  cursor: pointer;
+
+  z-index: 4;
+}
+
+.gallery-prev {
+  left: 18px;
+}
+
+.gallery-next {
+  right: 18px;
+}
+
+.gallery-prev:hover,
+.gallery-next:hover,
+.gallery-close:hover {
+  background: rgba(255,255,255,.15);
+}
+
+.gallery-info {
+  display: flex;
+
+  justify-content: space-between;
+  align-items: flex-end;
+
+  gap: 20px;
+
+  padding: 18px 4px 4px;
+}
+
+.gallery-info h3 {
+  margin: 0 0 6px;
+
+  font-size: 20px;
+
+  letter-spacing: -.04em;
+}
+
+.gallery-info p {
+  margin: 0;
+
+  max-width: 600px;
+
+  color: #888;
+
+  font-size: 11px;
+
+  line-height: 1.5;
+}
+
+.gallery-counter {
+  color: #888;
+
+  font-family: "DM Mono", monospace;
+
+  font-size: 10px;
+
+  white-space: nowrap;
+}
+
+
+/* =========================================================
+   PROJECT CARD CLICKABLE
+========================================================= */
+
+.category-project-card {
+  position: relative;
+
+  z-index: 3;
+
+  pointer-events: auto;
+
+  cursor: pointer;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 650px) {
+
+  .hero {
+    grid-template-columns: 1fr;
+
+    gap: 40px;
+  }
+
+  .hero-card {
+    width: 180px !important;
+    max-width: 180px !important;
+
+    justify-self: center;
+  }
+
+  .gallery-modal {
+    padding: 10px;
+  }
+
+  .gallery-window {
+    width: 100%;
+
+    padding: 10px;
+
+    border-radius: 16px;
+  }
+
+  .gallery-main-image {
+    max-height: 68vh;
+  }
+
+  .gallery-close {
+    top: 18px;
+    right: 18px;
+  }
+
+  .gallery-prev,
+  .gallery-next {
+    width: 38px;
+    height: 38px;
+
+    font-size: 22px;
+  }
+
+  .gallery-prev {
+    left: 10px;
+  }
+
+  .gallery-next {
+    right: 10px;
+  }
+
+  .gallery-info {
+    padding: 14px 4px 4px;
+  }
+
+  .gallery-info h3 {
+    font-size: 16px;
+  }
+
+  .gallery-info p {
+    font-size: 10px;
+  }
 }
