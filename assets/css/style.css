@@ -908,3 +908,12 @@ nav a:hover,
 }
 
 }
+.hero {
+  grid-template-columns:
+    minmax(0, 1fr)
+    260px;
+}
+
+.hero-card {
+  width: 260px;
+}
