@@ -1,346 +1,517 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const grid = document.querySelector("#project-grid");
 
-  if (!grid) return;
+  /* =========================
+     BASIC SITE
+  ========================= */
 
-  renderCategories(grid);
+  const yearElement = document.getElementById("year");
 
-  const year = document.querySelector("#year");
-
-  if (year) {
-    year.textContent = new Date().getFullYear();
+  if (yearElement) {
+    yearElement.textContent = new Date().getFullYear();
   }
 
-  const behanceLink = document.querySelector("#behance-link");
+  const behanceLink = document.getElementById("behance-link");
 
-  if (
-    behanceLink &&
-    typeof SITE !== "undefined" &&
-    SITE.behance
-  ) {
+  if (behanceLink && typeof SITE !== "undefined") {
     behanceLink.href = SITE.behance;
-    behanceLink.target = "_blank";
-    behanceLink.rel = "noopener noreferrer";
   }
-});
 
 
-function renderCategories(grid) {
-  grid.innerHTML = "";
+  /* =========================
+     PROJECT GRID
+  ========================= */
+
+  const projectGrid = document.getElementById("project-grid");
+
+  if (!projectGrid || typeof CATEGORIES === "undefined") {
+    return;
+  }
+
+  let projectIndex = 0;
 
   CATEGORIES.forEach((category) => {
-    const card = document.createElement("article");
 
-    card.className = "project-card";
-    card.style.cursor = "pointer";
+    /* Category heading */
 
-    const firstProject = category.projects[0];
+    const categoryHeader = document.createElement("div");
+    categoryHeader.className = "category-heading";
 
-    card.innerHTML = `
-      <div
-        class="project-image"
-        style="background-image:url('${firstProject ? firstProject.image : ""}')"
-      ></div>
-
-      <div class="project-overlay">
-        <div class="project-meta">
-          <div>
-            <h3 class="project-title">
-              ${category.title}
-            </h3>
-
-            <p class="project-desc">
-              ${category.description}
-            </p>
-          </div>
-
-          <div class="project-type">
-            ${category.projects.length}
-            ${category.projects.length === 1 ? "PROJECT" : "PROJECTS"}
-          </div>
-        </div>
+    categoryHeader.innerHTML = `
+      <div>
+        <p class="eyebrow">${category.title}</p>
+        <p class="category-description">
+          ${category.description}
+        </p>
       </div>
     `;
 
-    card.addEventListener("click", () => {
-      openCategory(category);
-    });
-
-    grid.appendChild(card);
-  });
-}
+    projectGrid.appendChild(categoryHeader);
 
 
-function openCategory(category) {
-  const overlay = document.createElement("div");
+    /* Projects */
 
-  overlay.id = "category-overlay";
+    category.projects.forEach((project) => {
 
-  overlay.style.cssText = `
-    position:fixed;
-    inset:0;
-    z-index:9999;
-    background:rgba(0,0,0,.96);
-    overflow-y:auto;
-    padding:40px 25px 60px;
-    box-sizing:border-box;
-  `;
+      const images =
+        Array.isArray(project.gallery) && project.gallery.length
+          ? project.gallery
+          : [project.image];
 
-  overlay.innerHTML = `
-    <div style="max-width:1400px;margin:auto;">
+      const card = document.createElement("article");
 
-      <div style="
-        display:flex;
-        justify-content:space-between;
-        align-items:center;
-        margin-bottom:35px;
-      ">
+      card.className = "project-card";
+      card.dataset.projectIndex = projectIndex;
 
-        <div>
-          <p style="
-            margin:0 0 8px;
-            color:rgba(255,255,255,.5);
-            font-size:13px;
-            letter-spacing:1.5px;
-          ">
-            CATEGORY
-          </p>
+      /*
+        Project image slideshow
+      */
 
-          <h2 style="
-            margin:0;
-            color:white;
-            font-size:32px;
-          ">
-            ${category.title}
-          </h2>
-
-          <p style="
-            margin:8px 0 0;
-            color:rgba(255,255,255,.6);
-          ">
-            ${category.description}
-          </p>
-        </div>
-
-        <button
-          id="close-category"
-          style="
-            width:48px;
-            height:48px;
-            border-radius:50%;
-            border:1px solid rgba(255,255,255,.3);
-            background:rgba(255,255,255,.1);
-            color:white;
-            font-size:28px;
-            cursor:pointer;
-          "
-        >
-          ×
-        </button>
-
-      </div>
-
-      <div style="
-        display:grid;
-        grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-        gap:20px;
-      ">
-
-        ${category.projects.map((project) => `
-          <article
-            class="category-project"
-            style="
-              position:relative;
-              min-height:340px;
-              border-radius:16px;
-              overflow:hidden;
-              cursor:pointer;
-              background:#111;
-            "
-          >
-
-            <img
-              src="${project.image}"
-              alt="${project.title}"
-              loading="lazy"
-              style="
-                width:100%;
-                height:340px;
-                object-fit:cover;
-                display:block;
-              "
-            >
-
-            <div style="
-              position:absolute;
-              inset:auto 0 0 0;
-              padding:60px 20px 20px;
-              background:linear-gradient(
-                transparent,
-                rgba(0,0,0,.9)
-              );
-            ">
-
-              <h3 style="
-                margin:0;
-                color:white;
-                font-size:22px;
-              ">
-                ${project.title}
-              </h3>
-
-              <p style="
-                margin:6px 0 0;
-                color:rgba(255,255,255,.65);
-                font-size:14px;
-              ">
-                ${project.year}
-              </p>
-
+      const imageSlides = images
+        .map((src, index) => {
+          return `
+            <div
+              class="project-slide ${index === 0 ? "active" : ""}"
+              style="background-image:url('${src}')"
+              data-index="${index}">
             </div>
-
-          </article>
-        `).join("")}
-
-      </div>
-    </div>
-  `;
-
-  document.body.appendChild(overlay);
-  document.body.style.overflow = "hidden";
-
-  overlay
-    .querySelector("#close-category")
-    .addEventListener("click", () => {
-      overlay.remove();
-      document.body.style.overflow = "";
-    });
-
-  overlay
-    .querySelectorAll(".category-project")
-    .forEach((card, index) => {
-      card.addEventListener("click", () => {
-        openProject(category.projects[index]);
-      });
-    });
-}
+          `;
+        })
+        .join("");
 
 
-function openProject(project) {
-  const images =
-    project.gallery && project.gallery.length
-      ? project.gallery
-      : [project.image];
+      /*
+        Dots
+      */
 
-  const overlay = document.createElement("div");
+      const dots = images
+        .map((src, index) => {
+          return `
+            <button
+              class="project-dot ${index === 0 ? "active" : ""}"
+              type="button"
+              data-slide="${index}"
+              aria-label="View image ${index + 1}">
+            </button>
+          `;
+        })
+        .join("");
 
-  overlay.id = "project-gallery-overlay";
 
-  overlay.style.cssText = `
-    position:fixed;
-    inset:0;
-    z-index:10000;
-    background:rgba(0,0,0,.97);
-    overflow-y:auto;
-    padding:40px 25px 60px;
-    box-sizing:border-box;
-  `;
+      card.innerHTML = `
 
-  overlay.innerHTML = `
-    <div style="max-width:1400px;margin:auto;">
+        <div class="project-image slideshow">
 
-      <div style="
-        display:flex;
-        justify-content:space-between;
-        align-items:center;
-        margin-bottom:30px;
-      ">
+          ${imageSlides}
 
-        <div>
+          <div class="project-slideshow-controls">
 
-          <p style="
-            margin:0 0 8px;
-            color:rgba(255,255,255,.5);
-            font-size:13px;
-            letter-spacing:1.5px;
-          ">
-            PROJECT
-          </p>
+            <button
+              class="slide-prev"
+              type="button"
+              aria-label="Previous image">
+              ‹
+            </button>
 
-          <h2 style="
-            margin:0;
-            color:white;
-            font-size:32px;
-          ">
-            ${project.title}
-          </h2>
-
-          <p style="
-            margin:6px 0 0;
-            color:rgba(255,255,255,.6);
-          ">
-            ${project.year}
-          </p>
-
-        </div>
-
-        <button
-          id="close-gallery"
-          style="
-            width:48px;
-            height:48px;
-            border-radius:50%;
-            border:1px solid rgba(255,255,255,.3);
-            background:rgba(255,255,255,.1);
-            color:white;
-            font-size:28px;
-            cursor:pointer;
-          "
-        >
-          ×
-        </button>
-
-      </div>
-
-      <div style="
-        display:grid;
-        grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-        gap:20px;
-      ">
-
-        ${images.map((image) => `
-          <div style="
-            background:#111;
-            border-radius:14px;
-            overflow:hidden;
-          ">
-
-            <img
-              src="${image}"
-              alt="${project.title}"
-              loading="lazy"
-              style="
-                width:100%;
-                height:auto;
-                display:block;
-              "
-            >
+            <button
+              class="slide-next"
+              type="button"
+              aria-label="Next image">
+              ›
+            </button>
 
           </div>
-        `).join("")}
+
+          <div class="project-dots">
+            ${dots}
+          </div>
+
+        </div>
+
+
+        <div class="project-overlay">
+
+          <div class="project-meta">
+
+            <div>
+              <p class="project-title">
+                ${project.title}
+              </p>
+
+              <p class="project-desc">
+                ${project.description}
+              </p>
+            </div>
+
+            <div class="project-type">
+              ${project.year}
+            </div>
+
+          </div>
+
+        </div>
+
+      `;
+
+
+      projectGrid.appendChild(card);
+
+
+      /* =========================
+         SLIDESHOW LOGIC
+      ========================= */
+
+      let currentSlide = 0;
+
+      const slides = card.querySelectorAll(".project-slide");
+      const dotsElements = card.querySelectorAll(".project-dot");
+
+      const showSlide = (index) => {
+
+        if (!slides.length) return;
+
+        currentSlide =
+          (index + slides.length) % slides.length;
+
+        slides.forEach((slide, i) => {
+          slide.classList.toggle(
+            "active",
+            i === currentSlide
+          );
+        });
+
+        dotsElements.forEach((dot, i) => {
+          dot.classList.toggle(
+            "active",
+            i === currentSlide
+          );
+        });
+
+      };
+
+
+      /* Previous */
+
+      const previousButton =
+        card.querySelector(".slide-prev");
+
+      if (previousButton) {
+
+        previousButton.addEventListener("click", (event) => {
+
+          event.stopPropagation();
+
+          showSlide(currentSlide - 1);
+
+          restartAutoSlide();
+
+        });
+
+      }
+
+
+      /* Next */
+
+      const nextButton =
+        card.querySelector(".slide-next");
+
+      if (nextButton) {
+
+        nextButton.addEventListener("click", (event) => {
+
+          event.stopPropagation();
+
+          showSlide(currentSlide + 1);
+
+          restartAutoSlide();
+
+        });
+
+      }
+
+
+      /* Dots */
+
+      dotsElements.forEach((dot) => {
+
+        dot.addEventListener("click", (event) => {
+
+          event.stopPropagation();
+
+          const index =
+            Number(dot.dataset.slide);
+
+          showSlide(index);
+
+          restartAutoSlide();
+
+        });
+
+      });
+
+
+      /* =========================
+         AUTO SLIDESHOW
+      ========================= */
+
+      let autoSlide;
+
+      const startAutoSlide = () => {
+
+        if (images.length <= 1) {
+          return;
+        }
+
+        autoSlide = setInterval(() => {
+
+          showSlide(currentSlide + 1);
+
+        }, 3500);
+
+      };
+
+
+      const restartAutoSlide = () => {
+
+        clearInterval(autoSlide);
+
+        startAutoSlide();
+
+      };
+
+
+      startAutoSlide();
+
+
+      /* =========================
+         PAUSE WHEN HOVER
+      ========================= */
+
+      card.addEventListener("mouseenter", () => {
+        clearInterval(autoSlide);
+      });
+
+      card.addEventListener("mouseleave", () => {
+        startAutoSlide();
+      });
+
+
+      /* =========================
+         OPEN PROJECT GALLERY
+      ========================= */
+
+      card.addEventListener("click", () => {
+
+        openGallery(
+          project.title,
+          project.description,
+          images
+        );
+
+      });
+
+
+      projectIndex++;
+
+    });
+
+  });
+
+
+  /* =========================
+     LIGHTBOX / GALLERY
+  ========================= */
+
+  function openGallery(title, description, images) {
+
+    const existing =
+      document.querySelector(".gallery-modal");
+
+    if (existing) {
+      existing.remove();
+    }
+
+
+    let current = 0;
+
+
+    const modal =
+      document.createElement("div");
+
+    modal.className = "gallery-modal";
+
+
+    modal.innerHTML = `
+
+      <div class="gallery-backdrop"></div>
+
+      <div class="gallery-window">
+
+        <button
+          class="gallery-close"
+          type="button">
+          ×
+        </button>
+
+        <div class="gallery-image-wrap">
+
+          <img
+            class="gallery-main-image"
+            src="${images[0]}"
+            alt="${title}">
+
+          <button
+            class="gallery-prev"
+            type="button">
+            ‹
+          </button>
+
+          <button
+            class="gallery-next"
+            type="button">
+            ›
+          </button>
+
+        </div>
+
+        <div class="gallery-info">
+
+          <div>
+
+            <h3>${title}</h3>
+
+            <p>${description}</p>
+
+          </div>
+
+          <span class="gallery-counter">
+            1 / ${images.length}
+          </span>
+
+        </div>
 
       </div>
 
-    </div>
-  `;
+    `;
 
-  document.body.appendChild(overlay);
-  document.body.style.overflow = "hidden";
 
-  overlay
-    .querySelector("#close-gallery")
-    .addEventListener("click", () => {
-      overlay.remove();
-      document.body.style.overflow = "";
-    });
-}
+    document.body.appendChild(modal);
+
+
+    const image =
+      modal.querySelector(".gallery-main-image");
+
+    const counter =
+      modal.querySelector(".gallery-counter");
+
+
+    const updateGallery = () => {
+
+      image.src = images[current];
+
+      image.alt = `${title} — image ${current + 1}`;
+
+      counter.textContent =
+        `${current + 1} / ${images.length}`;
+
+    };
+
+
+    modal
+      .querySelector(".gallery-prev")
+      .addEventListener("click", () => {
+
+        current =
+          (current - 1 + images.length) %
+          images.length;
+
+        updateGallery();
+
+      });
+
+
+    modal
+      .querySelector(".gallery-next")
+      .addEventListener("click", () => {
+
+        current =
+          (current + 1) %
+          images.length;
+
+        updateGallery();
+
+      });
+
+
+    modal
+      .querySelector(".gallery-close")
+      .addEventListener("click", () => {
+
+        modal.remove();
+
+      });
+
+
+    modal
+      .querySelector(".gallery-backdrop")
+      .addEventListener("click", () => {
+
+        modal.remove();
+
+      });
+
+
+    /* Keyboard */
+
+    const keyboardHandler = (event) => {
+
+      if (!document.body.contains(modal)) {
+
+        document.removeEventListener(
+          "keydown",
+          keyboardHandler
+        );
+
+        return;
+
+      }
+
+
+      if (event.key === "Escape") {
+
+        modal.remove();
+
+      }
+
+
+      if (event.key === "ArrowRight") {
+
+        current =
+          (current + 1) %
+          images.length;
+
+        updateGallery();
+
+      }
+
+
+      if (event.key === "ArrowLeft") {
+
+        current =
+          (current - 1 + images.length) %
+          images.length;
+
+        updateGallery();
+
+      }
+
+    };
+
+
+    document.addEventListener(
+      "keydown",
+      keyboardHandler
+    );
+
+  }
+
+});
