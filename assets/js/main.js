@@ -63,96 +63,79 @@ function openProject(project) {
 
   const overlay = document.createElement("div");
 
-  overlay.id = "project-gallery-overlay";
-
   overlay.style.cssText = `
-    position: fixed;
-    inset: 0;
-    z-index: 9999;
-    background: rgba(0, 0, 0, 0.94);
-    overflow-y: auto;
-    padding: 40px 30px 60px;
-    box-sizing: border-box;
+    position:fixed;
+    inset:0;
+    z-index:9999;
+    background:rgba(0,0,0,.96);
+    overflow-y:auto;
+    padding:40px 25px 60px;
+    box-sizing:border-box;
   `;
 
   overlay.innerHTML = `
     <div style="
-      max-width: 1400px;
-      margin: 0 auto;
+      max-width:1400px;
+      margin:auto;
     ">
 
       <div style="
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-bottom: 30px;
-        position: sticky;
-        top: 0;
-        z-index: 2;
-        padding: 10px 0;
+        display:flex;
+        justify-content:space-between;
+        align-items:center;
+        margin-bottom:30px;
       ">
-
         <div>
           <h2 style="
-            margin: 0;
-            color: white;
-            font-size: 32px;
-            font-weight: 600;
+            margin:0;
+            color:white;
+            font-size:32px;
           ">
             ${project.title}
           </h2>
 
           <p style="
-            margin: 6px 0 0;
-            color: rgba(255,255,255,0.6);
-            font-size: 14px;
+            margin:6px 0 0;
+            color:rgba(255,255,255,.6);
           ">
             ${project.category} · ${project.year}
           </p>
         </div>
 
         <button
-          id="close-project-gallery"
-          aria-label="Close gallery"
+          id="close-gallery"
           style="
-            width: 48px;
-            height: 48px;
-            border-radius: 50%;
-            border: 1px solid rgba(255,255,255,0.25);
-            background: rgba(255,255,255,0.08);
-            color: white;
-            font-size: 28px;
-            cursor: pointer;
+            width:48px;
+            height:48px;
+            border-radius:50%;
+            border:1px solid rgba(255,255,255,.3);
+            background:rgba(255,255,255,.1);
+            color:white;
+            font-size:28px;
+            cursor:pointer;
           "
         >
           ×
         </button>
-
       </div>
 
       <div style="
-        display: grid;
-        grid-template-columns:
-          repeat(auto-fit, minmax(280px, 1fr));
-        gap: 20px;
+        display:grid;
+        grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+        gap:20px;
       ">
         ${images.map((image) => `
-          <div style="
-            background: #111;
-            border-radius: 16px;
-            overflow: hidden;
-          ">
-            <img
-              src="${image}"
-              alt="${project.title}"
-              loading="lazy"
-              style="
-                width: 100%;
-                height: auto;
-                display: block;
-              "
-            >
-          </div>
+          <img
+            src="${image}"
+            alt="${project.title}"
+            loading="lazy"
+            style="
+              width:100%;
+              height:auto;
+              display:block;
+              border-radius:14px;
+            "
+          >
         `).join("")}
       </div>
 
@@ -162,19 +145,10 @@ function openProject(project) {
   document.body.appendChild(overlay);
   document.body.style.overflow = "hidden";
 
-  const closeButton =
-    document.querySelector("#close-project-gallery");
-
-  closeButton.addEventListener("click", closeProject);
-
-  overlay.addEventListener("click", (event) => {
-    if (event.target === overlay) {
-      closeProject();
-    }
-  });
-
-  function closeProject() {
-    overlay.remove();
-    document.body.style.overflow = "";
-  }
+  document
+    .querySelector("#close-gallery")
+    .addEventListener("click", () => {
+      overlay.remove();
+      document.body.style.overflow = "";
+    });
 }
