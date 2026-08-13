@@ -43,64 +43,66 @@ const CATEGORIES = [
   },
 
   {
-    title: "PORTRAIT / FASHION PHOTOGRAPHY",
-    description: "Portraits, fashion editorials, artist profiles, and creative campaigns.",
+  title: "PORTRAIT / FASHION PHOTOGRAPHY",
+  description: "Portraits, fashion editorials, artist profiles, and creative campaigns.",
 
-    projects: [
-            {
-        title: "Peron.id Long Sleeve T-Shirt",
-        year: "2026",
-        description: "Fashion portrait photography featuring Peron.id long sleeve T-shirt.",
+  projects: [
+    {
+      title: "Peron.id Long Sleeve T-Shirt",
+      year: "2026",
+      description: "Fashion portrait photography featuring Peron.id long sleeve T-shirt.",
 
-        image: "assets/images/peron-long-sleeve-01.jpg",
+      image: "assets/images/peron-long-sleeve-01.jpg",
 
-        gallery: [
-          "assets/images/peron-long-sleeve-01.jpg",
-          "assets/images/peron-long-sleeve-02.jpg",
-          "assets/images/peron-long-sleeve-03.jpg",
-          "assets/images/peron-long-sleeve-04.jpg",
-          "assets/images/peron-long-sleeve-05.jpg"
-        ]
-      },
+      gallery: [
+        "assets/images/peron-long-sleeve-01.jpg",
+        "assets/images/peron-long-sleeve-02.jpg",
+        "assets/images/peron-long-sleeve-03.jpg",
+        "assets/images/peron-long-sleeve-04.jpg",
+        "assets/images/peron-long-sleeve-05.jpg"
+      ]
+    },
 
-      {
-        title: "WKA × Simpati",
-        year: "2026",
-        description: "Fashion campaign photography for WKA × Simpati.",
+    {
+      title: "WKA × Simpati",
+      year: "2026",
+      description: "Fashion campaign photography for WKA × Simpati.",
 
-        image: "assets/images/wka-simpati-01.jpg",
+      image: "assets/images/wka-simpati-01.jpg",
 
-        gallery: [
-          "assets/images/wka-simpati-01.jpg",
-          "assets/images/wka-simpati-02.jpg",
-          "assets/images/wka-simpati-03.jpg",
-          "assets/images/wka-simpati-04.jpg",
-          "assets/images/wka-simpati-05.jpg",
-          "assets/images/wka-simpati-06.jpg",
-          "assets/images/wka-simpati-07.jpg",
-          "assets/images/wka-simpati-08.jpg",
-          "assets/images/wka-simpati-09.jpg",
-          "assets/images/wka-simpati-10.jpg"
-        ]
-      },
-      
-      {
-        title: "Vishgazine Issue",
-        year: "2026",
-        description: "Fashion campaign photography for Vish by Nevertoolavish, Vishgazine Issue.",
+      gallery: [
+        "assets/images/wka-simpati-01.jpg",
+        "assets/images/wka-simpati-02.jpg",
+        "assets/images/wka-simpati-03.jpg",
+        "assets/images/wka-simpati-04.jpg",
+        "assets/images/wka-simpati-05.jpg",
+        "assets/images/wka-simpati-06.jpg",
+        "assets/images/wka-simpati-07.jpg",
+        "assets/images/wka-simpati-08.jpg",
+        "assets/images/wka-simpati-09.jpg",
+        "assets/images/wka-simpati-10.jpg"
+      ]
+    },
 
-        image: "assets/images/vishgazine-01.jpg",
+    {
+      title: "Vishgazine Issue",
+      year: "2026",
+      description: "Fashion campaign photography for Vish by Nevertoolavish, Vishgazine Issue.",
 
-        gallery: [
-          "assets/images/vishgazine-01.jpg",
-          "assets/images/vishgazine-02.jpg",
-          "assets/images/vishgazine-03.jpg",
-          "assets/images/vishgazine-04.jpg",
-          "assets/images/vishgazine-05.jpg",
-          "assets/images/vishgazine-06.jpg",
-          "assets/images/vishgazine-07.jpg",
-          "assets/images/vishgazine-08.jpg",
-          "assets/images/vishgazine-09.jpg"
+      image: "assets/images/vishgazine-01.jpg",
+
+      gallery: [
+        "assets/images/vishgazine-01.jpg",
+        "assets/images/vishgazine-02.jpg",
+        "assets/images/vishgazine-03.jpg",
+        "assets/images/vishgazine-04.jpg",
+        "assets/images/vishgazine-05.jpg",
+        "assets/images/vishgazine-06.jpg",
+        "assets/images/vishgazine-07.jpg",
+        "assets/images/vishgazine-08.jpg",
+        "assets/images/vishgazine-09.jpg"
+      ]
+    }
   ]
 }
     ]
