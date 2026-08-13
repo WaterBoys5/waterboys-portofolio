@@ -213,3 +213,406 @@ nav a:hover,.contact-links a:hover,.text-link:hover{color:#fff}
   }
 
 }
+/* =========================
+   PROJECT SLIDESHOW
+========================= */
+
+.project-image.slideshow {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.project-slide {
+  position: absolute;
+  inset: 0;
+
+  background-size: cover;
+  background-position: center;
+
+  opacity: 0;
+  transform: scale(1.02);
+
+  transition:
+    opacity 0.7s ease,
+    transform 4s ease;
+
+  z-index: 1;
+}
+
+.project-slide.active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+
+/* =========================
+   SLIDESHOW ARROWS
+========================= */
+
+.project-slideshow-controls {
+  position: absolute;
+  inset: 50% 18px auto 18px;
+
+  transform: translateY(-50%);
+
+  display: flex;
+  justify-content: space-between;
+
+  pointer-events: none;
+
+  z-index: 5;
+}
+
+.project-slideshow-controls button {
+  width: 38px;
+  height: 38px;
+
+  border-radius: 50%;
+
+  border: 1px solid rgba(255,255,255,.22);
+
+  background: rgba(0,0,0,.38);
+
+  color: #fff;
+
+  display: grid;
+  place-items: center;
+
+  font-size: 22px;
+
+  cursor: pointer;
+
+  opacity: 0;
+
+  transition:
+    opacity .25s ease,
+    background .25s ease,
+    transform .25s ease;
+
+  pointer-events: auto;
+
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.project-card:hover
+.project-slideshow-controls button {
+  opacity: 1;
+}
+
+.project-slideshow-controls button:hover {
+  background: rgba(255,255,255,.15);
+  transform: scale(1.08);
+}
+
+
+/* =========================
+   SLIDESHOW DOTS
+========================= */
+
+.project-dots {
+  position: absolute;
+
+  left: 28px;
+  bottom: 24px;
+
+  display: flex;
+  gap: 5px;
+
+  z-index: 6;
+
+  max-width: calc(100% - 56px);
+
+  overflow: hidden;
+}
+
+.project-dot {
+  width: 5px;
+  height: 5px;
+
+  padding: 0;
+
+  border: 0;
+
+  border-radius: 50%;
+
+  background: rgba(255,255,255,.4);
+
+  cursor: pointer;
+
+  transition:
+    width .25s ease,
+    background .25s ease;
+}
+
+.project-dot.active {
+  width: 18px;
+  border-radius: 10px;
+  background: #fff;
+}
+
+
+/* =========================
+   CATEGORY HEADING
+========================= */
+
+.category-heading {
+  grid-column: span 12;
+
+  margin-top: 55px;
+  margin-bottom: 5px;
+
+  padding-bottom: 14px;
+
+  border-bottom: 1px solid var(--line);
+}
+
+.category-heading:first-child {
+  margin-top: 0;
+}
+
+.category-heading .eyebrow {
+  margin-bottom: 8px;
+}
+
+.category-description {
+  margin: 0;
+
+  color: #888;
+
+  font-size: 11px;
+
+  line-height: 1.5;
+}
+
+
+/* =========================
+   GALLERY MODAL
+========================= */
+
+.gallery-modal {
+  position: fixed;
+  inset: 0;
+
+  z-index: 9999;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 30px;
+}
+
+.gallery-backdrop {
+  position: absolute;
+  inset: 0;
+
+  background: rgba(0,0,0,.82);
+
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+}
+
+.gallery-window {
+  position: relative;
+
+  width: min(1100px, 100%);
+
+  max-height: 92vh;
+
+  z-index: 2;
+
+  background: rgba(12,12,12,.92);
+
+  border: 1px solid rgba(255,255,255,.14);
+
+  border-radius: 24px;
+
+  overflow: hidden;
+
+  box-shadow:
+    0 30px 100px rgba(0,0,0,.6);
+}
+
+
+/* Main image */
+
+.gallery-image-wrap {
+  position: relative;
+
+  width: 100%;
+
+  height: min(72vh, 760px);
+
+  background: #080808;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gallery-main-image {
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+
+  display: block;
+}
+
+
+/* Close */
+
+.gallery-close {
+  position: absolute;
+
+  top: 15px;
+  right: 15px;
+
+  width: 40px;
+  height: 40px;
+
+  z-index: 10;
+
+  border: 1px solid rgba(255,255,255,.2);
+
+  border-radius: 50%;
+
+  background: rgba(0,0,0,.55);
+
+  color: #fff;
+
+  font-size: 25px;
+
+  cursor: pointer;
+
+  backdrop-filter: blur(12px);
+}
+
+
+/* Gallery arrows */
+
+.gallery-prev,
+.gallery-next {
+  position: absolute;
+
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  width: 45px;
+  height: 45px;
+
+  border-radius: 50%;
+
+  border: 1px solid rgba(255,255,255,.2);
+
+  background: rgba(0,0,0,.5);
+
+  color: #fff;
+
+  font-size: 27px;
+
+  cursor: pointer;
+
+  backdrop-filter: blur(12px);
+}
+
+.gallery-prev {
+  left: 20px;
+}
+
+.gallery-next {
+  right: 20px;
+}
+
+
+/* Gallery information */
+
+.gallery-info {
+  padding: 22px 25px;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: end;
+
+  gap: 30px;
+
+  border-top: 1px solid rgba(255,255,255,.1);
+}
+
+.gallery-info h3 {
+  margin: 0 0 7px;
+
+  font-size: 20px;
+
+  letter-spacing: -.03em;
+}
+
+.gallery-info p {
+  margin: 0;
+
+  max-width: 600px;
+
+  color: #999;
+
+  font-size: 11px;
+
+  line-height: 1.6;
+}
+
+.gallery-counter {
+  color: #888;
+
+  font: 10px 'DM Mono', monospace;
+
+  white-space: nowrap;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px) {
+
+  .project-slideshow-controls button {
+    opacity: .8;
+  }
+
+  .project-dots {
+    left: 20px;
+    bottom: 18px;
+  }
+
+  .gallery-modal {
+    padding: 12px;
+  }
+
+  .gallery-window {
+    border-radius: 18px;
+  }
+
+  .gallery-image-wrap {
+    height: 65vh;
+  }
+
+  .gallery-info {
+    padding: 18px;
+    align-items: flex-start;
+  }
+
+  .gallery-info h3 {
+    font-size: 17px;
+  }
+
+  .gallery-prev,
+  .gallery-next {
+    width: 38px;
+    height: 38px;
+  }
+
+}
