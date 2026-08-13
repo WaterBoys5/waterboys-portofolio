@@ -12,9 +12,9 @@ document.addEventListener("DOMContentLoaded", () => {
     behance.href = SITE.behance;
   }
 
-  const grid = document.getElementById("project-grid");
+  const projectGrid = document.getElementById("project-grid");
 
-  if (!grid || typeof CATEGORIES === "undefined") {
+  if (!projectGrid || typeof CATEGORIES === "undefined") {
     return;
   }
 
@@ -23,20 +23,20 @@ document.addEventListener("DOMContentLoaded", () => {
     const categorySection = document.createElement("section");
     categorySection.className = "project-category";
 
-    const heading = document.createElement("div");
-    heading.className = "category-heading";
+    const categoryHeader = document.createElement("div");
+    categoryHeader.className = "category-heading";
 
-    heading.innerHTML = `
+    categoryHeader.innerHTML = `
       <p class="eyebrow">${category.title}</p>
-      <p class="category-description">
-        ${category.description}
-      </p>
+      <p class="category-description">${category.description}</p>
     `;
 
-    categorySection.appendChild(heading);
+    categorySection.appendChild(categoryHeader);
 
     const categoryGrid = document.createElement("div");
-    categoryGrid.className = "project-grid";
+    categoryGrid.className = "project-grid-inner";
+
+    categorySection.appendChild(categoryGrid);
 
     category.projects.forEach((project) => {
 
@@ -48,39 +48,37 @@ document.addEventListener("DOMContentLoaded", () => {
       const card = document.createElement("article");
       card.className = "project-card";
 
-      const image = document.createElement("div");
-      image.className = "project-image";
+      card.innerHTML = `
+        <div class="project-image"></div>
 
-      image.style.backgroundImage =
-        `url("${images[0]}")`;
+        <div class="project-overlay">
+          <div class="project-meta">
 
-      const overlay = document.createElement("div");
-      overlay.className = "project-overlay";
+            <div>
+              <p class="project-title">${project.title}</p>
+              <p class="project-desc">${project.description}</p>
+            </div>
 
-      overlay.innerHTML = `
-        <div class="project-meta">
-          <div>
-            <p class="project-title">${project.title}</p>
-            <p class="project-desc">${project.description}</p>
-          </div>
+            <div class="project-type">
+              ${project.year}
+            </div>
 
-          <div class="project-type">
-            ${project.year}
           </div>
         </div>
       `;
 
-      card.appendChild(image);
-      card.appendChild(overlay);
-      categoryGrid.appendChild(card);
+      const image = card.querySelector(".project-image");
+
+      let current = 0;
+
+      image.style.backgroundImage =
+        `url("${images[current]}")`;
 
       /*
-       * RANDOM THUMBNAIL SLIDESHOW
+       * RANDOM THUMBNAIL
        */
 
       if (images.length > 1) {
-
-        let current = 0;
 
         setInterval(() => {
 
@@ -115,13 +113,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
       });
 
+      categoryGrid.appendChild(card);
+
     });
 
-    categorySection.appendChild(categoryGrid);
-    grid.appendChild(categorySection);
+    projectGrid.appendChild(categorySection);
 
   });
 
+
+  /*
+   * GALLERY
+   */
 
   function openGallery(title, description, images) {
 
@@ -155,8 +158,7 @@ document.addEventListener("DOMContentLoaded", () => {
           <img
             class="gallery-main-image"
             src="${images[0]}"
-            alt="${title}"
-          >
+            alt="${title}">
 
           <button
             class="gallery-prev"
@@ -228,8 +230,7 @@ document.addEventListener("DOMContentLoaded", () => {
       .addEventListener("click", () => {
 
         current =
-          (current + 1) %
-          images.length;
+          (current + 1) % images.length;
 
         updateGallery();
 
@@ -252,39 +253,6 @@ document.addEventListener("DOMContentLoaded", () => {
         modal.remove();
 
       });
-
-
-    document.addEventListener("keydown", function keyboard(event) {
-
-      if (!document.body.contains(modal)) {
-        return;
-      }
-
-      if (event.key === "Escape") {
-        modal.remove();
-      }
-
-      if (event.key === "ArrowRight") {
-
-        current =
-          (current + 1) %
-          images.length;
-
-        updateGallery();
-
-      }
-
-      if (event.key === "ArrowLeft") {
-
-        current =
-          (current - 1 + images.length) %
-          images.length;
-
-        updateGallery();
-
-      }
-
-    });
 
   }
 
