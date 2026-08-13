@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   /* =========================
-     PROJECTS
+     PROJECT GRID
   ========================= */
 
   const projectGrid = document.getElementById("project-grid");
@@ -29,12 +29,591 @@ document.addEventListener("DOMContentLoaded", () => {
 
   CATEGORIES.forEach((category) => {
 
+    if (!category.projects || !category.projects.length) {
+      return;
+    }
+
+
     /* =========================
-       CATEGORY CONTAINER
+       CATEGORY WRAPPER
     ========================= */
 
-    const categorySection = document.createElement("section");
-    categorySection.className = "project-category";
+    const categorySection = document.createElement("div");
+
+    categorySection.className = "category-block";
+
+
+    /* =========================
+       CATEGORY HEADER
+    ========================= */
+
+    const categoryHeader = document.createElement("div");
+
+    categoryHeader.className = "section-heading";
+
+    categoryHeader.innerHTML = `
+      <div>
+        <p class="eyebrow">${category.title}</p>
+      </div>
+
+      <p class="section-note">
+        ${category.description}
+      </p>
+    `;
+
+    categorySection.appendChild(categoryHeader);
+
+
+    /* =========================
+       ONE PROJECT CARD ONLY
+    ========================= */
+
+    const card = document.createElement("article");
+
+    card.className = "project-card";
+
+
+    let projectIndex = 0;
+    let photoIndex = 0;
+
+    let projectTimer;
+    let photoTimer;
+
+
+    /* =========================
+       GET PROJECT IMAGES
+    ========================= */
+
+    const getImages = (project) => {
+
+      if (
+        Array.isArray(project.gallery) &&
+        project.gallery.length
+      ) {
+        return project.gallery;
+      }
+
+      return [project.image];
+
+    };
+
+
+    /* =========================
+       SHOW PROJECT
+    ========================= */
+
+    const showProject = (index, random = false) => {
+
+      const projects = category.projects;
+
+      if (!projects.length) {
+        return;
+      }
+
+
+      if (random && projects.length > 1) {
+
+        let nextIndex;
+
+        do {
+
+          nextIndex =
+            Math.floor(Math.random() * projects.length);
+
+        } while (nextIndex === projectIndex);
+
+        projectIndex = nextIndex;
+
+      } else {
+
+        projectIndex =
+          (index + projects.length) %
+          projects.length;
+
+      }
+
+
+      const project =
+        projects[projectIndex];
+
+      const images =
+        getImages(project);
+
+
+      photoIndex = 0;
+
+
+      /* =========================
+         CARD CONTENT
+      ========================= */
+
+      card.innerHTML = `
+
+        <div class="project-image slideshow">
+
+          <div
+            class="project-slide active"
+            style="background-image:url('${images[0]}')">
+          </div>
+
+          <button
+            class="slide-prev"
+            type="button"
+            aria-label="Previous project">
+            ‹
+          </button>
+
+          <button
+            class="slide-next"
+            type="button"
+            aria-label="Next project">
+            ›
+          </button>
+
+          <div class="project-dots">
+
+            ${images.map((image, i) => `
+              <button
+                class="project-dot ${i === 0 ? "active" : ""}"
+                type="button"
+                data-photo="${i}"
+                aria-label="View image ${i + 1}">
+              </button>
+            `).join("")}
+
+          </div>
+
+        </div>
+
+
+        <div class="project-overlay">
+
+          <div class="project-meta">
+
+            <div>
+
+              <p class="project-title">
+                ${project.title}
+              </p>
+
+              <p class="project-desc">
+                ${project.description}
+              </p>
+
+            </div>
+
+            <div class="project-type">
+              ${project.year}
+            </div>
+
+          </div>
+
+        </div>
+
+      `;
+
+
+      /* =========================
+         ELEMENTS
+      ========================= */
+
+      const slide =
+        card.querySelector(".project-slide");
+
+      const dots =
+        card.querySelectorAll(".project-dot");
+
+      const previous =
+        card.querySelector(".slide-prev");
+
+      const next =
+        card.querySelector(".slide-next");
+
+
+      /* =========================
+         SHOW PHOTO
+      ========================= */
+
+      const showPhoto = (index) => {
+
+        photoIndex =
+          (index + images.length) %
+          images.length;
+
+
+        slide.style.backgroundImage =
+          `url('${images[photoIndex]}')`;
+
+
+        dots.forEach((dot, i) => {
+
+          dot.classList.toggle(
+            "active",
+            i === photoIndex
+          );
+
+        });
+
+      };
+
+
+      /* =========================
+         PHOTO PREVIOUS
+      ========================= */
+
+      previous.addEventListener("click", (event) => {
+
+        event.stopPropagation();
+
+        showPhoto(photoIndex - 1);
+
+        restartPhotoTimer();
+
+      });
+
+
+      /* =========================
+         PHOTO NEXT
+      ========================= */
+
+      next.addEventListener("click", (event) => {
+
+        event.stopPropagation();
+
+        showPhoto(photoIndex + 1);
+
+        restartPhotoTimer();
+
+      });
+
+
+      /* =========================
+         PHOTO DOTS
+      ========================= */
+
+      dots.forEach((dot) => {
+
+        dot.addEventListener("click", (event) => {
+
+          event.stopPropagation();
+
+          showPhoto(
+            Number(dot.dataset.photo)
+          );
+
+          restartPhotoTimer();
+
+        });
+
+      });
+
+
+      /* =========================
+         PHOTO AUTO SLIDE
+      ========================= */
+
+      const startPhotoTimer = () => {
+
+        clearInterval(photoTimer);
+
+        if (images.length <= 1) {
+          return;
+        }
+
+        photoTimer = setInterval(() => {
+
+          showPhoto(photoIndex + 1);
+
+        }, 3000);
+
+      };
+
+
+      const restartPhotoTimer = () => {
+
+        clearInterval(photoTimer);
+
+        startPhotoTimer();
+
+      };
+
+
+      startPhotoTimer();
+
+
+      /* =========================
+         OPEN GALLERY
+      ========================= */
+
+      card.addEventListener("click", () => {
+
+        openGallery(
+          project.title,
+          project.description,
+          images
+        );
+
+      });
+
+
+      /* =========================
+         PROJECT AUTO CHANGE
+      ========================= */
+
+      clearTimeout(projectTimer);
+
+      if (category.projects.length > 1) {
+
+        projectTimer = setTimeout(() => {
+
+          showProject(
+            projectIndex + 1
+          );
+
+        }, 9000);
+
+      }
+
+    };
+
+
+    /* =========================
+       FIRST PROJECT
+    ========================= */
+
+    showProject(0);
+
+
+    /* =========================
+       MANUAL PROJECT NAVIGATION
+       Shift + Arrow buttons
+    ========================= */
+
+    categorySection.addEventListener(
+      "dblclick",
+      () => {
+
+        showProject(
+          projectIndex + 1,
+          true
+        );
+
+      }
+    );
+
+
+    /* =========================
+       ADD CARD
+    ========================= */
+
+    categorySection.appendChild(card);
+
+    projectGrid.appendChild(categorySection);
+
+  });
+
+
+  /* =========================
+     LIGHTBOX / GALLERY
+  ========================= */
+
+  function openGallery(title, description, images) {
+
+    const existing =
+      document.querySelector(".gallery-modal");
+
+    if (existing) {
+      existing.remove();
+    }
+
+
+    let current = 0;
+
+
+    const modal =
+      document.createElement("div");
+
+    modal.className = "gallery-modal";
+
+
+    modal.innerHTML = `
+
+      <div class="gallery-backdrop"></div>
+
+      <div class="gallery-window">
+
+        <button
+          class="gallery-close"
+          type="button">
+          ×
+        </button>
+
+        <div class="gallery-image-wrap">
+
+          <img
+            class="gallery-main-image"
+            src="${images[0]}"
+            alt="${title}">
+
+          <button
+            class="gallery-prev"
+            type="button">
+            ‹
+          </button>
+
+          <button
+            class="gallery-next"
+            type="button">
+            ›
+          </button>
+
+        </div>
+
+        <div class="gallery-info">
+
+          <div>
+
+            <h3>${title}</h3>
+
+            <p>${description}</p>
+
+          </div>
+
+          <span class="gallery-counter">
+            1 / ${images.length}
+          </span>
+
+        </div>
+
+      </div>
+
+    `;
+
+
+    document.body.appendChild(modal);
+
+
+    const image =
+      modal.querySelector(".gallery-main-image");
+
+    const counter =
+      modal.querySelector(".gallery-counter");
+
+
+    const updateGallery = () => {
+
+      image.src = images[current];
+
+      image.alt =
+        `${title} — image ${current + 1}`;
+
+      counter.textContent =
+        `${current + 1} / ${images.length}`;
+
+    };
+
+
+    modal
+      .querySelector(".gallery-prev")
+      .addEventListener("click", () => {
+
+        current =
+          (current - 1 + images.length) %
+          images.length;
+
+        updateGallery();
+
+      });
+
+
+    modal
+      .querySelector(".gallery-next")
+      .addEventListener("click", () => {
+
+        current =
+          (current + 1) %
+          images.length;
+
+        updateGallery();
+
+      });
+
+
+    modal
+      .querySelector(".gallery-close")
+      .addEventListener("click", () => {
+
+        modal.remove();
+
+      });
+
+
+    modal
+      .querySelector(".gallery-backdrop")
+      .addEventListener("click", () => {
+
+        modal.remove();
+
+      });
+
+
+    /* =========================
+       KEYBOARD
+    ========================= */
+
+    const keyboardHandler = (event) => {
+
+      if (!document.body.contains(modal)) {
+
+        document.removeEventListener(
+          "keydown",
+          keyboardHandler
+        );
+
+        return;
+
+      }
+
+
+      if (event.key === "Escape") {
+
+        modal.remove();
+
+      }
+
+
+      if (event.key === "ArrowRight") {
+
+        current =
+          (current + 1) %
+          images.length;
+
+        updateGallery();
+
+      }
+
+
+      if (event.key === "ArrowLeft") {
+
+        current =
+          (current - 1 + images.length) %
+          images.length;
+
+        updateGallery();
+
+      }
+
+    };
+
+
+    document.addEventListener(
+      "keydown",
+      keyboardHandler
+    );
+
+  }
+
+});    categorySection.className = "project-category";
 
 
     /* =========================
