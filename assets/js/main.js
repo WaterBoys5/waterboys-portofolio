@@ -1,40 +1,4 @@
-assets/js/main.js  ========================= */
-
-  CATEGORIES.forEach((category, categoryIndex) => {
-
-    const categoryCard = document.createElement("article");
-
-    categoryCard.className = "category-card";
-
-
-    /* Collect ALL images from category
-       ONLY for category thumbnail */
-
-    const categoryImages = [];
-
-    if (Array.isArray(category.projects)) {
-
-      category.projects.forEach((project) => {
-
-        if (
-          Array.isArray(project.gallery) &&
-          project.gallery.length
-        ) {
-
-          categoryImages.push(
-            ...project.gallery
-          );
-
-        } else if (project.image) {
-
-          categoryImages.push(
-            project.image
-          );
-
-        }
-
-      });
-
+assets/js/main.js
     }
 
 
