@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Weteerbreh — Photography & Videography</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+
+  <!-- =====================================================
+       LIQUID BACKGROUND
+  ====================================================== -->
+
+  <div class="liquid-bg" aria-hidden="true">
+    <div class="blob blob-a"></div>
+    <div class="blob blob-b"></div>
+    <div class="blob blob-c"></div>
+    <div class="blob blob-d"></div>
+    <div class="glass-noise"></div>
+  </div>
+
+
+  <!-- =====================================================
+       HEADER
+  ====================================================== -->
+
+  <header class="site-header">
+
+    <a href="#" class="brand">
+      <span class="brand-mark">W</span>
+      <span>WETEERBREH</span>
+    </a>
+
+    <nav class="site-nav">
+      <a href="#work">Work</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+      <a href="mailto:waterboys.work@gmail.com" class="nav-cta">
+        Let's work
+      </a>
+    </nav>
+
+  </header>
+
+
+  <main>
+
+
+    <!-- =====================================================
+         HERO
+    ====================================================== -->
+
+    <section class="hero section">
+
+      <!-- LEFT -->
+      <div class="hero-left">
+
+        <p class="eyebrow">
+          PHOTOGRAPHY • VIDEOGRAPHY • CREATIVE
+        </p>
+
+        <h1>
+          Visual stories,<br>
+          <span>made with intention.</span>
+        </h1>
+
+        <p class="hero-text">
+          Portfolio fotografi dan videografi untuk campaign,
+          brand, product, event, dan creative project.
+        </p>
+
+        <div class="hero-actions">
+
+          <a href="#work" class="button button-light">
+            View selected work ↘
+          </a>
+
+          <a
+            href="mailto:waterboys.work@gmail.com"
+            class="text-link"
+          >
+            waterboys.work@gmail.com
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <!-- RIGHT -->
+      <div class="hero-right" id="about">
+
+        <!-- ABOUT ME DI ATAS -->
+        <div class="hero-about">
+
+          <p class="eyebrow">
+            ABOUT ME
+          </p>
+
+          <p>
+            Saya Zulkarnain, seorang fotografer dan videografer
+            yang memiliki ketertarikan pada visual storytelling,
+            commercial photography, portrait, product, dan
+            dokumentasi event.
+          </p>
+
+        </div>
+
+
+        <!-- FOTO + INFORMASI DI BAWAH -->
+        <div class="hero-profile">
+
+          <!-- FOTO PROFIL KECIL -->
+          <div class="hero-card glass-card">
+
+            <div class="hero-card-label">
+              <span>YOUR IMAGE</span>
+              <span>01</span>
+            </div>
+
+            <div class="hero-card-image">
+
+              <!-- GANTI FILE INI DENGAN FOTO PROFIL LU -->
+              <img
+                src="assets/images/profile.jpg"
+                alt="Zulkarnain"
+              >
+
+            </div>
+
+            <div class="hero-card-label">
+              <span>WETEERBREH</span>
+              <span>2026</span>
+            </div>
+
+          </div>
+
+
+          <!-- INFORMASI DI SAMPING FOTO -->
+          <div class="hero-profile-info">
+
+            <h2>
+              Zulkarnain
+            </h2>
+
+            <p>
+              Photographer<br>
+              Videographer<br>
+              Visual Creative
+            </p>
+
+            <span class="profile-location">
+              Jakarta / Indonesia
+            </span>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         WORK
+    ====================================================== -->
+
+    <section
+      id="work"
+      class="work-section section"
+    >
+
+      <div class="section-heading">
+
+        <div>
+          <p class="eyebrow">
+            SELECTED WORK
+          </p>
+
+          <h2>
+            Projects
+          </h2>
+        </div>
+
+        <p class="section-note">
+          A selection of photography and videography
+          projects across different visual disciplines.
+        </p>
+
+      </div>
+
+
+      <!-- PROJECT CATEGORY GRID -->
+      <div id="project-grid"></div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         CONTACT
+    ====================================================== -->
+
+    <section
+      id="contact"
+      class="contact-section section"
+    >
+
+      <p class="eyebrow">
+        CONTACT
+      </p>
+
+      <h2>
+        Let's make<br>
+        something visual.
+      </h2>
+
+      <a
+        href="mailto:waterboys.work@gmail.com"
+        class="contact-email"
+      >
+        waterboys.work@gmail.com
+      </a>
+
+    </section>
+
+  </main>
+
+
+
+  <!-- =====================================================
+       CATEGORY MODAL
+  ====================================================== -->
+
+  <div
+    id="category-modal"
+    class="category-modal"
+    hidden
+  >
+
+    <div
+      class="category-modal-backdrop"
+      data-close-category
+    ></div>
+
+    <div class="category-modal-window">
+
+      <button
+        class="modal-close"
+        id="category-close"
+        type="button"
+        aria-label="Close"
+      >
+        ×
+      </button>
+
+      <div class="modal-heading">
+
+        <p
+          class="eyebrow"
+          id="category-modal-number"
+        ></p>
+
+        <h2 id="category-modal-title"></h2>
+
+        <p id="category-modal-description"></p>
+
+      </div>
+
+      <div
+        id="category-projects"
+        class="category-projects"
+      ></div>
+
+    </div>
+
+  </div>
+
+
+
+  <!-- =====================================================
+       GALLERY MODAL
+  ====================================================== -->
+
+  <div
+    id="gallery-modal"
+    class="gallery-modal"
+    hidden
+  >
+
+    <div
+      class="gallery-backdrop"
+      data-close-gallery
+    ></div>
+
+    <div class="gallery-window">
+
+      <button
+        class="gallery-close"
+        id="gallery-close"
+        type="button"
+        aria-label="Close"
+      >
+        ×
+      </button>
+
+      <div class="gallery-image-wrap">
+
+        <button
+          class="gallery-prev"
+          id="gallery-prev"
+          type="button"
+          aria-label="Previous image"
+        >
+          ‹
+        </button>
+
+        <img
+          id="gallery-main-image"
+          class="gallery-main-image"
+          src=""
+          alt=""
+        >
+
+        <button
+          class="gallery-next"
+          id="gallery-next"
+          type="button"
+          aria-label="Next image"
+        >
+          ›
+        </button>
+
+      </div>
+
+
+      <div class="gallery-info">
+
+        <div>
+
+          <p
+            class="eyebrow"
+            id="gallery-counter"
+          ></p>
+
+          <h2 id="gallery-title"></h2>
+
+          <p id="gallery-description"></p>
+
+        </div>
+
+        <span
+          id="gallery-year"
+          class="gallery-year"
+        ></span>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <script src="assets/js/main.js"></script>
+
+</body>
+</html>
