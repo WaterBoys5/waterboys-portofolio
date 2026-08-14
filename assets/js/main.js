@@ -9,12 +9,9 @@ const SITE = {
 
 const CATEGORIES = [
 
-  /* =======================================================
-     DOCUMENTATION
-  ======================================================= */
-
   {
     title: "DOCUMENTATION",
+
     description:
       "Live performances, events, and visual documentation.",
 
@@ -22,15 +19,11 @@ const CATEGORIES = [
 
       {
         title: "Stereo Wall",
+
         year: "2026",
+
         description:
           "Visual documentation of Stereo Wall at Trilogigs 2025.",
-
-        /*
-          Posisi gambar dinaikkan sedikit agar bagian bawah
-          tidak terlalu masuk / terpotong pada thumbnail.
-        */
-        objectPosition: "50% 34%",
 
         images: [
           "assets/images/documentation/stereo-wall-01.jpg",
@@ -54,12 +47,9 @@ const CATEGORIES = [
   },
 
 
-  /* =======================================================
-     PRODUCT PHOTOGRAPHY
-  ======================================================= */
-
   {
     title: "PRODUCT PHOTOGRAPHY",
+
     description:
       "Product, campaign, commercial, and brand photography.",
 
@@ -67,9 +57,11 @@ const CATEGORIES = [
 
       {
         title: "LV Wallet",
+
         year: "2026",
+
         description:
-          "Product photography of a Louis Vuitton wallet.",
+          "Commercial product photography of a Louis Vuitton wallet.",
 
         images: [
           "assets/images/product/lv-wallet-01.jpg",
@@ -82,9 +74,11 @@ const CATEGORIES = [
 
       {
         title: "TITANS",
+
         year: "2026",
+
         description:
-          "Campaign photography for TITANS spray paint.",
+          "Commercial photography for TITANS spray paint.",
 
         images: [
           "assets/images/product/titans-01.jpg",
@@ -103,70 +97,73 @@ const CATEGORIES = [
   },
 
 
-  /* =======================================================
-     PORTRAIT / FASHION
-  ======================================================= */
-
   {
     title: "PORTRAIT / FASHION",
+
     description:
       "Portraits, fashion, creative direction, and visual storytelling.",
 
     projects: [
 
       {
-        title: "Long Sleeve Peron",
+        title: "Peron Long Sleeve",
+
         year: "2026",
+
         description:
-          "Portrait and fashion photography featuring Long Sleeve Peron.",
+          "Portrait and fashion photography featuring Peron Long Sleeve.",
 
         images: [
-          "assets/images/portrait/long-sleeve-peron-01.jpg",
-          "assets/images/portrait/long-sleeve-peron-02.jpg",
-          "assets/images/portrait/long-sleeve-peron-03.jpg",
-          "assets/images/portrait/long-sleeve-peron-04.jpg",
-          "assets/images/portrait/long-sleeve-peron-05.jpg"
+          "assets/images/portrait-commercial/peron-long-sleeve-01.jpg",
+          "assets/images/portrait-commercial/peron-long-sleeve-02.jpg",
+          "assets/images/portrait-commercial/peron-long-sleeve-03.jpg",
+          "assets/images/portrait-commercial/peron-long-sleeve-04.jpg",
+          "assets/images/portrait-commercial/peron-long-sleeve-05.jpg"
         ]
       },
 
 
       {
         title: "Vishgazine",
+
         year: "2026",
+
         description:
-          "Fashion and editorial photography for Vishgazine.",
+          "Fashion and portrait photography for Vishgazine.",
 
         images: [
-          "assets/images/portrait/vishgazine-01.jpg",
-          "assets/images/portrait/vishgazine-02.jpg",
-          "assets/images/portrait/vishgazine-03.jpg",
-          "assets/images/portrait/vishgazine-04.jpg",
-          "assets/images/portrait/vishgazine-05.jpg",
-          "assets/images/portrait/vishgazine-06.jpg",
-          "assets/images/portrait/vishgazine-07.jpg",
-          "assets/images/portrait/vishgazine-08.jpg",
-          "assets/images/portrait/vishgazine-09.jpg"
+          "assets/images/portrait-commercial/vishgazine-01.jpg",
+          "assets/images/portrait-commercial/vishgazine-02.jpg",
+          "assets/images/portrait-commercial/vishgazine-03.jpg",
+          "assets/images/portrait-commercial/vishgazine-04.jpg",
+          "assets/images/portrait-commercial/vishgazine-05.jpg",
+          "assets/images/portrait-commercial/vishgazine-06.jpg",
+          "assets/images/portrait-commercial/vishgazine-07.jpg",
+          "assets/images/portrait-commercial/vishgazine-08.jpg",
+          "assets/images/portrait-commercial/vishgazine-09.jpg"
         ]
       },
 
 
       {
         title: "WKA x Simpati",
+
         year: "2026",
+
         description:
-          "Fashion campaign photography for WKA x Simpati.",
+          "Portrait and campaign photography for WKA x Simpati.",
 
         images: [
-          "assets/images/portrait/wka-x-simpati-01.jpg",
-          "assets/images/portrait/wka-x-simpati-02.jpg",
-          "assets/images/portrait/wka-x-simpati-03.jpg",
-          "assets/images/portrait/wka-x-simpati-04.jpg",
-          "assets/images/portrait/wka-x-simpati-05.jpg",
-          "assets/images/portrait/wka-x-simpati-06.jpg",
-          "assets/images/portrait/wka-x-simpati-07.jpg",
-          "assets/images/portrait/wka-x-simpati-08.jpg",
-          "assets/images/portrait/wka-x-simpati-09.jpg",
-          "assets/images/portrait/wka-x-simpati-10.jpg"
+          "assets/images/portrait-commercial/wka-simpati-01.jpg",
+          "assets/images/portrait-commercial/wka-simpati-02.jpg",
+          "assets/images/portrait-commercial/wka-simpati-03.jpg",
+          "assets/images/portrait-commercial/wka-simpati-04.jpg",
+          "assets/images/portrait-commercial/wka-simpati-05.jpg",
+          "assets/images/portrait-commercial/wka-simpati-06.jpg",
+          "assets/images/portrait-commercial/wka-simpati-07.jpg",
+          "assets/images/portrait-commercial/wka-simpati-08.jpg",
+          "assets/images/portrait-commercial/wka-simpati-09.jpg",
+          "assets/images/portrait-commercial/wka-simpati-10.jpg"
         ]
       }
 
@@ -245,34 +242,27 @@ const mobileNav =
 
 
 /* =========================================================
-   HELPER
+   HELPERS
 ========================================================= */
 
-function closeAllModals() {
+function lockBody() {
+  document.body.classList.add("modal-open");
+}
 
-  if (galleryModal) {
 
-    galleryModal.classList.remove("is-open");
+function unlockBodyIfNeeded() {
 
-    galleryModal.setAttribute(
-      "aria-hidden",
-      "true"
-    );
+  const categoryOpen =
+    categoryModal &&
+    categoryModal.classList.contains("is-open");
 
+  const galleryOpen =
+    galleryModal &&
+    galleryModal.classList.contains("is-open");
+
+  if (!categoryOpen && !galleryOpen) {
+    document.body.classList.remove("modal-open");
   }
-
-  if (categoryModal) {
-
-    categoryModal.classList.remove("is-open");
-
-    categoryModal.setAttribute(
-      "aria-hidden",
-      "true"
-    );
-
-  }
-
-  document.body.classList.remove("modal-open");
 }
 
 
@@ -311,37 +301,22 @@ function renderCategories() {
       firstProject?.images?.[0] || "";
 
 
-    let imageHTML = "";
-
-
-    if (firstImage) {
-
-      imageHTML = `
-        <img
-          class="category-image"
-          src="${firstImage}"
-          alt="${category.title}"
-          loading="lazy"
-          ${
-            firstProject.objectPosition
-              ? `style="object-position: ${firstProject.objectPosition};"`
-              : ""
-          }
-        >
-      `;
-
-    } else {
-
-      imageHTML = `
-        <div class="category-placeholder"></div>
-      `;
-
-    }
-
-
     card.innerHTML = `
 
-      ${imageHTML}
+      ${
+        firstImage
+          ? `
+            <img
+              class="category-image"
+              src="${firstImage}"
+              alt="${category.title}"
+              loading="lazy"
+            >
+          `
+          : `
+            <div class="category-placeholder"></div>
+          `
+      }
 
       <div class="category-overlay">
 
@@ -356,7 +331,6 @@ function renderCategories() {
           </span>
 
         </div>
-
 
         <div class="category-bottom">
 
@@ -373,9 +347,7 @@ function renderCategories() {
 
     card.addEventListener(
       "click",
-      () => {
-        openCategory(index);
-      }
+      () => openCategory(index)
     );
 
 
@@ -401,6 +373,7 @@ function renderCategories() {
     categoryGrid.appendChild(card);
 
   });
+
 }
 
 
@@ -456,20 +429,20 @@ function openCategory(index) {
     "is-open"
   );
 
+
   categoryModal.setAttribute(
     "aria-hidden",
     "false"
   );
 
-  document.body.classList.add(
-    "modal-open"
-  );
+
+  lockBody();
 
 }
 
 
 /* =========================================================
-   RENDER PROJECT CATALOG
+   RENDER PROJECTS
 ========================================================= */
 
 function renderProjects(category) {
@@ -501,8 +474,7 @@ function renderProjects(category) {
       const button =
         document.createElement("button");
 
-      button.type =
-        "button";
+      button.type = "button";
 
       button.className =
         "project-item";
@@ -512,39 +484,24 @@ function renderProjects(category) {
         project.images?.[0] || "";
 
 
-      let thumbnailHTML = "";
-
-
-      if (thumbnail) {
-
-        thumbnailHTML = `
-          <img
-            class="project-thumb"
-            src="${thumbnail}"
-            alt="${project.title}"
-            loading="lazy"
-            ${
-              project.objectPosition
-                ? `style="object-position: ${project.objectPosition};"`
-                : ""
-            }
-          >
-        `;
-
-      } else {
-
-        thumbnailHTML = `
-          <div class="project-thumb-placeholder"></div>
-        `;
-
-      }
-
-
       button.innerHTML = `
 
         <div class="project-image-wrap">
 
-          ${thumbnailHTML}
+          ${
+            thumbnail
+              ? `
+                <img
+                  class="project-thumb"
+                  src="${thumbnail}"
+                  alt="${project.title}"
+                  loading="lazy"
+                >
+              `
+              : `
+                <div class="project-thumb-placeholder"></div>
+              `
+          }
 
           <div class="project-image-overlay">
 
@@ -559,7 +516,6 @@ function renderProjects(category) {
               </span>
 
             </div>
-
 
             <span class="project-arrow">
               ↗
@@ -583,15 +539,11 @@ function renderProjects(category) {
 
       button.addEventListener(
         "click",
-        () => {
-          openGallery(index);
-        }
+        () => openGallery(index)
       );
 
 
-      projectList.appendChild(
-        button
-      );
+      projectList.appendChild(button);
 
     }
   );
@@ -612,24 +564,14 @@ function closeCategory() {
     "is-open"
   );
 
+
   categoryModal.setAttribute(
     "aria-hidden",
     "true"
   );
 
 
-  if (
-    !galleryModal ||
-    !galleryModal.classList.contains(
-      "is-open"
-    )
-  ) {
-
-    document.body.classList.remove(
-      "modal-open"
-    );
-
-  }
+  unlockBodyIfNeeded();
 
 }
 
@@ -695,14 +637,14 @@ function openGallery(projectIndex) {
     "is-open"
   );
 
+
   galleryModal.setAttribute(
     "aria-hidden",
     "false"
   );
 
-  document.body.classList.add(
-    "modal-open"
-  );
+
+  lockBody();
 
 }
 
@@ -720,9 +662,7 @@ function updateGallery() {
 
 
   const project =
-    category.projects?.[
-      currentProjectIndex
-    ];
+    category.projects?.[currentProjectIndex];
 
   if (
     !project ||
@@ -768,19 +708,19 @@ function updateGallery() {
 
     }
 
-
     return;
 
   }
 
 
-  /*
-    Reset transform dan positioning
-    setiap kali pindah foto.
-  */
+  if (
+    currentImageIndex >= images.length
+  ) {
 
-  galleryImage.style.objectPosition =
-    "center";
+    currentImageIndex =
+      images.length - 1;
+
+  }
 
 
   galleryImage.src =
@@ -793,11 +733,7 @@ function updateGallery() {
   if (galleryCounter) {
 
     galleryCounter.textContent =
-      `${String(
-        currentImageIndex + 1
-      ).padStart(2, "0")} / ${String(
-        images.length
-      ).padStart(2, "0")}`;
+      `${String(currentImageIndex + 1).padStart(2, "0")} / ${String(images.length).padStart(2, "0")}`;
 
   }
 
@@ -813,8 +749,7 @@ function updateGallery() {
   if (galleryNext) {
 
     galleryNext.disabled =
-      currentImageIndex >=
-      images.length - 1;
+      currentImageIndex >= images.length - 1;
 
   }
 
@@ -831,9 +766,7 @@ function nextImage() {
     CATEGORIES[currentCategoryIndex];
 
   const project =
-    category?.projects?.[
-      currentProjectIndex
-    ];
+    category?.projects?.[currentProjectIndex];
 
   if (!project) return;
 
@@ -889,35 +822,14 @@ function closeGallery() {
     "is-open"
   );
 
+
   galleryModal.setAttribute(
     "aria-hidden",
     "true"
   );
 
 
-  /*
-    Setelah gallery ditutup,
-    category modal tetap terbuka.
-  */
-
-  if (
-    categoryModal &&
-    categoryModal.classList.contains(
-      "is-open"
-    )
-  ) {
-
-    document.body.classList.add(
-      "modal-open"
-    );
-
-  } else {
-
-    document.body.classList.remove(
-      "modal-open"
-    );
-
-  }
+  unlockBodyIfNeeded();
 
 }
 
@@ -930,14 +842,16 @@ document
   .querySelectorAll(
     "[data-close-category]"
   )
-  .forEach((element) => {
+  .forEach(
+    (element) => {
 
-    element.addEventListener(
-      "click",
-      closeCategory
-    );
+      element.addEventListener(
+        "click",
+        closeCategory
+      );
 
-  });
+    }
+  );
 
 
 /* =========================================================
@@ -948,14 +862,16 @@ document
   .querySelectorAll(
     "[data-close-gallery]"
   )
-  .forEach((element) => {
+  .forEach(
+    (element) => {
 
-    element.addEventListener(
-      "click",
-      closeGallery
-    );
+      element.addEventListener(
+        "click",
+        closeGallery
+      );
 
-  });
+    }
+  );
 
 
 /* =========================================================
@@ -1014,29 +930,16 @@ document.addEventListener(
   "keydown",
   (event) => {
 
-    /*
-      Jangan menjalankan shortcut
-      kalau sedang mengetik.
-    */
-
-    const activeElement =
-      document.activeElement;
-
-    const isTyping =
-      activeElement &&
+    if (
+      event.target &&
       (
-        activeElement.tagName === "INPUT" ||
-        activeElement.tagName === "TEXTAREA" ||
-        activeElement.isContentEditable
-      );
-
-
-    if (isTyping) {
+        event.target.tagName === "INPUT" ||
+        event.target.tagName === "TEXTAREA"
+      )
+    ) {
       return;
     }
 
-
-    /* ESC */
 
     if (
       event.key === "Escape"
@@ -1072,8 +975,6 @@ document.addEventListener(
     }
 
 
-    /* GALLERY NAVIGATION */
-
     if (
       galleryModal &&
       galleryModal.classList.contains(
@@ -1085,8 +986,6 @@ document.addEventListener(
         event.key === "ArrowRight"
       ) {
 
-        event.preventDefault();
-
         nextImage();
 
       }
@@ -1095,8 +994,6 @@ document.addEventListener(
       if (
         event.key === "ArrowLeft"
       ) {
-
-        event.preventDefault();
 
         previousImage();
 
@@ -1138,28 +1035,63 @@ if (
 
   mobileNav
     .querySelectorAll("a")
-    .forEach((link) => {
+    .forEach(
+      (link) => {
 
-      link.addEventListener(
-        "click",
-        () => {
+        link.addEventListener(
+          "click",
+          () => {
 
-          mobileNav.classList.remove(
-            "is-open"
-          );
+            mobileNav.classList.remove(
+              "is-open"
+            );
 
 
-          mobileMenuButton.setAttribute(
-            "aria-expanded",
-            "false"
-          );
+            mobileMenuButton.setAttribute(
+              "aria-expanded",
+              "false"
+            );
 
-        }
-      );
+          }
+        );
 
-    });
+      }
+    );
 
 }
+
+
+/* =========================================================
+   IMAGE ERROR HANDLING
+========================================================= */
+
+document.addEventListener(
+  "error",
+  (event) => {
+
+    const element =
+      event.target;
+
+
+    if (
+      element &&
+      element.tagName === "IMG"
+    ) {
+
+      element.classList.add(
+        "image-load-error"
+      );
+
+      console.warn(
+        "Image failed to load:",
+        element.src
+      );
+
+    }
+
+  },
+  true
+);
 
 
 /* =========================================================
