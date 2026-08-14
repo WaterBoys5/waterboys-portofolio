@@ -16,7 +16,6 @@
   --glass: rgba(12, 12, 12, 0.24);
 
   --max: 1440px;
-
   --pad: clamp(20px, 4vw, 64px);
 
   --radius: 26px;
@@ -25,11 +24,6 @@
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-
-/* =========================================================
-   BASE
-========================================================= */
-
 html {
   scroll-behavior: smooth;
   background: var(--bg);
@@ -37,23 +31,16 @@ html {
 
 body {
   margin: 0;
-
   min-width: 320px;
-
   overflow-x: hidden;
 
   background: var(--bg);
-
   color: var(--text);
 
-  font-family:
-    "Inter",
-    sans-serif;
-
+  font-family: "Inter", sans-serif;
   line-height: 1.5;
 
   -webkit-font-smoothing: antialiased;
-
   text-rendering: optimizeLegibility;
 }
 
@@ -78,14 +65,12 @@ a {
 
 
 /* =========================================================
-   ABSTRACT LIQUID GLASS BACKGROUND
+   LIQUID GLASS BACKGROUND
 ========================================================= */
 
 .liquid-bg {
   position: fixed;
-
   inset: 0;
-
   z-index: -5;
 
   overflow: hidden;
@@ -93,42 +78,36 @@ a {
   background:
     radial-gradient(
       ellipse at 15% 15%,
-      rgba(255,255,255,.075),
+      rgba(255, 255, 255, 0.075),
       transparent 34%
     ),
     radial-gradient(
       ellipse at 85% 65%,
-      rgba(255,255,255,.045),
+      rgba(255, 255, 255, 0.045),
       transparent 38%
     ),
     #080808;
 }
 
-
-/* =========================================================
-   ABSTRACT WHITE PATTERN
-========================================================= */
-
 .liquid-bg::before {
   content: "";
 
   position: absolute;
-
   inset: -15%;
 
-  opacity: .075;
+  opacity: 0.075;
 
   background:
     repeating-linear-gradient(
       115deg,
       transparent 0,
       transparent 90px,
-      rgba(255,255,255,.45) 91px,
+      rgba(255, 255, 255, 0.45) 91px,
       transparent 92px,
       transparent 190px
     );
 
-  filter: blur(.5px);
+  filter: blur(0.5px);
 
   transform:
     rotate(-5deg)
@@ -143,7 +122,6 @@ a {
 }
 
 @keyframes patternMove {
-
   from {
     transform:
       rotate(-5deg)
@@ -157,13 +135,7 @@ a {
       scale(1.18)
       translate3d(1%, 2%, 0);
   }
-
 }
-
-
-/* =========================================================
-   LIQUID BLOBS
-========================================================= */
 
 .blob {
   position: absolute;
@@ -178,7 +150,7 @@ a {
 
   filter: blur(110px);
 
-  opacity: .085;
+  opacity: 0.085;
 
   background: #e5e5e5;
 
@@ -203,7 +175,7 @@ a {
   right: -16%;
   top: 22%;
 
-  opacity: .055;
+  opacity: 0.055;
 
   animation:
     driftTwo
@@ -217,7 +189,7 @@ a {
   left: 30%;
   bottom: -25%;
 
-  opacity: .045;
+  opacity: 0.045;
 
   animation:
     driftThree
@@ -228,46 +200,34 @@ a {
 }
 
 @keyframes driftOne {
-
   to {
     transform:
       translate(17vw, 12vh)
       scale(1.08);
   }
-
 }
 
 @keyframes driftTwo {
-
   to {
     transform:
       translate(-12vw, 9vh)
-      scale(.92);
+      scale(0.92);
   }
-
 }
 
 @keyframes driftThree {
-
   to {
     transform:
       translate(7vw, -13vh)
       scale(1.1);
   }
-
 }
-
-
-/* =========================================================
-   GRAIN
-========================================================= */
 
 .grain {
   position: absolute;
-
   inset: 0;
 
-  opacity: .018;
+  opacity: 0.018;
 
   background-image:
     url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.7'/%3E%3C/svg%3E");
@@ -290,23 +250,19 @@ a {
   z-index: 100;
 
   display: flex;
-
   align-items: center;
-
   justify-content: space-between;
 
   min-height: 76px;
 
-  padding:
-    0
-    var(--pad);
+  padding: 0 var(--pad);
 
   background:
-    rgba(8,8,8,.20);
+    rgba(8, 8, 8, 0.20);
 
   border-bottom:
     1px solid
-    rgba(255,255,255,.045);
+    rgba(255, 255, 255, 0.045);
 
   backdrop-filter:
     blur(22px)
@@ -321,7 +277,6 @@ a {
   display: inline-flex;
 
   align-items: center;
-
   justify-content: center;
 }
 
@@ -335,12 +290,11 @@ a {
 
   border:
     1px solid
-    rgba(255,255,255,.55);
+    rgba(255, 255, 255, 0.55);
 
   border-radius: 50%;
 
   font-size: 13px;
-
   font-weight: 600;
 }
 
@@ -358,7 +312,7 @@ a {
   color: #d3d3d3;
 
   transition:
-    color .25s ease;
+    color 0.25s ease;
 }
 
 .desktop-nav > a:not(.pill-button):hover {
@@ -372,25 +326,25 @@ a {
 
   border:
     1px solid
-    rgba(255,255,255,.20);
+    rgba(255, 255, 255, 0.20);
 
   border-radius: 999px;
 
   background:
-    rgba(255,255,255,.045);
+    rgba(255, 255, 255, 0.045);
 
   transition:
-    background .25s ease,
-    border-color .25s ease,
-    transform .25s ease;
+    background 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease;
 }
 
 .pill-button:hover {
   border-color:
-    rgba(255,255,255,.45);
+    rgba(255, 255, 255, 0.45);
 
   background:
-    rgba(255,255,255,.10);
+    rgba(255, 255, 255, 0.10);
 
   transform:
     translateY(-1px);
@@ -434,7 +388,7 @@ a {
 
   font-size: 11px;
 
-  letter-spacing: .15em;
+  letter-spacing: 0.15em;
 }
 
 .eyebrow span {
@@ -453,7 +407,7 @@ a {
 
   grid-template-columns:
     1.15fr
-    .85fr;
+    0.85fr;
 
   align-items: center;
 
@@ -479,9 +433,9 @@ a {
 
   font-weight: 500;
 
-  line-height: .94;
+  line-height: 0.94;
 
-  letter-spacing: -.065em;
+  letter-spacing: -0.065em;
 }
 
 .hero h1 em,
@@ -531,17 +485,17 @@ a {
 
   font-size: 11px;
 
-  letter-spacing: .08em;
+  letter-spacing: 0.08em;
 }
 
 .text-link span {
   transition:
-    transform .25s var(--ease);
+    transform 0.25s var(--ease);
 }
 
 .text-link:hover span {
   transform:
-    translate(4px,4px);
+    translate(4px, 4px);
 }
 
 .mono-link {
@@ -571,11 +525,11 @@ a {
   aspect-ratio: 1;
 
   transform:
-    translate(-50%,-50%);
+    translate(-50%, -50%);
 
   border:
     1px solid
-    rgba(255,255,255,.08);
+    rgba(255, 255, 255, 0.08);
 
   border-radius: 50%;
 }
@@ -590,7 +544,7 @@ a {
 
   border:
     1px solid
-    rgba(255,255,255,.055);
+    rgba(255, 255, 255, 0.055);
 
   border-radius: 50%;
 }
@@ -609,7 +563,7 @@ a {
 
   font-size: 9px;
 
-  letter-spacing: .08em;
+  letter-spacing: 0.08em;
 }
 
 
@@ -634,7 +588,7 @@ a {
 
   border-bottom:
     1px solid
-    rgba(255,255,255,.07);
+    rgba(255, 255, 255, 0.07);
 }
 
 .section-heading h2 {
@@ -652,9 +606,9 @@ a {
 
   font-weight: 500;
 
-  letter-spacing: -.055em;
+  letter-spacing: -0.055em;
 
-  line-height: .95;
+  line-height: 0.95;
 }
 
 .section-heading > p {
@@ -709,10 +663,10 @@ a {
 
   box-shadow:
     0 20px 60px
-    rgba(0,0,0,.18);
+    rgba(0, 0, 0, 0.18);
 
   transition:
-    transform .4s var(--ease);
+    transform 0.4s var(--ease);
 }
 
 .category-card:hover {
@@ -728,11 +682,6 @@ a {
   outline-offset: 4px;
 }
 
-
-/* =========================================================
-   CATEGORY IMAGE
-========================================================= */
-
 .category-image {
   position: absolute;
 
@@ -743,7 +692,12 @@ a {
 
   object-fit: cover;
 
-  object-position: center center;
+  /*
+    Posisi default dibuat sedikit naik.
+    Ini khusus supaya thumbnail Stereo Wall
+    tidak terlalu turun.
+  */
+  object-position: center 38%;
 
   transition:
     transform
@@ -751,36 +705,10 @@ a {
     var(--ease);
 }
 
-
-/*
-   STEREO WALL
-
-   Foto pertama category = Stereo Wall.
-   Posisi dinaikkan supaya bagian penting foto
-   tidak terlalu turun dan kepotong.
-
-   Nilai 35% berarti titik fokus foto berada
-   sedikit lebih ke atas dibanding center.
-*/
-
-.category-card:first-child .category-image {
-  object-position: center 35%;
-}
-
-
-.category-card:hover
-.category-image {
+.category-card:hover .category-image {
   transform:
     scale(1.035);
 }
-
-.category-card:first-child:hover
-.category-image {
-  transform:
-    scale(1.035)
-    translateY(-1%);
-}
-
 
 .category-placeholder {
   position: absolute;
@@ -790,15 +718,10 @@ a {
   background:
     linear-gradient(
       135deg,
-      rgba(255,255,255,.08),
-      rgba(255,255,255,.015)
+      rgba(255, 255, 255, 0.08),
+      rgba(255, 255, 255, 0.015)
     );
 }
-
-
-/* =========================================================
-   CATEGORY OVERLAY
-========================================================= */
 
 .category-overlay {
   position: absolute;
@@ -818,11 +741,11 @@ a {
   background:
     linear-gradient(
       to bottom,
-      rgba(0,0,0,.72) 0%,
-      rgba(0,0,0,.20) 24%,
+      rgba(0, 0, 0, 0.72) 0%,
+      rgba(0, 0, 0, 0.20) 24%,
       transparent 50%,
       transparent 55%,
-      rgba(0,0,0,.72) 100%
+      rgba(0, 0, 0, 0.72) 100%
     );
 
   pointer-events: none;
@@ -854,14 +777,13 @@ a {
   font-size: 16px;
 
   transition:
-    transform .3s
+    transform 0.3s
     var(--ease);
 }
 
-.category-card:hover
-.category-arrow {
+.category-card:hover .category-arrow {
   transform:
-    translate(4px,-4px);
+    translate(4px, -4px);
 }
 
 .category-bottom {
@@ -882,7 +804,7 @@ a {
 
   line-height: 1;
 
-  letter-spacing: -.035em;
+  letter-spacing: -0.035em;
 }
 
 
@@ -899,7 +821,7 @@ a {
 
   border-bottom:
     1px solid
-    rgba(255,255,255,.08);
+    rgba(255, 255, 255, 0.08);
 }
 
 .about-layout {
@@ -919,16 +841,11 @@ a {
   padding-top: 46px;
 }
 
-
-/* =========================================================
-   PROFILE IMAGE
-========================================================= */
-
 .profile-frame {
   position: relative;
 
-  width: 195px;
-  height: 245px;
+  width: 165px;
+  height: 210px;
 
   overflow: hidden;
 
@@ -936,11 +853,11 @@ a {
 
   border: none;
 
-  border-radius: 24px;
+  border-radius: 22px;
 
   box-shadow:
     0 20px 50px
-    rgba(0,0,0,.25);
+    rgba(0, 0, 0, 0.25);
 }
 
 .profile-frame img {
@@ -981,9 +898,9 @@ a {
       54px
     );
 
-  line-height: .95;
+  line-height: 0.95;
 
-  letter-spacing: -.055em;
+  letter-spacing: -0.055em;
 }
 
 .stage-name {
@@ -1004,7 +921,7 @@ a {
 
   font-size: 10px;
 
-  letter-spacing: .08em;
+  letter-spacing: 0.08em;
 }
 
 .about-text {
@@ -1041,7 +958,7 @@ a {
 
   border:
     1px solid
-    rgba(255,255,255,.09);
+    rgba(255, 255, 255, 0.09);
 
   border-radius: 999px;
 
@@ -1049,7 +966,7 @@ a {
 
   font-size: 9px;
 
-  letter-spacing: .08em;
+  letter-spacing: 0.08em;
 }
 
 
@@ -1068,7 +985,7 @@ a {
 
   border-top:
     1px solid
-    rgba(255,255,255,.08);
+    rgba(255, 255, 255, 0.08);
 }
 
 .contact h2 {
@@ -1086,9 +1003,9 @@ a {
 
   font-weight: 500;
 
-  line-height: .87;
+  line-height: 0.87;
 
-  letter-spacing: -.07em;
+  letter-spacing: -0.07em;
 }
 
 .contact-inner > p:not(.eyebrow) {
@@ -1103,7 +1020,7 @@ a {
   display: grid;
 
   grid-template-columns:
-    repeat(3,1fr);
+    repeat(3, 1fr);
 
   gap: 18px;
 
@@ -1119,15 +1036,15 @@ a {
 
   border-top:
     1px solid
-    rgba(255,255,255,.08);
+    rgba(255, 255, 255, 0.08);
 
   transition:
-    border-color .25s ease;
+    border-color 0.25s ease;
 }
 
 .contact-links a:hover {
   border-color:
-    rgba(255,255,255,.5);
+    rgba(255, 255, 255, 0.5);
 }
 
 .contact-links span {
@@ -1143,7 +1060,7 @@ a {
 
   font-size: 9px;
 
-  letter-spacing: .1em;
+  letter-spacing: 0.1em;
 
   text-transform: uppercase;
 }
@@ -1175,7 +1092,7 @@ a {
 
   border-top:
     1px solid
-    rgba(255,255,255,.08);
+    rgba(255, 255, 255, 0.08);
 
   color: #666;
 
@@ -1185,7 +1102,7 @@ a {
 
   font-size: 9px;
 
-  letter-spacing: .05em;
+  letter-spacing: 0.05em;
 }
 
 .site-footer div:nth-child(2) {
@@ -1210,11 +1127,6 @@ a {
 
   display: grid;
 
-  /*
-    INI YANG MEMASTIKAN PANEL BENAR-BENAR
-    DI TENGAH LAYAR.
-  */
-
   place-items: center;
 
   visibility: hidden;
@@ -1226,8 +1138,8 @@ a {
   padding: 20px;
 
   transition:
-    opacity .3s ease,
-    visibility .3s ease;
+    opacity 0.3s ease,
+    visibility 0.3s ease;
 }
 
 .modal.is-open {
@@ -1244,7 +1156,7 @@ a {
   inset: 0;
 
   background:
-    rgba(0,0,0,.70);
+    rgba(0, 0, 0, 0.70);
 
   backdrop-filter:
     blur(24px);
@@ -1269,30 +1181,28 @@ a {
       100%
     );
 
+  margin: auto;
+
   max-height:
     calc(100svh - 40px);
 
-  margin: 0;
-
   overflow: auto;
-
-  border: none;
 
   border-radius: 28px;
 
   background:
-    rgba(12,12,12,.86);
+    rgba(12, 12, 12, 0.86);
 
   box-shadow:
     0 30px 100px
-    rgba(0,0,0,.5);
+    rgba(0, 0, 0, 0.5);
 
   transform:
     translateY(12px)
-    scale(.985);
+    scale(0.985);
 
   transition:
-    transform .35s
+    transform 0.35s
     var(--ease);
 
   backdrop-filter:
@@ -1302,17 +1212,11 @@ a {
     blur(24px);
 }
 
-.modal.is-open
-.category-modal-panel {
+.modal.is-open .category-modal-panel {
   transform:
     translateY(0)
     scale(1);
 }
-
-
-/* =========================================================
-   MODAL TOPBAR
-========================================================= */
 
 .modal-topbar,
 .gallery-topbar {
@@ -1328,7 +1232,7 @@ a {
 
   border-bottom:
     1px solid
-    rgba(255,255,255,.07);
+    rgba(255, 255, 255, 0.07);
 }
 
 .icon-button {
@@ -1346,7 +1250,7 @@ a {
   border-radius: 50%;
 
   background:
-    rgba(255,255,255,.06);
+    rgba(255, 255, 255, 0.06);
 
   cursor: pointer;
 
@@ -1357,18 +1261,13 @@ a {
   line-height: 1;
 
   transition:
-    background .2s ease;
+    background 0.2s ease;
 }
 
 .icon-button:hover {
   background:
-    rgba(255,255,255,.12);
+    rgba(255, 255, 255, 0.12);
 }
-
-
-/* =========================================================
-   CATEGORY MODAL HEADING
-========================================================= */
 
 .category-modal-heading {
   padding:
@@ -1391,9 +1290,9 @@ a {
 
   font-weight: 500;
 
-  letter-spacing: -.06em;
+  letter-spacing: -0.06em;
 
-  line-height: .9;
+  line-height: 0.9;
 }
 
 .category-modal-heading > p:last-child {
@@ -1415,13 +1314,11 @@ a {
   display: grid;
 
   grid-template-columns:
-    repeat(2,1fr);
+    repeat(2, minmax(0, 1fr));
 
   gap: 20px;
 
   padding: 20px;
-
-  background: transparent;
 }
 
 .project-item {
@@ -1449,16 +1346,11 @@ a {
 
   box-shadow:
     0 15px 40px
-    rgba(0,0,0,.18);
-
-  appearance: none;
-
-  -webkit-appearance: none;
+    rgba(0, 0, 0, 0.18);
 
   transition:
-    transform .35s
-    var(--ease),
-    background .25s ease;
+    transform 0.35s var(--ease),
+    background 0.25s ease;
 }
 
 .project-item:hover {
@@ -1466,14 +1358,6 @@ a {
 
   transform:
     translateY(-3px);
-}
-
-.project-item:focus-visible {
-  outline:
-    2px solid
-    rgba(255,255,255,.9);
-
-  outline-offset: 3px;
 }
 
 
@@ -1486,6 +1370,10 @@ a {
 
   width: 100%;
 
+  /*
+    Sedikit lebih tinggi supaya portrait/commercial
+    thumbnail tidak terlalu terpotong.
+  */
   aspect-ratio: 16 / 10;
 
   overflow: hidden;
@@ -1506,12 +1394,11 @@ a {
   object-position: center center;
 
   transition:
-    transform .7s
+    transform 0.7s
     var(--ease);
 }
 
-.project-item:hover
-.project-thumb {
+.project-item:hover .project-thumb {
   transform:
     scale(1.025);
 }
@@ -1537,9 +1424,9 @@ a {
   background:
     linear-gradient(
       to bottom,
-      rgba(0,0,0,.88) 0%,
-      rgba(0,0,0,.58) 16%,
-      rgba(0,0,0,.16) 32%,
+      rgba(0, 0, 0, 0.88) 0%,
+      rgba(0, 0, 0, 0.58) 16%,
+      rgba(0, 0, 0, 0.16) 32%,
       transparent 48%
     );
 
@@ -1564,12 +1451,12 @@ a {
 
   line-height: 1;
 
-  letter-spacing: -.025em;
+  letter-spacing: -0.025em;
 }
 
 .project-year-overlay {
   color:
-    rgba(255,255,255,.60);
+    rgba(255, 255, 255, 0.60);
 
   font-family:
     "DM Mono",
@@ -1592,14 +1479,13 @@ a {
   font-size: 16px;
 
   transition:
-    transform .3s
+    transform 0.3s
     var(--ease);
 }
 
-.project-item:hover
-.project-arrow {
+.project-item:hover .project-arrow {
   transform:
-    translate(4px,-4px);
+    translate(4px, -4px);
 }
 
 
@@ -1645,7 +1531,7 @@ a {
 
 .gallery-modal {
   background:
-    rgba(0,0,0,.15);
+    rgba(0, 0, 0, 0.15);
 }
 
 .gallery-panel {
@@ -1662,32 +1548,27 @@ a {
   max-height:
     calc(100svh - 40px);
 
-  margin: 0;
-
   overflow: hidden;
-
-  border: none;
 
   border-radius: 28px;
 
   background:
-    rgba(10,10,10,.92);
+    rgba(10, 10, 10, 0.92);
 
   box-shadow:
     0 30px 100px
-    rgba(0,0,0,.6);
+    rgba(0, 0, 0, 0.6);
 
   transform:
     translateY(12px)
-    scale(.985);
+    scale(0.985);
 
   transition:
-    transform .35s
+    transform 0.35s
     var(--ease);
 }
 
-.modal.is-open
-.gallery-panel {
+.modal.is-open .gallery-panel {
   transform:
     translateY(0)
     scale(1);
@@ -1721,16 +1602,16 @@ a {
   display: grid;
 
   grid-template-columns:
-    60px
-    minmax(0,1fr)
-    60px;
+    64px
+    minmax(0, 1fr)
+    64px;
 
   align-items: center;
 
   min-height:
     min(
-      62vh,
-      620px
+      68vh,
+      680px
     );
 
   background: #050505;
@@ -1741,32 +1622,36 @@ a {
 
   height:
     min(
-      62vh,
-      620px
+      68vh,
+      680px
     );
 
   display: grid;
 
   place-items: center;
 
-  padding: 18px;
-
-  overflow: hidden;
+  /*
+    Padding lebih lega supaya foto portrait
+    tidak mepet ke atas/bawah.
+  */
+  padding:
+    24px
+    12px;
 }
-
-
-/* =========================================================
-   GALLERY IMAGE
-========================================================= */
 
 .gallery-image-wrap img {
   display: block;
 
   width: auto;
 
-  max-width: 70%;
-
   height: auto;
+
+  /*
+    Jangan pakai width 48%.
+    Itu bikin foto portrait terlihat terlalu kecil
+    dan kadang terasa bergeser.
+  */
+  max-width: 86%;
 
   max-height: 88%;
 
@@ -1776,9 +1661,9 @@ a {
 
   user-select: none;
 
-  -webkit-user-drag: none;
-
   border-radius: 4px;
+
+  margin: auto;
 }
 
 
@@ -1807,7 +1692,7 @@ a {
   border-radius: 50%;
 
   background:
-    rgba(255,255,255,.07);
+    rgba(255, 255, 255, 0.07);
 
   cursor: pointer;
 
@@ -1818,13 +1703,13 @@ a {
   font-size: 16px;
 
   transition:
-    background .2s ease,
-    transform .2s ease;
+    background 0.2s ease,
+    transform 0.2s ease;
 }
 
 .gallery-arrow:hover {
   background:
-    rgba(255,255,255,.13);
+    rgba(255, 255, 255, 0.13);
 
   transform:
     scale(1.05);
@@ -1833,7 +1718,7 @@ a {
 .gallery-arrow:disabled {
   cursor: default;
 
-  opacity: .25;
+  opacity: 0.25;
 
   transform: none;
 }
@@ -1860,7 +1745,7 @@ a {
 
   border-top:
     1px solid
-    rgba(255,255,255,.08);
+    rgba(255, 255, 255, 0.08);
 }
 
 .gallery-caption p {
@@ -1876,7 +1761,7 @@ a {
 
 
 /* =========================================================
-   900PX
+   TABLET
 ========================================================= */
 
 @media (max-width: 900px) {
@@ -1891,74 +1776,51 @@ a {
     padding-bottom: 100px;
   }
 
-
   .hero-space {
     display: none;
   }
 
-
   .category-grid {
     grid-template-columns:
-      repeat(2,1fr);
+      repeat(2, 1fr);
   }
-
 
   .project-list {
     grid-template-columns: 1fr;
   }
 
-
   .about-layout {
     gap: 40px;
   }
-
 
   .contact-links {
     grid-template-columns: 1fr;
   }
 
-
-  .category-modal-panel {
-    width:
-      min(
-        760px,
-        100%
-      );
+  .gallery-image-wrap img {
+    max-width: 82%;
+    max-height: 86%;
   }
-
-
-  .gallery-panel {
-    width:
-      min(
-        900px,
-        100%
-      );
-  }
-
 }
 
 
 /* =========================================================
-   680PX MOBILE
+   MOBILE
 ========================================================= */
 
 @media (max-width: 680px) {
 
   :root {
     --pad: 20px;
-
     --radius: 20px;
   }
 
 
-  /* =======================================================
-     HEADER
-  ======================================================= */
+  /* HEADER */
 
   .desktop-nav {
     display: none;
   }
-
 
   .mobile-menu-button {
     position: relative;
@@ -1979,11 +1841,10 @@ a {
     border-radius: 50%;
 
     background:
-      rgba(255,255,255,.06);
+      rgba(255, 255, 255, 0.06);
 
     cursor: pointer;
   }
-
 
   .mobile-menu-button span {
     display: block;
@@ -1996,9 +1857,7 @@ a {
   }
 
 
-  /* =======================================================
-     MOBILE NAV
-  ======================================================= */
+  /* MOBILE NAV */
 
   .mobile-nav {
     position: absolute;
@@ -2020,11 +1879,11 @@ a {
       20px;
 
     background:
-      rgba(8,8,8,.82);
+      rgba(8, 8, 8, 0.82);
 
     border-bottom:
       1px solid
-      rgba(255,255,255,.07);
+      rgba(255, 255, 255, 0.07);
 
     backdrop-filter:
       blur(20px);
@@ -2042,11 +1901,10 @@ a {
       translateY(-8px);
 
     transition:
-      opacity .25s ease,
-      visibility .25s ease,
-      transform .25s ease;
+      opacity 0.25s ease,
+      visibility 0.25s ease,
+      transform 0.25s ease;
   }
-
 
   .mobile-nav.is-open {
     opacity: 1;
@@ -2059,19 +1917,17 @@ a {
       translateY(0);
   }
 
-
   .mobile-nav > a {
     padding: 16px 0;
 
     border-bottom:
       1px solid
-      rgba(255,255,255,.07);
+      rgba(255, 255, 255, 0.07);
 
     color: #ddd;
 
     font-size: 14px;
   }
-
 
   .mobile-nav .pill-button {
     width: fit-content;
@@ -2080,16 +1936,13 @@ a {
   }
 
 
-  /* =======================================================
-     HERO
-  ======================================================= */
+  /* HERO */
 
   .hero {
     padding-top: 145px;
 
     padding-bottom: 80px;
   }
-
 
   .hero h1 {
     font-size:
@@ -2100,7 +1953,6 @@ a {
       );
   }
 
-
   .hero-actions {
     align-items: flex-start;
 
@@ -2110,29 +1962,23 @@ a {
   }
 
 
-  /* =======================================================
-     SECTIONS
-  ======================================================= */
+  /* SECTIONS */
 
   .projects,
   .about {
     padding-top: 110px;
   }
 
-
   .section-heading {
     display: block;
   }
-
 
   .section-heading > p {
     margin-top: 20px;
   }
 
 
-  /* =======================================================
-     CATEGORY
-  ======================================================= */
+  /* CATEGORY */
 
   .category-grid {
     grid-template-columns: 1fr;
@@ -2140,31 +1986,22 @@ a {
     gap: 14px;
   }
 
-
   .category-card {
     aspect-ratio: 3 / 4;
 
     border-radius: 20px;
   }
 
+  .category-image {
+    object-position: center 38%;
+  }
 
   .category-overlay {
     padding: 18px;
   }
 
 
-  /*
-     Stereo Wall di mobile juga dinaikkan.
-  */
-
-  .category-card:first-child .category-image {
-    object-position: center 32%;
-  }
-
-
-  /* =======================================================
-     ABOUT
-  ======================================================= */
+  /* ABOUT */
 
   .about-layout {
     grid-template-columns:
@@ -2174,7 +2011,6 @@ a {
     gap: 22px;
   }
 
-
   .profile-frame {
     width: 125px;
     height: 165px;
@@ -2182,11 +2018,9 @@ a {
     border-radius: 18px;
   }
 
-
   .name {
     font-size: 32px;
   }
-
 
   .about-text {
     margin-top: 30px;
@@ -2194,22 +2028,18 @@ a {
     font-size: 14px;
   }
 
-
   .tag-list {
     margin-top: 28px;
   }
 
 
-  /* =======================================================
-     CONTACT
-  ======================================================= */
+  /* CONTACT */
 
   .contact {
     padding-top: 120px;
 
     padding-bottom: 100px;
   }
-
 
   .contact h2 {
     font-size:
@@ -2220,15 +2050,12 @@ a {
       );
   }
 
-
   .contact-links {
     margin-top: 48px;
   }
 
 
-  /* =======================================================
-     FOOTER
-  ======================================================= */
+  /* FOOTER */
 
   .site-footer {
     grid-template-columns: 1fr;
@@ -2236,21 +2063,17 @@ a {
     gap: 8px;
   }
 
-
   .site-footer div:nth-child(2),
   .site-footer div:last-child {
     text-align: left;
   }
 
 
-  /* =======================================================
-     CATEGORY MODAL
-  ======================================================= */
+  /* CATEGORY MODAL */
 
   .modal {
     padding: 10px;
   }
-
 
   .category-modal-panel {
     width: 100%;
@@ -2261,7 +2084,6 @@ a {
     border-radius: 20px;
   }
 
-
   .category-modal-heading {
     padding:
       38px
@@ -2270,19 +2092,7 @@ a {
   }
 
 
-  .category-modal-heading h2 {
-    font-size:
-      clamp(
-        36px,
-        12vw,
-        58px
-      );
-  }
-
-
-  /* =======================================================
-     PROJECTS
-  ======================================================= */
+  /* PROJECTS */
 
   .project-list {
     grid-template-columns: 1fr;
@@ -2292,17 +2102,14 @@ a {
     padding: 14px;
   }
 
-
   .project-item {
     border-radius: 18px;
   }
-
 
   .project-image-wrap {
     aspect-ratio:
       16 / 10;
   }
-
 
   .project-image-title {
     padding:
@@ -2311,11 +2118,9 @@ a {
       25px;
   }
 
-
   .project-title-overlay {
     font-size: 17px;
   }
-
 
   .project-arrow {
     margin:
@@ -2325,7 +2130,6 @@ a {
       0;
   }
 
-
   .project-info {
     padding:
       13px
@@ -2334,9 +2138,7 @@ a {
   }
 
 
-  /* =======================================================
-     GALLERY
-  ======================================================= */
+  /* GALLERY */
 
   .gallery-panel {
     width: 100%;
@@ -2347,38 +2149,35 @@ a {
     border-radius: 18px;
   }
 
-
   .gallery-stage {
     grid-template-columns:
       42px
-      minmax(0,1fr)
+      minmax(0, 1fr)
       42px;
 
     min-height:
-      58vh;
+      60vh;
   }
-
 
   .gallery-image-wrap {
     height:
-      58vh;
+      60vh;
 
-    padding: 8px;
+    padding:
+      10px
+      4px;
   }
-
 
   .gallery-image-wrap img {
-    max-width: 76%;
+    max-width: 92%;
 
-    max-height: 82%;
+    max-height: 88%;
   }
-
 
   .gallery-arrow {
     width: 36px;
     height: 36px;
   }
-
 
   .gallery-caption {
     min-height: 84px;
@@ -2388,47 +2187,38 @@ a {
       15px;
   }
 
-
   .gallery-caption > .mono-label {
     display: none;
   }
-
 }
 
 
 /* =========================================================
-   VERY SMALL MOBILE
+   VERY SMALL SCREEN
 ========================================================= */
 
-@media (max-width: 400px) {
+@media (max-width: 420px) {
 
   .gallery-stage {
     grid-template-columns:
-      36px
-      minmax(0,1fr)
-      36px;
+      38px
+      minmax(0, 1fr)
+      38px;
   }
 
+  .gallery-image-wrap {
+    height: 56vh;
+  }
 
   .gallery-image-wrap img {
-    max-width: 82%;
-
-    max-height: 80%;
+    max-width: 94%;
+    max-height: 86%;
   }
-
 
   .gallery-arrow {
     width: 32px;
     height: 32px;
-
-    font-size: 14px;
   }
-
-
-  .project-title-overlay {
-    font-size: 16px;
-  }
-
 }
 
 
@@ -2442,18 +2232,13 @@ a {
     scroll-behavior: auto;
   }
 
-
   *,
   *::before,
   *::after {
-    animation-duration:
-      .01ms !important;
+    animation-duration: 0.01ms !important;
 
-    animation-iteration-count:
-      1 !important;
+    animation-iteration-count: 1 !important;
 
-    transition-duration:
-      .01ms !important;
+    transition-duration: 0.01ms !important;
   }
-
 }
