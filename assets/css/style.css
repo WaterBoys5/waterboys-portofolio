@@ -555,182 +555,302 @@ a {
 
 .category-grid {
   display: grid;
-
-  grid-template-columns:
-    repeat(3,1fr);
-
-  gap: 18px;
-
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
   padding-top: 24px;
 }
 
 .category-card {
   position: relative;
-
   min-width: 0;
-
-  aspect-ratio:
-    4 / 5;
-
+  aspect-ratio: 3 / 4;
   overflow: hidden;
-
   cursor: pointer;
-
   border: none;
-
-  border-radius:
-    var(--radius);
-
+  border-radius: 24px;
   background: #111;
-
   isolation: isolate;
-
-  box-shadow:
-    0 20px 60px rgba(0,0,0,.22);
-
-  transition:
-    transform .45s var(--ease),
-    box-shadow .45s var(--ease);
-}
-
-.category-card:hover {
-  transform:
-    translateY(-5px);
-
-  box-shadow:
-    0 28px 80px rgba(0,0,0,.35);
 }
 
 .category-card:focus-visible {
-  outline:
-    2px solid #fff;
-
+  outline: 2px solid #fff;
   outline-offset: 4px;
 }
 
 .category-image {
   position: absolute;
-
   inset: 0;
-
   width: 100%;
   height: 100%;
-
   object-fit: cover;
-
-  transform:
-    scale(1.01);
-
-  transition:
-    transform .8s var(--ease);
+  transition: transform 1s var(--ease);
 }
 
-.category-card:hover
-.category-image {
-  transform:
-    scale(1.045);
+.category-card:hover .category-image {
+  transform: scale(1.035);
 }
 
-.category-gradient {
+.category-placeholder {
   position: absolute;
-
   inset: 0;
-
-  z-index: 1;
-
   background:
     linear-gradient(
-      to bottom,
-      rgba(0,0,0,.75) 0%,
-      rgba(0,0,0,.32) 30%,
-      transparent 53%,
-      rgba(0,0,0,.75) 100%
+      135deg,
+      rgba(255,255,255,.08),
+      rgba(255,255,255,.015)
     );
 }
 
-.category-content {
+.category-overlay {
   position: absolute;
-
   inset: 0;
-
   z-index: 2;
-
   display: flex;
-
   flex-direction: column;
-
   justify-content: space-between;
-
   padding: 22px;
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(0,0,0,.72) 0%,
+      rgba(0,0,0,.28) 24%,
+      transparent 45%,
+      transparent 55%,
+      rgba(0,0,0,.68) 100%
+    );
+  pointer-events: none;
 }
 
 .category-top {
   display: flex;
-
   align-items: center;
-
   justify-content: space-between;
 }
 
 .category-number {
-  font-family:
-    "DM Mono",
-    monospace;
-
-  color:
-    rgba(255,255,255,.72);
-
+  font-family: "DM Mono", monospace;
   font-size: 10px;
+  color: #fff;
 }
 
 .category-arrow {
-  font-family:
-    "DM Mono",
-    monospace;
-
-  font-size: 17px;
-
-  transition:
-    transform .3s var(--ease);
+  font-family: "DM Mono", monospace;
+  font-size: 16px;
+  transition: transform .3s var(--ease);
 }
 
-.category-card:hover
-.category-arrow {
-  transform:
-    translate(4px,-4px);
+.category-card:hover .category-arrow {
+  transform: translate(4px, -4px);
 }
 
-.category-info {
+.category-bottom {
   display: flex;
-
-  flex-direction: column;
-
-  gap: 8px;
-
-  max-width: 90%;
+  align-items: end;
 }
 
 .category-title {
-  font-size:
-    clamp(20px,2vw,29px);
-
+  max-width: 90%;
+  font-size: clamp(19px, 2vw, 28px);
   line-height: 1;
-
-  letter-spacing:
-    -.04em;
+  letter-spacing: -.035em;
 }
 
-.category-description {
-  max-width: 390px;
 
-  color:
-    rgba(255,255,255,.62);
+/* =========================
+   CATEGORY MODAL
+========================= */
 
-  font-size: 12px;
-
-  line-height: 1.4;
+.category-modal-panel {
+  border: none;
+  border-radius: 24px;
+  overflow: hidden;
 }
 
+.project-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  padding: 20px;
+  background: transparent;
+  border-top: none;
+}
+
+.project-item {
+  display: block;
+  min-width: 0;
+  padding: 0;
+  border: none;
+  border-radius: 20px;
+  overflow: hidden;
+  background: #111;
+  color: #fff;
+  text-align: left;
+  cursor: pointer;
+  transition:
+    transform .35s var(--ease),
+    background .25s ease;
+}
+
+.project-item:hover {
+  background: #161616;
+  transform: translateY(-3px);
+}
+
+
+/* =========================
+   PROJECT IMAGE
+========================= */
+
+.project-image-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background: #111;
+}
+
+.project-thumb {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  margin: 0;
+}
+
+.project-image-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 18px;
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(0,0,0,.72),
+      rgba(0,0,0,.2) 35%,
+      transparent 55%
+    );
+  pointer-events: none;
+}
+
+.project-number,
+.project-arrow {
+  font-family: "DM Mono", monospace;
+  font-size: 10px;
+  color: #fff;
+}
+
+.project-arrow {
+  font-size: 16px;
+}
+
+
+/* =========================
+   PROJECT INFO
+========================= */
+
+.project-info {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 18px 20px 20px;
+}
+
+.project-title {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 19px;
+  line-height: 1;
+}
+
+.project-year {
+  color: #777;
+  font-family: "DM Mono", monospace;
+  font-size: 9px;
+}
+
+.project-description {
+  max-width: 250px;
+  color: #888;
+  font-size: 11px;
+  line-height: 1.45;
+  text-align: right;
+}
+
+.empty-projects {
+  padding: 30px 20px;
+  color: #777;
+  font-size: 13px;
+}
+
+
+/* =========================
+   GALLERY
+========================= */
+
+.gallery-panel {
+  border: none;
+  border-radius: 24px;
+  overflow: hidden;
+}
+
+.gallery-stage {
+  position: relative;
+  display: grid;
+  grid-template-columns: 60px minmax(0, 1fr) 60px;
+  align-items: center;
+  min-height: min(62vh, 620px);
+  background: #050505;
+}
+
+.gallery-image-wrap {
+  width: 100%;
+  height: min(62vh, 620px);
+  display: grid;
+  place-items: center;
+  padding: 18px;
+}
+
+.gallery-image-wrap img {
+  display: block;
+  width: auto;
+  max-width: 70%;
+  height: auto;
+  max-height: 90%;
+  object-fit: contain;
+  user-select: none;
+}
+
+.gallery-arrow {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  width: 44px;
+  height: 44px;
+  place-items: center;
+  margin: auto;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: rgba(255,255,255,.07);
+  cursor: pointer;
+  font-family: "DM Mono", monospace;
+  font-size: 16px;
+  transition: background .2s ease, transform .2s ease;
+}
+
+.gallery-arrow:hover {
+  background: rgba(255,255,255,.13);
+  transform: scale(1.05);
+}
+
+.gallery-arrow:disabled {
+  cursor: default;
+  opacity: .25;
+  transform: none;
+}
 
 /* =========================
    ABOUT
