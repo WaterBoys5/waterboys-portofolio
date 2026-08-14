@@ -306,17 +306,14 @@ nav a:hover,
 
   display: grid;
 
-  grid-template-columns:
-    minmax(0, 1fr)
-    auto;
+  grid-template-columns: 1fr 85px 280px;
 
   align-items: center;
 
-  gap: 45px;
+  column-gap: 35px;
 
-  padding-top: 50px;
+  padding-top: 60px;
 }
-
 .hero h1 {
   margin: 0;
 
@@ -420,12 +417,12 @@ nav a:hover,
 }
 
 .hero-card {
-  width: 100px !important;
-  max-width: 100px !important;
+  width: 85px !important;
+  max-width: 85px !important;
 
   padding: 5px;
 
-  flex: 0 0 100px;
+  justify-self: center;
 
   transform: rotate(2deg);
 }
