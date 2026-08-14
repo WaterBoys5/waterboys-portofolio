@@ -1,16 +1,64 @@
-assets/js/main.js
-    }
 
 
+/* =========================
+     CLEAR PROJECT AREA
+     MAIN CATEGORY CARDS
+     ONLY THESE SLIDESHOW
+ ========================= */
+
+  projectGrid.innerHTML = "";
+  CATEGORIES.forEach((category) => {
+
+    const categoryCard = document.createElement("article");
+
+  /* =========================
+     CATEGORY CARDS
+  ========================= */
+    categoryCard.className = "category-card";
+
+  CATEGORIES.forEach((category) => {
+
+    /*
+     * Satu kategori = satu box.
+     * Semua gallery dari semua project
+     * di dalam kategori digabung menjadi
+     * satu kumpulan gambar.
+     */
+    /* Collect ALL images from this category
+       ONLY for the category thumbnail */
+
+    const images = [];
+    const categoryImages = [];
+
+category.projects.forEach((project) => {
+
+if (
+Array.isArray(project.gallery) &&
+project.gallery.length
+) {
+        categoryImages.push(...project.gallery);
+      } else if (project.image) {
+        categoryImages.push(project.image);
+      }
+
+        project.gallery.forEach((image) => {
+          images.push(image);
+        });
+    });
+
+      } else if (project.image) {
+
+        images.push(project.image);
     categoryCard.innerHTML = `
       <div class="category-image"></div>
 
+      }
       <div class="category-overlay">
 
+    });
         <div>
-
           <p class="category-number">
-            ${String(categoryIndex + 1).padStart(2, "0")}
+            ${String(CATEGORIES.indexOf(category) + 1).padStart(2, "0")}
           </p>
 
           <h3 class="category-title">
@@ -20,66 +68,89 @@ assets/js/main.js
           <p class="category-description">
             ${category.description}
           </p>
-
         </div>
 
+    /* Hapus gambar duplikat */
         <span class="category-arrow">↗</span>
 
+    const uniqueImages = [...new Set(images)];
       </div>
     `;
 
 
-    projectGrid.appendChild(
-      categoryCard
-    );
+    if (!uniqueImages.length) {
+      return;
+    }
+    projectGrid.appendChild(categoryCard);
 
 
-    /* =========================
+/* =========================
+       CATEGORY SECTION
        CATEGORY SLIDESHOW
        RANDOM IMAGE
-    ========================= */
+   ========================= */
 
+    const categorySection =
+      document.createElement("section");
     const categoryImage =
-      categoryCard.querySelector(
-        ".category-image"
-      );
+      categoryCard.querySelector(".category-image");
 
+    categorySection.className =
+      "project-category";
     let currentImage = 0;
 
 
-    if (
-      categoryImage &&
-      categoryImages.length > 0
-    ) {
+    /* =========================
+       CATEGORY HEADER
+    ========================= */
+    if (categoryImages.length > 0) {
 
+    const categoryHeader =
+      document.createElement("div");
       currentImage =
         Math.floor(
-          Math.random() *
-          categoryImages.length
+          Math.random() * categoryImages.length
         );
 
+    categoryHeader.className =
+      "category-heading";
       categoryImage.style.backgroundImage =
         `url("${categoryImages[currentImage]}")`;
-
     }
 
+    categoryHeader.innerHTML = `
+      <div>
+        <p class="eyebrow">
+          ${category.title}
+        </p>
 
+        <p class="category-description">
+          ${category.description}
+        </p>
+      </div>
+    `;
     if (categoryImages.length > 1) {
 
+    categorySection.appendChild(categoryHeader);
       setInterval(() => {
 
         let nextImage;
 
+    /* =========================
+       ONE BOX FOR CATEGORY
+    ========================= */
         do {
 
+    const categoryGrid =
+      document.createElement("div");
           nextImage =
             Math.floor(
-              Math.random() *
-              categoryImages.length
+              Math.random() * categoryImages.length
             );
 
         } while (
-          nextImage === currentImage
+          nextImage === currentImage &&
+          categoryImages.length > 1
         );
 
 
@@ -90,12 +161,18 @@ assets/js/main.js
           "changing"
         );
 
+    categoryGrid.className =
+      "project-grid-inner";
 
         setTimeout(() => {
 
+    const card =
+      document.createElement("article");
           categoryImage.style.backgroundImage =
             `url("${categoryImages[currentImage]}")`;
 
+    card.className =
+      "project-card";
           categoryImage.classList.remove(
             "changing"
           );
@@ -107,10 +184,15 @@ assets/js/main.js
     }
 
 
-    /* =========================
+/* =========================
+       RANDOM START IMAGE
        OPEN CATEGORY
-    ========================= */
+   ========================= */
 
+    let current =
+      Math.floor(
+        Math.random() * uniqueImages.length
+      );
     categoryCard.addEventListener(
       "click",
       () => {
@@ -129,26 +211,14 @@ assets/js/main.js
 
   function openCategory(category) {
 
-    /* Remove existing category modal */
-
     closeCategory();
-
-
-    /* Close any old gallery */
-
-    const oldGallery =
-      document.querySelector(
-        ".gallery-modal"
-      );
-
-    if (oldGallery) {
-      oldGallery.remove();
-    }
 
 
     const modal =
       document.createElement("div");
 
+    card.innerHTML = `
+      <div class="project-image"></div>
     modal.className =
       "category-modal";
 
@@ -157,29 +227,33 @@ assets/js/main.js
 
       <div class="category-modal-backdrop"></div>
 
-      <div
-        class="category-modal-window"
-        role="dialog"
-        aria-modal="true"
-      >
+      <div class="project-overlay">
+      <div class="category-modal-window">
 
+        <div class="project-meta">
         <div class="category-modal-header">
 
-          <div>
+         <div>
+            <p class="project-title">
+              ${category.title}
 
             <p class="eyebrow">
               PROJECTS
-            </p>
+           </p>
 
+            <p class="project-desc">
             <h2>
               ${category.title}
             </h2>
 
             <p>
-              ${category.description}
-            </p>
-
+             ${category.description}
+           </p>
           </div>
+
+          <div class="project-type">
+            ${uniqueImages.length} IMAGES
+         </div>
 
           <button
             class="category-modal-close"
@@ -188,19 +262,19 @@ assets/js/main.js
             ×
           </button>
 
-        </div>
+       </div>
 
 
         <div class="category-projects"></div>
 
-      </div>
+     </div>
 
-    `;
+   `;
 
 
-    document.body.appendChild(
-      modal
-    );
+    const image =
+      card.querySelector(".project-image");
+    document.body.appendChild(modal);
 
 
     const projectsContainer =
@@ -209,159 +283,142 @@ assets/js/main.js
       );
 
 
-    /* =========================
+/* =========================
+       SHOW IMAGE
        PROJECTS INSIDE CATEGORY
        NO SLIDESHOW HERE
+   ========================= */
+
+    function showRandomImage() {
+    category.projects.forEach((project) => {
+
+      if (uniqueImages.length <= 1) {
+        return;
+      }
+      const images =
+        Array.isArray(project.gallery) &&
+        project.gallery.length
+          ? project.gallery
+          : [project.image];
+
+      let next;
+
+      do {
+      const projectCard =
+        document.createElement("article");
+
+        next =
+          Math.floor(
+            Math.random() *
+            uniqueImages.length
+          );
+      projectCard.className =
+        "category-project-card";
+
+      } while (next === current);
+
+      projectCard.innerHTML = `
+
+      current = next;
+        <div
+          class="category-project-image"
+          style="background-image:url('${images[0]}')">
+        </div>
+
+      image.style.backgroundImage =
+        `url("${uniqueImages[current]}")`;
+    }
+        <div class="category-project-info">
+
+          <div>
+
+    /* Initial image */
+            <h3>
+              ${project.title}
+            </h3>
+
+    image.style.backgroundImage =
+      `url("${uniqueImages[current]}")`;
+            <p>
+              ${project.description}
+            </p>
+
+          </div>
+
+    /* =========================
+       RANDOM SLIDESHOW
     ========================= */
+          <span>
+            ${project.year}
+          </span>
 
-    if (
-      Array.isArray(category.projects)
-    ) {
+    if (uniqueImages.length > 1) {
+        </div>
 
-      category.projects.forEach(
-        (project) => {
+      setInterval(() => {
+      `;
 
-          const images =
-            Array.isArray(project.gallery) &&
-            project.gallery.length
-              ? project.gallery
-              : project.image
-                ? [project.image]
-                : [];
+        showRandomImage();
 
+      }, 3500);
+      projectsContainer.appendChild(
+        projectCard
+      );
 
-          const projectCard =
-            document.createElement(
-              "article"
-            );
+    }
 
-          projectCard.className =
-            "category-project-card";
+      /* =========================
+         OPEN PROJECT GALLERY
+      ========================= */
 
+    /* =========================
+       OPEN CATEGORY GALLERY
+    ========================= */
+      projectCard.addEventListener(
+        "click",
+        () => {
 
-          projectCard.innerHTML = `
-
-            <div
-              class="category-project-image"
-              style="background-image:url('${images[0] || ""}')">
-            </div>
-
-            <div class="category-project-info">
-
-              <div>
-
-                <h3>
-                  ${project.title || ""}
-                </h3>
-
-                <p>
-                  ${project.description || ""}
-                </p>
-
-              </div>
-
-              <span>
-                ${project.year || ""}
-              </span>
-
-            </div>
-
-          `;
-
-
-          projectsContainer.appendChild(
-            projectCard
+    card.addEventListener("click", () => {
+          openGallery(
+            project.title,
+            project.description,
+            images
           );
 
-
-          /* =========================
-             OPEN PROJECT GALLERY
-          ========================= */
-
-          if (images.length > 0) {
-
-            projectCard.addEventListener(
-              "click",
-              (event) => {
-
-                event.preventDefault();
-                event.stopPropagation();
-
-                openGallery(
-                  project.title || "",
-                  project.description || "",
-                  images
-                );
-
-              }
-            );
-
-          }
-
+      openGallery(
+        category.title,
+        category.description,
+        uniqueImages
         }
-      );
+);
 
-    }
+});
 
 
-    /* =========================
-       CLOSE BUTTON
-    ========================= */
+    categoryGrid.appendChild(card);
+    /* CLOSE */
 
-    const closeButton =
-      modal.querySelector(
+    categorySection.appendChild(categoryGrid);
+    modal
+      .querySelector(
         ".category-modal-close"
-      );
-
-    if (closeButton) {
-
-      closeButton.addEventListener(
-        "click",
-        (event) => {
-
-          event.preventDefault();
-          event.stopPropagation();
-
-          closeCategory();
-
-        }
-      );
-
-    }
-
-
-    /* =========================
-       BACKDROP
-    ========================= */
-
-    const backdrop =
-      modal.querySelector(
-        ".category-modal-backdrop"
-      );
-
-    if (backdrop) {
-
-      backdrop.addEventListener(
+      )
+      .addEventListener(
         "click",
         closeCategory
       );
 
-    }
+    projectGrid.appendChild(categorySection);
 
-
-    /* =========================
-       ESC KEY
-    ========================= */
-
-    categoryKeyboard = (event) => {
-
-      if (event.key === "Escape") {
-
-        closeCategory();
-
-      }
-
-    };
+  });
+    modal
+      .querySelector(
+        ".category-modal-backdrop"
+      )
+      .addEventListener(
+        "click",
+        closeCategory
+      );
 
 
     document.addEventListener(
@@ -369,12 +426,19 @@ assets/js/main.js
       categoryKeyboard
     );
 
+
+    function categoryKeyboard(event) {
+
+      if (event.key === "Escape") {
+
+        closeCategory();
+
+      }
+
+    }
+
   }
 
-
-  /* =========================
-     CLOSE CATEGORY
-  ========================= */
 
   function closeCategory() {
 
@@ -389,195 +453,115 @@ assets/js/main.js
     }
 
 
-    if (categoryKeyboard) {
-
-      document.removeEventListener(
-        "keydown",
-        categoryKeyboard
-      );
-
-      categoryKeyboard = null;
-
-    }
+    document.removeEventListener(
+      "keydown",
+      categoryKeyboard
+    );
 
   }
 
 
-  /* =========================
+/* =========================
+     GALLERY
      PROJECT GALLERY
-  ========================= */
+ ========================= */
 
-  function openGallery(
-    title,
-    description,
-    images
-  ) {
+function openGallery(
+@@ -255,11 +378,14 @@ document.addEventListener("DOMContentLoaded", () => {
+images
+) {
 
-    if (
-      !Array.isArray(images) ||
-      images.length === 0
-    ) {
-      return;
-    }
-
-
-    /* Remove old gallery */
-
+    const oldModal =
+      document.querySelector(".gallery-modal");
     const oldGallery =
       document.querySelector(
         ".gallery-modal"
       );
 
+
+    if (oldModal) {
+      oldModal.remove();
     if (oldGallery) {
       oldGallery.remove();
-    }
+}
 
 
-    /* Remove category keyboard
-       while gallery is open */
-
-    if (categoryKeyboard) {
-
-      document.removeEventListener(
-        "keydown",
-        categoryKeyboard
-      );
-
-      categoryKeyboard = null;
-
-    }
+@@ -285,6 +411,7 @@ document.addEventListener("DOMContentLoaded", () => {
+         ×
+       </button>
 
 
-    let current = 0;
+       <div class="gallery-image-wrap">
+
+         <img
+@@ -306,6 +433,7 @@ document.addEventListener("DOMContentLoaded", () => {
+
+       </div>
 
 
-    const modal =
-      document.createElement("div");
+       <div class="gallery-info">
 
-    modal.className =
-      "gallery-modal";
-
-
-    modal.innerHTML = `
-
-      <div class="gallery-backdrop"></div>
-
-      <div
-        class="gallery-window"
-        role="dialog"
-        aria-modal="true"
-      >
-
-        <button
-          class="gallery-close"
-          type="button"
-          aria-label="Close">
-          ×
-        </button>
+         <div>
+@@ -331,10 +459,12 @@ document.addEventListener("DOMContentLoaded", () => {
+   `;
 
 
-        <div class="gallery-image-wrap">
-
-          <img
-            class="gallery-main-image"
-            src="${images[0]}"
-            alt="${title}"
-          >
-
-          <button
-            class="gallery-prev"
-            type="button"
-            aria-label="Previous image">
-            ‹
-          </button>
-
-          <button
-            class="gallery-next"
-            type="button"
-            aria-label="Next image">
-            ›
-          </button>
-
-        </div>
-
-
-        <div class="gallery-info">
-
-          <div>
-
-            <h3>
-              ${title}
-            </h3>
-
-            <p>
-              ${description}
-            </p>
-
-          </div>
-
-          <span class="gallery-counter">
-            1 / ${images.length}
-          </span>
-
-        </div>
-
-      </div>
-
-    `;
-
-
+    document.body.appendChild(modal);
     document.body.appendChild(
       modal
     );
 
 
+    const mainImage =
     const image =
-      modal.querySelector(
-        ".gallery-main-image"
-      );
-
-
-    const counter =
-      modal.querySelector(
-        ".gallery-counter"
-      );
+modal.querySelector(
+".gallery-main-image"
+);
+@@ -346,16 +476,12 @@ document.addEventListener("DOMContentLoaded", () => {
+);
 
 
     /* =========================
-       UPDATE IMAGE
+       UPDATE GALLERY
     ========================= */
 
-    function updateGallery() {
+function updateGallery() {
 
+      mainImage.src =
       image.src =
-        images[current];
+images[current];
 
+      mainImage.alt =
       image.alt =
-        `${title} - image ${current + 1}`;
+`${title} - image ${current + 1}`;
 
-      counter.textContent =
-        `${current + 1} / ${images.length}`;
-
-    }
+counter.textContent =
+@@ -364,73 +490,94 @@ document.addEventListener("DOMContentLoaded", () => {
+}
 
 
     /* =========================
        PREVIOUS
     ========================= */
+    /* PREVIOUS */
 
-    const previousButton =
-      modal.querySelector(
+modal
+      .querySelector(".gallery-prev")
+      .addEventListener("click", () => {
+
+        current =
+          (current - 1 + images.length) %
+          images.length;
+
+        updateGallery();
+
+      });
+      .querySelector(
         ".gallery-prev"
-      );
-
-    if (previousButton) {
-
-      previousButton.addEventListener(
+      )
+      .addEventListener(
         "click",
-        (event) => {
-
-          event.preventDefault();
-          event.stopPropagation();
+        () => {
 
           current =
             (
@@ -592,26 +576,29 @@ assets/js/main.js
         }
       );
 
-    }
-
 
     /* =========================
        NEXT
     ========================= */
+    /* NEXT */
 
-    const nextButton =
-      modal.querySelector(
+modal
+      .querySelector(".gallery-next")
+      .addEventListener("click", () => {
+
+        current =
+          (current + 1) %
+          images.length;
+
+        updateGallery();
+
+      });
+      .querySelector(
         ".gallery-next"
-      );
-
-    if (nextButton) {
-
-      nextButton.addEventListener(
+      )
+      .addEventListener(
         "click",
-        (event) => {
-
-          event.preventDefault();
-          event.stopPropagation();
+        () => {
 
           current =
             (
@@ -625,149 +612,98 @@ assets/js/main.js
         }
       );
 
-    }
-
 
     /* =========================
-       CLOSE GALLERY
+       CLOSE
     ========================= */
+    /* CLOSE */
 
-    function closeGallery() {
-
-      if (modal) {
-        modal.remove();
-      }
-
-
-      if (galleryKeyboard) {
-
-        document.removeEventListener(
-          "keydown",
-          galleryKeyboard
-        );
-
-        galleryKeyboard = null;
-
-      }
-
-    }
-
-
-    const closeButton =
-      modal.querySelector(
+modal
+      .querySelector(".gallery-close")
+      .addEventListener("click", () => {
+      .querySelector(
         ".gallery-close"
-      );
-
-    if (closeButton) {
-
-      closeButton.addEventListener(
+      )
+      .addEventListener(
         "click",
-        (event) => {
+        () => {
 
-          event.preventDefault();
-          event.stopPropagation();
+        modal.remove();
+          modal.remove();
 
-          closeGallery();
-
+      });
         }
       );
 
-    }
 
-
-    /* =========================
-       BACKDROP
-    ========================= */
-
-    const backdrop =
-      modal.querySelector(
+modal
+      .querySelector(".gallery-backdrop")
+      .addEventListener("click", () => {
+      .querySelector(
         ".gallery-backdrop"
-      );
-
-    if (backdrop) {
-
-      backdrop.addEventListener(
+      )
+      .addEventListener(
         "click",
-        closeGallery
-      );
+        () => {
 
-    }
+        modal.remove();
+          modal.remove();
+
+      });
+        }
+      );
 
 
     /* =========================
        KEYBOARD
     ========================= */
+    /* KEYBOARD */
 
-    galleryKeyboard = (event) => {
+    function keyboardHandler(event) {
+    function keyboard(event) {
 
+      if (!document.body.contains(modal)) {
       if (
         !document.body.contains(modal)
       ) {
 
-        document.removeEventListener(
-          "keydown",
-          galleryKeyboard
-        );
+document.removeEventListener(
+"keydown",
+          keyboardHandler
+          keyboard
+);
 
-        galleryKeyboard = null;
+return;
+@@ -448,7 +595,9 @@ document.addEventListener("DOMContentLoaded", () => {
+if (event.key === "ArrowRight") {
 
-        return;
-
-      }
-
-
-      if (event.key === "Escape") {
-
-        closeGallery();
-
-        return;
-
-      }
-
-
-      if (event.key === "ArrowRight") {
-
-        current =
+current =
+          (current + 1) %
           (
-            current +
-            1
+            current + 1
           ) %
-          images.length;
+images.length;
 
-        updateGallery();
+updateGallery();
+@@ -459,7 +608,11 @@ document.addEventListener("DOMContentLoaded", () => {
+if (event.key === "ArrowLeft") {
 
-        return;
-
-      }
-
-
-      if (event.key === "ArrowLeft") {
-
-        current =
+current =
+          (current - 1 + images.length) %
           (
             current -
             1 +
             images.length
           ) %
-          images.length;
+images.length;
 
-        updateGallery();
+updateGallery();
+@@ -471,7 +624,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
-      }
+document.addEventListener(
+"keydown",
+      keyboardHandler
+      keyboard
+);
 
-    };
-
-
-    document.addEventListener(
-      "keydown",
-      galleryKeyboard
-    );
-
-
-    /* Make sure first image is loaded */
-
-    updateGallery();
-
-  }
-
-});
+}
