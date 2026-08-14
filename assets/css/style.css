@@ -24,6 +24,11 @@
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
+
+/* =========================================================
+   BASE
+========================================================= */
+
 html {
   scroll-behavior: smooth;
   background: var(--bg);
@@ -53,7 +58,10 @@ a {
   text-decoration: none;
 }
 
-button {
+button,
+input,
+textarea,
+select {
   color: inherit;
   font: inherit;
 }
@@ -78,16 +86,21 @@ a {
   background:
     radial-gradient(
       ellipse at 15% 15%,
-      rgba(255, 255, 255, 0.075),
+      rgba(255,255,255,.075),
       transparent 34%
     ),
     radial-gradient(
       ellipse at 85% 65%,
-      rgba(255, 255, 255, 0.045),
+      rgba(255,255,255,.045),
       transparent 38%
     ),
     #080808;
 }
+
+
+/* =========================================================
+   ABSTRACT PATTERN
+========================================================= */
 
 .liquid-bg::before {
   content: "";
@@ -95,19 +108,19 @@ a {
   position: absolute;
   inset: -15%;
 
-  opacity: 0.075;
+  opacity: .075;
 
   background:
     repeating-linear-gradient(
       115deg,
       transparent 0,
       transparent 90px,
-      rgba(255, 255, 255, 0.45) 91px,
+      rgba(255,255,255,.45) 91px,
       transparent 92px,
       transparent 190px
     );
 
-  filter: blur(0.5px);
+  filter: blur(.5px);
 
   transform:
     rotate(-5deg)
@@ -137,6 +150,11 @@ a {
   }
 }
 
+
+/* =========================================================
+   LIQUID BLOBS
+========================================================= */
+
 .blob {
   position: absolute;
 
@@ -150,7 +168,7 @@ a {
 
   filter: blur(110px);
 
-  opacity: 0.085;
+  opacity: .085;
 
   background: #e5e5e5;
 
@@ -175,7 +193,7 @@ a {
   right: -16%;
   top: 22%;
 
-  opacity: 0.055;
+  opacity: .055;
 
   animation:
     driftTwo
@@ -189,7 +207,7 @@ a {
   left: 30%;
   bottom: -25%;
 
-  opacity: 0.045;
+  opacity: .045;
 
   animation:
     driftThree
@@ -211,7 +229,7 @@ a {
   to {
     transform:
       translate(-12vw, 9vh)
-      scale(0.92);
+      scale(.92);
   }
 }
 
@@ -223,11 +241,16 @@ a {
   }
 }
 
+
+/* =========================================================
+   GRAIN
+========================================================= */
+
 .grain {
   position: absolute;
   inset: 0;
 
-  opacity: 0.018;
+  opacity: .018;
 
   background-image:
     url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.7'/%3E%3C/svg%3E");
@@ -258,11 +281,11 @@ a {
   padding: 0 var(--pad);
 
   background:
-    rgba(8, 8, 8, 0.20);
+    rgba(8,8,8,.20);
 
   border-bottom:
     1px solid
-    rgba(255, 255, 255, 0.045);
+    rgba(255,255,255,.045);
 
   backdrop-filter:
     blur(22px)
@@ -290,7 +313,7 @@ a {
 
   border:
     1px solid
-    rgba(255, 255, 255, 0.55);
+    rgba(255,255,255,.55);
 
   border-radius: 50%;
 
@@ -312,7 +335,7 @@ a {
   color: #d3d3d3;
 
   transition:
-    color 0.25s ease;
+    color .25s ease;
 }
 
 .desktop-nav > a:not(.pill-button):hover {
@@ -320,31 +343,35 @@ a {
 }
 
 .pill-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
   padding:
     10px
     17px;
 
   border:
     1px solid
-    rgba(255, 255, 255, 0.20);
+    rgba(255,255,255,.20);
 
   border-radius: 999px;
 
   background:
-    rgba(255, 255, 255, 0.045);
+    rgba(255,255,255,.045);
 
   transition:
-    background 0.25s ease,
-    border-color 0.25s ease,
-    transform 0.25s ease;
+    background .25s ease,
+    border-color .25s ease,
+    transform .25s ease;
 }
 
 .pill-button:hover {
   border-color:
-    rgba(255, 255, 255, 0.45);
+    rgba(255,255,255,.45);
 
   background:
-    rgba(255, 255, 255, 0.10);
+    rgba(255,255,255,.10);
 
   transform:
     translateY(-1px);
@@ -388,7 +415,7 @@ a {
 
   font-size: 11px;
 
-  letter-spacing: 0.15em;
+  letter-spacing: .15em;
 }
 
 .eyebrow span {
@@ -407,7 +434,7 @@ a {
 
   grid-template-columns:
     1.15fr
-    0.85fr;
+    .85fr;
 
   align-items: center;
 
@@ -433,9 +460,9 @@ a {
 
   font-weight: 500;
 
-  line-height: 0.94;
+  line-height: .94;
 
-  letter-spacing: -0.065em;
+  letter-spacing: -.065em;
 }
 
 .hero h1 em,
@@ -485,17 +512,17 @@ a {
 
   font-size: 11px;
 
-  letter-spacing: 0.08em;
+  letter-spacing: .08em;
 }
 
 .text-link span {
   transition:
-    transform 0.25s var(--ease);
+    transform .25s var(--ease);
 }
 
 .text-link:hover span {
   transform:
-    translate(4px, 4px);
+    translate(4px,4px);
 }
 
 .mono-link {
@@ -525,11 +552,11 @@ a {
   aspect-ratio: 1;
 
   transform:
-    translate(-50%, -50%);
+    translate(-50%,-50%);
 
   border:
     1px solid
-    rgba(255, 255, 255, 0.08);
+    rgba(255,255,255,.08);
 
   border-radius: 50%;
 }
@@ -544,7 +571,7 @@ a {
 
   border:
     1px solid
-    rgba(255, 255, 255, 0.055);
+    rgba(255,255,255,.055);
 
   border-radius: 50%;
 }
@@ -563,7 +590,7 @@ a {
 
   font-size: 9px;
 
-  letter-spacing: 0.08em;
+  letter-spacing: .08em;
 }
 
 
@@ -588,7 +615,7 @@ a {
 
   border-bottom:
     1px solid
-    rgba(255, 255, 255, 0.07);
+    rgba(255,255,255,.07);
 }
 
 .section-heading h2 {
@@ -606,9 +633,9 @@ a {
 
   font-weight: 500;
 
-  letter-spacing: -0.055em;
+  letter-spacing: -.055em;
 
-  line-height: 0.95;
+  line-height: .95;
 }
 
 .section-heading > p {
@@ -626,7 +653,7 @@ a {
 
 
 /* =========================================================
-   CATEGORY CARDS
+   CATEGORY GRID
 ========================================================= */
 
 .category-grid {
@@ -640,14 +667,22 @@ a {
   padding-top: 24px;
 }
 
+
+/* IMPORTANT:
+   Category is a BUTTON, so reset browser button styles.
+*/
+
 .category-card {
   position: relative;
 
   display: block;
 
+  width: 100%;
   min-width: 0;
 
   aspect-ratio: 3 / 4;
+
+  padding: 0;
 
   overflow: hidden;
 
@@ -659,14 +694,22 @@ a {
 
   background: #111;
 
+  color: #fff;
+
+  text-align: left;
+
+  appearance: none;
+
+  -webkit-appearance: none;
+
   isolation: isolate;
 
   box-shadow:
     0 20px 60px
-    rgba(0, 0, 0, 0.18);
+    rgba(0,0,0,.18);
 
   transition:
-    transform 0.4s var(--ease);
+    transform .4s var(--ease);
 }
 
 .category-card:hover {
@@ -692,20 +735,14 @@ a {
 
   object-fit: cover;
 
-  /*
-    Posisi default dibuat sedikit naik.
-    Ini khusus supaya thumbnail Stereo Wall
-    tidak terlalu turun.
-  */
-  object-position: center 38%;
-
   transition:
     transform
     1s
     var(--ease);
 }
 
-.category-card:hover .category-image {
+.category-card:hover
+.category-image {
   transform:
     scale(1.035);
 }
@@ -718,8 +755,8 @@ a {
   background:
     linear-gradient(
       135deg,
-      rgba(255, 255, 255, 0.08),
-      rgba(255, 255, 255, 0.015)
+      rgba(255,255,255,.08),
+      rgba(255,255,255,.015)
     );
 }
 
@@ -741,11 +778,11 @@ a {
   background:
     linear-gradient(
       to bottom,
-      rgba(0, 0, 0, 0.72) 0%,
-      rgba(0, 0, 0, 0.20) 24%,
+      rgba(0,0,0,.72) 0%,
+      rgba(0,0,0,.20) 24%,
       transparent 50%,
       transparent 55%,
-      rgba(0, 0, 0, 0.72) 100%
+      rgba(0,0,0,.72) 100%
     );
 
   pointer-events: none;
@@ -777,13 +814,14 @@ a {
   font-size: 16px;
 
   transition:
-    transform 0.3s
+    transform .3s
     var(--ease);
 }
 
-.category-card:hover .category-arrow {
+.category-card:hover
+.category-arrow {
   transform:
-    translate(4px, -4px);
+    translate(4px,-4px);
 }
 
 .category-bottom {
@@ -804,7 +842,7 @@ a {
 
   line-height: 1;
 
-  letter-spacing: -0.035em;
+  letter-spacing: -.035em;
 }
 
 
@@ -821,7 +859,7 @@ a {
 
   border-bottom:
     1px solid
-    rgba(255, 255, 255, 0.08);
+    rgba(255,255,255,.08);
 }
 
 .about-layout {
@@ -841,11 +879,16 @@ a {
   padding-top: 46px;
 }
 
+
+/* =========================================================
+   PROFILE
+========================================================= */
+
 .profile-frame {
   position: relative;
 
-  width: 165px;
-  height: 210px;
+  width: 195px;
+  height: 245px;
 
   overflow: hidden;
 
@@ -853,11 +896,11 @@ a {
 
   border: none;
 
-  border-radius: 22px;
+  border-radius: 24px;
 
   box-shadow:
     0 20px 50px
-    rgba(0, 0, 0, 0.25);
+    rgba(0,0,0,.25);
 }
 
 .profile-frame img {
@@ -883,11 +926,6 @@ a {
   color: #777;
 }
 
-.profile-frame img:not([style*="display: none"])
-+ .profile-fallback {
-  display: none;
-}
-
 .name {
   margin: 0;
 
@@ -898,9 +936,9 @@ a {
       54px
     );
 
-  line-height: 0.95;
+  line-height: .95;
 
-  letter-spacing: -0.055em;
+  letter-spacing: -.055em;
 }
 
 .stage-name {
@@ -921,7 +959,7 @@ a {
 
   font-size: 10px;
 
-  letter-spacing: 0.08em;
+  letter-spacing: .08em;
 }
 
 .about-text {
@@ -958,7 +996,7 @@ a {
 
   border:
     1px solid
-    rgba(255, 255, 255, 0.09);
+    rgba(255,255,255,.09);
 
   border-radius: 999px;
 
@@ -966,7 +1004,7 @@ a {
 
   font-size: 9px;
 
-  letter-spacing: 0.08em;
+  letter-spacing: .08em;
 }
 
 
@@ -985,7 +1023,7 @@ a {
 
   border-top:
     1px solid
-    rgba(255, 255, 255, 0.08);
+    rgba(255,255,255,.08);
 }
 
 .contact h2 {
@@ -1003,9 +1041,9 @@ a {
 
   font-weight: 500;
 
-  line-height: 0.87;
+  line-height: .87;
 
-  letter-spacing: -0.07em;
+  letter-spacing: -.07em;
 }
 
 .contact-inner > p:not(.eyebrow) {
@@ -1036,15 +1074,15 @@ a {
 
   border-top:
     1px solid
-    rgba(255, 255, 255, 0.08);
+    rgba(255,255,255,.08);
 
   transition:
-    border-color 0.25s ease;
+    border-color .25s ease;
 }
 
 .contact-links a:hover {
   border-color:
-    rgba(255, 255, 255, 0.5);
+    rgba(255,255,255,.5);
 }
 
 .contact-links span {
@@ -1060,7 +1098,7 @@ a {
 
   font-size: 9px;
 
-  letter-spacing: 0.1em;
+  letter-spacing: .1em;
 
   text-transform: uppercase;
 }
@@ -1092,7 +1130,7 @@ a {
 
   border-top:
     1px solid
-    rgba(255, 255, 255, 0.08);
+    rgba(255,255,255,.08);
 
   color: #666;
 
@@ -1102,7 +1140,7 @@ a {
 
   font-size: 9px;
 
-  letter-spacing: 0.05em;
+  letter-spacing: .05em;
 }
 
 .site-footer div:nth-child(2) {
@@ -1115,7 +1153,7 @@ a {
 
 
 /* =========================================================
-   MODAL BASE
+   MODALS
 ========================================================= */
 
 .modal {
@@ -1127,19 +1165,15 @@ a {
 
   display: grid;
 
-  place-items: center;
-
   visibility: hidden;
 
   opacity: 0;
 
   pointer-events: none;
 
-  padding: 20px;
-
   transition:
-    opacity 0.3s ease,
-    visibility 0.3s ease;
+    opacity .3s ease,
+    visibility .3s ease;
 }
 
 .modal.is-open {
@@ -1156,7 +1190,7 @@ a {
   inset: 0;
 
   background:
-    rgba(0, 0, 0, 0.70);
+    rgba(0,0,0,.70);
 
   backdrop-filter:
     blur(24px);
@@ -1178,7 +1212,7 @@ a {
   width:
     min(
       1160px,
-      100%
+      calc(100% - 40px)
     );
 
   margin: auto;
@@ -1188,21 +1222,23 @@ a {
 
   overflow: auto;
 
+  border: none;
+
   border-radius: 28px;
 
   background:
-    rgba(12, 12, 12, 0.86);
+    rgba(12,12,12,.86);
 
   box-shadow:
     0 30px 100px
-    rgba(0, 0, 0, 0.5);
+    rgba(0,0,0,.5);
 
   transform:
     translateY(12px)
-    scale(0.985);
+    scale(.985);
 
   transition:
-    transform 0.35s
+    transform .35s
     var(--ease);
 
   backdrop-filter:
@@ -1212,7 +1248,8 @@ a {
     blur(24px);
 }
 
-.modal.is-open .category-modal-panel {
+.modal.is-open
+.category-modal-panel {
   transform:
     translateY(0)
     scale(1);
@@ -1232,7 +1269,7 @@ a {
 
   border-bottom:
     1px solid
-    rgba(255, 255, 255, 0.07);
+    rgba(255,255,255,.07);
 }
 
 .icon-button {
@@ -1250,7 +1287,7 @@ a {
   border-radius: 50%;
 
   background:
-    rgba(255, 255, 255, 0.06);
+    rgba(255,255,255,.06);
 
   cursor: pointer;
 
@@ -1260,13 +1297,18 @@ a {
 
   line-height: 1;
 
+  appearance: none;
+
   transition:
-    background 0.2s ease;
+    background .2s ease,
+    transform .2s ease;
 }
 
 .icon-button:hover {
   background:
-    rgba(255, 255, 255, 0.12);
+    rgba(255,255,255,.12);
+
+  transform: scale(1.03);
 }
 
 .category-modal-heading {
@@ -1290,9 +1332,9 @@ a {
 
   font-weight: 500;
 
-  letter-spacing: -0.06em;
+  letter-spacing: -.06em;
 
-  line-height: 0.9;
+  line-height: .9;
 }
 
 .category-modal-heading > p:last-child {
@@ -1314,18 +1356,24 @@ a {
   display: grid;
 
   grid-template-columns:
-    repeat(2, minmax(0, 1fr));
+    repeat(2, 1fr);
 
   gap: 20px;
 
   padding: 20px;
+
+  background: transparent;
 }
+
+
+/* IMPORTANT:
+   Project items are BUTTONS.
+*/
 
 .project-item {
   display: block;
 
   width: 100%;
-
   min-width: 0;
 
   padding: 0;
@@ -1344,13 +1392,17 @@ a {
 
   cursor: pointer;
 
+  appearance: none;
+
+  -webkit-appearance: none;
+
   box-shadow:
     0 15px 40px
-    rgba(0, 0, 0, 0.18);
+    rgba(0,0,0,.18);
 
   transition:
-    transform 0.35s var(--ease),
-    background 0.25s ease;
+    transform .35s var(--ease),
+    background .25s ease;
 }
 
 .project-item:hover {
@@ -1358,6 +1410,14 @@ a {
 
   transform:
     translateY(-3px);
+}
+
+.project-item:focus-visible {
+  outline:
+    2px solid
+    #fff;
+
+  outline-offset: 4px;
 }
 
 
@@ -1370,10 +1430,6 @@ a {
 
   width: 100%;
 
-  /*
-    Sedikit lebih tinggi supaya portrait/commercial
-    thumbnail tidak terlalu terpotong.
-  */
   aspect-ratio: 16 / 10;
 
   overflow: hidden;
@@ -1391,14 +1447,13 @@ a {
 
   object-fit: cover;
 
-  object-position: center center;
-
   transition:
-    transform 0.7s
+    transform .7s
     var(--ease);
 }
 
-.project-item:hover .project-thumb {
+.project-item:hover
+.project-thumb {
   transform:
     scale(1.025);
 }
@@ -1424,9 +1479,9 @@ a {
   background:
     linear-gradient(
       to bottom,
-      rgba(0, 0, 0, 0.88) 0%,
-      rgba(0, 0, 0, 0.58) 16%,
-      rgba(0, 0, 0, 0.16) 32%,
+      rgba(0,0,0,.88) 0%,
+      rgba(0,0,0,.58) 16%,
+      rgba(0,0,0,.16) 32%,
       transparent 48%
     );
 
@@ -1451,12 +1506,12 @@ a {
 
   line-height: 1;
 
-  letter-spacing: -0.025em;
+  letter-spacing: -.025em;
 }
 
 .project-year-overlay {
   color:
-    rgba(255, 255, 255, 0.60);
+    rgba(255,255,255,.60);
 
   font-family:
     "DM Mono",
@@ -1479,13 +1534,14 @@ a {
   font-size: 16px;
 
   transition:
-    transform 0.3s
+    transform .3s
     var(--ease);
 }
 
-.project-item:hover .project-arrow {
+.project-item:hover
+.project-arrow {
   transform:
-    translate(4px, -4px);
+    translate(4px,-4px);
 }
 
 
@@ -1526,12 +1582,12 @@ a {
 
 
 /* =========================================================
-   GALLERY MODAL
+   GALLERY
 ========================================================= */
 
 .gallery-modal {
   background:
-    rgba(0, 0, 0, 0.15);
+    rgba(0,0,0,.15);
 }
 
 .gallery-panel {
@@ -1542,7 +1598,7 @@ a {
   width:
     min(
       1280px,
-      100%
+      calc(100% - 40px)
     );
 
   max-height:
@@ -1550,25 +1606,28 @@ a {
 
   overflow: hidden;
 
+  border: none;
+
   border-radius: 28px;
 
   background:
-    rgba(10, 10, 10, 0.92);
+    rgba(10,10,10,.92);
 
   box-shadow:
     0 30px 100px
-    rgba(0, 0, 0, 0.6);
+    rgba(0,0,0,.6);
 
   transform:
     translateY(12px)
-    scale(0.985);
+    scale(.985);
 
   transition:
-    transform 0.35s
+    transform .35s
     var(--ease);
 }
 
-.modal.is-open .gallery-panel {
+.modal.is-open
+.gallery-panel {
   transform:
     translateY(0)
     scale(1);
@@ -1602,16 +1661,16 @@ a {
   display: grid;
 
   grid-template-columns:
-    64px
-    minmax(0, 1fr)
-    64px;
+    60px
+    minmax(0,1fr)
+    60px;
 
   align-items: center;
 
   min-height:
     min(
-      68vh,
-      680px
+      62vh,
+      620px
     );
 
   background: #050505;
@@ -1622,48 +1681,39 @@ a {
 
   height:
     min(
-      68vh,
-      680px
+      62vh,
+      620px
     );
 
   display: grid;
 
   place-items: center;
 
-  /*
-    Padding lebih lega supaya foto portrait
-    tidak mepet ke atas/bawah.
-  */
-  padding:
-    24px
-    12px;
+  padding: 18px;
 }
+
+
+/* FOTO GALERI DIPERKECIL */
 
 .gallery-image-wrap img {
   display: block;
 
   width: auto;
 
+  max-width: 48%;
+
   height: auto;
 
-  /*
-    Jangan pakai width 48%.
-    Itu bikin foto portrait terlihat terlalu kecil
-    dan kadang terasa bergeser.
-  */
-  max-width: 86%;
-
-  max-height: 88%;
+  max-height: 68%;
 
   object-fit: contain;
-
-  object-position: center;
 
   user-select: none;
 
   border-radius: 4px;
 
-  margin: auto;
+  transition:
+    opacity .2s ease;
 }
 
 
@@ -1692,7 +1742,7 @@ a {
   border-radius: 50%;
 
   background:
-    rgba(255, 255, 255, 0.07);
+    rgba(255,255,255,.07);
 
   cursor: pointer;
 
@@ -1702,14 +1752,16 @@ a {
 
   font-size: 16px;
 
+  appearance: none;
+
   transition:
-    background 0.2s ease,
-    transform 0.2s ease;
+    background .2s ease,
+    transform .2s ease;
 }
 
 .gallery-arrow:hover {
   background:
-    rgba(255, 255, 255, 0.13);
+    rgba(255,255,255,.13);
 
   transform:
     scale(1.05);
@@ -1718,9 +1770,26 @@ a {
 .gallery-arrow:disabled {
   cursor: default;
 
-  opacity: 0.25;
+  opacity: .25;
 
   transform: none;
+}
+
+
+/* =========================================================
+   GALLERY COUNTER
+========================================================= */
+
+.gallery-counter {
+  color: #666;
+
+  font-family:
+    "DM Mono",
+    monospace;
+
+  font-size: 9px;
+
+  letter-spacing: .08em;
 }
 
 
@@ -1745,7 +1814,7 @@ a {
 
   border-top:
     1px solid
-    rgba(255, 255, 255, 0.08);
+    rgba(255,255,255,.08);
 }
 
 .gallery-caption p {
@@ -1761,7 +1830,71 @@ a {
 
 
 /* =========================================================
-   TABLET
+   IMAGE FALLBACK
+========================================================= */
+
+.image-fallback {
+  position: absolute;
+
+  inset: 0;
+
+  display: none;
+
+  place-items: center;
+
+  color: #555;
+
+  background:
+    linear-gradient(
+      135deg,
+      #151515,
+      #0d0d0d
+    );
+
+  font-family:
+    "DM Mono",
+    monospace;
+
+  font-size: 10px;
+
+  letter-spacing: .08em;
+}
+
+
+/* =========================================================
+   SCROLLBARS
+========================================================= */
+
+.category-modal-panel,
+.gallery-panel {
+  scrollbar-width: thin;
+
+  scrollbar-color:
+    rgba(255,255,255,.18)
+    transparent;
+}
+
+.category-modal-panel::-webkit-scrollbar,
+.gallery-panel::-webkit-scrollbar {
+  width: 6px;
+}
+
+.category-modal-panel::-webkit-scrollbar-track,
+.gallery-panel::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.category-modal-panel::-webkit-scrollbar-thumb,
+.gallery-panel::-webkit-scrollbar-thumb {
+  background:
+    rgba(255,255,255,.18);
+
+  border-radius: 999px;
+}
+
+
+/* =========================================================
+   900PX
 ========================================================= */
 
 @media (max-width: 900px) {
@@ -1782,7 +1915,7 @@ a {
 
   .category-grid {
     grid-template-columns:
-      repeat(2, 1fr);
+      repeat(2,1fr);
   }
 
   .project-list {
@@ -1796,16 +1929,11 @@ a {
   .contact-links {
     grid-template-columns: 1fr;
   }
-
-  .gallery-image-wrap img {
-    max-width: 82%;
-    max-height: 86%;
-  }
 }
 
 
 /* =========================================================
-   MOBILE
+   680PX MOBILE
 ========================================================= */
 
 @media (max-width: 680px) {
@@ -1836,14 +1964,18 @@ a {
 
     gap: 5px;
 
+    padding: 0;
+
     border: none;
 
     border-radius: 50%;
 
     background:
-      rgba(255, 255, 255, 0.06);
+      rgba(255,255,255,.06);
 
     cursor: pointer;
+
+    appearance: none;
   }
 
   .mobile-menu-button span {
@@ -1879,11 +2011,11 @@ a {
       20px;
 
     background:
-      rgba(8, 8, 8, 0.82);
+      rgba(8,8,8,.82);
 
     border-bottom:
       1px solid
-      rgba(255, 255, 255, 0.07);
+      rgba(255,255,255,.07);
 
     backdrop-filter:
       blur(20px);
@@ -1901,9 +2033,9 @@ a {
       translateY(-8px);
 
     transition:
-      opacity 0.25s ease,
-      visibility 0.25s ease,
-      transform 0.25s ease;
+      opacity .25s ease,
+      visibility .25s ease,
+      transform .25s ease;
   }
 
   .mobile-nav.is-open {
@@ -1922,7 +2054,7 @@ a {
 
     border-bottom:
       1px solid
-      rgba(255, 255, 255, 0.07);
+      rgba(255,255,255,.07);
 
     color: #ddd;
 
@@ -1990,10 +2122,6 @@ a {
     aspect-ratio: 3 / 4;
 
     border-radius: 20px;
-  }
-
-  .category-image {
-    object-position: center 38%;
   }
 
   .category-overlay {
@@ -2071,12 +2199,9 @@ a {
 
   /* CATEGORY MODAL */
 
-  .modal {
-    padding: 10px;
-  }
-
   .category-modal-panel {
-    width: 100%;
+    width:
+      calc(100% - 20px);
 
     max-height:
       calc(100svh - 20px);
@@ -2089,6 +2214,15 @@ a {
       38px
       18px
       28px;
+  }
+
+  .category-modal-heading h2 {
+    font-size:
+      clamp(
+        36px,
+        11vw,
+        58px
+      );
   }
 
 
@@ -2141,10 +2275,11 @@ a {
   /* GALLERY */
 
   .gallery-panel {
-    width: 100%;
+    width:
+      calc(100% - 10px);
 
     max-height:
-      calc(100svh - 20px);
+      calc(100svh - 10px);
 
     border-radius: 18px;
   }
@@ -2152,26 +2287,24 @@ a {
   .gallery-stage {
     grid-template-columns:
       42px
-      minmax(0, 1fr)
+      1fr
       42px;
 
     min-height:
-      60vh;
+      58vh;
   }
 
   .gallery-image-wrap {
     height:
-      60vh;
+      58vh;
 
-    padding:
-      10px
-      4px;
+    padding: 8px;
   }
 
   .gallery-image-wrap img {
-    max-width: 92%;
+    max-width: 66%;
 
-    max-height: 88%;
+    max-height: 72%;
   }
 
   .gallery-arrow {
@@ -2190,34 +2323,47 @@ a {
   .gallery-caption > .mono-label {
     display: none;
   }
+
 }
 
 
 /* =========================================================
-   VERY SMALL SCREEN
+   SMALL PHONES
 ========================================================= */
 
 @media (max-width: 420px) {
 
+  .about-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .profile-frame {
+    width: 125px;
+    height: 165px;
+  }
+
+  .name {
+    margin-top: 18px;
+  }
+
+  .category-title {
+    font-size: 22px;
+  }
+
+  .project-title-overlay {
+    font-size: 16px;
+  }
+
   .gallery-stage {
     grid-template-columns:
       38px
-      minmax(0, 1fr)
+      1fr
       38px;
   }
 
-  .gallery-image-wrap {
-    height: 56vh;
-  }
-
   .gallery-image-wrap img {
-    max-width: 94%;
-    max-height: 86%;
-  }
-
-  .gallery-arrow {
-    width: 32px;
-    height: 32px;
+    max-width: 72%;
+    max-height: 70%;
   }
 }
 
@@ -2235,10 +2381,10 @@ a {
   *,
   *::before,
   *::after {
-    animation-duration: 0.01ms !important;
+    animation-duration: .01ms !important;
 
     animation-iteration-count: 1 !important;
 
-    transition-duration: 0.01ms !important;
+    transition-duration: .01ms !important;
   }
 }
