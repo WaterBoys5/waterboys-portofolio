@@ -49,17 +49,17 @@ a {
     background:
         radial-gradient(
             circle at 15% 20%,
-            rgba(255,255,255,0.08),
+            rgba(255, 255, 255, 0.08),
             transparent 28%
         ),
         radial-gradient(
             circle at 85% 35%,
-            rgba(255,255,255,0.05),
+            rgba(255, 255, 255, 0.05),
             transparent 30%
         ),
         radial-gradient(
             circle at 50% 85%,
-            rgba(255,255,255,0.045),
+            rgba(255, 255, 255, 0.045),
             transparent 30%
         );
 
@@ -134,9 +134,9 @@ a {
     background:
         linear-gradient(
             125deg,
-            rgba(255,255,255,0.035),
-            rgba(255,255,255,0.012),
-            rgba(255,255,255,0.025)
+            rgba(255, 255, 255, 0.035),
+            rgba(255, 255, 255, 0.012),
+            rgba(255, 255, 255, 0.025)
         );
 
     backdrop-filter: blur(26px);
@@ -166,11 +166,9 @@ a {
     align-items: center;
     justify-content: space-between;
 
-    background:
-        rgba(10,10,10,0.48);
+    background: rgba(10, 10, 10, 0.48);
 
-    border:
-        1px solid rgba(255,255,255,0.10);
+    border: 1px solid rgba(255, 255, 255, 0.10);
 
     border-radius: 999px;
 
@@ -178,7 +176,7 @@ a {
     -webkit-backdrop-filter: blur(22px);
 
     box-shadow:
-        0 18px 55px rgba(0,0,0,0.28);
+        0 18px 55px rgba(0, 0, 0, 0.28);
 
     z-index: 1000;
 }
@@ -224,8 +222,7 @@ a {
 }
 
 .navbar nav a {
-    color:
-        rgba(255,255,255,0.55);
+    color: rgba(255, 255, 255, 0.55);
 
     text-decoration: none;
 
@@ -235,8 +232,7 @@ a {
 
     letter-spacing: 0.15em;
 
-    transition:
-        color 0.25s ease;
+    transition: color 0.25s ease;
 }
 
 .navbar nav a:hover {
@@ -258,8 +254,7 @@ a {
 }
 
 .eyebrow {
-    color:
-        rgba(255,255,255,0.40);
+    color: rgba(255, 255, 255, 0.40);
 
     font-size: 9px;
 
@@ -318,8 +313,7 @@ a {
 
     letter-spacing: 0.08em;
 
-    color:
-        rgba(255,255,255,0.30);
+    color: rgba(255, 255, 255, 0.30);
 }
 
 .hero-description {
@@ -327,8 +321,7 @@ a {
 
     margin-top: 30px;
 
-    color:
-        rgba(255,255,255,0.46);
+    color: rgba(255, 255, 255, 0.46);
 
     font-size: 13px;
 
@@ -355,12 +348,12 @@ a {
 
     border:
         1px solid
-        rgba(255,255,255,0.18);
+        rgba(255, 255, 255, 0.18);
 
     border-radius: 999px;
 
     background:
-        rgba(255,255,255,0.035);
+        rgba(255, 255, 255, 0.035);
 
     backdrop-filter: blur(10px);
 
@@ -372,10 +365,10 @@ a {
 
 .pill-button:hover {
     background:
-        rgba(255,255,255,0.10);
+        rgba(255, 255, 255, 0.10);
 
     border-color:
-        rgba(255,255,255,0.32);
+        rgba(255, 255, 255, 0.32);
 
     transform:
         translateY(-2px);
@@ -438,7 +431,7 @@ a {
     cursor: pointer;
 
     transition:
-        transform 0.4s cubic-bezier(.2,.7,.2,1);
+        transform 0.4s cubic-bezier(.2, .7, .2, 1);
 }
 
 .category-card:hover {
@@ -466,11 +459,11 @@ a {
 
     border:
         1px solid
-        rgba(255,255,255,0.10);
+        rgba(255, 255, 255, 0.10);
 
     box-shadow:
         0 25px 70px
-        rgba(0,0,0,0.32);
+        rgba(0, 0, 0, 0.32);
 }
 
 .category-image img {
@@ -482,7 +475,7 @@ a {
     object-fit: cover;
 
     transition:
-        transform 0.8s cubic-bezier(.2,.7,.2,1);
+        transform 0.8s cubic-bezier(.2, .7, .2, 1);
 }
 
 .category-card:hover
@@ -504,9 +497,9 @@ a {
     background:
         linear-gradient(
             to bottom,
-            rgba(0,0,0,0.78) 0%,
-            rgba(0,0,0,0.42) 19%,
-            rgba(0,0,0,0.08) 43%,
+            rgba(0, 0, 0, 0.78) 0%,
+            rgba(0, 0, 0, 0.42) 19%,
+            rgba(0, 0, 0, 0.08) 43%,
             transparent 62%
         );
 
@@ -536,7 +529,7 @@ a {
     margin-bottom: 8px;
 
     color:
-        rgba(255,255,255,0.45);
+        rgba(255, 255, 255, 0.45);
 
     font-size: 8px;
 
@@ -570,7 +563,7 @@ a {
     max-width: 310px;
 
     color:
-        rgba(255,255,255,0.40);
+        rgba(255, 255, 255, 0.40);
 
     font-size: 10px;
 
@@ -629,14 +622,14 @@ a {
         10px 16px;
 
     color:
-        rgba(255,255,255,0.68);
+        rgba(255, 255, 255, 0.68);
 
     background:
-        rgba(255,255,255,0.04);
+        rgba(255, 255, 255, 0.04);
 
     border:
         1px solid
-        rgba(255,255,255,0.12);
+        rgba(255, 255, 255, 0.12);
 
     border-radius: 999px;
 
@@ -676,7 +669,7 @@ a {
     cursor: pointer;
 
     transition:
-        transform 0.4s cubic-bezier(.2,.7,.2,1);
+        transform 0.4s cubic-bezier(.2, .7, .2, 1);
 }
 
 .project-card:hover {
@@ -704,7 +697,7 @@ a {
 
     border:
         1px solid
-        rgba(255,255,255,0.10);
+        rgba(255, 255, 255, 0.10);
 }
 
 .project-card-image img {
@@ -716,7 +709,7 @@ a {
     object-fit: cover;
 
     transition:
-        transform 0.7s cubic-bezier(.2,.7,.2,1);
+        transform 0.7s cubic-bezier(.2, .7, .2, 1);
 }
 
 .project-card:hover
@@ -740,11 +733,11 @@ a {
         6px 9px;
 
     background:
-        rgba(0,0,0,0.55);
+        rgba(0, 0, 0, 0.55);
 
     border:
         1px solid
-        rgba(255,255,255,0.12);
+        rgba(255, 255, 255, 0.12);
 
     border-radius: 999px;
 
@@ -753,7 +746,7 @@ a {
 
 .project-card-overlay span {
     color:
-        rgba(255,255,255,0.70);
+        rgba(255, 255, 255, 0.70);
 
     font-size: 7px;
 
@@ -784,7 +777,7 @@ a {
     margin-top: 5px;
 
     color:
-        rgba(255,255,255,0.38);
+        rgba(255, 255, 255, 0.38);
 
     font-size: 9px;
 
@@ -809,7 +802,7 @@ a {
         80px 5vw;
 
     background:
-        rgba(4,4,4,0.94);
+        rgba(4, 4, 4, 0.94);
 
     backdrop-filter: blur(30px);
     -webkit-backdrop-filter: blur(30px);
@@ -832,12 +825,12 @@ a {
 
     border:
         1px solid
-        rgba(255,255,255,0.15);
+        rgba(255, 255, 255, 0.15);
 
     border-radius: 50%;
 
     background:
-        rgba(255,255,255,0.05);
+        rgba(255, 255, 255, 0.05);
 
     color: #ffffff;
 
@@ -854,7 +847,7 @@ a {
 
 .viewer-heading p {
     color:
-        rgba(255,255,255,0.35);
+        rgba(255, 255, 255, 0.35);
 
     font-size: 8px;
 
@@ -929,7 +922,7 @@ a {
     padding: 40px;
 
     background:
-        rgba(0,0,0,0.96);
+        rgba(0, 0, 0, 0.96);
 
     backdrop-filter: blur(25px);
 }
@@ -954,12 +947,12 @@ a {
 
     border:
         1px solid
-        rgba(255,255,255,0.18);
+        rgba(255, 255, 255, 0.18);
 
     border-radius: 50%;
 
     background:
-        rgba(255,255,255,0.06);
+        rgba(255, 255, 255, 0.06);
 
     color: #ffffff;
 
@@ -970,7 +963,7 @@ a {
 
 
 /* =====================================================
-   SELECTED CLIENTS / BRANDS
+   CLIENTS
 ===================================================== */
 
 .clients-section {
@@ -1023,12 +1016,12 @@ a {
 
     border:
         1px solid
-        rgba(255,255,255,0.07);
+        rgba(255, 255, 255, 0.07);
 
     border-radius: 16px;
 
     background:
-        rgba(255,255,255,0.018);
+        rgba(255, 255, 255, 0.018);
 
     transition:
         background 0.3s ease,
@@ -1057,12 +1050,33 @@ a {
         transform 0.3s ease;
 }
 
+
+/* =====================================================
+   LARGER LOGOS
+   PERON / REPRO / TITANS
+===================================================== */
+
+.client-logo-large img {
+    max-height: 48px;
+
+    transform: scale(1.12);
+}
+
+.client-logo-large:hover img {
+    transform: scale(1.18);
+}
+
+
+/* =====================================================
+   CLIENT LOGO HOVER
+===================================================== */
+
 .client-logo:hover {
     background:
-        rgba(255,255,255,0.045);
+        rgba(255, 255, 255, 0.045);
 
     border-color:
-        rgba(255,255,255,0.14);
+        rgba(255, 255, 255, 0.14);
 
     transform:
         translateY(-3px);
@@ -1076,6 +1090,15 @@ a {
 
     transform:
         scale(1.04);
+}
+
+
+/*
+   Keep the enlarged logos enlarged on hover.
+*/
+
+.client-logo-large:hover img {
+    transform: scale(1.18);
 }
 
 
@@ -1125,11 +1148,11 @@ a {
 
     border:
         1px solid
-        rgba(255,255,255,0.10);
+        rgba(255, 255, 255, 0.10);
 
     box-shadow:
         0 25px 70px
-        rgba(0,0,0,0.30);
+        rgba(0, 0, 0, 0.30);
 }
 
 .about-photo img {
@@ -1176,7 +1199,7 @@ a {
     margin-top: 8px;
 
     color:
-        rgba(255,255,255,0.32);
+        rgba(255, 255, 255, 0.32);
 
     font-size: 10px;
 
@@ -1190,7 +1213,7 @@ a {
 
 .about-text p {
     color:
-        rgba(255,255,255,0.48);
+        rgba(255, 255, 255, 0.48);
 
     font-size: 14px;
 
@@ -1201,7 +1224,7 @@ a {
 
 .about-text .about-lead {
     color:
-        rgba(255,255,255,0.84);
+        rgba(255, 255, 255, 0.84);
 
     font-size: 18px;
 
@@ -1241,7 +1264,7 @@ a {
 
     -webkit-text-stroke:
         1px
-        rgba(255,255,255,0.55);
+        rgba(255, 255, 255, 0.55);
 }
 
 .contact-links {
@@ -1254,7 +1277,7 @@ a {
 
 .contact-links a {
     color:
-        rgba(255,255,255,0.65);
+        rgba(255, 255, 255, 0.65);
 
     text-decoration: none;
 
@@ -1266,7 +1289,7 @@ a {
 
     border-bottom:
         1px solid
-        rgba(255,255,255,0.20);
+        rgba(255, 255, 255, 0.20);
 
     transition:
         0.25s ease;
@@ -1298,10 +1321,10 @@ footer {
 
     border-top:
         1px solid
-        rgba(255,255,255,0.08);
+        rgba(255, 255, 255, 0.08);
 
     color:
-        rgba(255,255,255,0.25);
+        rgba(255, 255, 255, 0.25);
 
     font-size: 8px;
 
@@ -1415,6 +1438,9 @@ footer {
         grid-template-columns: 1fr;
     }
 
+
+    /* CLIENTS */
+
     .clients-section {
         padding:
             20px 0
@@ -1438,6 +1464,19 @@ footer {
         max-height: 30px;
     }
 
+    .client-logo-large img {
+        max-height: 38px;
+
+        transform: scale(1.12);
+    }
+
+    .client-logo-large:hover img {
+        transform: scale(1.18);
+    }
+
+
+    /* ABOUT */
+
     .about-content {
         grid-template-columns: 1fr;
 
@@ -1456,11 +1495,17 @@ footer {
         font-size: 18px;
     }
 
+
+    /* CONTACT */
+
     .contact-links {
         flex-wrap: wrap;
 
         gap: 18px;
     }
+
+
+    /* FOOTER */
 
     footer {
         flex-direction: column;
