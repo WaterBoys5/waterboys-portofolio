@@ -5,13 +5,13 @@ const SITE = {
 const CATEGORIES = [
   {
     title: "DOCUMENTATION",
-    description: "Live events, performances, and visual documentation.",
+    description: "Live performances, events, and visual documentation.",
 
     projects: [
       {
         title: "Stereo Wall",
         year: "2026",
-        description: "Documentation of Stereo Wall at Trilogigs 2025.",
+        description: "Visual documentation of Stereo Wall at Trilogigs 2025.",
 
         images: [
           "assets/images/documentation/stereo-wall-01.jpg",
@@ -36,14 +36,12 @@ const CATEGORIES = [
   {
     title: "COMMERCIAL PHOTOGRAPHY",
     description: "Commercial, product, campaign, and brand photography.",
-
     projects: []
   },
 
   {
     title: "PORTRAIT PHOTOGRAPHY",
     description: "Portraits, creative portraits, and visual storytelling.",
-
     projects: []
   }
 ];
@@ -132,6 +130,7 @@ function renderCategories() {
     const card = document.createElement("article");
 
     card.className = "category-card";
+
     card.setAttribute("tabindex", "0");
     card.setAttribute("role", "button");
 
@@ -142,18 +141,25 @@ function renderCategories() {
       firstProject?.images?.[0] || "";
 
     card.innerHTML = `
-      <img
-        class="category-image"
-        src="${firstImage}"
-        alt="${category.title}"
-        loading="lazy"
-      >
+      ${
+        firstImage
+          ? `
+            <img
+              class="category-image"
+              src="${firstImage}"
+              alt="${category.title}"
+              loading="lazy"
+            >
+          `
+          : `
+            <div class="category-placeholder"></div>
+          `
+      }
 
-      <div class="category-gradient"></div>
-
-      <div class="category-content">
+      <div class="category-overlay">
 
         <div class="category-top">
+
           <span class="category-number">
             ${String(index + 1).padStart(2, "0")}
           </span>
@@ -161,16 +167,13 @@ function renderCategories() {
           <span class="category-arrow">
             ↗
           </span>
+
         </div>
 
-        <div class="category-info">
+        <div class="category-bottom">
 
           <span class="category-title">
             ${category.title}
-          </span>
-
-          <span class="category-description">
-            ${category.description}
           </span>
 
         </div>
@@ -265,65 +268,77 @@ function renderProjects(category) {
     return;
   }
 
-  category.projects.forEach(
-    (project, index) => {
+  category.projects.forEach((project, index) => {
 
-      const button =
-        document.createElement("button");
+    const button =
+      document.createElement("button");
 
-      button.type = "button";
-      button.className = "project-card";
+    button.type = "button";
+    button.className = "project-item";
 
-      const thumbnail =
-        project.images?.[0] || "";
+    const thumbnail =
+      project.images?.[0] || "";
 
-      button.innerHTML = `
-        <img
-          class="project-image"
-          src="${thumbnail}"
-          alt="${project.title}"
-          loading="lazy"
-        >
+    button.innerHTML = `
 
-        <div class="project-gradient"></div>
+      <div class="project-image-wrap">
 
-        <div class="project-content">
+        ${
+          thumbnail
+            ? `
+              <img
+                class="project-thumb"
+                src="${thumbnail}"
+                alt="${project.title}"
+                loading="lazy"
+              >
+            `
+            : `
+              <div class="project-thumb-placeholder"></div>
+            `
+        }
 
-          <div class="project-top">
+        <div class="project-image-overlay">
 
-            <span class="project-year">
-              ${project.year || ""}
-            </span>
+          <span class="project-number">
+            ${String(index + 1).padStart(2, "0")}
+          </span>
 
-            <span class="project-arrow">
-              ↗
-            </span>
-
-          </div>
-
-          <div class="project-info">
-
-            <span class="project-title">
-              ${project.title}
-            </span>
-
-            <span class="project-description">
-              ${project.description || ""}
-            </span>
-
-          </div>
+          <span class="project-arrow">
+            ↗
+          </span>
 
         </div>
-      `;
 
-      button.addEventListener(
-        "click",
-        () => openGallery(index)
-      );
+      </div>
 
-      projectList.appendChild(button);
-    }
-  );
+      <div class="project-info">
+
+        <div>
+
+          <span class="project-title">
+            ${project.title}
+          </span>
+
+          <span class="project-year">
+            ${project.year || ""}
+          </span>
+
+        </div>
+
+        <span class="project-description">
+          ${project.description || ""}
+        </span>
+
+      </div>
+    `;
+
+    button.addEventListener("click", () => {
+      openGallery(index);
+    });
+
+    projectList.appendChild(button);
+  });
 }
 
 
@@ -347,9 +362,8 @@ function closeCategory() {
     !galleryModal.classList.contains("is-open")
   ) {
 
-    document.body.classList.remove(
-      "modal-open"
-    );
+    document.body.classList.remove("modal-open");
+
   }
 }
 
@@ -397,9 +411,7 @@ function openGallery(projectIndex) {
     "false"
   );
 
-  document.body.classList.add(
-    "modal-open"
-  );
+  document.body.classList.add("modal-open");
 }
 
 
@@ -417,21 +429,18 @@ function updateGallery() {
   const project =
     category.projects?.[currentProjectIndex];
 
-  if (!project) return;
+  if (!project || !galleryImage) return;
 
   const images =
     project.images || [];
 
   if (!images.length) {
 
-    if (galleryImage) {
-      galleryImage.removeAttribute("src");
-      galleryImage.alt = "";
-    }
+    galleryImage.removeAttribute("src");
+    galleryImage.alt = "";
 
     if (galleryCounter) {
-      galleryCounter.textContent =
-        "00 / 00";
+      galleryCounter.textContent = "00 / 00";
     }
 
     if (galleryPrev) {
@@ -445,29 +454,25 @@ function updateGallery() {
     return;
   }
 
-  if (galleryImage) {
+  galleryImage.src =
+    images[currentImageIndex];
 
-    galleryImage.src =
-      images[currentImageIndex];
-
-    galleryImage.alt =
-      project.title;
-  }
+  galleryImage.alt =
+    project.title;
 
   if (galleryCounter) {
 
     galleryCounter.textContent =
       `${String(currentImageIndex + 1).padStart(2, "0")} / ${String(images.length).padStart(2, "0")}`;
+
   }
 
   if (galleryPrev) {
-
     galleryPrev.disabled =
       currentImageIndex <= 0;
   }
 
   if (galleryNext) {
-
     galleryNext.disabled =
       currentImageIndex >= images.length - 1;
   }
@@ -498,6 +503,7 @@ function nextImage() {
 
     currentImageIndex++;
     updateGallery();
+
   }
 }
 
@@ -526,23 +532,26 @@ function closeGallery() {
 
   if (!galleryModal) return;
 
-  galleryModal.classList.remove(
-    "is-open"
-  );
+  galleryModal.classList.remove("is-open");
 
   galleryModal.setAttribute(
     "aria-hidden",
     "true"
   );
 
-  document.body.classList.remove(
-    "modal-open"
-  );
+  if (
+    !categoryModal ||
+    !categoryModal.classList.contains("is-open")
+  ) {
+
+    document.body.classList.remove("modal-open");
+
+  }
 }
 
 
 /* =========================
-   CLOSE BACKDROPS
+   BACKDROP
 ========================= */
 
 document
@@ -579,6 +588,7 @@ if (categoryClose) {
     "click",
     closeCategory
   );
+
 }
 
 if (galleryClose) {
@@ -587,6 +597,7 @@ if (galleryClose) {
     "click",
     closeGallery
   );
+
 }
 
 
@@ -600,6 +611,7 @@ if (galleryPrev) {
     "click",
     previousImage
   );
+
 }
 
 if (galleryNext) {
@@ -608,6 +620,7 @@ if (galleryNext) {
     "click",
     nextImage
   );
+
 }
 
 
@@ -622,30 +635,30 @@ document.addEventListener(
     if (event.key === "Escape") {
 
       if (
-        galleryModal?.classList.contains(
-          "is-open"
-        )
+        galleryModal &&
+        galleryModal.classList.contains("is-open")
       ) {
 
         closeGallery();
         return;
+
       }
 
       if (
-        categoryModal?.classList.contains(
-          "is-open"
-        )
+        categoryModal &&
+        categoryModal.classList.contains("is-open")
       ) {
 
         closeCategory();
         return;
+
       }
+
     }
 
     if (
-      galleryModal?.classList.contains(
-        "is-open"
-      )
+      galleryModal &&
+      galleryModal.classList.contains("is-open")
     ) {
 
       if (event.key === "ArrowRight") {
@@ -655,7 +668,9 @@ document.addEventListener(
       if (event.key === "ArrowLeft") {
         previousImage();
       }
+
     }
+
   }
 );
 
@@ -674,14 +689,13 @@ if (
     () => {
 
       const isOpen =
-        mobileNav.classList.toggle(
-          "is-open"
-        );
+        mobileNav.classList.toggle("is-open");
 
       mobileMenuButton.setAttribute(
         "aria-expanded",
         String(isOpen)
       );
+
     }
   );
 
@@ -701,10 +715,12 @@ if (
             "aria-expanded",
             "false"
           );
+
         }
       );
 
     });
+
 }
 
 
