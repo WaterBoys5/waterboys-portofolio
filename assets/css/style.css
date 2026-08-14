@@ -50,7 +50,6 @@ a {
   -webkit-tap-highlight-color: transparent;
 }
 
-
 /* =========================
    LIQUID BACKGROUND
 ========================= */
@@ -129,7 +128,6 @@ a {
   }
 }
 
-
 /* =========================
    HEADER
 ========================= */
@@ -206,7 +204,6 @@ a {
   display: none;
 }
 
-
 /* =========================
    GENERAL
 ========================= */
@@ -218,7 +215,6 @@ a {
   );
   margin-inline: auto;
 }
-
 
 /* =========================
    HERO
@@ -343,7 +339,6 @@ a {
   letter-spacing: .08em;
 }
 
-
 /* =========================
    PROJECTS
 ========================= */
@@ -376,11 +371,6 @@ a {
   font-size: 14px;
 }
 
-
-/* =========================
-   CATEGORY CARDS
-========================= */
-
 .category-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -405,22 +395,14 @@ a {
   outline-offset: 4px;
 }
 
-
-/* FOTO KATEGORI DIPERKECIL */
-
 .category-image,
 .category-image.next {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
-
-  /* Tetap utuh, tidak terpotong */
   object-fit: contain;
-
-  /* Semakin besar padding = foto semakin kecil */
-  padding: 75px;
-
+  padding: 35px;
   transition:
     opacity .9s ease,
     transform 1.1s var(--ease);
@@ -495,7 +477,6 @@ a {
 .category-card:hover .category-arrow {
   transform: translate(4px, -4px);
 }
-
 
 /* =========================
    ABOUT
@@ -592,7 +573,6 @@ a {
   letter-spacing: .08em;
 }
 
-
 /* =========================
    CONTACT
 ========================= */
@@ -654,7 +634,6 @@ a {
   font-weight: 500;
 }
 
-
 /* =========================
    FOOTER
 ========================= */
@@ -679,7 +658,6 @@ a {
 .site-footer div:last-child {
   text-align: right;
 }
-
 
 /* =========================
    MODAL
@@ -761,7 +739,6 @@ a {
   background: rgba(255,255,255,.1);
 }
 
-
 /* =========================
    CATEGORY MODAL
 ========================= */
@@ -793,17 +770,12 @@ a {
   border-top: 1px solid var(--line);
 }
 
-
-/* =========================
-   PROJECT ITEM
-========================= */
-
 .project-item {
   display: grid;
-  grid-template-columns: 90px 1fr auto;
+  grid-template-columns: 110px 1fr auto;
   align-items: center;
-  min-height: 100px;
-  padding: 15px 22px;
+  min-height: 110px;
+  padding: 18px 22px;
   border: 0;
   background: #101010;
   color: #fff;
@@ -816,16 +788,10 @@ a {
   background: #181818;
 }
 
-
-/* THUMBNAIL PROJECT DIPERKECIL */
-
 .project-thumb {
-  width: 58px;
-  height: 58px;
-
-  /* Foto utuh, tidak dipotong */
-  object-fit: contain;
-
+  width: 80px;
+  height: 72px;
+  object-fit: cover;
   background: #1b1b1b;
 }
 
@@ -852,7 +818,6 @@ a {
   font-size: 14px;
 }
 
-
 /* =========================
    GALLERY
 ========================= */
@@ -862,44 +827,72 @@ a {
 }
 
 .gallery-panel {
-  width: min(1380px, calc(100% - 30px));
-  max-height: calc(100svh - 30px);
+  width: min(1200px, calc(100% - 60px));
+  max-height: calc(100svh - 60px);
   overflow: hidden;
 }
+
+/*
+  GALLERY DIPERKECIL
+  Foto tidak lagi memenuhi hampir seluruh layar.
+*/
 
 .gallery-topbar {
   position: relative;
   z-index: 3;
+  padding: 15px 20px;
 }
 
 .gallery-topbar h2 {
   margin: 5px 0 0;
-  font-size: 19px;
+  font-size: 18px;
   font-weight: 500;
 }
 
 .gallery-stage {
   position: relative;
   display: grid;
-  grid-template-columns: 70px 1fr 70px;
+  grid-template-columns: 60px minmax(0, 1fr) 60px;
   align-items: center;
-  min-height: min(70vh, 720px);
+
+  /*
+    Tinggi area foto dibuat lebih kecil
+  */
+  min-height: 500px;
+  height: min(58vh, 560px);
+
   background: #050505;
 }
 
 .gallery-image-wrap {
   width: 100%;
-  height: min(70vh, 720px);
+  height: 100%;
+
+  /*
+    Padding lebih besar supaya foto tidak mentok
+  */
   display: grid;
   place-items: center;
-  padding: 20px;
+  padding: 35px 60px;
+  overflow: hidden;
 }
 
 .gallery-image-wrap img {
   display: block;
-  width: 100%;
-  height: 100%;
+
+  /*
+    KUNCI UTAMA:
+    Foto dibatasi ukurannya, bukan dipaksa
+    memenuhi seluruh container.
+  */
+  width: auto;
+  height: auto;
+
+  max-width: 100%;
+  max-height: 100%;
+
   object-fit: contain;
+
   user-select: none;
 }
 
@@ -907,8 +900,8 @@ a {
   position: relative;
   z-index: 2;
   display: grid;
-  width: 48px;
-  height: 48px;
+  width: 46px;
+  height: 46px;
   place-items: center;
   margin: auto;
   padding: 0;
@@ -937,8 +930,8 @@ a {
   align-items: end;
   justify-content: space-between;
   gap: 20px;
-  min-height: 76px;
-  padding: 15px 22px;
+  min-height: 70px;
+  padding: 14px 20px;
   border-top: 1px solid var(--line);
 }
 
@@ -947,7 +940,6 @@ a {
   color: #999;
   font-size: 12px;
 }
-
 
 /* =========================
    TABLET
@@ -982,13 +974,18 @@ a {
     grid-template-columns: 1fr;
   }
 
-  /* Tablet */
-  .category-image,
-  .category-image.next {
-    padding: 60px;
+  .gallery-panel {
+    width: min(1100px, calc(100% - 40px));
+  }
+
+  .gallery-stage {
+    height: min(58vh, 520px);
+  }
+
+  .gallery-image-wrap {
+    padding: 30px 45px;
   }
 }
-
 
 /* =========================
    MOBILE
@@ -1105,15 +1102,6 @@ a {
     aspect-ratio: 3 / 4;
   }
 
-
-  /* FOTO KATEGORI MOBILE */
-
-  .category-image,
-  .category-image.next {
-    padding: 65px;
-  }
-
-
   .about-layout {
     grid-template-columns: 90px 1fr;
     gap: 22px;
@@ -1160,9 +1148,6 @@ a {
     text-align: left;
   }
 
-
-  /* CATEGORY MODAL MOBILE */
-
   .category-modal-panel {
     width: calc(100% - 20px);
     max-height: calc(100svh - 20px);
@@ -1172,46 +1157,53 @@ a {
     padding: 38px 18px 28px;
   }
 
-
-  /* PROJECT ITEM MOBILE */
-
   .project-item {
     grid-template-columns: 72px 1fr auto;
-    min-height: 90px;
+    min-height: 94px;
     padding: 12px 15px;
   }
 
   .project-thumb {
-    width: 54px;
-    height: 54px;
-    object-fit: contain;
+    width: 58px;
+    height: 62px;
   }
 
-
-  /* GALLERY MOBILE */
+  /*
+    MOBILE GALLERY
+  */
 
   .gallery-panel {
-    width: calc(100% - 10px);
-    max-height: calc(100svh - 10px);
+    width: calc(100% - 14px);
+    max-height: calc(100svh - 14px);
   }
 
   .gallery-stage {
-    grid-template-columns: 46px 1fr 46px;
-    min-height: 62vh;
+    grid-template-columns: 42px minmax(0, 1fr) 42px;
+
+    /*
+      Tidak terlalu tinggi di HP
+    */
+    min-height: 420px;
+    height: 55vh;
   }
 
   .gallery-image-wrap {
-    height: 62vh;
-    padding: 8px;
+    height: 100%;
+    padding: 20px 10px;
+  }
+
+  .gallery-image-wrap img {
+    max-width: 100%;
+    max-height: 100%;
   }
 
   .gallery-arrow {
-    width: 38px;
-    height: 38px;
+    width: 36px;
+    height: 36px;
   }
 
   .gallery-caption {
-    min-height: 84px;
+    min-height: 78px;
     padding: 12px 15px;
   }
 
@@ -1219,7 +1211,6 @@ a {
     display: none;
   }
 }
-
 
 /* =========================
    REDUCED MOTION
