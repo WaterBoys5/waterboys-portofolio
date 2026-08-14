@@ -1,140 +1,134 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Portfolio fotografi dan videografi — Weteerbreh / Waterboys Work.">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Weteerbreh — Photography & Videography</title>
+  
+  <!-- Pastikan path CSS ini bener ke folder lu -->
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-  <div class="liquid-bg" aria-hidden="true">
-    <span class="blob blob-a"></span>
-    <span class="blob blob-b"></span>
-    <span class="blob blob-c"></span>
-    <span class="blob blob-d"></span>
+
+  <!-- BACKGROUND EFFECT -->
+  <div class="liquid-bg">
+    <div class="blob blob-a"></div>
+    <div class="blob blob-b"></div>
+    <div class="blob blob-c"></div>
+    <div class="blob blob-d"></div>
     <div class="glass-noise"></div>
   </div>
 
+  <!-- HEADER / NAVBAR -->
   <header class="site-header">
-    <a class="brand" href="#home" aria-label="Weteerbreh home">
-      <span class="brand-mark">W</span>
-      <span>WETEERBREH</span>
-    </a>
+    <div class="brand">
+      <div class="brand-mark">W</div>
+      WETEERBREH
+    </div>
     <nav>
       <a href="#work">Work</a>
       <a href="#about">About</a>
       <a href="#contact">Contact</a>
+      <a href="#" class="nav-cta">Let's work</a>
     </nav>
-    <a class="nav-cta" href="#contact">Let's work</a>
   </header>
 
-  <main id="home">
+  <!-- MAIN SECTION -->
+  <main>
+    
+    <!-- HERO SECTION (ATAS) -->
     <section class="hero section">
-      <div class="hero-copy">
-        <p class="eyebrow">PHOTOGRAPHY · VIDEOGRAPHY · CREATIVE</p>
+      
+      <!-- KIRI: JUDUL UTAMA -->
+      <div class="hero-left">
+        <p class="eyebrow">PHOTOGRAPHY • VIDEOGRAPHY • CREATIVE</p>
         <h1>Visual stories,<br><span>made with intention.</span></h1>
-        <p class="hero-text">
-          Portfolio fotografi dan videografi untuk campaign, brand, product,
-          event, dan creative project.
-        </p>
+        <p class="hero-text">Portfolio fotografi dan videografi untuk campaign, brand, product, event, dan creative project.</p>
         <div class="hero-actions">
-          <a class="button button-light" href="#work">View selected work <span>↘</span></a>
-          <a class="text-link" href="mailto:waterboys.work@gmail.com">waterboys.work@gmail.com</a>
+          <a href="#work" class="button button-light">View selected work ↘</a>
+          <a href="mailto:waterboys.work@gmail.com" class="text-link">waterboys.work@gmail.com</a>
         </div>
       </div>
-      <div class="hero-card glass-card">
-        <div class="hero-card-top">
-          <span>AVAILABLE FOR</span>
-          <span>2026</span>
-        </div>
-        <div class="hero-card-image">
-          <div class="hero-placeholder">
-            <span>YOUR<br>IMAGE</span>
-            <small>Replace this with your best work</small>
+
+      <!-- KANAN: FOTO PROFIL & TENTANG SAYA -->
+      <div class="hero-right">
+        
+        <!-- INI DIA STRUKTUR FOTO YANG BENER BIAR KECIL -->
+        <div class="hero-profile">
+          
+          <!-- BUNGKUS KARTU FOTO -->
+          <div class="hero-card glass-card">
+            <div class="hero-card-image">
+              <!-- LU TINGGAL GANTI NAMA FILE FOTO NYENGIR LU DI SINI ↓↓↓ -->
+              <img src="foto-nyengir-lu.jpg" alt="Foto Weteerbreh">
+            </div>
           </div>
+
+          <!-- TEKS DI SAMPING KANAN FOTO -->
+          <div class="hero-profile-info">
+            <h3>Tentang Saya</h3>
+            <p>Halo! Saya Weteerbreh. Saya seorang fotografer dan videografer yang menyukai pencahayaan studio dan mendongeng secara visual. Saya berspesialisasi dalam membuat potret yang menarik dan visual sinematik yang menangkap esensi subjek saya.</p>
+          </div>
+          
         </div>
-        <div class="hero-card-bottom">
-          <span>PHOTO / VIDEO</span>
-          <span>INDONESIA</span>
-        </div>
+        
       </div>
     </section>
 
-    <section id="work" class="section work-section">
+    <!-- SECTION PROJECTS (BAWAH) -->
+    <section id="work" class="work-section section">
       <div class="section-heading">
-        <div>
-          <p class="eyebrow">SELECTED WORK</p>
-          <h2>Projects</h2>
-        </div>
+        <h2>Projects</h2>
         <p class="section-note">A selection of photography & videography projects.</p>
       </div>
-      <div id="project-grid" class="project-grid"></div>
-    </section>
-
-<section id="about" class="section about-section">
-
-  <div class="about-photo">
-    <img 
-      src="assets/images/profile.jpg" 
-      alt="Zulkarnain aka Waterboys"
-    >
-  </div>
-
-  <div class="about-content">
-
-    <p class="eyebrow">ABOUT ME</p>
-
-    <h2>
-      Zulkarnain
-      <span>aka Waterboys</span>
-    </h2>
-
-    <p class="about-role">
-      Junior Art Director · Photographer · Videographer
-    </p>
-
-    <p class="about-description">
-      Saya adalah fotografer dan videografer yang berbasis di Depok,
-      dengan fokus pada fashion, product, dan event photography.
-      Saya tertarik pada visual yang punya karakter dan mampu
-      menyampaikan sebuah cerita.
-    </p>
-
-    <div class="about-skills">
-      <span>Photography</span>
-      <span>Videography</span>
-      <span>Fashion</span>
-      <span>Product</span>
-      <span>Event</span>
-    </div>
-
-  </div>
-
-</section>
-
-    <section id="contact" class="section contact-section">
-      <div>
-        <p class="eyebrow">GET IN TOUCH</p>
-        <h2>Have a project<br><span>in mind?</span></h2>
-      </div>
-      <div class="contact-panel glass-card">
-        <p>For photography, videography, campaign, or creative collaborations:</p>
-        <a class="contact-email" href="mailto:waterboys.work@gmail.com">waterboys.work@gmail.com</a>
-        <div class="contact-links">
-          <a href="https://www.instagram.com/weteerbreh/" target="_blank" rel="noopener">Instagram ↗</a>
-          <a id="behance-link" href="#" target="_blank" rel="noopener">Behance ↗</a>
+      
+      <div id="project-grid">
+        
+        <!-- KARTU 1 -->
+        <div class="category-card">
+          <!-- Ganti URL gambar background-nya -->
+          <div class="category-image" style="background-image: url('gambar-stage-lu.jpg');"></div>
+          <div class="category-overlay">
+            <p class="category-number">01</p>
+            <div>
+              <h3 class="category-title">STAGE PHOTOGRAPHY</h3>
+              <p class="category-description">Live performances, concerts, and stage documentation.</p>
+            </div>
+            <div class="category-arrow">↗</div>
+          </div>
         </div>
+
+        <!-- KARTU 2 -->
+        <div class="category-card">
+          <!-- Ganti URL gambar background-nya -->
+          <div class="category-image" style="background-image: url('gambar-product-lu.jpg');"></div>
+          <div class="category-overlay">
+            <p class="category-number">02</p>
+            <div>
+              <h3 class="category-title">PRODUCT PHOTOGRAPHY</h3>
+              <p class="category-description">Commercial product photography, still life, and brand visuals.</p>
+            </div>
+            <div class="category-arrow">↗</div>
+          </div>
+        </div>
+
+        <!-- KARTU 3 -->
+        <div class="category-card">
+          <!-- Ganti URL gambar background-nya -->
+          <div class="category-image" style="background-image: url('gambar-portrait-lu.jpg');"></div>
+          <div class="category-overlay">
+            <p class="category-number">03</p>
+            <div>
+              <h3 class="category-title">PORTRAIT / FASHION</h3>
+              <p class="category-description">Portraits, fashion editorials, artist profiles, and creative campaigns.</p>
+            </div>
+            <div class="category-arrow">↗</div>
+          </div>
+        </div>
+
       </div>
     </section>
+
   </main>
-
-<footer class="site-footer">
-  <span>© <span id="year"></span> Weteerbreh / Waterboys Work</span>
-  <span>Photography · Videography</span>
-</footer>
-
-<script src="assets/js/projects.js?v=10"></script>
-<script src="assets/js/main.js?v=10"></script>
 </body>
 </html>
