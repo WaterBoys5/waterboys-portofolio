@@ -1,325 +1,304 @@
-/* =================================
-   WATERBOYS PORTFOLIO
-================================= */
+document.addEventListener("DOMContentLoaded", () => {
+
+    const categoryCards =
+        document.querySelectorAll(".category-card");
+
+    const workSection =
+        document.querySelector(".work-section");
+
+    const projectView =
+        document.querySelector("#project-view");
+
+    const projectGrid =
+        document.querySelector("#project-grid");
+
+    const projectTitle =
+        document.querySelector("#project-category-title");
+
+    const projectLabel =
+        document.querySelector("#project-category-label");
+
+    const backButton =
+        document.querySelector("#back-button");
 
 
-/*
-  =================================================
-  EDIT FOTO DI SINI
-  =================================================
+    /*
+    ========================================
+    PROJECT DATA
+    ========================================
+    */
 
-  Struktur folder:
+    const PROJECTS = {
 
-  assets/images/
-  ├── documentation/
-  ├── portrait-commercial/
-  └── product/
+        documentation: [
 
-  Tinggal masukkan nama file foto yang sebenarnya.
-*/
+            {
+                title: "Stereo Wall",
+                description: "Live performance documentation.",
+                image: "assets/images/documentation/stage-01.jpg"
+            },
+
+            {
+                title: "Stereo Wall",
+                description: "Concert and stage documentation.",
+                image: "assets/images/documentation/stage-02.jpg"
+            }
+
+        ],
 
 
-const PROJECTS = {
+        "portrait-commercial": [
 
-  documentation: [
+            {
+                title: "Peron Long Sleeve",
+                description: "Commercial portrait campaign.",
+                image:
+                    "assets/images/portrait-commercial/peron-long-sleeve-01.jpg"
+            },
 
-    {
-      title: "DOCUMENTATION 01",
-      year: "2026",
-      image: "assets/images/documentation/documentation-01.jpg"
-    },
+            {
+                title: "Vishgazine",
+                description: "Commercial portrait campaign.",
+                image:
+                    "assets/images/portrait-commercial/vishgazine-01.jpg"
+            },
 
-    {
-      title: "DOCUMENTATION 02",
-      year: "2026",
-      image: "assets/images/documentation/documentation-02.jpg"
+            {
+                title: "WKA × Simpati",
+                description: "Commercial campaign.",
+                image:
+                    "assets/images/portrait-commercial/wka-simpati-01.jpg"
+            }
+
+        ],
+
+
+        product: [
+
+            {
+                title: "Product Campaign",
+                description: "Commercial product photography.",
+                image:
+                    "assets/images/product/product-01.jpg"
+            },
+
+            {
+                title: "Product Catalog",
+                description: "Studio product photography.",
+                image:
+                    "assets/images/product/product-02.jpg"
+            }
+
+        ]
+
+    };
+
+
+    /*
+    ========================================
+    OPEN CATEGORY
+    ========================================
+    */
+
+    categoryCards.forEach(card => {
+
+        card.addEventListener("click", () => {
+
+            const category =
+                card.dataset.category;
+
+            openCategory(category);
+
+        });
+
+    });
+
+
+    function openCategory(category) {
+
+        const projects =
+            PROJECTS[category];
+
+        if (!projects) return;
+
+
+        let readableName =
+            category
+                .replaceAll("-", " ")
+                .toUpperCase();
+
+
+        projectTitle.textContent =
+            readableName;
+
+        projectLabel.textContent =
+            "SELECTED PROJECTS";
+
+
+        projectGrid.innerHTML = "";
+
+
+        projects.forEach(project => {
+
+            const card =
+                document.createElement("article");
+
+            card.className =
+                "project-card";
+
+
+            card.innerHTML = `
+
+                <div class="project-card-image">
+
+                    <img
+                        src="${project.image}"
+                        alt="${project.title}"
+                    >
+
+                </div>
+
+                <div class="project-card-title">
+
+                    <h3>
+                        ${project.title}
+                    </h3>
+
+                    <p>
+                        ${project.description}
+                    </p>
+
+                </div>
+
+            `;
+
+
+            card.addEventListener(
+                "click",
+                () => {
+
+                    openImage(
+                        project.image,
+                        project.title
+                    );
+
+                }
+            );
+
+
+            projectGrid.appendChild(card);
+
+        });
+
+
+        workSection.style.display =
+            "none";
+
+        projectView.classList.remove(
+            "hidden"
+        );
+
+
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+
     }
 
-  ],
 
+    /*
+    ========================================
+    BACK
+    ========================================
+    */
 
-  portrait: [
+    backButton.addEventListener(
+        "click",
+        () => {
 
-    {
-      title: "PERON LONG SLEEVE",
-      year: "2026",
-      image: "assets/images/portrait-commercial/peron-long-sleeve-01.jpg"
-    },
+            projectView.classList.add(
+                "hidden"
+            );
 
-    {
-      title: "WKA X SIMPATI",
-      year: "2026",
-      image: "assets/images/portrait-commercial/wka-simpati-01.jpg"
-    },
+            workSection.style.display =
+                "";
 
-    {
-      title: "VISHGAZINE",
-      year: "2026",
-      image: "assets/images/portrait-commercial/vishgazine-01.jpg"
-    }
+            workSection.scrollIntoView({
+                behavior: "smooth"
+            });
 
-  ],
-
-
-  product: [
-
-    {
-      title: "PRODUCT 01",
-      year: "2026",
-      image: "assets/images/product/product-01.jpg"
-    },
-
-    {
-      title: "PRODUCT 02",
-      year: "2026",
-      image: "assets/images/product/product-02.jpg"
-    }
-
-  ]
-
-};
-
-
-
-/* =================================
-   CREATE PROJECT CARD
-================================= */
-
-function createProjectCard(project) {
-
-  const card = document.createElement("a");
-
-  card.href = "#";
-
-  card.className = "project-card";
-
-
-  card.innerHTML = `
-
-    <div class="project-image">
-
-      <img
-        src="${project.image}"
-        alt="${project.title}"
-        loading="lazy"
-      >
-
-    </div>
-
-
-    <div class="project-meta">
-
-      <h4>
-        ${project.title}
-      </h4>
-
-      <span>
-        ${project.year}
-      </span>
-
-    </div>
-
-  `;
-
-
-  card.addEventListener("click", function(event) {
-
-    event.preventDefault();
-
-    openLightbox(
-      project.image,
-      project.title
+        }
     );
 
-  });
+
+    /*
+    ========================================
+    IMAGE VIEWER
+    ========================================
+    */
+
+    function openImage(image, title) {
+
+        const viewer =
+            document.createElement("div");
+
+        viewer.className =
+            "image-viewer";
 
 
-  return card;
+        viewer.innerHTML = `
 
-}
+            <button class="viewer-close">
+                ×
+            </button>
 
+            <img
+                src="${image}"
+                alt="${title}"
+            >
 
-
-/* =================================
-   LOAD PROJECTS
-================================= */
-
-function loadProjects() {
-
-  const documentationGrid =
-    document.getElementById(
-      "documentation-grid"
-    );
+        `;
 
 
-  const portraitGrid =
-    document.getElementById(
-      "portrait-grid"
-    );
+        document.body.appendChild(viewer);
+
+        document.body.style.overflow =
+            "hidden";
 
 
-  const productGrid =
-    document.getElementById(
-      "product-grid"
-    );
+        const close =
+            () => {
+
+                viewer.remove();
+
+                document.body.style.overflow =
+                    "";
+
+            };
 
 
-  PROJECTS.documentation.forEach(
-    function(project) {
-
-      documentationGrid.appendChild(
-        createProjectCard(project)
-      );
-
-    }
-  );
+        viewer
+            .querySelector(".viewer-close")
+            .addEventListener(
+                "click",
+                close
+            );
 
 
-  PROJECTS.portrait.forEach(
-    function(project) {
+        viewer.addEventListener(
+            "click",
+            event => {
 
-      portraitGrid.appendChild(
-        createProjectCard(project)
-      );
+                if (
+                    event.target === viewer
+                ) {
+                    close();
+                }
 
-    }
-  );
-
-
-  PROJECTS.product.forEach(
-    function(project) {
-
-      productGrid.appendChild(
-        createProjectCard(project)
-      );
-
-    }
-  );
-
-}
-
-
-
-/* =================================
-   LIGHTBOX
-================================= */
-
-const lightbox =
-  document.getElementById(
-    "lightbox"
-  );
-
-
-const lightboxImage =
-  document.getElementById(
-    "lightbox-image"
-  );
-
-
-const lightboxTitle =
-  document.getElementById(
-    "lightbox-title"
-  );
-
-
-const lightboxClose =
-  document.getElementById(
-    "lightbox-close"
-  );
-
-
-
-function openLightbox(
-  image,
-  title
-) {
-
-  lightboxImage.src = image;
-
-  lightboxImage.alt = title;
-
-  lightboxTitle.textContent = title;
-
-  lightbox.classList.add(
-    "active"
-  );
-
-  document.body.style.overflow =
-    "hidden";
-
-}
-
-
-
-function closeLightbox() {
-
-  lightbox.classList.remove(
-    "active"
-  );
-
-  document.body.style.overflow =
-    "";
-
-}
-
-
-
-/* CLOSE BUTTON */
-
-lightboxClose.addEventListener(
-  "click",
-  closeLightbox
-);
-
-
-
-/* CLICK OUTSIDE IMAGE */
-
-lightbox.addEventListener(
-  "click",
-  function(event) {
-
-    if (
-      event.target === lightbox
-    ) {
-
-      closeLightbox();
+            }
+        );
 
     }
 
-  }
-);
-
-
-
-/* ESC KEY */
-
-document.addEventListener(
-  "keydown",
-  function(event) {
-
-    if (
-      event.key === "Escape"
-    ) {
-
-      closeLightbox();
-
-    }
-
-  }
-);
-
-
-
-/* =================================
-   START
-================================= */
-
-document.addEventListener(
-  "DOMContentLoaded",
-  function() {
-
-    loadProjects();
-
-  }
-);
+});
