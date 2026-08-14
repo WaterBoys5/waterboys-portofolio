@@ -460,68 +460,41 @@ nav a:hover,
 
 .glass-card {
   background: var(--glass);
-
   border: 1px solid var(--line);
-
-  border-radius: var(--radius);
-
+  border-radius: var(--radius); /* Balikin ke radius awal (24px) biar ujungnya melengkung smooth */
   box-shadow:
     0 25px 80px rgba(0, 0, 0, 0.3),
     inset 0 1px 0 rgba(255, 255, 255, 0.06);
-
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
 }
 
 .hero-card {
-  flex: 0 0 95px;
-
-  width: 95px;
-
-  max-width: 95px;
-
-  padding: 5px;
-
-  transform: rotate(2deg);
+  flex: 0 0 150px; /* Ukuran lebar fotonya, bisa lu sesuaikan kalau masih kegedean/kekecilan */
+  width: 150px;
+  max-width: 150px;
+  padding: 6px;
 }
 
 .hero-card-top,
 .hero-card-bottom {
-  display: flex;
-
-  justify-content: space-between;
-
-  padding: 6px 4px;
-
-  color: #888;
-
-  font-family: "DM Mono", monospace;
-
-  font-size: 7px;
+  display: none;
 }
 
 .hero-card-image {
   width: 100%;
-
-  aspect-ratio: 3 / 4;
-
+  aspect-ratio: 3 / 4; /* Ini yang bikin bentuknya persegi panjang (portrait) kayak kartu lu */
   overflow: hidden;
-
-  border-radius: 9px;
-
+  border-radius: 18px; /* Lengkungan buat foto di bagian dalam, ngikutin wadah luarnya */
   background: #111;
 }
 
 .hero-card-image img {
   width: 100%;
   height: 100%;
-
   display: block;
-
   object-fit: cover;
 }
-
-
 /* =========================================================
    PROFILE INFORMATION
    ZULKARNAIN DLL
