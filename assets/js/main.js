@@ -23,9 +23,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /*
-    ========================================
+    ==========================================
     PROJECT DATA
-    ========================================
+    ==========================================
     */
 
     const PROJECTS = {
@@ -35,13 +35,22 @@ document.addEventListener("DOMContentLoaded", () => {
             {
                 title: "Stereo Wall",
                 description: "Live performance documentation.",
-                image: "assets/images/documentation/stage-01.jpg"
-            },
-
-            {
-                title: "Stereo Wall",
-                description: "Concert and stage documentation.",
-                image: "assets/images/documentation/stage-02.jpg"
+                images: [
+                    "assets/images/documentation/stereo-wall-01.jpg",
+                    "assets/images/documentation/stereo-wall-02.jpg",
+                    "assets/images/documentation/stereo-wall-03.jpg",
+                    "assets/images/documentation/stereo-wall-04.jpg",
+                    "assets/images/documentation/stereo-wall-05.jpg",
+                    "assets/images/documentation/stereo-wall-06.jpg",
+                    "assets/images/documentation/stereo-wall-07.jpg",
+                    "assets/images/documentation/stereo-wall-08.jpg",
+                    "assets/images/documentation/stereo-wall-09.jpg",
+                    "assets/images/documentation/stereo-wall-10.jpg",
+                    "assets/images/documentation/stereo-wall-11.jpg",
+                    "assets/images/documentation/stereo-wall-12.jpg",
+                    "assets/images/documentation/stereo-wall-13.jpg",
+                    "assets/images/documentation/stereo-wall-14.jpg"
+                ]
             }
 
         ],
@@ -52,22 +61,46 @@ document.addEventListener("DOMContentLoaded", () => {
             {
                 title: "Peron Long Sleeve",
                 description: "Commercial portrait campaign.",
-                image:
-                    "assets/images/portrait-commercial/peron-long-sleeve-01.jpg"
+                images: [
+                    "assets/images/portrait-commercial/peron-long-sleeve-01.jpg",
+                    "assets/images/portrait-commercial/peron-long-sleeve-02.jpg",
+                    "assets/images/portrait-commercial/peron-long-sleeve-03.jpg",
+                    "assets/images/portrait-commercial/peron-long-sleeve-04.jpg",
+                    "assets/images/portrait-commercial/peron-long-sleeve-05.jpg"
+                ]
             },
 
             {
                 title: "Vishgazine",
                 description: "Commercial portrait campaign.",
-                image:
-                    "assets/images/portrait-commercial/vishgazine-01.jpg"
+                images: [
+                    "assets/images/portrait-commercial/vishgazine-01.jpg",
+                    "assets/images/portrait-commercial/vishgazine-02.jpg",
+                    "assets/images/portrait-commercial/vishgazine-03.jpg",
+                    "assets/images/portrait-commercial/vishgazine-04.jpg",
+                    "assets/images/portrait-commercial/vishgazine-05.jpg",
+                    "assets/images/portrait-commercial/vishgazine-06.jpg",
+                    "assets/images/portrait-commercial/vishgazine-07.jpg",
+                    "assets/images/portrait-commercial/vishgazine-08.jpg",
+                    "assets/images/portrait-commercial/vishgazine-09.jpg"
+                ]
             },
 
             {
                 title: "WKA × Simpati",
                 description: "Commercial campaign.",
-                image:
-                    "assets/images/portrait-commercial/wka-simpati-01.jpg"
+                images: [
+                    "assets/images/portrait-commercial/wka-simpati-01.jpg",
+                    "assets/images/portrait-commercial/wka-simpati-02.jpg",
+                    "assets/images/portrait-commercial/wka-simpati-03.jpg",
+                    "assets/images/portrait-commercial/wka-simpati-04.jpg",
+                    "assets/images/portrait-commercial/wka-simpati-05.jpg",
+                    "assets/images/portrait-commercial/wka-simpati-06.jpg",
+                    "assets/images/portrait-commercial/wka-simpati-07.jpg",
+                    "assets/images/portrait-commercial/wka-simpati-08.jpg",
+                    "assets/images/portrait-commercial/wka-simpati-09.jpg",
+                    "assets/images/portrait-commercial/wka-simpati-10.jpg"
+                ]
             }
 
         ],
@@ -76,17 +109,30 @@ document.addEventListener("DOMContentLoaded", () => {
         product: [
 
             {
-                title: "Product Campaign",
-                description: "Commercial product photography.",
-                image:
-                    "assets/images/product/product-01.jpg"
+                title: "LV Wallet",
+                description: "Luxury product photography.",
+                images: [
+                    "assets/images/product/lv-wallet-01.jpg",
+                    "assets/images/product/lv-wallet-02.jpg",
+                    "assets/images/product/lv-wallet-03.jpg",
+                    "assets/images/product/lv-wallet-04.jpg"
+                ]
             },
 
             {
-                title: "Product Catalog",
-                description: "Studio product photography.",
-                image:
-                    "assets/images/product/product-02.jpg"
+                title: "TITANS",
+                description: "Commercial product campaign.",
+                images: [
+                    "assets/images/product/titans-01.jpg",
+                    "assets/images/product/titans-02.jpg",
+                    "assets/images/product/titans-03.jpg",
+                    "assets/images/product/titans-04.jpg",
+                    "assets/images/product/titans-05.jpg",
+                    "assets/images/product/titans-06.jpg",
+                    "assets/images/product/titans-07.jpg",
+                    "assets/images/product/titans-08.jpg",
+                    "assets/images/product/titans-09.jpg"
+                ]
             }
 
         ]
@@ -95,9 +141,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /*
-    ========================================
-    OPEN CATEGORY
-    ========================================
+    ==========================================
+    CATEGORY CLICK
+    ==========================================
     */
 
     categoryCards.forEach(card => {
@@ -114,6 +160,12 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 
+    /*
+    ==========================================
+    OPEN CATEGORY
+    ==========================================
+    */
+
     function openCategory(category) {
 
         const projects =
@@ -122,7 +174,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (!projects) return;
 
 
-        let readableName =
+        const readableName =
             category
                 .replaceAll("-", " ")
                 .toUpperCase();
@@ -138,6 +190,10 @@ document.addEventListener("DOMContentLoaded", () => {
         projectGrid.innerHTML = "";
 
 
+        /*
+        CREATE PROJECT CARDS
+        */
+
         projects.forEach(project => {
 
             const card =
@@ -147,18 +203,35 @@ document.addEventListener("DOMContentLoaded", () => {
                 "project-card";
 
 
+            /*
+            FIRST IMAGE = THUMBNAIL
+            */
+
+            const thumbnail =
+                project.images[0];
+
+
             card.innerHTML = `
 
                 <div class="project-card-image">
 
                     <img
-                        src="${project.image}"
+                        src="${thumbnail}"
                         alt="${project.title}"
+                        loading="lazy"
                     >
+
+                    <div class="project-card-overlay">
+
+                        <span>
+                            ${project.images.length} IMAGES
+                        </span>
+
+                    </div>
 
                 </div>
 
-                <div class="project-card-title">
+                <div class="project-card-info">
 
                     <h3>
                         ${project.title}
@@ -173,13 +246,16 @@ document.addEventListener("DOMContentLoaded", () => {
             `;
 
 
+            /*
+            CLICK PROJECT
+            */
+
             card.addEventListener(
                 "click",
                 () => {
 
-                    openImage(
-                        project.image,
-                        project.title
+                    openProject(
+                        project
                     );
 
                 }
@@ -208,9 +284,189 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /*
-    ========================================
-    BACK
-    ========================================
+    ==========================================
+    OPEN PROJECT
+    ==========================================
+    */
+
+    function openProject(project) {
+
+        const viewer =
+            document.createElement("div");
+
+        viewer.className =
+            "project-viewer";
+
+
+        viewer.innerHTML = `
+
+            <div class="project-viewer-inner">
+
+                <button class="viewer-close">
+                    ×
+                </button>
+
+                <div class="viewer-heading">
+
+                    <p>
+                        PROJECT
+                    </p>
+
+                    <h2>
+                        ${project.title}
+                    </h2>
+
+                </div>
+
+                <div class="viewer-grid"></div>
+
+            </div>
+
+        `;
+
+
+        const viewerGrid =
+            viewer.querySelector(".viewer-grid");
+
+
+        /*
+        ADD ALL PROJECT IMAGES
+        */
+
+        project.images.forEach(
+            (image, index) => {
+
+                const imageCard =
+                    document.createElement("div");
+
+                imageCard.className =
+                    "viewer-image";
+
+
+                imageCard.innerHTML = `
+
+                    <img
+                        src="${image}"
+                        alt="${project.title} ${index + 1}"
+                        loading="lazy"
+                    >
+
+                `;
+
+
+                imageCard.addEventListener(
+                    "click",
+                    () => {
+
+                        openFullscreen(
+                            image
+                        );
+
+                    }
+                );
+
+
+                viewerGrid.appendChild(
+                    imageCard
+                );
+
+            }
+        );
+
+
+        document.body.appendChild(
+            viewer
+        );
+
+        document.body.style.overflow =
+            "hidden";
+
+
+        viewer
+            .querySelector(".viewer-close")
+            .addEventListener(
+                "click",
+                () => {
+
+                    viewer.remove();
+
+                    document.body.style.overflow =
+                        "";
+
+                }
+            );
+
+    }
+
+
+    /*
+    ==========================================
+    FULLSCREEN IMAGE
+    ==========================================
+    */
+
+    function openFullscreen(image) {
+
+        const fullscreen =
+            document.createElement("div");
+
+        fullscreen.className =
+            "fullscreen-viewer";
+
+
+        fullscreen.innerHTML = `
+
+            <button>
+                ×
+            </button>
+
+            <img
+                src="${image}"
+                alt=""
+            >
+
+        `;
+
+
+        document.body.appendChild(
+            fullscreen
+        );
+
+
+        fullscreen
+            .querySelector("button")
+            .addEventListener(
+                "click",
+                () => {
+
+                    fullscreen.remove();
+
+                }
+            );
+
+
+        fullscreen.addEventListener(
+            "click",
+            event => {
+
+                if (
+                    event.target === fullscreen
+                ) {
+
+                    fullscreen.remove();
+
+                }
+
+            }
+        );
+
+    }
+
+
+    /*
+    ==========================================
+    BACK BUTTON
+    ==========================================
     */
 
     backButton.addEventListener(
@@ -230,75 +486,5 @@ document.addEventListener("DOMContentLoaded", () => {
 
         }
     );
-
-
-    /*
-    ========================================
-    IMAGE VIEWER
-    ========================================
-    */
-
-    function openImage(image, title) {
-
-        const viewer =
-            document.createElement("div");
-
-        viewer.className =
-            "image-viewer";
-
-
-        viewer.innerHTML = `
-
-            <button class="viewer-close">
-                ×
-            </button>
-
-            <img
-                src="${image}"
-                alt="${title}"
-            >
-
-        `;
-
-
-        document.body.appendChild(viewer);
-
-        document.body.style.overflow =
-            "hidden";
-
-
-        const close =
-            () => {
-
-                viewer.remove();
-
-                document.body.style.overflow =
-                    "";
-
-            };
-
-
-        viewer
-            .querySelector(".viewer-close")
-            .addEventListener(
-                "click",
-                close
-            );
-
-
-        viewer.addEventListener(
-            "click",
-            event => {
-
-                if (
-                    event.target === viewer
-                ) {
-                    close();
-                }
-
-            }
-        );
-
-    }
 
 });
