@@ -11,24 +11,23 @@
 
 <body>
 
-    <!-- ABSTRACT BACKGROUND -->
-    <div class="abstract-bg">
-        <div class="shape shape-one"></div>
-        <div class="shape shape-two"></div>
-        <div class="shape shape-three"></div>
-        <div class="shape shape-four"></div>
+    <!-- ABSTRACT LIQUID GLASS BACKGROUND -->
+    <div class="background">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+        <div class="blob blob-4"></div>
     </div>
 
-    <!-- LIQUID GLASS -->
-    <div class="glass-layer"></div>
+    <div class="glass"></div>
 
 
-    <!-- NAVIGATION -->
+    <!-- NAVBAR -->
     <header class="navbar">
 
-        <div class="logo">
+        <a href="#" class="brand">
             WATERBOYS
-        </div>
+        </a>
 
         <nav>
             <a href="#work">WORK</a>
@@ -44,7 +43,7 @@
         <!-- HERO -->
         <section class="hero">
 
-            <div class="hero-inner">
+            <div class="hero-content">
 
                 <p class="eyebrow">
                     PHOTOGRAPHER / VIDEOGRAPHER
@@ -52,8 +51,11 @@
 
                 <h1>
                     ZULKARNAIN
-                    <span>WATERBOYS</span>
                 </h1>
+
+                <p class="hero-subtitle">
+                    WATERBOYS
+                </p>
 
                 <p class="hero-description">
                     Photography and visual storytelling across
@@ -61,7 +63,7 @@
                     and documentation projects.
                 </p>
 
-                <a href="#work" class="hero-button">
+                <a href="#work" class="pill-button">
                     EXPLORE WORK
                 </a>
 
@@ -73,20 +75,22 @@
         <!-- WORK -->
         <section id="work" class="work-section">
 
-            <div class="section-heading">
+            <div class="section-header">
 
-                <p class="eyebrow">
-                    SELECTED WORK
-                </p>
+                <div>
+                    <p class="eyebrow">
+                        SELECTED WORK
+                    </p>
 
-                <h2>
-                    CATEGORIES
-                </h2>
+                    <h2>
+                        CATEGORIES
+                    </h2>
+                </div>
 
             </div>
 
 
-            <!-- CATEGORY CATALOG -->
+            <!-- CATEGORY CARDS -->
             <div class="category-grid">
 
 
@@ -99,21 +103,24 @@
                     <div class="category-image">
 
                         <img
-                            src="assets/images/documentation/stage-01.jpg"
+                            src="assets/images/documentation/stereo-wall-01.jpg"
                             alt="Documentation"
                         >
 
-                        <div class="image-title">
+                        <div class="image-overlay"></div>
+
+                        <div class="image-heading">
+                            <span>01</span>
                             <h3>DOCUMENTATION</h3>
                         </div>
 
                     </div>
 
-                    <div class="category-description">
+                    <div class="category-info">
 
                         <p>
-                            Visual documentation of performances,
-                            events, concerts, and creative projects.
+                            Live performances, events,
+                            concerts, and creative documentation.
                         </p>
 
                     </div>
@@ -134,16 +141,19 @@
                             alt="Portrait Commercial"
                         >
 
-                        <div class="image-title">
+                        <div class="image-overlay"></div>
+
+                        <div class="image-heading">
+                            <span>02</span>
                             <h3>PORTRAIT COMMERCIAL</h3>
                         </div>
 
                     </div>
 
-                    <div class="category-description">
+                    <div class="category-info">
 
                         <p>
-                            Portrait and campaign photography
+                            Portraits and campaign imagery
                             created for brands and creative projects.
                         </p>
 
@@ -161,17 +171,20 @@
                     <div class="category-image">
 
                         <img
-                            src="assets/images/product/product-01.jpg"
+                            src="assets/images/product/lv-wallet-01.jpg"
                             alt="Product"
                         >
 
-                        <div class="image-title">
+                        <div class="image-overlay"></div>
+
+                        <div class="image-heading">
+                            <span>03</span>
                             <h3>PRODUCT</h3>
                         </div>
 
                     </div>
 
-                    <div class="category-description">
+                    <div class="category-info">
 
                         <p>
                             Product photography for catalogs,
@@ -201,13 +214,18 @@
                 </button>
 
                 <div>
-                    <p class="eyebrow" id="project-category-label">
-                        CATEGORY
+
+                    <p
+                        class="eyebrow"
+                        id="project-category-label"
+                    >
+                        SELECTED PROJECTS
                     </p>
 
                     <h2 id="project-category-title">
                         DOCUMENTATION
                     </h2>
+
                 </div>
 
             </div>
@@ -224,7 +242,7 @@
         <!-- ABOUT -->
         <section id="about" class="about-section">
 
-            <div class="section-heading">
+            <div class="section-header">
 
                 <p class="eyebrow">
                     ABOUT ME
@@ -241,17 +259,22 @@
 
                 <div class="about-photo">
 
-                    <img
-                        src="assets/images/profile.jpg"
-                        alt="Zulkarnain"
-                    >
+                    <!--
+                    BELUM ADA PROFILE DI ASSETS/IMAGES.
+                    Nanti kalau sudah upload:
+                    assets/images/profile.jpg
+                    -->
+
+                    <div class="profile-placeholder">
+                        <span>WATERBOYS</span>
+                    </div>
 
                 </div>
 
 
                 <div class="about-text">
 
-                    <p>
+                    <p class="about-lead">
                         I am Zulkarnain, a photography student
                         and freelance photographer based in Indonesia.
                     </p>
@@ -296,6 +319,7 @@
                 <a
                     href="https://www.instagram.com/"
                     target="_blank"
+                    rel="noopener"
                 >
                     INSTAGRAM
                 </a>
@@ -303,6 +327,7 @@
                 <a
                     href="https://www.behance.net/waterboys1"
                     target="_blank"
+                    rel="noopener"
                 >
                     BEHANCE
                 </a>
