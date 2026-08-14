@@ -14,13 +14,14 @@ html {
 
 body {
     background: #050505;
-    color: #f5f5f5;
-    font-family:
-        Arial,
-        Helvetica,
-        sans-serif;
-
+    color: #ffffff;
+    font-family: Arial, Helvetica, sans-serif;
     overflow-x: hidden;
+}
+
+button,
+a {
+    -webkit-tap-highlight-color: transparent;
 }
 
 
@@ -39,14 +40,40 @@ body {
     background: #050505;
 }
 
+.background::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background:
+        radial-gradient(
+            circle at 15% 20%,
+            rgba(255,255,255,0.08),
+            transparent 28%
+        ),
+        radial-gradient(
+            circle at 85% 35%,
+            rgba(255,255,255,0.05),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 50% 85%,
+            rgba(255,255,255,0.045),
+            transparent 30%
+        );
+
+    opacity: 0.55;
+}
+
 .blob {
     position: absolute;
 
     border-radius: 50%;
 
-    filter: blur(110px);
+    filter: blur(120px);
 
-    opacity: 0.16;
+    opacity: 0.13;
 
     pointer-events: none;
 }
@@ -58,37 +85,37 @@ body {
     background: #ffffff;
 
     top: -30%;
-    left: -15%;
+    left: -20%;
 }
 
 .blob-2 {
-    width: 45vw;
-    height: 45vw;
+    width: 48vw;
+    height: 48vw;
 
-    background: #777777;
+    background: #888888;
 
-    top: 25%;
-    right: -20%;
+    top: 20%;
+    right: -25%;
 }
 
 .blob-3 {
-    width: 50vw;
-    height: 50vw;
+    width: 55vw;
+    height: 55vw;
 
     background: #ffffff;
 
-    bottom: -30%;
-    left: 10%;
+    bottom: -35%;
+    left: 5%;
 }
 
 .blob-4 {
     width: 30vw;
     height: 30vw;
 
-    background: #555555;
+    background: #666666;
 
-    top: 50%;
-    left: 45%;
+    top: 45%;
+    left: 40%;
 }
 
 
@@ -98,7 +125,6 @@ body {
 
 .glass {
     position: fixed;
-
     inset: 0;
 
     z-index: -10;
@@ -108,13 +134,13 @@ body {
     background:
         linear-gradient(
             125deg,
-            rgba(255,255,255,0.055),
-            rgba(255,255,255,0.018),
-            rgba(255,255,255,0.045)
+            rgba(255,255,255,0.035),
+            rgba(255,255,255,0.012),
+            rgba(255,255,255,0.025)
         );
 
-    backdrop-filter: blur(28px);
-    -webkit-backdrop-filter: blur(28px);
+    backdrop-filter: blur(26px);
+    -webkit-backdrop-filter: blur(26px);
 }
 
 
@@ -125,21 +151,23 @@ body {
 .navbar {
     position: fixed;
 
-    top: 20px;
+    top: 18px;
     left: 50%;
 
     transform: translateX(-50%);
 
     width: min(1200px, calc(100% - 40px));
 
-    padding: 14px 20px;
+    min-height: 58px;
+
+    padding: 10px 20px;
 
     display: flex;
     align-items: center;
     justify-content: space-between;
 
     background:
-        rgba(15,15,15,0.48);
+        rgba(10,10,10,0.48);
 
     border:
         1px solid rgba(255,255,255,0.10);
@@ -150,37 +178,52 @@ body {
     -webkit-backdrop-filter: blur(22px);
 
     box-shadow:
-        0 15px 50px
-        rgba(0,0,0,0.25);
+        0 18px 55px rgba(0,0,0,0.28);
 
     z-index: 1000;
 }
 
+
+/* LOGO */
+
 .brand {
-    color: #fff;
+    display: flex;
+    align-items: center;
+
+    width: 95px;
+    height: 34px;
 
     text-decoration: none;
-
-    font-size: 11px;
-
-    font-weight: 800;
-
-    letter-spacing: 0.18em;
 }
+
+.brand img {
+    display: block;
+
+    width: auto;
+    height: 27px;
+
+    max-width: 95px;
+
+    object-fit: contain;
+}
+
+
+/* NAVIGATION */
 
 .navbar nav {
     display: flex;
+    align-items: center;
 
-    gap: 25px;
+    gap: 27px;
 }
 
 .navbar nav a {
-    color: rgba(255,255,255,0.58);
+    color:
+        rgba(255,255,255,0.55);
 
     text-decoration: none;
 
     font-size: 9px;
-
     font-weight: 600;
 
     letter-spacing: 0.15em;
@@ -190,7 +233,7 @@ body {
 }
 
 .navbar nav a:hover {
-    color: #fff;
+    color: #ffffff;
 }
 
 
@@ -207,7 +250,8 @@ body {
 }
 
 .eyebrow {
-    color: rgba(255,255,255,0.42);
+    color:
+        rgba(255,255,255,0.40);
 
     font-size: 9px;
 
@@ -224,7 +268,7 @@ body {
 .hero {
     min-height: 100vh;
 
-    width: min(1400px, 90%);
+    width: min(1300px, 90%);
 
     margin: auto;
 
@@ -238,45 +282,45 @@ body {
 }
 
 .hero-content {
-    max-width: 850px;
+    max-width: 820px;
 }
 
 .hero h1 {
     margin-top: 18px;
 
     font-size:
-        clamp(58px, 9.5vw, 135px);
+        clamp(52px, 7.8vw, 110px);
 
-    line-height: 0.88;
+    line-height: 0.9;
 
     letter-spacing: -0.075em;
 
     font-weight: 800;
 
-    color: #fff;
+    color: #ffffff;
 }
 
 .hero-subtitle {
-    margin-top: 5px;
+    margin-top: 6px;
 
     font-size:
-        clamp(18px, 2.5vw, 32px);
+        clamp(15px, 2vw, 23px);
 
     font-weight: 600;
 
-    letter-spacing: 0.05em;
+    letter-spacing: 0.08em;
 
     color:
         rgba(255,255,255,0.30);
 }
 
 .hero-description {
-    max-width: 510px;
+    max-width: 500px;
 
-    margin-top: 32px;
+    margin-top: 30px;
 
     color:
-        rgba(255,255,255,0.48);
+        rgba(255,255,255,0.46);
 
     font-size: 13px;
 
@@ -286,12 +330,12 @@ body {
 .pill-button {
     display: inline-flex;
 
-    margin-top: 30px;
+    margin-top: 28px;
 
     padding:
         12px 20px;
 
-    color: #fff;
+    color: #ffffff;
 
     text-decoration: none;
 
@@ -303,12 +347,12 @@ body {
 
     border:
         1px solid
-        rgba(255,255,255,0.20);
+        rgba(255,255,255,0.18);
 
     border-radius: 999px;
 
     background:
-        rgba(255,255,255,0.045);
+        rgba(255,255,255,0.035);
 
     backdrop-filter: blur(10px);
 
@@ -320,10 +364,10 @@ body {
 
 .pill-button:hover {
     background:
-        rgba(255,255,255,0.12);
+        rgba(255,255,255,0.10);
 
     border-color:
-        rgba(255,255,255,0.35);
+        rgba(255,255,255,0.32);
 
     transform:
         translateY(-2px);
@@ -331,7 +375,7 @@ body {
 
 
 /* =====================================================
-   WORK SECTION
+   WORK
 ===================================================== */
 
 .work-section {
@@ -345,26 +389,25 @@ body {
 }
 
 .section-header {
-    margin-bottom: 50px;
+    margin-bottom: 48px;
 }
 
 .section-header h2 {
     margin-top: 12px;
 
     font-size:
-        clamp(42px, 6vw, 80px);
+        clamp(42px, 6vw, 78px);
 
     line-height: 0.9;
 
     letter-spacing: -0.065em;
 
-    color: #fff;
+    color: #ffffff;
 }
 
 
 /* =====================================================
    CATEGORY GRID
-   3 CARDS SEJAJAR
 ===================================================== */
 
 .category-grid {
@@ -382,12 +425,12 @@ body {
 ===================================================== */
 
 .category-card {
-    cursor: pointer;
-
     min-width: 0;
 
+    cursor: pointer;
+
     transition:
-        transform 0.35s ease;
+        transform 0.4s cubic-bezier(.2,.7,.2,1);
 }
 
 .category-card:hover {
@@ -411,7 +454,7 @@ body {
 
     border-radius: 22px;
 
-    background: #151515;
+    background: #111111;
 
     border:
         1px solid
@@ -419,7 +462,7 @@ body {
 
     box-shadow:
         0 25px 70px
-        rgba(0,0,0,0.30);
+        rgba(0,0,0,0.32);
 }
 
 .category-image img {
@@ -431,18 +474,18 @@ body {
     object-fit: cover;
 
     transition:
-        transform 0.7s cubic-bezier(.2,.7,.2,1);
+        transform 0.8s cubic-bezier(.2,.7,.2,1);
 }
 
 .category-card:hover
 .category-image img {
     transform:
-        scale(1.045);
+        scale(1.035);
 }
 
 
 /* =====================================================
-   IMAGE DARK GRADIENT
+   CATEGORY GRADIENT
 ===================================================== */
 
 .image-overlay {
@@ -454,9 +497,9 @@ body {
         linear-gradient(
             to bottom,
             rgba(0,0,0,0.78) 0%,
-            rgba(0,0,0,0.35) 20%,
-            rgba(0,0,0,0.00) 50%,
-            rgba(0,0,0,0.08) 100%
+            rgba(0,0,0,0.42) 19%,
+            rgba(0,0,0,0.08) 43%,
+            transparent 62%
         );
 
     pointer-events: none;
@@ -476,18 +519,16 @@ body {
     width: 100%;
 
     padding:
-        20px 20px 50px;
-
-    display: flex;
-
-    flex-direction: column;
-
-    gap: 8px;
+        20px 20px 65px;
 }
 
 .image-heading span {
+    display: block;
+
+    margin-bottom: 8px;
+
     color:
-        rgba(255,255,255,0.50);
+        rgba(255,255,255,0.45);
 
     font-size: 8px;
 
@@ -495,13 +536,14 @@ body {
 }
 
 .image-heading h3 {
-    color: #fff;
+    color: #ffffff;
 
-    font-size: 15px;
+    font-size:
+        clamp(13px, 1.35vw, 17px);
 
     line-height: 1.1;
 
-    letter-spacing: -0.02em;
+    letter-spacing: -0.025em;
 
     font-weight: 700;
 }
@@ -517,14 +559,14 @@ body {
 }
 
 .category-info p {
-    max-width: 300px;
+    max-width: 310px;
 
     color:
-        rgba(255,255,255,0.42);
+        rgba(255,255,255,0.40);
 
     font-size: 10px;
 
-    line-height: 1.55;
+    line-height: 1.6;
 }
 
 
@@ -556,16 +598,16 @@ body {
 
     align-items: flex-start;
 
-    gap: 35px;
+    gap: 30px;
 
     margin-bottom: 55px;
 }
 
 .project-header h2 {
-    margin-top: 10px;
+    margin-top: 9px;
 
     font-size:
-        clamp(40px, 6vw, 75px);
+        clamp(40px, 5.5vw, 72px);
 
     line-height: 0.9;
 
@@ -579,10 +621,10 @@ body {
         10px 16px;
 
     color:
-        rgba(255,255,255,0.70);
+        rgba(255,255,255,0.68);
 
     background:
-        rgba(255,255,255,0.045);
+        rgba(255,255,255,0.04);
 
     border:
         1px solid
@@ -601,15 +643,14 @@ body {
 }
 
 #back-button:hover {
-    color: #000;
+    color: #000000;
 
-    background: #fff;
+    background: #ffffff;
 }
 
 
 /* =====================================================
-   PROJECT CARDS
-   3 KOLOM
+   PROJECT GRID
 ===================================================== */
 
 .project-grid {
@@ -622,16 +663,23 @@ body {
 }
 
 .project-card {
+    min-width: 0;
+
     cursor: pointer;
 
     transition:
-        transform 0.35s ease;
+        transform 0.4s cubic-bezier(.2,.7,.2,1);
 }
 
 .project-card:hover {
     transform:
         translateY(-6px);
 }
+
+
+/* =====================================================
+   PROJECT IMAGE
+===================================================== */
 
 .project-card-image {
     position: relative;
@@ -644,7 +692,7 @@ body {
 
     border-radius: 20px;
 
-    background: #111;
+    background: #111111;
 
     border:
         1px solid
@@ -660,19 +708,17 @@ body {
     object-fit: cover;
 
     transition:
-        transform 0.6s ease;
+        transform 0.7s cubic-bezier(.2,.7,.2,1);
 }
 
 .project-card:hover
 .project-card-image img {
     transform:
-        scale(1.04);
+        scale(1.035);
 }
 
 
-/* =====================================================
-   PROJECT IMAGE COUNT
-===================================================== */
+/* IMAGE COUNT */
 
 .project-card-overlay {
     position: absolute;
@@ -696,17 +742,17 @@ body {
 }
 
 .project-card-overlay span {
+    color:
+        rgba(255,255,255,0.70);
+
     font-size: 7px;
 
     letter-spacing: 0.12em;
-
-    color:
-        rgba(255,255,255,0.72);
 }
 
 
 /* =====================================================
-   PROJECT TEXT
+   PROJECT INFO
 ===================================================== */
 
 .project-card-info {
@@ -715,7 +761,7 @@ body {
 }
 
 .project-card-info h3 {
-    color: #fff;
+    color: #ffffff;
 
     font-size: 12px;
 
@@ -737,7 +783,7 @@ body {
 
 
 /* =====================================================
-   PROJECT IMAGE VIEWER
+   PROJECT VIEWER
 ===================================================== */
 
 .project-viewer {
@@ -753,7 +799,7 @@ body {
         80px 5vw;
 
     background:
-        rgba(5,5,5,0.92);
+        rgba(4,4,4,0.94);
 
     backdrop-filter: blur(30px);
     -webkit-backdrop-filter: blur(30px);
@@ -774,7 +820,8 @@ body {
     width: 40px;
     height: 40px;
 
-    border: 1px solid
+    border:
+        1px solid
         rgba(255,255,255,0.15);
 
     border-radius: 50%;
@@ -782,7 +829,7 @@ body {
     background:
         rgba(255,255,255,0.05);
 
-    color: #fff;
+    color: #ffffff;
 
     font-size: 22px;
 
@@ -813,6 +860,11 @@ body {
     letter-spacing: -0.05em;
 }
 
+
+/* =====================================================
+   PROJECT PHOTOS
+===================================================== */
+
 .viewer-grid {
     display: grid;
 
@@ -829,12 +881,11 @@ body {
 
     cursor: zoom-in;
 
-    background: #111;
+    background: #111111;
 }
 
 .viewer-image img {
     width: 100%;
-
     height: auto;
 
     display: block;
@@ -850,7 +901,7 @@ body {
 
 
 /* =====================================================
-   FULLSCREEN VIEWER
+   FULLSCREEN IMAGE
 ===================================================== */
 
 .fullscreen-viewer {
@@ -863,13 +914,12 @@ body {
     display: flex;
 
     align-items: center;
-
     justify-content: center;
 
     padding: 40px;
 
     background:
-        rgba(0,0,0,0.94);
+        rgba(0,0,0,0.96);
 
     backdrop-filter: blur(25px);
 }
@@ -901,7 +951,7 @@ body {
     background:
         rgba(255,255,255,0.06);
 
-    color: #fff;
+    color: #ffffff;
 
     font-size: 24px;
 
@@ -927,7 +977,7 @@ body {
     display: grid;
 
     grid-template-columns:
-        minmax(280px, 0.85fr)
+        minmax(330px, 0.95fr)
         minmax(300px, 1fr);
 
     gap: 65px;
@@ -937,13 +987,13 @@ body {
 
 
 /* =====================================================
-   PROFILE
+   PROFILE PHOTO
 ===================================================== */
 
 .about-photo {
     width: 100%;
 
-    max-width: 410px;
+    max-width: 450px;
 
     aspect-ratio: 4 / 5;
 
@@ -951,8 +1001,7 @@ body {
 
     border-radius: 22px;
 
-    background:
-        rgba(255,255,255,0.035);
+    background: #111111;
 
     border:
         1px solid
@@ -963,21 +1012,13 @@ body {
         rgba(0,0,0,0.30);
 }
 
-.profile-placeholder {
+.about-photo img {
     width: 100%;
     height: 100%;
 
-    display: flex;
+    display: block;
 
-    align-items: center;
-    justify-content: center;
-
-    color:
-        rgba(255,255,255,0.20);
-
-    font-size: 10px;
-
-    letter-spacing: 0.25em;
+    object-fit: cover;
 }
 
 
@@ -1002,9 +1043,9 @@ body {
 
 .about-text .about-lead {
     color:
-        rgba(255,255,255,0.82);
+        rgba(255,255,255,0.84);
 
-    font-size: 20px;
+    font-size: 19px;
 
     line-height: 1.5;
 }
@@ -1028,7 +1069,7 @@ body {
     margin-top: 15px;
 
     font-size:
-        clamp(50px, 8vw, 110px);
+        clamp(50px, 7.5vw, 105px);
 
     line-height: 0.86;
 
@@ -1074,9 +1115,9 @@ body {
 }
 
 .contact-links a:hover {
-    color: #fff;
+    color: #ffffff;
 
-    border-color: #fff;
+    border-color: #ffffff;
 }
 
 
@@ -1142,7 +1183,16 @@ footer {
         top: 12px;
 
         padding:
-            13px 15px;
+            11px 15px;
+    }
+
+    .brand {
+        width: 82px;
+    }
+
+    .brand img {
+        max-width: 82px;
+        height: 24px;
     }
 
     .navbar nav {
@@ -1164,7 +1214,7 @@ footer {
 
     .hero h1 {
         font-size:
-            17vw;
+            15vw;
     }
 
     .hero-description {
@@ -1186,7 +1236,8 @@ footer {
         gap: 30px;
     }
 
-    .category-image {
+    .category-image,
+    .project-card-image {
         aspect-ratio: 4 / 5;
     }
 
@@ -1207,7 +1258,7 @@ footer {
     }
 
     .about-photo {
-        max-width: 360px;
+        max-width: 390px;
     }
 
     .about-text .about-lead {
