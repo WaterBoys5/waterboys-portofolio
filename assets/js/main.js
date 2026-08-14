@@ -670,3 +670,33 @@ document.addEventListener("DOMContentLoaded", () => {
 
 });
 ```
+
+**Yang berubah cuma ini:**
+
+```text
+PORTRAIT COMMERCIAL
+├── Peron Long Sleeve
+├── Vishgazine
+├── WKA × Simpati
+└── Unreleased — Nevertoolavish
+    ├── 01
+    ├── 02
+    ├── 03
+    ├── 04
+    ├── 05
+    └── 06
+```
+
+Path yang dipakai:
+
+```text
+assets/images/portrait-commercial/
+├── unreleased-nevertoolavish-01.jpg
+├── unreleased-nevertoolavish-02.jpg
+├── unreleased-nevertoolavish-03.jpg
+├── unreleased-nevertoolavish-04.jpg
+├── unreleased-nevertoolavish-05.jpg
+└── unreleased-nevertoolavish-06.jpg
+```
+
+**Catatan penting:** kalau nama file asli lu bukan persis `unreleased-nevertoolavish-01.jpg` sampai `06.jpg`, fotonya bakal jadi broken image. Nama file di GitHub itu harus **100% sama**, termasuk huruf besar-kecil.
