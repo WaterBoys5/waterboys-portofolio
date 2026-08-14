@@ -1,16 +1,23 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Weteerbreh — Photography & Videography</title>
-  
-  <!-- Pastikan path CSS ini bener ke folder lu -->
-  <link rel="stylesheet" href="assets/css/style.css">
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Zulkarnain — Photography & Videography</title>
+
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-  <!-- BACKGROUND EFFECT -->
+  <!-- =====================================================
+       LIQUID GLASS BACKGROUND
+  ====================================================== -->
+
   <div class="liquid-bg">
     <div class="blob blob-a"></div>
     <div class="blob blob-b"></div>
@@ -19,116 +26,332 @@
     <div class="glass-noise"></div>
   </div>
 
-  <!-- HEADER / NAVBAR -->
+
+  <!-- =====================================================
+       HEADER
+  ====================================================== -->
+
   <header class="site-header">
-    <div class="brand">
-      <div class="brand-mark">W</div>
-      WETEERBREH
-    </div>
+
+    <a href="#" class="brand">
+      <span class="brand-mark">Z</span>
+      <span>ZULKARNAIN</span>
+    </a>
+
     <nav>
-      <a href="#work">Work</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
-      <a href="#" class="nav-cta">Let's work</a>
+      <a href="#work">WORK</a>
+      <a href="#about">ABOUT</a>
+
+      <a
+        href="https://www.behance.net/waterboys1"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="nav-cta"
+      >
+        BEHANCE
+      </a>
     </nav>
+
   </header>
 
-  <!-- MAIN SECTION -->
+
+  <!-- =====================================================
+       HERO
+  ====================================================== -->
+
   <main>
-    
-    <!-- HERO SECTION (ATAS) -->
-    <section class="hero section">
-      
-      <!-- KIRI: JUDUL UTAMA -->
+
+    <section class="section hero">
+
+      <!-- HERO LEFT -->
+
       <div class="hero-left">
-        <p class="eyebrow">PHOTOGRAPHY • VIDEOGRAPHY • CREATIVE</p>
-        <h1>Visual stories,<br><span>made with intention.</span></h1>
-        <p class="hero-text">Portfolio fotografi dan videografi untuk campaign, brand, product, event, dan creative project.</p>
+
+        <p class="eyebrow">
+          PHOTOGRAPHER / VIDEOGRAPHER
+        </p>
+
+        <h1>
+          VISUALS<br>
+          <span>THAT SPEAK.</span>
+        </h1>
+
+        <p class="hero-text">
+          Photography and visual storytelling focused on
+          people, products, performances, and creative projects.
+        </p>
+
         <div class="hero-actions">
-          <a href="#work" class="button button-light">View selected work ↘</a>
-          <a href="mailto:waterboys.work@gmail.com" class="text-link">waterboys.work@gmail.com</a>
+
+          <a
+            href="#work"
+            class="button button-light"
+          >
+            VIEW WORK
+            <span>↗</span>
+          </a>
+
+          <a
+            href="#about"
+            class="text-link"
+          >
+            ABOUT ME
+          </a>
+
         </div>
+
       </div>
 
-      <!-- KANAN: FOTO PROFIL & TENTANG SAYA -->
-      <div class="hero-right">
-        
-        <!-- INI DIA STRUKTUR FOTO YANG BENER BIAR KECIL -->
+
+      <!-- HERO RIGHT -->
+
+      <div class="hero-right" id="about">
+
+        <!-- ABOUT ME -->
+
+        <div class="hero-about">
+
+          <h2>
+            ABOUT ME
+          </h2>
+
+          <p>
+            I’m Zulkarnain, a photography student and
+            freelance photographer with an interest in
+            photography, videography, and visual communication.
+          </p>
+
+        </div>
+
+
+        <!-- PROFILE -->
+        <!-- FOTO KECIL DI BAWAH ABOUT ME -->
+
         <div class="hero-profile">
-          
-          <!-- BUNGKUS KARTU FOTO -->
-          <div class="hero-card glass-card">
-            <div class="hero-card-image">
-              <!-- LU TINGGAL GANTI NAMA FILE FOTO NYENGIR LU DI SINI ↓↓↓ -->
-              <img src="foto-nyengir-lu.jpg" alt="Foto Weteerbreh">
+
+          <!-- PROFILE PHOTO -->
+
+          <div class="glass-card hero-card">
+
+            <div class="hero-card-top">
+              <span>PROFILE</span>
+              <span>01</span>
             </div>
+
+            <div class="hero-card-image">
+
+              <img
+                src="assets/images/profile.jpg"
+                alt="Zulkarnain"
+              >
+
+            </div>
+
+            <div class="hero-card-bottom">
+              <span>PHOTO</span>
+              <span>2026</span>
+            </div>
+
           </div>
 
-          <!-- TEKS DI SAMPING KANAN FOTO -->
+
+          <!-- PROFILE INFORMATION -->
+
           <div class="hero-profile-info">
-            <h3>Tentang Saya</h3>
-            <p>Halo! Saya Weteerbreh. Saya seorang fotografer dan videografer yang menyukai pencahayaan studio dan mendongeng secara visual. Saya berspesialisasi dalam membuat potret yang menarik dan visual sinematik yang menangkap esensi subjek saya.</p>
+
+            <h3>
+              Zulkarnain
+            </h3>
+
+            <p>
+              Photography Student<br>
+              Photographer / Videographer<br>
+              Jakarta, Indonesia
+            </p>
+
           </div>
-          
+
         </div>
-        
+
       </div>
+
     </section>
 
-    <!-- SECTION PROJECTS (BAWAH) -->
-    <section id="work" class="work-section section">
+
+    <!-- =====================================================
+         WORK
+    ====================================================== -->
+
+    <section
+      class="section work-section"
+      id="work"
+    >
+
       <div class="section-heading">
-        <h2>Projects</h2>
-        <p class="section-note">A selection of photography & videography projects.</p>
-      </div>
-      
-      <div id="project-grid">
-        
-        <!-- KARTU 1 -->
-        <div class="category-card">
-          <!-- Ganti URL gambar background-nya -->
-          <div class="category-image" style="background-image: url('gambar-stage-lu.jpg');"></div>
-          <div class="category-overlay">
-            <p class="category-number">01</p>
-            <div>
-              <h3 class="category-title">STAGE PHOTOGRAPHY</h3>
-              <p class="category-description">Live performances, concerts, and stage documentation.</p>
-            </div>
-            <div class="category-arrow">↗</div>
-          </div>
+
+        <div>
+
+          <p class="eyebrow">
+            SELECTED WORK
+          </p>
+
+          <h2>
+            PROJECTS
+          </h2>
+
         </div>
 
-        <!-- KARTU 2 -->
-        <div class="category-card">
-          <!-- Ganti URL gambar background-nya -->
-          <div class="category-image" style="background-image: url('gambar-product-lu.jpg');"></div>
-          <div class="category-overlay">
-            <p class="category-number">02</p>
-            <div>
-              <h3 class="category-title">PRODUCT PHOTOGRAPHY</h3>
-              <p class="category-description">Commercial product photography, still life, and brand visuals.</p>
-            </div>
-            <div class="category-arrow">↗</div>
-          </div>
-        </div>
-
-        <!-- KARTU 3 -->
-        <div class="category-card">
-          <!-- Ganti URL gambar background-nya -->
-          <div class="category-image" style="background-image: url('gambar-portrait-lu.jpg');"></div>
-          <div class="category-overlay">
-            <p class="category-number">03</p>
-            <div>
-              <h3 class="category-title">PORTRAIT / FASHION</h3>
-              <p class="category-description">Portraits, fashion editorials, artist profiles, and creative campaigns.</p>
-            </div>
-            <div class="category-arrow">↗</div>
-          </div>
-        </div>
+        <p class="section-note">
+          A selection of photography and visual projects
+          across commercial, stage, and creative work.
+        </p>
 
       </div>
+
+
+      <!-- =================================================
+           PROJECT CATEGORY GRID
+
+           JavaScript akan mengisi bagian ini.
+      ================================================== -->
+
+      <div id="project-grid"></div>
+
     </section>
 
   </main>
+
+
+  <!-- =====================================================
+       CATEGORY MODAL
+
+       Biasanya elemen ini dibuat/diisi oleh JavaScript.
+       Kalau main.js lu memang membuat modal sendiri,
+       bagian ini TIDAK perlu diduplikasi.
+  ====================================================== -->
+
+  <div
+    class="category-modal"
+    id="category-modal"
+    hidden
+  >
+
+    <div
+      class="category-modal-backdrop"
+      data-close-category
+    ></div>
+
+    <div class="category-modal-window">
+
+      <button
+        type="button"
+        class="category-close"
+        data-close-category
+        aria-label="Close"
+      >
+        ×
+      </button>
+
+      <div class="category-modal-content">
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- =====================================================
+       GALLERY MODAL
+  ====================================================== -->
+
+  <div
+    class="gallery-modal"
+    id="gallery-modal"
+    hidden
+  >
+
+    <div
+      class="gallery-backdrop"
+      data-close-gallery
+    ></div>
+
+    <div class="gallery-window">
+
+      <button
+        type="button"
+        class="gallery-close"
+        data-close-gallery
+        aria-label="Close gallery"
+      >
+        ×
+      </button>
+
+      <div class="gallery-image-wrap">
+
+        <button
+          type="button"
+          class="gallery-prev"
+          aria-label="Previous image"
+        >
+          ‹
+        </button>
+
+        <img
+          class="gallery-main-image"
+          src=""
+          alt=""
+        >
+
+        <button
+          type="button"
+          class="gallery-next"
+          aria-label="Next image"
+        >
+          ›
+        </button>
+
+      </div>
+
+
+      <div class="gallery-info">
+
+        <div>
+
+          <h3 class="gallery-title"></h3>
+
+          <p class="gallery-description"></p>
+
+        </div>
+
+        <span class="gallery-counter">
+          1 / 1
+        </span>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- =====================================================
+       FOOTER
+  ====================================================== -->
+
+  <footer class="site-footer">
+
+    <p class="eyebrow">
+      ZULKARNAIN
+    </p>
+
+  </footer>
+
+
+  <!-- =====================================================
+       JAVASCRIPT
+  ====================================================== -->
+
+  <script src="main.js"></script>
+
 </body>
 </html>
