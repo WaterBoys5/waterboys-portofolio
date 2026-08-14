@@ -1,5 +1,11 @@
 document.addEventListener("DOMContentLoaded", () => {
 
+    /*
+    =====================================================
+    ELEMENTS
+    =====================================================
+    */
+
     const categoryCards =
         document.querySelectorAll(".category-card");
 
@@ -23,19 +29,33 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /*
-    ==========================================
+    =====================================================
     PROJECT DATA
-    ==========================================
+    =====================================================
+
+    SATU OBJECT = SATU PROJECT
+
+    images[] = semua foto yang ada di project tersebut
+    =====================================================
     */
 
     const PROJECTS = {
+
+
+        /* =================================================
+           DOCUMENTATION
+        ================================================= */
 
         documentation: [
 
             {
                 title: "Stereo Wall",
-                description: "Live performance documentation.",
+
+                description:
+                    "Live performance documentation.",
+
                 images: [
+
                     "assets/images/documentation/stereo-wall-01.jpg",
                     "assets/images/documentation/stereo-wall-02.jpg",
                     "assets/images/documentation/stereo-wall-03.jpg",
@@ -50,30 +70,45 @@ document.addEventListener("DOMContentLoaded", () => {
                     "assets/images/documentation/stereo-wall-12.jpg",
                     "assets/images/documentation/stereo-wall-13.jpg",
                     "assets/images/documentation/stereo-wall-14.jpg"
+
                 ]
             }
 
         ],
 
 
+        /* =================================================
+           PORTRAIT COMMERCIAL
+        ================================================= */
+
         "portrait-commercial": [
 
             {
                 title: "Peron Long Sleeve",
-                description: "Commercial portrait campaign.",
+
+                description:
+                    "Commercial portrait campaign.",
+
                 images: [
+
                     "assets/images/portrait-commercial/peron-long-sleeve-01.jpg",
                     "assets/images/portrait-commercial/peron-long-sleeve-02.jpg",
                     "assets/images/portrait-commercial/peron-long-sleeve-03.jpg",
                     "assets/images/portrait-commercial/peron-long-sleeve-04.jpg",
                     "assets/images/portrait-commercial/peron-long-sleeve-05.jpg"
+
                 ]
             },
 
+
             {
                 title: "Vishgazine",
-                description: "Commercial portrait campaign.",
+
+                description:
+                    "Commercial portrait campaign.",
+
                 images: [
+
                     "assets/images/portrait-commercial/vishgazine-01.jpg",
                     "assets/images/portrait-commercial/vishgazine-02.jpg",
                     "assets/images/portrait-commercial/vishgazine-03.jpg",
@@ -83,13 +118,19 @@ document.addEventListener("DOMContentLoaded", () => {
                     "assets/images/portrait-commercial/vishgazine-07.jpg",
                     "assets/images/portrait-commercial/vishgazine-08.jpg",
                     "assets/images/portrait-commercial/vishgazine-09.jpg"
+
                 ]
             },
 
+
             {
                 title: "WKA × Simpati",
-                description: "Commercial campaign.",
+
+                description:
+                    "Commercial campaign.",
+
                 images: [
+
                     "assets/images/portrait-commercial/wka-simpati-01.jpg",
                     "assets/images/portrait-commercial/wka-simpati-02.jpg",
                     "assets/images/portrait-commercial/wka-simpati-03.jpg",
@@ -100,29 +141,44 @@ document.addEventListener("DOMContentLoaded", () => {
                     "assets/images/portrait-commercial/wka-simpati-08.jpg",
                     "assets/images/portrait-commercial/wka-simpati-09.jpg",
                     "assets/images/portrait-commercial/wka-simpati-10.jpg"
+
                 ]
             }
 
         ],
 
 
+        /* =================================================
+           PRODUCT
+        ================================================= */
+
         product: [
 
             {
                 title: "LV Wallet",
-                description: "Luxury product photography.",
+
+                description:
+                    "Luxury product photography.",
+
                 images: [
+
                     "assets/images/product/lv-wallet-01.jpg",
                     "assets/images/product/lv-wallet-02.jpg",
                     "assets/images/product/lv-wallet-03.jpg",
                     "assets/images/product/lv-wallet-04.jpg"
+
                 ]
             },
 
+
             {
                 title: "TITANS",
-                description: "Commercial product campaign.",
+
+                description:
+                    "Commercial product campaign.",
+
                 images: [
+
                     "assets/images/product/titans-01.jpg",
                     "assets/images/product/titans-02.jpg",
                     "assets/images/product/titans-03.jpg",
@@ -132,6 +188,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     "assets/images/product/titans-07.jpg",
                     "assets/images/product/titans-08.jpg",
                     "assets/images/product/titans-09.jpg"
+
                 ]
             }
 
@@ -141,9 +198,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /*
-    ==========================================
+    =====================================================
     CATEGORY CLICK
-    ==========================================
+    =====================================================
     */
 
     categoryCards.forEach(card => {
@@ -161,9 +218,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /*
-    ==========================================
+    =====================================================
     OPEN CATEGORY
-    ==========================================
+    =====================================================
     */
 
     function openCategory(category) {
@@ -171,7 +228,14 @@ document.addEventListener("DOMContentLoaded", () => {
         const projects =
             PROJECTS[category];
 
-        if (!projects) return;
+        if (!projects) {
+            console.error(
+                "Category tidak ditemukan:",
+                category
+            );
+
+            return;
+        }
 
 
         const readableName =
@@ -191,7 +255,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
         /*
+        =================================================
         CREATE PROJECT CARDS
+        =================================================
         */
 
         projects.forEach(project => {
@@ -202,10 +268,6 @@ document.addEventListener("DOMContentLoaded", () => {
             card.className =
                 "project-card";
 
-
-            /*
-            FIRST IMAGE = THUMBNAIL
-            */
 
             const thumbnail =
                 project.images[0];
@@ -231,6 +293,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 </div>
 
+
                 <div class="project-card-info">
 
                     <h3>
@@ -254,9 +317,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 "click",
                 () => {
 
-                    openProject(
-                        project
-                    );
+                    openProject(project);
 
                 }
             );
@@ -266,6 +327,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
         });
 
+
+        /*
+        =================================================
+        CHANGE VIEW
+        =================================================
+        */
 
         workSection.style.display =
             "none";
@@ -284,9 +351,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /*
-    ==========================================
+    =====================================================
     OPEN PROJECT
-    ==========================================
+    =====================================================
     */
 
     function openProject(project) {
@@ -302,9 +369,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
             <div class="project-viewer-inner">
 
-                <button class="viewer-close">
+                <button
+                    class="viewer-close"
+                    type="button"
+                    aria-label="Close project"
+                >
                     ×
                 </button>
+
 
                 <div class="viewer-heading">
 
@@ -318,6 +390,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 </div>
 
+
                 <div class="viewer-grid"></div>
 
             </div>
@@ -330,7 +403,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
         /*
-        ADD ALL PROJECT IMAGES
+        =================================================
+        ADD ALL PHOTOS
+        =================================================
         */
 
         project.images.forEach(
@@ -359,7 +434,8 @@ document.addEventListener("DOMContentLoaded", () => {
                     () => {
 
                         openFullscreen(
-                            image
+                            image,
+                            project.title
                         );
 
                     }
@@ -382,30 +458,70 @@ document.addEventListener("DOMContentLoaded", () => {
             "hidden";
 
 
+        /*
+        CLOSE PROJECT
+        */
+
+        const closeProject =
+            () => {
+
+                viewer.remove();
+
+                document.body.style.overflow =
+                    "";
+
+            };
+
+
         viewer
             .querySelector(".viewer-close")
             .addEventListener(
                 "click",
-                () => {
+                closeProject
+            );
 
-                    viewer.remove();
 
-                    document.body.style.overflow =
-                        "";
+        /*
+        ESC KEY
+        */
+
+        const escapeHandler =
+            event => {
+
+                if (
+                    event.key === "Escape"
+                ) {
+
+                    closeProject();
+
+                    document.removeEventListener(
+                        "keydown",
+                        escapeHandler
+                    );
 
                 }
-            );
+
+            };
+
+
+        document.addEventListener(
+            "keydown",
+            escapeHandler
+        );
 
     }
 
 
     /*
-    ==========================================
+    =====================================================
     FULLSCREEN IMAGE
-    ==========================================
+    =====================================================
     */
 
-    function openFullscreen(image) {
+    function openFullscreen(
+        image,
+        title
+    ) {
 
         const fullscreen =
             document.createElement("div");
@@ -416,13 +532,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
         fullscreen.innerHTML = `
 
-            <button>
+            <button
+                type="button"
+                aria-label="Close image"
+            >
                 ×
             </button>
 
             <img
                 src="${image}"
-                alt=""
+                alt="${title}"
             >
 
         `;
@@ -433,15 +552,19 @@ document.addEventListener("DOMContentLoaded", () => {
         );
 
 
+        const closeFullscreen =
+            () => {
+
+                fullscreen.remove();
+
+            };
+
+
         fullscreen
             .querySelector("button")
             .addEventListener(
                 "click",
-                () => {
-
-                    fullscreen.remove();
-
-                }
+                closeFullscreen
             );
 
 
@@ -453,20 +576,49 @@ document.addEventListener("DOMContentLoaded", () => {
                     event.target === fullscreen
                 ) {
 
-                    fullscreen.remove();
+                    closeFullscreen();
 
                 }
 
             }
         );
 
+
+        /*
+        ESC KEY
+        */
+
+        const escapeHandler =
+            event => {
+
+                if (
+                    event.key === "Escape"
+                ) {
+
+                    closeFullscreen();
+
+                    document.removeEventListener(
+                        "keydown",
+                        escapeHandler
+                    );
+
+                }
+
+            };
+
+
+        document.addEventListener(
+            "keydown",
+            escapeHandler
+        );
+
     }
 
 
     /*
-    ==========================================
-    BACK BUTTON
-    ==========================================
+    =====================================================
+    BACK TO CATEGORIES
+    =====================================================
     */
 
     backButton.addEventListener(
