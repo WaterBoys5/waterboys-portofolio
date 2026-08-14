@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Zulkarnain / Waterboys — Photographer and Videographer portfolio.">
+  <meta name="theme-color" content="#080808">
+  <title>Zulkarnain — Waterboys | Photographer · Videographer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <div class="liquid-bg" aria-hidden="true">
+    <span class="blob blob-1"></span>
+    <span class="blob blob-2"></span>
+    <span class="blob blob-3"></span>
+    <span class="grain"></span>
+  </div>
+
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="Zulkarnain home">
+      <span class="brand-mark">Z</span>
+    </a>
+
+    <nav class="desktop-nav" aria-label="Main navigation">
+      <a href="#work">Work</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+      <a class="pill-button" href="mailto:waterboys.work@gmail.com">Let's Work</a>
+    </nav>
+
+    <button class="mobile-menu-button" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="mobile-nav">
+      <span></span><span></span>
+    </button>
+
+    <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation">
+      <a href="#work">Work</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+      <a class="pill-button" href="mailto:waterboys.work@gmail.com">Let's Work</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero section-shell" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow">PHOTOGRAPHY <span>•</span> VIDEOGRAPHY <span>•</span> CREATIVE</p>
+        <h1 id="hero-title">Visual stories,<br><em>made with intention.</em></h1>
+        <p class="hero-description">
+          Portfolio fotografi dan videografi untuk campaign, brand, product, event, dan creative project.
+        </p>
+        <div class="hero-actions">
+          <a class="text-link" href="#work">VIEW SELECTED WORK <span>↘</span></a>
+          <a class="mono-link" href="mailto:waterboys.work@gmail.com">waterboys.work@gmail.com</a>
+        </div>
+      </div>
+      <div class="hero-space" aria-hidden="true">
+        <div class="hero-orbit"></div>
+        <span class="hero-coordinate">06° 20' S / 106° 48' E</span>
+      </div>
+    </section>
+
+    <section class="projects section-shell" id="work" aria-labelledby="projects-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">SELECTED WORK</p>
+          <h2 id="projects-title">Projects</h2>
+        </div>
+        <p>A selection of photography and videography projects.</p>
+      </div>
+
+      <div class="category-grid" id="category-grid" aria-live="polite"></div>
+    </section>
+
+    <section class="about section-shell" id="about" aria-labelledby="about-title">
+      <div class="section-rule">
+        <p class="eyebrow" id="about-title">ABOUT ME</p>
+      </div>
+
+      <div class="about-layout">
+        <div class="profile-frame">
+          <img src="assets/images/profile.jpg" alt="Portrait of Zulkarnain" onerror="this.style.display='none'">
+          <span class="profile-fallback">Z</span>
+        </div>
+
+        <div class="about-copy">
+          <p class="name">Zulkarnain</p>
+          <p class="stage-name">Waterboys</p>
+          <p class="role">Photographer · Videographer</p>
+
+          <div class="about-text">
+            <p>
+              Saya adalah fotografer dan videografer yang memiliki ketertarikan pada visual communication,
+              commercial photography, portrait, fashion, product, dan event documentation.
+            </p>
+            <p>
+              Dalam proses kerja, saya memperhatikan lighting, composition, storytelling, dan editing
+              untuk membangun visual yang sesuai dengan karakter setiap project.
+            </p>
+          </div>
+
+          <div class="tag-list" aria-label="Areas of work">
+            <span>PHOTOGRAPHY</span>
+            <span>VIDEOGRAPHY</span>
+            <span>FASHION</span>
+            <span>PRODUCT</span>
+            <span>EVENT</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact section-shell" id="contact" aria-labelledby="contact-title">
+      <div class="contact-inner">
+        <p class="eyebrow" id="contact-title">CONTACT</p>
+        <h2>Let's work<br><em>together.</em></h2>
+        <p>For campaigns, creative projects, documentation, and visual production.</p>
+
+        <div class="contact-links">
+          <a href="mailto:waterboys.work@gmail.com">
+            <span>Email</span>
+            <strong>waterboys.work@gmail.com</strong>
+          </a>
+          <a href="https://www.instagram.com/weteerbreh/" target="_blank" rel="noopener noreferrer">
+            <span>Instagram</span>
+            <strong>@weteerbreh</strong>
+          </a>
+          <a href="https://www.behance.net/waterboys1" target="_blank" rel="noopener noreferrer">
+            <span>Behance</span>
+            <strong>waterboys1</strong>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer section-shell">
+    <div>Zulkarnain / Waterboys</div>
+    <div>Photography · Videography · Creative</div>
+    <div>© 2026</div>
+  </footer>
+
+  <!-- Category / project list modal -->
+  <div class="modal" id="category-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="category-modal-title">
+    <div class="modal-backdrop" data-close-category></div>
+    <div class="category-modal-panel">
+      <div class="modal-topbar">
+        <span class="mono-label">CATEGORY / <span id="category-modal-number">01</span></span>
+        <button class="icon-button" id="category-close" type="button" aria-label="Close category modal">×</button>
+      </div>
+      <div class="category-modal-heading">
+        <p class="eyebrow">SELECTED CATEGORY</p>
+        <h2 id="category-modal-title">Stage Photography</h2>
+        <p id="category-modal-description"></p>
+      </div>
+      <div class="project-list" id="project-list"></div>
+    </div>
+  </div>
+
+  <!-- Gallery modal -->
+  <div class="modal gallery-modal" id="gallery-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="gallery-title">
+    <div class="modal-backdrop" data-close-gallery></div>
+    <div class="gallery-panel">
+      <div class="gallery-topbar">
+        <div>
+          <p class="mono-label" id="gallery-category-label">STAGE PHOTOGRAPHY</p>
+          <h2 id="gallery-title">Stereo Wall</h2>
+        </div>
+        <button class="icon-button" id="gallery-close" type="button" aria-label="Close photo gallery">×</button>
+      </div>
+
+      <div class="gallery-stage">
+        <button class="gallery-arrow gallery-prev" id="gallery-prev" type="button" aria-label="Previous photo">←</button>
+        <div class="gallery-image-wrap">
+          <img id="gallery-image" src="" alt="">
+        </div>
+        <button class="gallery-arrow gallery-next" id="gallery-next" type="button" aria-label="Next photo">→</button>
+      </div>
+
+      <div class="gallery-caption">
+        <div>
+          <p class="mono-label" id="gallery-counter">01 / 01</p>
+          <p id="gallery-description"></p>
+        </div>
+        <span class="mono-label">← / → NAVIGATE</span>
+      </div>
+    </div>
+  </div>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
