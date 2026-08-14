@@ -26,7 +26,7 @@ a {
 
 
 /* =====================================================
-   ABSTRACT BACKGROUND
+   ABSTRACT LIQUID GLASS BACKGROUND
 ===================================================== */
 
 .background {
@@ -184,7 +184,9 @@ a {
 }
 
 
-/* LOGO */
+/* =====================================================
+   LOGO
+===================================================== */
 
 .brand {
     display: flex;
@@ -194,6 +196,8 @@ a {
     height: 34px;
 
     text-decoration: none;
+
+    overflow: hidden;
 }
 
 .brand img {
@@ -208,7 +212,9 @@ a {
 }
 
 
-/* NAVIGATION */
+/* =====================================================
+   NAVIGATION
+===================================================== */
 
 .navbar nav {
     display: flex;
@@ -224,6 +230,7 @@ a {
     text-decoration: none;
 
     font-size: 9px;
+
     font-weight: 600;
 
     letter-spacing: 0.15em;
@@ -718,7 +725,9 @@ a {
 }
 
 
-/* IMAGE COUNT */
+/* =====================================================
+   IMAGE COUNT
+===================================================== */
 
 .project-card-overlay {
     position: absolute;
