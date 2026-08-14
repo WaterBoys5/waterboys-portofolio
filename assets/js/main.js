@@ -13,9 +13,22 @@ const CATEGORIES = [
         year: "2026",
         description: "Stage photography for Stereo Wall at Trilogigs 2025.",
 
-        images: [
-          "assets/images/201401.jpg"
-        ]
+       images: [
+  "assets/images/documentation/stereo-wall-01.jpg",
+  "assets/images/documentation/stereo-wall-02.jpg",
+  "assets/images/documentation/stereo-wall-03.jpg",
+  "assets/images/documentation/stereo-wall-04.jpg",
+  "assets/images/documentation/stereo-wall-05.jpg",
+  "assets/images/documentation/stereo-wall-06.jpg",
+  "assets/images/documentation/stereo-wall-07.jpg",
+  "assets/images/documentation/stereo-wall-08.jpg",
+  "assets/images/documentation/stereo-wall-09.jpg",
+  "assets/images/documentation/stereo-wall-10.jpg",
+  "assets/images/documentation/stereo-wall-11.jpg",
+  "assets/images/documentation/stereo-wall-12.jpg",
+  "assets/images/documentation/stereo-wall-13.jpg",
+  "assets/images/documentation/stereo-wall-14.jpg"
+]
       }
     ]
   },
