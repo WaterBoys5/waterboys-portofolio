@@ -1,39 +1,39 @@
 const CATEGORIES = [
   {
-    id: "documentation",
-    number: "01",
-    title: "DOCUMENTATION",
-    description: "Live performances, events, concerts, and visual documentation.",
-    previewImages: [
-      "assets/images/documentation/stereo-wall-01.jpg",
-      "assets/images/documentation/stereo-wall-02.jpg",
-      "assets/images/documentation/stereo-wall-03.jpg",
-      "assets/images/documentation/stereo-wall-04.jpg"
-    ],
-    projects: [
-      {
-  title: "Stereo Wall",
-  year: "2026",
-  description: "Stage photography for Stereo Wall at Trilogigs 2025.",
-  images: [
-    "assets/images/stage/stereo-wall-01.jpg",
-    "assets/images/stage/stereo-wall-02.jpg",
-    "assets/images/stage/stereo-wall-03.jpg",
-    "assets/images/stage/stereo-wall-04.jpg",
-    "assets/images/stage/stereo-wall-05.jpg",
-    "assets/images/stage/stereo-wall-06.jpg",
-    "assets/images/stage/stereo-wall-07.jpg",
-    "assets/images/stage/stereo-wall-08.jpg",
-    "assets/images/stage/stereo-wall-09.jpg",
-    "assets/images/stage/stereo-wall-10.jpg",
-    "assets/images/stage/stereo-wall-11.jpg",
-    "assets/images/stage/stereo-wall-12.jpg",
-    "assets/images/stage/stereo-wall-13.jpg",
-    "assets/images/stage/stereo-wall-14.jpg"
+  id: "documentation",
+  number: "01",
+  title: "DOCUMENTATION",
+  description: "Live performances, events, concerts, and visual documentation.",
+  previewImages: [
+    "assets/images/documentation/stereo-wall-01.jpg",
+    "assets/images/documentation/stereo-wall-02.jpg",
+    "assets/images/documentation/stereo-wall-03.jpg",
+    "assets/images/documentation/stereo-wall-04.jpg"
+  ],
+  projects: [
+    {
+      title: "Stereo Wall",
+      year: "2026",
+      description: "Stage photography for Stereo Wall at Trilogigs 2025.",
+      images: [
+        "assets/images/documentation/stereo-wall-01.jpg",
+        "assets/images/documentation/stereo-wall-02.jpg",
+        "assets/images/documentation/stereo-wall-03.jpg",
+        "assets/images/documentation/stereo-wall-04.jpg",
+        "assets/images/documentation/stereo-wall-05.jpg",
+        "assets/images/documentation/stereo-wall-06.jpg",
+        "assets/images/documentation/stereo-wall-07.jpg",
+        "assets/images/documentation/stereo-wall-08.jpg",
+        "assets/images/documentation/stereo-wall-09.jpg",
+        "assets/images/documentation/stereo-wall-10.jpg",
+        "assets/images/documentation/stereo-wall-11.jpg",
+        "assets/images/documentation/stereo-wall-12.jpg",
+        "assets/images/documentation/stereo-wall-13.jpg",
+        "assets/images/documentation/stereo-wall-14.jpg"
+      ]
+    }
   ]
-}
-    ]
-  },
+},
 
   {
     id: "product",
