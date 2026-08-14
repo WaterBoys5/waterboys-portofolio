@@ -365,7 +365,8 @@ a {
   inset: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
+  padding: 35px;
   transition: opacity .9s ease, transform 1.1s var(--ease);
 }
 
