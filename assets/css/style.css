@@ -1,3 +1,7 @@
+/* =========================================================
+   RESET
+========================================================= */
+
 *,
 *::before,
 *::after {
@@ -12,6 +16,7 @@
   --glass: rgba(12, 12, 12, 0.24);
 
   --max: 1440px;
+
   --pad: clamp(20px, 4vw, 64px);
 
   --radius: 26px;
@@ -32,16 +37,23 @@ html {
 
 body {
   margin: 0;
+
   min-width: 320px;
+
   overflow-x: hidden;
 
   background: var(--bg);
+
   color: var(--text);
 
-  font-family: "Inter", sans-serif;
+  font-family:
+    "Inter",
+    sans-serif;
+
   line-height: 1.5;
 
   -webkit-font-smoothing: antialiased;
+
   text-rendering: optimizeLegibility;
 }
 
@@ -71,7 +83,9 @@ a {
 
 .liquid-bg {
   position: fixed;
+
   inset: 0;
+
   z-index: -5;
 
   overflow: hidden;
@@ -91,12 +105,15 @@ a {
 }
 
 
-/* ABSTRACT WHITE PATTERN */
+/* =========================================================
+   ABSTRACT WHITE PATTERN
+========================================================= */
 
 .liquid-bg::before {
   content: "";
 
   position: absolute;
+
   inset: -15%;
 
   opacity: .075;
@@ -125,7 +142,6 @@ a {
     alternate;
 }
 
-
 @keyframes patternMove {
 
   from {
@@ -145,7 +161,9 @@ a {
 }
 
 
-/* LIQUID BLOBS */
+/* =========================================================
+   LIQUID BLOBS
+========================================================= */
 
 .blob {
   position: absolute;
@@ -169,7 +187,6 @@ a {
   will-change: transform;
 }
 
-
 .blob-1 {
   top: -18%;
   left: -12%;
@@ -181,7 +198,6 @@ a {
     infinite
     alternate;
 }
-
 
 .blob-2 {
   right: -16%;
@@ -197,7 +213,6 @@ a {
     alternate;
 }
 
-
 .blob-3 {
   left: 30%;
   bottom: -25%;
@@ -212,7 +227,6 @@ a {
     alternate;
 }
 
-
 @keyframes driftOne {
 
   to {
@@ -223,7 +237,6 @@ a {
 
 }
 
-
 @keyframes driftTwo {
 
   to {
@@ -233,7 +246,6 @@ a {
   }
 
 }
-
 
 @keyframes driftThree {
 
@@ -246,10 +258,13 @@ a {
 }
 
 
-/* GRAIN */
+/* =========================================================
+   GRAIN
+========================================================= */
 
 .grain {
   position: absolute;
+
   inset: 0;
 
   opacity: .018;
@@ -275,7 +290,9 @@ a {
   z-index: 100;
 
   display: flex;
+
   align-items: center;
+
   justify-content: space-between;
 
   min-height: 76px;
@@ -300,14 +317,13 @@ a {
     saturate(110%);
 }
 
-
 .brand {
   display: inline-flex;
 
   align-items: center;
+
   justify-content: center;
 }
-
 
 .brand-mark {
   display: grid;
@@ -324,9 +340,9 @@ a {
   border-radius: 50%;
 
   font-size: 13px;
+
   font-weight: 600;
 }
-
 
 .desktop-nav {
   display: flex;
@@ -338,7 +354,6 @@ a {
   font-size: 13px;
 }
 
-
 .desktop-nav > a:not(.pill-button) {
   color: #d3d3d3;
 
@@ -346,11 +361,9 @@ a {
     color .25s ease;
 }
 
-
 .desktop-nav > a:not(.pill-button):hover {
   color: #fff;
 }
-
 
 .pill-button {
   padding:
@@ -372,7 +385,6 @@ a {
     transform .25s ease;
 }
 
-
 .pill-button:hover {
   border-color:
     rgba(255,255,255,.45);
@@ -383,7 +395,6 @@ a {
   transform:
     translateY(-1px);
 }
-
 
 .mobile-menu-button,
 .mobile-nav {
@@ -405,7 +416,6 @@ a {
   margin-inline: auto;
 }
 
-
 .eyebrow,
 .mono-label,
 .role,
@@ -417,7 +427,6 @@ a {
     monospace;
 }
 
-
 .eyebrow {
   margin: 0;
 
@@ -427,7 +436,6 @@ a {
 
   letter-spacing: .15em;
 }
-
 
 .eyebrow span {
   color: #5d5d5d;
@@ -454,7 +462,6 @@ a {
   padding-top: 76px;
 }
 
-
 .hero h1 {
   max-width: 850px;
 
@@ -477,14 +484,12 @@ a {
   letter-spacing: -.065em;
 }
 
-
 .hero h1 em,
 .contact h2 em {
   color: #8f8f8f;
 
   font-style: normal;
 }
-
 
 .hero-description {
   max-width: 520px;
@@ -501,7 +506,6 @@ a {
     );
 }
 
-
 .hero-actions {
   display: flex;
 
@@ -513,7 +517,6 @@ a {
 
   margin-top: 40px;
 }
-
 
 .text-link {
   display: inline-flex;
@@ -531,18 +534,15 @@ a {
   letter-spacing: .08em;
 }
 
-
 .text-link span {
   transition:
     transform .25s var(--ease);
 }
 
-
 .text-link:hover span {
   transform:
     translate(4px,4px);
 }
-
 
 .mono-link {
   color: #777;
@@ -550,13 +550,11 @@ a {
   font-size: 10px;
 }
 
-
 .hero-space {
   position: relative;
 
   min-height: 480px;
 }
-
 
 .hero-orbit {
   position: absolute;
@@ -582,7 +580,6 @@ a {
   border-radius: 50%;
 }
 
-
 .hero-orbit::before,
 .hero-orbit::after {
   content: "";
@@ -598,11 +595,9 @@ a {
   border-radius: 50%;
 }
 
-
 .hero-orbit::after {
   inset: 29%;
 }
-
 
 .hero-coordinate {
   position: absolute;
@@ -626,7 +621,6 @@ a {
   padding-top: 150px;
 }
 
-
 .section-heading {
   display: flex;
 
@@ -642,7 +636,6 @@ a {
     1px solid
     rgba(255,255,255,.07);
 }
-
 
 .section-heading h2 {
   margin:
@@ -663,7 +656,6 @@ a {
 
   line-height: .95;
 }
-
 
 .section-heading > p {
   max-width: 330px;
@@ -687,13 +679,12 @@ a {
   display: grid;
 
   grid-template-columns:
-    repeat(3,1fr);
+    repeat(3, 1fr);
 
   gap: 20px;
 
   padding-top: 24px;
 }
-
 
 .category-card {
   position: relative;
@@ -710,8 +701,7 @@ a {
 
   border: none;
 
-  border-radius:
-    28px;
+  border-radius: 28px;
 
   background: #111;
 
@@ -725,12 +715,10 @@ a {
     transform .4s var(--ease);
 }
 
-
 .category-card:hover {
   transform:
     translateY(-3px);
 }
-
 
 .category-card:focus-visible {
   outline:
@@ -740,6 +728,10 @@ a {
   outline-offset: 4px;
 }
 
+
+/* =========================================================
+   CATEGORY IMAGE
+========================================================= */
 
 .category-image {
   position: absolute;
@@ -751,6 +743,8 @@ a {
 
   object-fit: cover;
 
+  object-position: center center;
+
   transition:
     transform
     1s
@@ -758,10 +752,33 @@ a {
 }
 
 
+/*
+   STEREO WALL
+
+   Foto pertama category = Stereo Wall.
+   Posisi dinaikkan supaya bagian penting foto
+   tidak terlalu turun dan kepotong.
+
+   Nilai 35% berarti titik fokus foto berada
+   sedikit lebih ke atas dibanding center.
+*/
+
+.category-card:first-child .category-image {
+  object-position: center 35%;
+}
+
+
 .category-card:hover
 .category-image {
   transform:
     scale(1.035);
+}
+
+.category-card:first-child:hover
+.category-image {
+  transform:
+    scale(1.035)
+    translateY(-1%);
 }
 
 
@@ -778,6 +795,10 @@ a {
     );
 }
 
+
+/* =========================================================
+   CATEGORY OVERLAY
+========================================================= */
 
 .category-overlay {
   position: absolute;
@@ -807,7 +828,6 @@ a {
   pointer-events: none;
 }
 
-
 .category-top {
   display: flex;
 
@@ -815,7 +835,6 @@ a {
 
   justify-content: space-between;
 }
-
 
 .category-number {
   font-family:
@@ -826,7 +845,6 @@ a {
 
   color: #fff;
 }
-
 
 .category-arrow {
   font-family:
@@ -840,20 +858,17 @@ a {
     var(--ease);
 }
 
-
 .category-card:hover
 .category-arrow {
   transform:
     translate(4px,-4px);
 }
 
-
 .category-bottom {
   display: flex;
 
   align-items: end;
 }
-
 
 .category-title {
   max-width: 90%;
@@ -879,7 +894,6 @@ a {
   padding-top: 170px;
 }
 
-
 .section-rule {
   padding-bottom: 22px;
 
@@ -887,7 +901,6 @@ a {
     1px solid
     rgba(255,255,255,.08);
 }
-
 
 .about-layout {
   display: grid;
@@ -907,7 +920,9 @@ a {
 }
 
 
-/* PROFILE IMAGE */
+/* =========================================================
+   PROFILE IMAGE
+========================================================= */
 
 .profile-frame {
   position: relative;
@@ -928,7 +943,6 @@ a {
     rgba(0,0,0,.25);
 }
 
-
 .profile-frame img {
   display: block;
 
@@ -937,7 +951,6 @@ a {
 
   object-fit: cover;
 }
-
 
 .profile-fallback {
   position: absolute;
@@ -953,12 +966,10 @@ a {
   color: #777;
 }
 
-
 .profile-frame img:not([style*="display: none"])
 + .profile-fallback {
   display: none;
 }
-
 
 .name {
   margin: 0;
@@ -975,7 +986,6 @@ a {
   letter-spacing: -.055em;
 }
 
-
 .stage-name {
   margin:
     7px
@@ -987,7 +997,6 @@ a {
   font-size: 17px;
 }
 
-
 .role {
   margin: 0;
 
@@ -997,7 +1006,6 @@ a {
 
   letter-spacing: .08em;
 }
-
 
 .about-text {
   max-width: 690px;
@@ -1009,14 +1017,12 @@ a {
   font-size: 16px;
 }
 
-
 .about-text p {
   margin:
     0
     0
     18px;
 }
-
 
 .tag-list {
   display: flex;
@@ -1027,7 +1033,6 @@ a {
 
   margin-top: 36px;
 }
-
 
 .tag-list span {
   padding:
@@ -1058,7 +1063,6 @@ a {
   padding-bottom: 150px;
 }
 
-
 .contact-inner {
   padding-top: 25px;
 
@@ -1066,7 +1070,6 @@ a {
     1px solid
     rgba(255,255,255,.08);
 }
-
 
 .contact h2 {
   margin:
@@ -1088,7 +1091,6 @@ a {
   letter-spacing: -.07em;
 }
 
-
 .contact-inner > p:not(.eyebrow) {
   max-width: 440px;
 
@@ -1096,7 +1098,6 @@ a {
 
   font-size: 15px;
 }
-
 
 .contact-links {
   display: grid;
@@ -1108,7 +1109,6 @@ a {
 
   margin-top: 70px;
 }
-
 
 .contact-links a {
   display: block;
@@ -1125,12 +1125,10 @@ a {
     border-color .25s ease;
 }
 
-
 .contact-links a:hover {
   border-color:
     rgba(255,255,255,.5);
 }
-
 
 .contact-links span {
   display: block;
@@ -1149,7 +1147,6 @@ a {
 
   text-transform: uppercase;
 }
-
 
 .contact-links strong {
   font-size: 14px;
@@ -1191,11 +1188,9 @@ a {
   letter-spacing: .05em;
 }
 
-
 .site-footer div:nth-child(2) {
   text-align: center;
 }
-
 
 .site-footer div:last-child {
   text-align: right;
@@ -1203,7 +1198,7 @@ a {
 
 
 /* =========================================================
-   MODALS
+   MODAL BASE
 ========================================================= */
 
 .modal {
@@ -1215,17 +1210,25 @@ a {
 
   display: grid;
 
+  /*
+    INI YANG MEMASTIKAN PANEL BENAR-BENAR
+    DI TENGAH LAYAR.
+  */
+
+  place-items: center;
+
   visibility: hidden;
 
   opacity: 0;
 
   pointer-events: none;
 
+  padding: 20px;
+
   transition:
     opacity .3s ease,
     visibility .3s ease;
 }
-
 
 .modal.is-open {
   visibility: visible;
@@ -1234,7 +1237,6 @@ a {
 
   pointer-events: auto;
 }
-
 
 .modal-backdrop {
   position: absolute;
@@ -1264,20 +1266,19 @@ a {
   width:
     min(
       1160px,
-      calc(100% - 40px)
+      100%
     );
-
-  margin: auto;
 
   max-height:
     calc(100svh - 40px);
+
+  margin: 0;
 
   overflow: auto;
 
   border: none;
 
-  border-radius:
-    28px;
+  border-radius: 28px;
 
   background:
     rgba(12,12,12,.86);
@@ -1301,7 +1302,6 @@ a {
     blur(24px);
 }
 
-
 .modal.is-open
 .category-modal-panel {
   transform:
@@ -1309,6 +1309,10 @@ a {
     scale(1);
 }
 
+
+/* =========================================================
+   MODAL TOPBAR
+========================================================= */
 
 .modal-topbar,
 .gallery-topbar {
@@ -1326,7 +1330,6 @@ a {
     1px solid
     rgba(255,255,255,.07);
 }
-
 
 .icon-button {
   display: grid;
@@ -1357,12 +1360,15 @@ a {
     background .2s ease;
 }
 
-
 .icon-button:hover {
   background:
     rgba(255,255,255,.12);
 }
 
+
+/* =========================================================
+   CATEGORY MODAL HEADING
+========================================================= */
 
 .category-modal-heading {
   padding:
@@ -1370,7 +1376,6 @@ a {
     22px
     35px;
 }
-
 
 .category-modal-heading h2 {
   margin:
@@ -1390,7 +1395,6 @@ a {
 
   line-height: .9;
 }
-
 
 .category-modal-heading > p:last-child {
   max-width: 600px;
@@ -1420,9 +1424,10 @@ a {
   background: transparent;
 }
 
-
 .project-item {
   display: block;
+
+  width: 100%;
 
   min-width: 0;
 
@@ -1430,8 +1435,7 @@ a {
 
   border: none;
 
-  border-radius:
-    24px;
+  border-radius: 24px;
 
   overflow: hidden;
 
@@ -1447,18 +1451,29 @@ a {
     0 15px 40px
     rgba(0,0,0,.18);
 
+  appearance: none;
+
+  -webkit-appearance: none;
+
   transition:
     transform .35s
     var(--ease),
     background .25s ease;
 }
 
-
 .project-item:hover {
   background: #161616;
 
   transform:
     translateY(-3px);
+}
+
+.project-item:focus-visible {
+  outline:
+    2px solid
+    rgba(255,255,255,.9);
+
+  outline-offset: 3px;
 }
 
 
@@ -1478,7 +1493,6 @@ a {
   background: #111;
 }
 
-
 .project-thumb {
   display: block;
 
@@ -1489,11 +1503,12 @@ a {
 
   object-fit: cover;
 
+  object-position: center center;
+
   transition:
     transform .7s
     var(--ease);
 }
-
 
 .project-item:hover
 .project-thumb {
@@ -1503,7 +1518,7 @@ a {
 
 
 /* =========================================================
-   TEXT OVER IMAGE
+   PROJECT TEXT OVER IMAGE
 ========================================================= */
 
 .project-image-overlay {
@@ -1531,7 +1546,6 @@ a {
   pointer-events: none;
 }
 
-
 .project-image-title {
   display: flex;
 
@@ -1545,7 +1559,6 @@ a {
     30px;
 }
 
-
 .project-title-overlay {
   font-size: 19px;
 
@@ -1554,9 +1567,9 @@ a {
   letter-spacing: -.025em;
 }
 
-
 .project-year-overlay {
-  color: rgba(255,255,255,.60);
+  color:
+    rgba(255,255,255,.60);
 
   font-family:
     "DM Mono",
@@ -1564,7 +1577,6 @@ a {
 
   font-size: 9px;
 }
-
 
 .project-arrow {
   margin:
@@ -1583,7 +1595,6 @@ a {
     transform .3s
     var(--ease);
 }
-
 
 .project-item:hover
 .project-arrow {
@@ -1605,7 +1616,6 @@ a {
     17px;
 }
 
-
 .project-description {
   display: block;
 
@@ -1616,8 +1626,9 @@ a {
   line-height: 1.45;
 }
 
-
 .empty-projects {
+  grid-column: 1 / -1;
+
   padding:
     30px
     20px;
@@ -1629,14 +1640,13 @@ a {
 
 
 /* =========================================================
-   GALLERY
+   GALLERY MODAL
 ========================================================= */
 
 .gallery-modal {
   background:
     rgba(0,0,0,.15);
 }
-
 
 .gallery-panel {
   position: relative;
@@ -1646,18 +1656,19 @@ a {
   width:
     min(
       1280px,
-      calc(100% - 40px)
+      100%
     );
 
   max-height:
     calc(100svh - 40px);
 
+  margin: 0;
+
   overflow: hidden;
 
   border: none;
 
-  border-radius:
-    28px;
+  border-radius: 28px;
 
   background:
     rgba(10,10,10,.92);
@@ -1675,7 +1686,6 @@ a {
     var(--ease);
 }
 
-
 .modal.is-open
 .gallery-panel {
   transform:
@@ -1683,13 +1693,11 @@ a {
     scale(1);
 }
 
-
 .gallery-topbar {
   position: relative;
 
   z-index: 3;
 }
-
 
 .gallery-topbar h2 {
   margin:
@@ -1704,7 +1712,7 @@ a {
 
 
 /* =========================================================
-   GALLERY IMAGE
+   GALLERY STAGE
 ========================================================= */
 
 .gallery-stage {
@@ -1728,7 +1736,6 @@ a {
   background: #050505;
 }
 
-
 .gallery-image-wrap {
   width: 100%;
 
@@ -1743,28 +1750,33 @@ a {
   place-items: center;
 
   padding: 18px;
+
+  overflow: hidden;
 }
 
 
-/*
-  FOTO GALLERY DIPERKECIL LAGI.
-  Tetap proporsional dan tidak dipotong.
-*/
+/* =========================================================
+   GALLERY IMAGE
+========================================================= */
 
 .gallery-image-wrap img {
   display: block;
 
   width: auto;
 
-  max-width: 48%;
+  max-width: 70%;
 
   height: auto;
 
-  max-height: 68%;
+  max-height: 88%;
 
   object-fit: contain;
 
+  object-position: center;
+
   user-select: none;
+
+  -webkit-user-drag: none;
 
   border-radius: 4px;
 }
@@ -1810,7 +1822,6 @@ a {
     transform .2s ease;
 }
 
-
 .gallery-arrow:hover {
   background:
     rgba(255,255,255,.13);
@@ -1818,7 +1829,6 @@ a {
   transform:
     scale(1.05);
 }
-
 
 .gallery-arrow:disabled {
   cursor: default;
@@ -1852,7 +1862,6 @@ a {
     1px solid
     rgba(255,255,255,.08);
 }
-
 
 .gallery-caption p {
   margin:
@@ -1908,6 +1917,24 @@ a {
     grid-template-columns: 1fr;
   }
 
+
+  .category-modal-panel {
+    width:
+      min(
+        760px,
+        100%
+      );
+  }
+
+
+  .gallery-panel {
+    width:
+      min(
+        900px,
+        100%
+      );
+  }
+
 }
 
 
@@ -1919,11 +1946,14 @@ a {
 
   :root {
     --pad: 20px;
+
     --radius: 20px;
   }
 
 
-  /* HEADER */
+  /* =======================================================
+     HEADER
+  ======================================================= */
 
   .desktop-nav {
     display: none;
@@ -1966,7 +1996,9 @@ a {
   }
 
 
-  /* MOBILE NAV */
+  /* =======================================================
+     MOBILE NAV
+  ======================================================= */
 
   .mobile-nav {
     position: absolute;
@@ -2048,7 +2080,9 @@ a {
   }
 
 
-  /* HERO */
+  /* =======================================================
+     HERO
+  ======================================================= */
 
   .hero {
     padding-top: 145px;
@@ -2076,7 +2110,9 @@ a {
   }
 
 
-  /* SECTIONS */
+  /* =======================================================
+     SECTIONS
+  ======================================================= */
 
   .projects,
   .about {
@@ -2094,7 +2130,9 @@ a {
   }
 
 
-  /* CATEGORY */
+  /* =======================================================
+     CATEGORY
+  ======================================================= */
 
   .category-grid {
     grid-template-columns: 1fr;
@@ -2106,8 +2144,7 @@ a {
   .category-card {
     aspect-ratio: 3 / 4;
 
-    border-radius:
-      20px;
+    border-radius: 20px;
   }
 
 
@@ -2116,7 +2153,18 @@ a {
   }
 
 
-  /* ABOUT */
+  /*
+     Stereo Wall di mobile juga dinaikkan.
+  */
+
+  .category-card:first-child .category-image {
+    object-position: center 32%;
+  }
+
+
+  /* =======================================================
+     ABOUT
+  ======================================================= */
 
   .about-layout {
     grid-template-columns:
@@ -2152,7 +2200,9 @@ a {
   }
 
 
-  /* CONTACT */
+  /* =======================================================
+     CONTACT
+  ======================================================= */
 
   .contact {
     padding-top: 120px;
@@ -2176,7 +2226,9 @@ a {
   }
 
 
-  /* FOOTER */
+  /* =======================================================
+     FOOTER
+  ======================================================= */
 
   .site-footer {
     grid-template-columns: 1fr;
@@ -2191,17 +2243,22 @@ a {
   }
 
 
-  /* CATEGORY MODAL */
+  /* =======================================================
+     CATEGORY MODAL
+  ======================================================= */
+
+  .modal {
+    padding: 10px;
+  }
+
 
   .category-modal-panel {
-    width:
-      calc(100% - 20px);
+    width: 100%;
 
     max-height:
       calc(100svh - 20px);
 
-    border-radius:
-      20px;
+    border-radius: 20px;
   }
 
 
@@ -2213,7 +2270,19 @@ a {
   }
 
 
-  /* PROJECTS */
+  .category-modal-heading h2 {
+    font-size:
+      clamp(
+        36px,
+        12vw,
+        58px
+      );
+  }
+
+
+  /* =======================================================
+     PROJECTS
+  ======================================================= */
 
   .project-list {
     grid-template-columns: 1fr;
@@ -2225,8 +2294,7 @@ a {
 
 
   .project-item {
-    border-radius:
-      18px;
+    border-radius: 18px;
   }
 
 
@@ -2266,24 +2334,24 @@ a {
   }
 
 
-  /* GALLERY */
+  /* =======================================================
+     GALLERY
+  ======================================================= */
 
   .gallery-panel {
-    width:
-      calc(100% - 10px);
+    width: 100%;
 
     max-height:
-      calc(100svh - 10px);
+      calc(100svh - 20px);
 
-    border-radius:
-      18px;
+    border-radius: 18px;
   }
 
 
   .gallery-stage {
     grid-template-columns:
       42px
-      1fr
+      minmax(0,1fr)
       42px;
 
     min-height:
@@ -2300,9 +2368,9 @@ a {
 
 
   .gallery-image-wrap img {
-    max-width: 66%;
+    max-width: 76%;
 
-    max-height: 72%;
+    max-height: 82%;
   }
 
 
@@ -2329,6 +2397,42 @@ a {
 
 
 /* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width: 400px) {
+
+  .gallery-stage {
+    grid-template-columns:
+      36px
+      minmax(0,1fr)
+      36px;
+  }
+
+
+  .gallery-image-wrap img {
+    max-width: 82%;
+
+    max-height: 80%;
+  }
+
+
+  .gallery-arrow {
+    width: 32px;
+    height: 32px;
+
+    font-size: 14px;
+  }
+
+
+  .project-title-overlay {
+    font-size: 16px;
+  }
+
+}
+
+
+/* =========================================================
    REDUCED MOTION
 ========================================================= */
 
@@ -2342,11 +2446,14 @@ a {
   *,
   *::before,
   *::after {
-    animation-duration: .01ms !important;
+    animation-duration:
+      .01ms !important;
 
-    animation-iteration-count: 1 !important;
+    animation-iteration-count:
+      1 !important;
 
-    transition-duration: .01ms !important;
+    transition-duration:
+      .01ms !important;
   }
 
 }
