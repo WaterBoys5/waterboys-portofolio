@@ -20,14 +20,15 @@
 <body>
 
   <!-- =====================================================
-       LIQUID BACKGROUND
+       LIQUID GLASS BACKGROUND
   ====================================================== -->
 
-  <div class="liquid-bg" aria-hidden="true">
+  <div class="liquid-bg">
     <div class="blob blob-a"></div>
     <div class="blob blob-b"></div>
     <div class="blob blob-c"></div>
     <div class="blob blob-d"></div>
+
     <div class="glass-noise"></div>
   </div>
 
@@ -43,11 +44,15 @@
       <span>WETEERBREH</span>
     </a>
 
-    <nav class="site-nav">
+    <nav class="main-nav">
       <a href="#work">Work</a>
       <a href="#about">About</a>
       <a href="#contact">Contact</a>
-      <a href="mailto:waterboys.work@gmail.com" class="nav-cta">
+
+      <a
+        href="mailto:waterboys.work@gmail.com"
+        class="nav-cta"
+      >
         Let's work
       </a>
     </nav>
@@ -55,12 +60,16 @@
   </header>
 
 
+  <!-- =====================================================
+       MAIN
+  ====================================================== -->
+
   <main>
 
 
-    <!-- =====================================================
+    <!-- ===================================================
          HERO
-    ====================================================== -->
+    ==================================================== -->
 
     <section class="hero section">
 
@@ -72,7 +81,8 @@
         </p>
 
         <h1>
-          Visual stories,<br>
+          Visual stories,
+          <br>
           <span>made with intention.</span>
         </h1>
 
@@ -83,7 +93,10 @@
 
         <div class="hero-actions">
 
-          <a href="#work" class="button button-light">
+          <a
+            href="#work"
+            class="button button-light"
+          >
             View selected work ↘
           </a>
 
@@ -102,37 +115,41 @@
       <!-- RIGHT -->
       <div class="hero-right" id="about">
 
-        <!-- ABOUT ME DI ATAS -->
+
+        <!-- ABOUT ME -->
         <div class="hero-about">
 
           <p class="eyebrow">
             ABOUT ME
           </p>
 
+          <h2>
+            Zulkarnain
+          </h2>
+
           <p>
-            Saya Zulkarnain, seorang fotografer dan videografer
-            yang memiliki ketertarikan pada visual storytelling,
-            commercial photography, portrait, product, dan
-            dokumentasi event.
+            Photography student and visual creative
+            focused on photography, videography,
+            lighting, and visual storytelling.
           </p>
 
         </div>
 
 
-        <!-- FOTO + INFORMASI DI BAWAH -->
+        <!-- PROFILE -->
         <div class="hero-profile">
 
-          <!-- FOTO PROFIL KECIL -->
+
+          <!-- PROFILE PHOTO -->
           <div class="hero-card glass-card">
 
-            <div class="hero-card-label">
-              <span>YOUR IMAGE</span>
+            <div class="hero-card-top">
+              <span>WTR</span>
               <span>01</span>
             </div>
 
             <div class="hero-card-image">
 
-              <!-- GANTI FILE INI DENGAN FOTO PROFIL LU -->
               <img
                 src="assets/images/profile.jpg"
                 alt="Zulkarnain"
@@ -140,30 +157,28 @@
 
             </div>
 
-            <div class="hero-card-label">
-              <span>WETEERBREH</span>
+            <div class="hero-card-bottom">
+              <span>PORTRAIT</span>
               <span>2026</span>
             </div>
 
           </div>
 
 
-          <!-- INFORMASI DI SAMPING FOTO -->
+          <!-- PROFILE INFO -->
           <div class="hero-profile-info">
 
-            <h2>
+            <h3>
               Zulkarnain
-            </h2>
+            </h3>
 
             <p>
-              Photographer<br>
-              Videographer<br>
-              Visual Creative
+              Photographer / Videographer
+              <br>
+              Politeknik Negeri Media Kreatif
+              <br>
+              Jakarta, Indonesia
             </p>
-
-            <span class="profile-location">
-              Jakarta / Indonesia
-            </span>
 
           </div>
 
@@ -175,9 +190,9 @@
 
 
 
-    <!-- =====================================================
+    <!-- ===================================================
          WORK
-    ====================================================== -->
+    ==================================================== -->
 
     <section
       id="work"
@@ -187,6 +202,7 @@
       <div class="section-heading">
 
         <div>
+
           <p class="eyebrow">
             SELECTED WORK
           </p>
@@ -194,26 +210,159 @@
           <h2>
             Projects
           </h2>
+
         </div>
 
         <p class="section-note">
-          A selection of photography and videography
-          projects across different visual disciplines.
+          A selection of photography and
+          videography projects.
         </p>
 
       </div>
 
 
-      <!-- PROJECT CATEGORY GRID -->
-      <div id="project-grid"></div>
+      <!-- PROJECT GRID -->
+
+      <div id="project-grid">
+
+
+        <!-- =============================================
+             STAGE
+        ============================================== -->
+
+        <article
+          class="category-card"
+          data-category="stage"
+        >
+
+          <div
+            class="category-image"
+            style="background-image: url('assets/images/stage.jpg');"
+          ></div>
+
+          <div class="category-overlay">
+
+            <p class="category-number">
+              01
+            </p>
+
+            <div class="category-bottom">
+
+              <h3 class="category-title">
+                STAGE PHOTOGRAPHY
+              </h3>
+
+              <p class="category-description">
+                Live performances, concerts,
+                and stage documentation.
+              </p>
+
+            </div>
+
+            <span class="category-arrow">
+              ↗
+            </span>
+
+          </div>
+
+        </article>
+
+
+
+        <!-- =============================================
+             PRODUCT
+        ============================================== -->
+
+        <article
+          class="category-card"
+          data-category="product"
+        >
+
+          <div
+            class="category-image"
+            style="background-image: url('assets/images/product.jpg');"
+          ></div>
+
+          <div class="category-overlay">
+
+            <p class="category-number">
+              02
+            </p>
+
+            <div class="category-bottom">
+
+              <h3 class="category-title">
+                PRODUCT PHOTOGRAPHY
+              </h3>
+
+              <p class="category-description">
+                Commercial product photography,
+                still life, and brand visuals.
+              </p>
+
+            </div>
+
+            <span class="category-arrow">
+              ↗
+            </span>
+
+          </div>
+
+        </article>
+
+
+
+        <!-- =============================================
+             PORTRAIT
+        ============================================== -->
+
+        <article
+          class="category-card"
+          data-category="portrait"
+        >
+
+          <div
+            class="category-image"
+            style="background-image: url('assets/images/portrait.jpg');"
+          ></div>
+
+          <div class="category-overlay">
+
+            <p class="category-number">
+              03
+            </p>
+
+            <div class="category-bottom">
+
+              <h3 class="category-title">
+                PORTRAIT / FASHION
+              </h3>
+
+              <p class="category-description">
+                Portraits, fashion editorials,
+                artist profiles, and campaigns.
+              </p>
+
+            </div>
+
+            <span class="category-arrow">
+              ↗
+            </span>
+
+          </div>
+
+        </article>
+
+
+      </div>
 
     </section>
 
 
 
-    <!-- =====================================================
+    <!-- ===================================================
          CONTACT
-    ====================================================== -->
+    ==================================================== -->
 
     <section
       id="contact"
@@ -225,8 +374,8 @@
       </p>
 
       <h2>
-        Let's make<br>
-        something visual.
+        Let's make something
+        <span>visual.</span>
       </h2>
 
       <a
@@ -247,8 +396,8 @@
   ====================================================== -->
 
   <div
-    id="category-modal"
     class="category-modal"
+    id="categoryModal"
     hidden
   >
 
@@ -257,33 +406,44 @@
       data-close-category
     ></div>
 
-    <div class="category-modal-window">
+    <div
+      class="category-modal-window"
+      role="dialog"
+      aria-modal="true"
+    >
 
       <button
         class="modal-close"
-        id="category-close"
+        id="categoryClose"
         type="button"
         aria-label="Close"
       >
         ×
       </button>
 
-      <div class="modal-heading">
+      <div class="modal-header">
 
         <p
           class="eyebrow"
-          id="category-modal-number"
-        ></p>
+          id="categoryModalNumber"
+        >
+          01
+        </p>
 
-        <h2 id="category-modal-title"></h2>
+        <h2 id="categoryModalTitle">
+          STAGE PHOTOGRAPHY
+        </h2>
 
-        <p id="category-modal-description"></p>
+        <p id="categoryModalDescription">
+          Live performances, concerts,
+          and stage documentation.
+        </p>
 
       </div>
 
       <div
-        id="category-projects"
         class="category-projects"
+        id="categoryProjects"
       ></div>
 
     </div>
@@ -297,8 +457,8 @@
   ====================================================== -->
 
   <div
-    id="gallery-modal"
     class="gallery-modal"
+    id="galleryModal"
     hidden
   >
 
@@ -307,22 +467,27 @@
       data-close-gallery
     ></div>
 
-    <div class="gallery-window">
+    <div
+      class="gallery-window"
+      role="dialog"
+      aria-modal="true"
+    >
 
       <button
         class="gallery-close"
-        id="gallery-close"
+        id="galleryClose"
         type="button"
         aria-label="Close"
       >
         ×
       </button>
 
+
       <div class="gallery-image-wrap">
 
         <button
           class="gallery-prev"
-          id="gallery-prev"
+          id="galleryPrev"
           type="button"
           aria-label="Previous image"
         >
@@ -330,15 +495,15 @@
         </button>
 
         <img
-          id="gallery-main-image"
           class="gallery-main-image"
+          id="galleryMainImage"
           src=""
           alt=""
         >
 
         <button
           class="gallery-next"
-          id="gallery-next"
+          id="galleryNext"
           type="button"
           aria-label="Next image"
         >
@@ -352,21 +517,22 @@
 
         <div>
 
-          <p
-            class="eyebrow"
-            id="gallery-counter"
-          ></p>
+          <h3 id="galleryTitle">
+            Project
+          </h3>
 
-          <h2 id="gallery-title"></h2>
-
-          <p id="gallery-description"></p>
+          <p id="galleryDescription">
+            Project description.
+          </p>
 
         </div>
 
         <span
-          id="gallery-year"
-          class="gallery-year"
-        ></span>
+          class="gallery-counter"
+          id="galleryCounter"
+        >
+          01 / 01
+        </span>
 
       </div>
 
@@ -374,6 +540,11 @@
 
   </div>
 
+
+
+  <!-- =====================================================
+       JAVASCRIPT
+  ====================================================== -->
 
   <script src="assets/js/main.js"></script>
 
