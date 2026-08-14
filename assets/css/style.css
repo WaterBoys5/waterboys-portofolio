@@ -251,6 +251,7 @@ a {
 .hero,
 .work-section,
 .project-view,
+.clients-section,
 .about-section,
 .contact-section {
     position: relative;
@@ -392,23 +393,18 @@ a {
 
     padding:
         120px 0
-        160px;
+        100px;
 }
 
 .section-header {
     margin-bottom: 48px;
 }
 
-
-/* =====================================================
-   SECTION HEADINGS
-===================================================== */
-
 .section-header h2 {
     margin-top: 12px;
 
     font-size:
-        clamp(36px, 4.5vw, 60px);
+        clamp(42px, 6vw, 78px);
 
     line-height: 0.9;
 
@@ -974,6 +970,116 @@ a {
 
 
 /* =====================================================
+   SELECTED CLIENTS / BRANDS
+===================================================== */
+
+.clients-section {
+    width: min(1200px, 90%);
+
+    margin: auto;
+
+    padding:
+        40px 0
+        130px;
+}
+
+.clients-section .section-header {
+    margin-bottom: 45px;
+}
+
+.clients-section .section-header h2 {
+    font-size:
+        clamp(36px, 5vw, 64px);
+}
+
+
+/* =====================================================
+   CLIENT LOGO GRID
+===================================================== */
+
+.clients-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(6, minmax(0, 1fr));
+
+    gap: 14px;
+}
+
+
+/* =====================================================
+   CLIENT LOGO
+===================================================== */
+
+.client-logo {
+    min-height: 92px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    border:
+        1px solid
+        rgba(255,255,255,0.07);
+
+    border-radius: 16px;
+
+    background:
+        rgba(255,255,255,0.018);
+
+    transition:
+        background 0.3s ease,
+        border-color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.client-logo img {
+    display: block;
+
+    width: auto;
+
+    max-width: 100%;
+    max-height: 38px;
+
+    object-fit: contain;
+
+    opacity: 0.42;
+
+    filter:
+        grayscale(100%);
+
+    transition:
+        opacity 0.3s ease,
+        filter 0.3s ease,
+        transform 0.3s ease;
+}
+
+.client-logo:hover {
+    background:
+        rgba(255,255,255,0.045);
+
+    border-color:
+        rgba(255,255,255,0.14);
+
+    transform:
+        translateY(-3px);
+}
+
+.client-logo:hover img {
+    opacity: 0.9;
+
+    filter:
+        grayscale(0%);
+
+    transform:
+        scale(1.04);
+}
+
+
+/* =====================================================
    ABOUT
 ===================================================== */
 
@@ -983,7 +1089,7 @@ a {
     margin: auto;
 
     padding:
-        130px 0
+        100px 0
         160px;
 }
 
@@ -1045,21 +1151,17 @@ a {
 }
 
 
-/* =====================================================
-   ABOUT NAME
-===================================================== */
+/* NAME */
 
 .about-name {
     margin-bottom: 28px;
 }
 
 .about-name h3 {
-    margin: 0;
-
     color: #ffffff;
 
     font-size:
-        clamp(28px, 3.2vw, 46px);
+        clamp(28px, 3.5vw, 42px);
 
     line-height: 0.95;
 
@@ -1071,22 +1173,20 @@ a {
 .about-name span {
     display: block;
 
-    margin-top: 7px;
+    margin-top: 8px;
 
     color:
-        rgba(255,255,255,0.35);
+        rgba(255,255,255,0.32);
 
-    font-size: 9px;
+    font-size: 10px;
 
     font-weight: 600;
 
-    letter-spacing: 0.20em;
+    letter-spacing: 0.18em;
 }
 
 
-/* =====================================================
-   ABOUT PARAGRAPHS
-===================================================== */
+/* ABOUT PARAGRAPHS */
 
 .about-text p {
     color:
@@ -1099,20 +1199,13 @@ a {
     margin-bottom: 22px;
 }
 
-
-/* =====================================================
-   ABOUT LEAD
-===================================================== */
-
 .about-text .about-lead {
     color:
         rgba(255,255,255,0.84);
 
     font-size: 18px;
 
-    line-height: 1.55;
-
-    margin-bottom: 24px;
+    line-height: 1.5;
 }
 
 
@@ -1228,6 +1321,11 @@ footer {
             repeat(2, minmax(0, 1fr));
     }
 
+    .clients-grid {
+        grid-template-columns:
+            repeat(3, minmax(0, 1fr));
+    }
+
     .about-content {
         gap: 40px;
     }
@@ -1288,6 +1386,7 @@ footer {
 
     .work-section,
     .project-view,
+    .clients-section,
     .about-section,
     .contact-section {
         width:
@@ -1316,6 +1415,29 @@ footer {
         grid-template-columns: 1fr;
     }
 
+    .clients-section {
+        padding:
+            20px 0
+            100px;
+    }
+
+    .clients-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        gap: 12px;
+    }
+
+    .client-logo {
+        min-height: 78px;
+
+        padding: 15px;
+    }
+
+    .client-logo img {
+        max-height: 30px;
+    }
+
     .about-content {
         grid-template-columns: 1fr;
 
@@ -1331,7 +1453,7 @@ footer {
     }
 
     .about-text .about-lead {
-        font-size: 17px;
+        font-size: 18px;
     }
 
     .contact-links {
