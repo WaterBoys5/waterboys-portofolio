@@ -1,4 +1,4 @@
-```js
+```javascript
 document.addEventListener("DOMContentLoaded", () => {
 
     /*
@@ -148,19 +148,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
             {
-                title: "Unreleased — Nevertoolavish",
+                title: "Nevertoolavish — Unreleased",
 
                 description:
                     "Artist portrait series for Nevertoolavish.",
 
                 images: [
 
-                    "assets/images/portrait-commercial/unreleased-nevertoolavish-01.jpg",
-                    "assets/images/portrait-commercial/unreleased-nevertoolavish-02.jpg",
-                    "assets/images/portrait-commercial/unreleased-nevertoolavish-03.jpg",
-                    "assets/images/portrait-commercial/unreleased-nevertoolavish-04.jpg",
-                    "assets/images/portrait-commercial/unreleased-nevertoolavish-05.jpg",
-                    "assets/images/portrait-commercial/unreleased-nevertoolavish-06.jpg"
+                    "assets/images/portrait-commercial/unreleased-01.jpg",
+                    "assets/images/portrait-commercial/unreleased-02.jpg",
+                    "assets/images/portrait-commercial/unreleased-03.jpg",
+                    "assets/images/portrait-commercial/unreleased-04.jpg",
+                    "assets/images/portrait-commercial/unreleased-05.jpg",
+                    "assets/images/portrait-commercial/unreleased-06.jpg"
 
                 ]
             }
@@ -249,7 +249,6 @@ document.addEventListener("DOMContentLoaded", () => {
             PROJECTS[category];
 
         if (!projects) {
-
             console.error(
                 "Category tidak ditemukan:",
                 category
@@ -331,9 +330,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
             /*
-            =================================================
             CLICK PROJECT
-            =================================================
             */
 
             card.addEventListener(
@@ -482,9 +479,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
         /*
-        =================================================
         CLOSE PROJECT
-        =================================================
         */
 
         const closeProject =
@@ -507,9 +502,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
         /*
-        =================================================
         ESC KEY
-        =================================================
         */
 
         const escapeHandler =
@@ -612,9 +605,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
         /*
-        =================================================
         ESC KEY
-        =================================================
         */
 
         const escapeHandler =
@@ -670,33 +661,3 @@ document.addEventListener("DOMContentLoaded", () => {
 
 });
 ```
-
-**Yang berubah cuma ini:**
-
-```text
-PORTRAIT COMMERCIAL
-├── Peron Long Sleeve
-├── Vishgazine
-├── WKA × Simpati
-└── Unreleased — Nevertoolavish
-    ├── 01
-    ├── 02
-    ├── 03
-    ├── 04
-    ├── 05
-    └── 06
-```
-
-Path yang dipakai:
-
-```text
-assets/images/portrait-commercial/
-├── unreleased-nevertoolavish-01.jpg
-├── unreleased-nevertoolavish-02.jpg
-├── unreleased-nevertoolavish-03.jpg
-├── unreleased-nevertoolavish-04.jpg
-├── unreleased-nevertoolavish-05.jpg
-└── unreleased-nevertoolavish-06.jpg
-```
-
-**Catatan penting:** kalau nama file asli lu bukan persis `unreleased-nevertoolavish-01.jpg` sampai `06.jpg`, fotonya bakal jadi broken image. Nama file di GitHub itu harus **100% sama**, termasuk huruf besar-kecil.
