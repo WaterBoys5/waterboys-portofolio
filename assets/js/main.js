@@ -1,3 +1,4 @@
+```js
 document.addEventListener("DOMContentLoaded", () => {
 
     /*
@@ -143,6 +144,25 @@ document.addEventListener("DOMContentLoaded", () => {
                     "assets/images/portrait-commercial/wka-simpati-10.jpg"
 
                 ]
+            },
+
+
+            {
+                title: "Unreleased — Nevertoolavish",
+
+                description:
+                    "Artist portrait series for Nevertoolavish.",
+
+                images: [
+
+                    "assets/images/portrait-commercial/unreleased-nevertoolavish-01.jpg",
+                    "assets/images/portrait-commercial/unreleased-nevertoolavish-02.jpg",
+                    "assets/images/portrait-commercial/unreleased-nevertoolavish-03.jpg",
+                    "assets/images/portrait-commercial/unreleased-nevertoolavish-04.jpg",
+                    "assets/images/portrait-commercial/unreleased-nevertoolavish-05.jpg",
+                    "assets/images/portrait-commercial/unreleased-nevertoolavish-06.jpg"
+
+                ]
             }
 
         ],
@@ -229,6 +249,7 @@ document.addEventListener("DOMContentLoaded", () => {
             PROJECTS[category];
 
         if (!projects) {
+
             console.error(
                 "Category tidak ditemukan:",
                 category
@@ -310,7 +331,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
             /*
+            =================================================
             CLICK PROJECT
+            =================================================
             */
 
             card.addEventListener(
@@ -459,7 +482,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
         /*
+        =================================================
         CLOSE PROJECT
+        =================================================
         */
 
         const closeProject =
@@ -482,7 +507,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
         /*
+        =================================================
         ESC KEY
+        =================================================
         */
 
         const escapeHandler =
@@ -585,7 +612,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
         /*
+        =================================================
         ESC KEY
+        =================================================
         */
 
         const escapeHandler =
@@ -640,3 +669,4 @@ document.addEventListener("DOMContentLoaded", () => {
     );
 
 });
+```
