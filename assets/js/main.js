@@ -2,16 +2,32 @@ const SITE = {
   behance: "https://www.behance.net/waterboys1"
 };
 
+
+/* =========================================================
+   PROJECT DATA
+========================================================= */
+
 const CATEGORIES = [
+
+  /* =======================================================
+     DOCUMENTATION
+  ======================================================= */
+
   {
     title: "DOCUMENTATION",
-    description: "Live performances, events, and visual documentation.",
+
+    description:
+      "Live performances, events, and visual documentation.",
 
     projects: [
+
       {
         title: "Stereo Wall",
+
         year: "2026",
-        description: "Visual documentation of Stereo Wall at Trilogigs 2025.",
+
+        description:
+          "Visual documentation of Stereo Wall at Trilogigs 2025.",
 
         images: [
           "assets/images/documentation/stereo-wall-01.jpg",
@@ -30,20 +46,142 @@ const CATEGORIES = [
           "assets/images/documentation/stereo-wall-14.jpg"
         ]
       }
+
     ]
   },
 
+
+  /* =======================================================
+     PRODUCT PHOTOGRAPHY
+  ======================================================= */
+
   {
     title: "PRODUCT PHOTOGRAPHY",
-    description: "Product, campaign, commercial, and brand photography.",
-    projects: []
+
+    description:
+      "Product, campaign, commercial, and brand photography.",
+
+    projects: [
+
+      {
+        title: "LV Wallet",
+
+        year: "2026",
+
+        description:
+          "Product photography of a Louis Vuitton wallet.",
+
+        images: [
+          "assets/images/product/lv-wallet-01.jpg",
+          "assets/images/product/lv-wallet-02.jpg",
+          "assets/images/product/lv-wallet-03.jpg",
+          "assets/images/product/lv-wallet-04.jpg"
+        ]
+      },
+
+
+      {
+        title: "TITANS",
+
+        year: "2026",
+
+        description:
+          "Campaign documentation featuring graffiti artists and TITANS spray paint.",
+
+        images: [
+          "assets/images/product/titans-01.jpg",
+          "assets/images/product/titans-02.jpg",
+          "assets/images/product/titans-03.jpg",
+          "assets/images/product/titans-04.jpg",
+          "assets/images/product/titans-05.jpg",
+          "assets/images/product/titans-06.jpg",
+          "assets/images/product/titans-07.jpg",
+          "assets/images/product/titans-08.jpg",
+          "assets/images/product/titans-09.jpg"
+        ]
+      }
+
+    ]
   },
+
+
+  /* =======================================================
+     PORTRAIT / FASHION
+  ======================================================= */
 
   {
     title: "PORTRAIT / FASHION",
-    description: "Portraits, fashion, creative direction, and visual storytelling.",
-    projects: []
+
+    description:
+      "Portraits, fashion, creative direction, and visual storytelling.",
+
+    projects: [
+
+      {
+        title: "Long Sleeve Peron",
+
+        year: "2026",
+
+        description:
+          "Fashion portrait series featuring Long Sleeve Peron.",
+
+        images: [
+          "assets/images/portrait/long-sleeve-peron-01.jpg",
+          "assets/images/portrait/long-sleeve-peron-02.jpg",
+          "assets/images/portrait/long-sleeve-peron-03.jpg",
+          "assets/images/portrait/long-sleeve-peron-04.jpg",
+          "assets/images/portrait/long-sleeve-peron-05.jpg"
+        ]
+      },
+
+
+      {
+        title: "Vishgazine",
+
+        year: "2026",
+
+        description:
+          "Editorial portrait and fashion series for Vishgazine.",
+
+        images: [
+          "assets/images/portrait/vishgazine-01.jpg",
+          "assets/images/portrait/vishgazine-02.jpg",
+          "assets/images/portrait/vishgazine-03.jpg",
+          "assets/images/portrait/vishgazine-04.jpg",
+          "assets/images/portrait/vishgazine-05.jpg",
+          "assets/images/portrait/vishgazine-06.jpg",
+          "assets/images/portrait/vishgazine-07.jpg",
+          "assets/images/portrait/vishgazine-08.jpg",
+          "assets/images/portrait/vishgazine-09.jpg"
+        ]
+      },
+
+
+      {
+        title: "WKA × Simpati",
+
+        year: "2026",
+
+        description:
+          "Fashion campaign for the WKA collaboration with Simpati.",
+
+        images: [
+          "assets/images/portrait/wka-x-simpati-01.jpg",
+          "assets/images/portrait/wka-x-simpati-02.jpg",
+          "assets/images/portrait/wka-x-simpati-03.jpg",
+          "assets/images/portrait/wka-x-simpati-04.jpg",
+          "assets/images/portrait/wka-x-simpati-05.jpg",
+          "assets/images/portrait/wka-x-simpati-06.jpg",
+          "assets/images/portrait/wka-x-simpati-07.jpg",
+          "assets/images/portrait/wka-x-simpati-08.jpg",
+          "assets/images/portrait/wka-x-simpati-09.jpg",
+          "assets/images/portrait/wka-x-simpati-10.jpg"
+        ]
+      }
+
+    ]
   }
+
 ];
 
 
@@ -60,24 +198,53 @@ let currentImageIndex = 0;
    ELEMENTS
 ========================================================= */
 
-const categoryGrid = document.getElementById("category-grid");
-const categoryModal = document.getElementById("category-modal");
-const categoryModalNumber = document.getElementById("category-modal-number");
-const categoryModalTitle = document.getElementById("category-modal-title");
-const categoryModalDescription = document.getElementById("category-modal-description");
-const categoryClose = document.getElementById("category-close");
+const categoryGrid =
+  document.getElementById("category-grid");
 
-const projectList = document.getElementById("project-list");
+const categoryModal =
+  document.getElementById("category-modal");
 
-const galleryModal = document.getElementById("gallery-modal");
-const galleryCategoryLabel = document.getElementById("gallery-category-label");
-const galleryTitle = document.getElementById("gallery-title");
-const galleryClose = document.getElementById("gallery-close");
-const galleryImage = document.getElementById("gallery-image");
-const galleryPrev = document.getElementById("gallery-prev");
-const galleryNext = document.getElementById("gallery-next");
-const galleryCounter = document.getElementById("gallery-counter");
-const galleryDescription = document.getElementById("gallery-description");
+const categoryModalNumber =
+  document.getElementById("category-modal-number");
+
+const categoryModalTitle =
+  document.getElementById("category-modal-title");
+
+const categoryModalDescription =
+  document.getElementById("category-modal-description");
+
+const categoryClose =
+  document.getElementById("category-close");
+
+const projectList =
+  document.getElementById("project-list");
+
+const galleryModal =
+  document.getElementById("gallery-modal");
+
+const galleryCategoryLabel =
+  document.getElementById("gallery-category-label");
+
+const galleryTitle =
+  document.getElementById("gallery-title");
+
+const galleryClose =
+  document.getElementById("gallery-close");
+
+const galleryImage =
+  document.getElementById("gallery-image");
+
+const galleryPrev =
+  document.getElementById("gallery-prev");
+
+const galleryNext =
+  document.getElementById("gallery-next");
+
+const galleryCounter =
+  document.getElementById("gallery-counter");
+
+const galleryDescription =
+  document.getElementById("gallery-description");
 
 const mobileMenuButton =
   document.querySelector(".mobile-menu-button");
@@ -98,17 +265,32 @@ function renderCategories() {
 
   CATEGORIES.forEach((category, index) => {
 
-    const card = document.createElement("article");
+    const card =
+      document.createElement("article");
 
-    card.className = "category-card";
+    card.className =
+      "category-card";
 
-    card.setAttribute("tabindex", "0");
-    card.setAttribute("role", "button");
+    card.setAttribute(
+      "tabindex",
+      "0"
+    );
 
-    const firstProject = category.projects?.[0];
-    const firstImage = firstProject?.images?.[0] || "";
+    card.setAttribute(
+      "role",
+      "button"
+    );
+
+
+    const firstProject =
+      category.projects?.[0];
+
+    const firstImage =
+      firstProject?.images?.[0] || "";
+
 
     card.innerHTML = `
+
       ${
         firstImage
           ? `
@@ -120,9 +302,13 @@ function renderCategories() {
             >
           `
           : `
-            <div class="category-placeholder"></div>
+            <div
+              class="category-placeholder"
+              aria-hidden="true"
+            ></div>
           `
       }
+
 
       <div class="category-overlay">
 
@@ -138,6 +324,7 @@ function renderCategories() {
 
         </div>
 
+
         <div class="category-bottom">
 
           <span class="category-title">
@@ -147,27 +334,39 @@ function renderCategories() {
         </div>
 
       </div>
+
     `;
 
-    card.addEventListener("click", () => {
-      openCategory(index);
-    });
 
-    card.addEventListener("keydown", (event) => {
+    card.addEventListener(
+      "click",
+      () => openCategory(index)
+    );
 
-      if (
-        event.key === "Enter" ||
-        event.key === " "
-      ) {
-        event.preventDefault();
-        openCategory(index);
+
+    card.addEventListener(
+      "keydown",
+      (event) => {
+
+        if (
+          event.key === "Enter" ||
+          event.key === " "
+        ) {
+
+          event.preventDefault();
+
+          openCategory(index);
+
+        }
+
       }
+    );
 
-    });
 
     categoryGrid.appendChild(card);
 
   });
+
 }
 
 
@@ -177,37 +376,63 @@ function renderCategories() {
 
 function openCategory(index) {
 
-  const category = CATEGORIES[index];
+  const category =
+    CATEGORIES[index];
 
-  if (!category || !categoryModal) return;
+  if (
+    !category ||
+    !categoryModal
+  ) {
+    return;
+  }
 
-  currentCategoryIndex = index;
+
+  currentCategoryIndex =
+    index;
+
 
   if (categoryModalNumber) {
+
     categoryModalNumber.textContent =
       String(index + 1).padStart(2, "0");
+
   }
+
 
   if (categoryModalTitle) {
+
     categoryModalTitle.textContent =
       category.title;
+
   }
 
+
   if (categoryModalDescription) {
+
     categoryModalDescription.textContent =
       category.description;
+
   }
+
 
   renderProjects(category);
 
-  categoryModal.classList.add("is-open");
+
+  categoryModal.classList.add(
+    "is-open"
+  );
+
 
   categoryModal.setAttribute(
     "aria-hidden",
     "false"
   );
 
-  document.body.classList.add("modal-open");
+
+  document.body.classList.add(
+    "modal-open"
+  );
+
 }
 
 
@@ -221,94 +446,127 @@ function renderProjects(category) {
 
   projectList.innerHTML = "";
 
+
   if (
     !category.projects ||
     category.projects.length === 0
   ) {
 
     projectList.innerHTML = `
+
       <div class="empty-projects">
         No projects available yet.
       </div>
+
     `;
 
     return;
+
   }
 
 
-  category.projects.forEach((project, index) => {
+  category.projects.forEach(
+    (project, index) => {
 
-    const button = document.createElement("button");
+      const button =
+        document.createElement("button");
 
-    button.type = "button";
-    button.className = "project-item";
 
-    const thumbnail =
-      project.images?.[0] || "";
+      button.type =
+        "button";
 
-    button.innerHTML = `
+      button.className =
+        "project-item";
 
-      <div class="project-image-wrap">
 
-        ${
-          thumbnail
-            ? `
-              <img
-                class="project-thumb"
-                src="${thumbnail}"
-                alt="${project.title}"
-                loading="lazy"
+      const thumbnail =
+        project.images?.[0] || "";
+
+
+      button.innerHTML = `
+
+        <div class="project-image-wrap">
+
+          ${
+            thumbnail
+              ? `
+                <img
+                  class="project-thumb"
+                  src="${thumbnail}"
+                  alt="${project.title}"
+                  loading="lazy"
+                >
+              `
+              : `
+                <div
+                  class="project-thumb-placeholder"
+                  aria-hidden="true"
+                ></div>
+              `
+          }
+
+
+          <div
+            class="project-image-overlay"
+          >
+
+            <div
+              class="project-image-title"
+            >
+
+              <span
+                class="project-title-overlay"
               >
-            `
-            : `
-              <div class="project-thumb-placeholder"></div>
-            `
-        }
+                ${project.title}
+              </span>
 
 
-        <div class="project-image-overlay">
+              <span
+                class="project-year-overlay"
+              >
+                ${project.year || ""}
+              </span>
 
-          <div class="project-image-title">
+            </div>
 
-            <span class="project-title-overlay">
-              ${project.title}
-            </span>
 
-            <span class="project-year-overlay">
-              ${project.year || ""}
+            <span
+              class="project-arrow"
+            >
+              ↗
             </span>
 
           </div>
 
+        </div>
 
-          <span class="project-arrow">
-            ↗
+
+        <div class="project-info">
+
+          <span
+            class="project-description"
+          >
+            ${project.description || ""}
           </span>
 
         </div>
 
-      </div>
+      `;
 
 
-      <div class="project-info">
-
-        <span class="project-description">
-          ${project.description || ""}
-        </span>
-
-      </div>
-
-    `;
+      button.addEventListener(
+        "click",
+        () => openGallery(index)
+      );
 
 
-    button.addEventListener("click", () => {
-      openGallery(index);
-    });
+      projectList.appendChild(
+        button
+      );
 
+    }
+  );
 
-    projectList.appendChild(button);
-
-  });
 }
 
 
@@ -320,19 +578,31 @@ function closeCategory() {
 
   if (!categoryModal) return;
 
-  categoryModal.classList.remove("is-open");
+
+  categoryModal.classList.remove(
+    "is-open"
+  );
+
 
   categoryModal.setAttribute(
     "aria-hidden",
     "true"
   );
 
+
   if (
     !galleryModal ||
-    !galleryModal.classList.contains("is-open")
+    !galleryModal.classList.contains(
+      "is-open"
+    )
   ) {
-    document.body.classList.remove("modal-open");
+
+    document.body.classList.remove(
+      "modal-open"
+    );
+
   }
+
 }
 
 
@@ -345,46 +615,73 @@ function openGallery(projectIndex) {
   const category =
     CATEGORIES[currentCategoryIndex];
 
+
   if (!category) return;
 
+
   const project =
-    category.projects?.[projectIndex];
+    category.projects?.[
+      projectIndex
+    ];
 
-  if (!project || !galleryModal) return;
 
-  currentProjectIndex = projectIndex;
-  currentImageIndex = 0;
+  if (
+    !project ||
+    !galleryModal
+  ) {
+    return;
+  }
+
+
+  currentProjectIndex =
+    projectIndex;
+
+  currentImageIndex =
+    0;
 
 
   if (galleryCategoryLabel) {
+
     galleryCategoryLabel.textContent =
       category.title;
+
   }
 
 
   if (galleryTitle) {
+
     galleryTitle.textContent =
       project.title;
+
   }
 
 
   if (galleryDescription) {
+
     galleryDescription.textContent =
       project.description || "";
+
   }
 
 
   updateGallery();
 
 
-  galleryModal.classList.add("is-open");
+  galleryModal.classList.add(
+    "is-open"
+  );
+
 
   galleryModal.setAttribute(
     "aria-hidden",
     "false"
   );
 
-  document.body.classList.add("modal-open");
+
+  document.body.classList.add(
+    "modal-open"
+  );
+
 }
 
 
@@ -397,13 +694,22 @@ function updateGallery() {
   const category =
     CATEGORIES[currentCategoryIndex];
 
+
   if (!category) return;
 
 
   const project =
-    category.projects?.[currentProjectIndex];
+    category.projects?.[
+      currentProjectIndex
+    ];
 
-  if (!project || !galleryImage) return;
+
+  if (
+    !project ||
+    !galleryImage
+  ) {
+    return;
+  }
 
 
   const images =
@@ -412,42 +718,86 @@ function updateGallery() {
 
   if (!images.length) {
 
-    galleryImage.removeAttribute("src");
+    galleryImage.removeAttribute(
+      "src"
+    );
 
     galleryImage.alt = "";
 
 
     if (galleryCounter) {
+
       galleryCounter.textContent =
         "00 / 00";
+
     }
 
 
     if (galleryPrev) {
-      galleryPrev.disabled = true;
+
+      galleryPrev.disabled =
+        true;
+
     }
 
 
     if (galleryNext) {
-      galleryNext.disabled = true;
+
+      galleryNext.disabled =
+        true;
+
     }
 
 
     return;
+
+  }
+
+
+  /*
+    Pastikan index selalu valid.
+    Karena manusia suka menambah foto
+    lalu lupa bahwa index itu ada.
+  */
+
+  if (
+    currentImageIndex < 0
+  ) {
+
+    currentImageIndex = 0;
+
+  }
+
+
+  if (
+    currentImageIndex >
+    images.length - 1
+  ) {
+
+    currentImageIndex =
+      images.length - 1;
+
   }
 
 
   galleryImage.src =
     images[currentImageIndex];
 
+
   galleryImage.alt =
-    project.title;
+    `${project.title} - Image ${
+      currentImageIndex + 1
+    }`;
 
 
   if (galleryCounter) {
 
     galleryCounter.textContent =
-      `${String(currentImageIndex + 1).padStart(2, "0")} / ${String(images.length).padStart(2, "0")}`;
+      `${String(
+        currentImageIndex + 1
+      ).padStart(2, "0")} / ${String(
+        images.length
+      ).padStart(2, "0")}`;
 
   }
 
@@ -463,9 +813,11 @@ function updateGallery() {
   if (galleryNext) {
 
     galleryNext.disabled =
-      currentImageIndex >= images.length - 1;
+      currentImageIndex >=
+      images.length - 1;
 
   }
+
 }
 
 
@@ -478,8 +830,12 @@ function nextImage() {
   const category =
     CATEGORIES[currentCategoryIndex];
 
+
   const project =
-    category?.projects?.[currentProjectIndex];
+    category?.projects?.[
+      currentProjectIndex
+    ];
+
 
   if (!project) return;
 
@@ -498,6 +854,7 @@ function nextImage() {
     updateGallery();
 
   }
+
 }
 
 
@@ -507,13 +864,17 @@ function nextImage() {
 
 function previousImage() {
 
-  if (currentImageIndex <= 0) {
+  if (
+    currentImageIndex <= 0
+  ) {
     return;
   }
+
 
   currentImageIndex--;
 
   updateGallery();
+
 }
 
 
@@ -525,7 +886,11 @@ function closeGallery() {
 
   if (!galleryModal) return;
 
-  galleryModal.classList.remove("is-open");
+
+  galleryModal.classList.remove(
+    "is-open"
+  );
+
 
   galleryModal.setAttribute(
     "aria-hidden",
@@ -535,12 +900,17 @@ function closeGallery() {
 
   if (
     !categoryModal ||
-    !categoryModal.classList.contains("is-open")
+    !categoryModal.classList.contains(
+      "is-open"
+    )
   ) {
 
-    document.body.classList.remove("modal-open");
+    document.body.classList.remove(
+      "modal-open"
+    );
 
   }
+
 }
 
 
@@ -549,15 +919,19 @@ function closeGallery() {
 ========================================================= */
 
 document
-  .querySelectorAll("[data-close-category]")
-  .forEach((element) => {
+  .querySelectorAll(
+    "[data-close-category]"
+  )
+  .forEach(
+    (element) => {
 
-    element.addEventListener(
-      "click",
-      closeCategory
-    );
+      element.addEventListener(
+        "click",
+        closeCategory
+      );
 
-  });
+    }
+  );
 
 
 /* =========================================================
@@ -565,15 +939,19 @@ document
 ========================================================= */
 
 document
-  .querySelectorAll("[data-close-gallery]")
-  .forEach((element) => {
+  .querySelectorAll(
+    "[data-close-gallery]"
+  )
+  .forEach(
+    (element) => {
 
-    element.addEventListener(
-      "click",
-      closeGallery
-    );
+      element.addEventListener(
+        "click",
+        closeGallery
+      );
 
-  });
+    }
+  );
 
 
 /* =========================================================
@@ -632,14 +1010,23 @@ document.addEventListener(
   "keydown",
   (event) => {
 
-    if (event.key === "Escape") {
+    /*
+      Escape
+    */
+
+    if (
+      event.key === "Escape"
+    ) {
 
       if (
         galleryModal &&
-        galleryModal.classList.contains("is-open")
+        galleryModal.classList.contains(
+          "is-open"
+        )
       ) {
 
         closeGallery();
+
         return;
 
       }
@@ -647,10 +1034,13 @@ document.addEventListener(
 
       if (
         categoryModal &&
-        categoryModal.classList.contains("is-open")
+        categoryModal.classList.contains(
+          "is-open"
+        )
       ) {
 
         closeCategory();
+
         return;
 
       }
@@ -658,18 +1048,32 @@ document.addEventListener(
     }
 
 
+    /*
+      Gallery navigation
+    */
+
     if (
       galleryModal &&
-      galleryModal.classList.contains("is-open")
+      galleryModal.classList.contains(
+        "is-open"
+      )
     ) {
 
-      if (event.key === "ArrowRight") {
+      if (
+        event.key === "ArrowRight"
+      ) {
+
         nextImage();
+
       }
 
 
-      if (event.key === "ArrowLeft") {
+      if (
+        event.key === "ArrowLeft"
+      ) {
+
         previousImage();
+
       }
 
     }
@@ -692,7 +1096,9 @@ if (
     () => {
 
       const isOpen =
-        mobileNav.classList.toggle("is-open");
+        mobileNav.classList.toggle(
+          "is-open"
+        );
 
 
       mobileMenuButton.setAttribute(
@@ -706,28 +1112,58 @@ if (
 
   mobileNav
     .querySelectorAll("a")
-    .forEach((link) => {
+    .forEach(
+      (link) => {
 
-      link.addEventListener(
-        "click",
-        () => {
+        link.addEventListener(
+          "click",
+          () => {
 
-          mobileNav.classList.remove(
-            "is-open"
-          );
+            mobileNav.classList.remove(
+              "is-open"
+            );
 
 
-          mobileMenuButton.setAttribute(
-            "aria-expanded",
-            "false"
-          );
+            mobileMenuButton.setAttribute(
+              "aria-expanded",
+              "false"
+            );
 
-        }
-      );
+          }
+        );
 
-    });
+      }
+    );
 
 }
+
+
+/* =========================================================
+   IMAGE ERROR HANDLING
+========================================================= */
+
+document.addEventListener(
+  "error",
+  (event) => {
+
+    const element =
+      event.target;
+
+
+    if (
+      element &&
+      element.tagName === "IMG"
+    ) {
+
+      element.classList.add(
+        "image-load-error"
+      );
+
+    }
+
+  },
+  true
+);
 
 
 /* =========================================================
