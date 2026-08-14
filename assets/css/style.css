@@ -399,11 +399,16 @@ a {
     margin-bottom: 48px;
 }
 
+
+/* =====================================================
+   SECTION HEADINGS
+===================================================== */
+
 .section-header h2 {
     margin-top: 12px;
 
     font-size:
-        clamp(42px, 6vw, 78px);
+        clamp(36px, 4.5vw, 60px);
 
     line-height: 0.9;
 
@@ -1039,6 +1044,50 @@ a {
     max-width: 530px;
 }
 
+
+/* =====================================================
+   ABOUT NAME
+===================================================== */
+
+.about-name {
+    margin-bottom: 28px;
+}
+
+.about-name h3 {
+    margin: 0;
+
+    color: #ffffff;
+
+    font-size:
+        clamp(28px, 3.2vw, 46px);
+
+    line-height: 0.95;
+
+    letter-spacing: -0.055em;
+
+    font-weight: 800;
+}
+
+.about-name span {
+    display: block;
+
+    margin-top: 7px;
+
+    color:
+        rgba(255,255,255,0.35);
+
+    font-size: 9px;
+
+    font-weight: 600;
+
+    letter-spacing: 0.20em;
+}
+
+
+/* =====================================================
+   ABOUT PARAGRAPHS
+===================================================== */
+
 .about-text p {
     color:
         rgba(255,255,255,0.48);
@@ -1050,13 +1099,20 @@ a {
     margin-bottom: 22px;
 }
 
+
+/* =====================================================
+   ABOUT LEAD
+===================================================== */
+
 .about-text .about-lead {
     color:
         rgba(255,255,255,0.84);
 
-    font-size: 19px;
+    font-size: 18px;
 
-    line-height: 1.5;
+    line-height: 1.55;
+
+    margin-bottom: 24px;
 }
 
 
@@ -1270,8 +1326,12 @@ footer {
         max-width: 390px;
     }
 
+    .about-name h3 {
+        font-size: 32px;
+    }
+
     .about-text .about-lead {
-        font-size: 18px;
+        font-size: 17px;
     }
 
     .contact-links {
