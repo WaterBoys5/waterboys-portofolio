@@ -2,16 +2,26 @@ const SITE = {
   behance: "https://www.behance.net/waterboys1"
 };
 
+
+/* =========================
+   CATEGORIES
+========================= */
+
 const CATEGORIES = [
   {
     title: "DOCUMENTATION",
-    description: "Live performances, events, and visual documentation.",
+
+    description:
+      "Live performances, events, and visual documentation.",
 
     projects: [
       {
         title: "Stereo Wall",
+
         year: "2026",
-        description: "Visual documentation of Stereo Wall at Trilogigs 2025.",
+
+        description:
+          "Visual documentation of Stereo Wall at Trilogigs 2025.",
 
         images: [
           "assets/images/documentation/stereo-wall-01.jpg",
@@ -33,15 +43,23 @@ const CATEGORIES = [
     ]
   },
 
+
   {
-    title: "COMMERCIAL PHOTOGRAPHY",
-    description: "Commercial, product, campaign, and brand photography.",
+    title: "PRODUCT PHOTOGRAPHY",
+
+    description:
+      "Product, campaign, catalog, and commercial photography.",
+
     projects: []
   },
 
+
   {
-    title: "PORTRAIT PHOTOGRAPHY",
-    description: "Portraits, creative portraits, and visual storytelling.",
+    title: "PORTRAIT/FASHION",
+
+    description:
+      "Portraits, fashion, creative portraits, and visual storytelling.",
+
     projects: []
   }
 ];
@@ -73,7 +91,9 @@ const categoryModalTitle =
   document.getElementById("category-modal-title");
 
 const categoryModalDescription =
-  document.getElementById("category-modal-description");
+  document.getElementById(
+    "category-modal-description"
+  );
 
 const categoryClose =
   document.getElementById("category-close");
@@ -81,11 +101,14 @@ const categoryClose =
 const projectList =
   document.getElementById("project-list");
 
+
 const galleryModal =
   document.getElementById("gallery-modal");
 
 const galleryCategoryLabel =
-  document.getElementById("gallery-category-label");
+  document.getElementById(
+    "gallery-category-label"
+  );
 
 const galleryTitle =
   document.getElementById("gallery-title");
@@ -106,101 +129,151 @@ const galleryCounter =
   document.getElementById("gallery-counter");
 
 const galleryDescription =
-  document.getElementById("gallery-description");
+  document.getElementById(
+    "gallery-description"
+  );
+
 
 const mobileMenuButton =
-  document.querySelector(".mobile-menu-button");
+  document.querySelector(
+    ".mobile-menu-button"
+  );
 
 const mobileNav =
   document.getElementById("mobile-nav");
 
 
 /* =========================
-   RENDER CATEGORIES
+   RENDER CATEGORY CARDS
 ========================= */
 
 function renderCategories() {
 
-  if (!categoryGrid) return;
+  if (!categoryGrid) {
+    return;
+  }
 
   categoryGrid.innerHTML = "";
 
-  CATEGORIES.forEach((category, index) => {
+  CATEGORIES.forEach(
+    (category, index) => {
 
-    const card = document.createElement("article");
+      const card =
+        document.createElement("article");
 
-    card.className = "category-card";
+      card.className =
+        "category-card";
 
-    card.setAttribute("tabindex", "0");
-    card.setAttribute("role", "button");
+      card.setAttribute(
+        "tabindex",
+        "0"
+      );
 
-    const firstProject =
-      category.projects?.[0];
+      card.setAttribute(
+        "role",
+        "button"
+      );
 
-    const firstImage =
-      firstProject?.images?.[0] || "";
 
-    card.innerHTML = `
-      ${
-        firstImage
-          ? `
-            <img
-              class="category-image"
-              src="${firstImage}"
-              alt="${category.title}"
-              loading="lazy"
-            >
-          `
-          : `
-            <div class="category-placeholder"></div>
-          `
-      }
+      const firstProject =
+        category.projects?.[0];
 
-      <div class="category-overlay">
+      const firstImage =
+        firstProject?.images?.[0] || "";
 
-        <div class="category-top">
 
-          <span class="category-number">
-            ${String(index + 1).padStart(2, "0")}
-          </span>
+      card.innerHTML = `
+        ${
+          firstImage
+            ? `
+              <img
+                class="category-image"
+                src="${firstImage}"
+                alt="${category.title}"
+                loading="lazy"
+              >
+            `
+            : `
+              <div
+                class="category-placeholder"
+                aria-hidden="true"
+              ></div>
+            `
+        }
 
-          <span class="category-arrow">
-            ↗
-          </span>
+
+        <div class="category-overlay">
+
+          <div class="category-top">
+
+            <span class="category-number">
+              ${String(index + 1).padStart(2, "0")}
+            </span>
+
+            <span class="category-arrow">
+              ↗
+            </span>
+
+          </div>
+
+
+          <div class="category-bottom">
+
+            <div class="category-text">
+
+              <span class="category-title">
+                ${category.title}
+              </span>
+
+              <span class="category-description">
+                ${category.description}
+              </span>
+
+            </div>
+
+          </div>
 
         </div>
+      `;
 
-        <div class="category-bottom">
 
-          <span class="category-title">
-            ${category.title}
-          </span>
+      /* CLICK */
 
-        </div>
+      card.addEventListener(
+        "click",
+        () => {
 
-      </div>
-    `;
+          openCategory(index);
 
-    card.addEventListener("click", () => {
-      openCategory(index);
-    });
+        }
+      );
 
-    card.addEventListener("keydown", (event) => {
 
-      if (
-        event.key === "Enter" ||
-        event.key === " "
-      ) {
+      /* KEYBOARD */
 
-        event.preventDefault();
-        openCategory(index);
+      card.addEventListener(
+        "keydown",
+        (event) => {
 
-      }
+          if (
+            event.key === "Enter" ||
+            event.key === " "
+          ) {
 
-    });
+            event.preventDefault();
 
-    categoryGrid.appendChild(card);
-  });
+            openCategory(index);
+
+          }
+
+        }
+      );
+
+
+      categoryGrid.appendChild(card);
+
+    }
+  );
 }
 
 
@@ -210,37 +283,62 @@ function renderCategories() {
 
 function openCategory(index) {
 
-  const category = CATEGORIES[index];
+  const category =
+    CATEGORIES[index];
 
-  if (!category || !categoryModal) return;
+  if (
+    !category ||
+    !categoryModal
+  ) {
+    return;
+  }
 
-  currentCategoryIndex = index;
+
+  currentCategoryIndex =
+    index;
+
 
   if (categoryModalNumber) {
+
     categoryModalNumber.textContent =
       String(index + 1).padStart(2, "0");
+
   }
+
 
   if (categoryModalTitle) {
+
     categoryModalTitle.textContent =
       category.title;
+
   }
 
+
   if (categoryModalDescription) {
+
     categoryModalDescription.textContent =
       category.description;
+
   }
+
 
   renderProjects(category);
 
-  categoryModal.classList.add("is-open");
+
+  categoryModal.classList.add(
+    "is-open"
+  );
+
 
   categoryModal.setAttribute(
     "aria-hidden",
     "false"
   );
 
-  document.body.classList.add("modal-open");
+
+  document.body.classList.add(
+    "modal-open"
+  );
 }
 
 
@@ -250,9 +348,13 @@ function openCategory(index) {
 
 function renderProjects(category) {
 
-  if (!projectList) return;
+  if (!projectList) {
+    return;
+  }
+
 
   projectList.innerHTML = "";
+
 
   if (
     !category.projects ||
@@ -268,77 +370,108 @@ function renderProjects(category) {
     return;
   }
 
-  category.projects.forEach((project, index) => {
 
-    const button =
-      document.createElement("button");
+  category.projects.forEach(
+    (project, index) => {
 
-    button.type = "button";
-    button.className = "project-item";
+      const button =
+        document.createElement("button");
 
-    const thumbnail =
-      project.images?.[0] || "";
 
-    button.innerHTML = `
+      button.type =
+        "button";
 
-      <div class="project-image-wrap">
 
-        ${
-          thumbnail
-            ? `
-              <img
-                class="project-thumb"
-                src="${thumbnail}"
-                alt="${project.title}"
-                loading="lazy"
-              >
-            `
-            : `
-              <div class="project-thumb-placeholder"></div>
-            `
+      button.className =
+        "project-item";
+
+
+      const thumbnail =
+        project.images?.[0] || "";
+
+
+      button.innerHTML = `
+
+        <div class="project-image-wrap">
+
+          ${
+            thumbnail
+              ? `
+                <img
+                  class="project-thumb"
+                  src="${thumbnail}"
+                  alt="${project.title}"
+                  loading="lazy"
+                >
+              `
+              : `
+                <div
+                  class="project-thumb-placeholder"
+                  aria-hidden="true"
+                ></div>
+              `
+          }
+
+
+          <div class="project-image-gradient">
+          </div>
+
+
+          <div class="project-image-top">
+
+            <span class="project-number">
+              ${String(index + 1).padStart(2, "0")}
+            </span>
+
+            <span class="project-arrow">
+              ↗
+            </span>
+
+          </div>
+
+
+          <div class="project-image-title">
+
+            <span>
+              ${project.title}
+            </span>
+
+            <small>
+              ${project.year || ""}
+            </small>
+
+          </div>
+
+        </div>
+
+
+        <div class="project-info">
+
+          <span class="project-description">
+            ${project.description || ""}
+          </span>
+
+        </div>
+
+      `;
+
+
+      button.addEventListener(
+        "click",
+        () => {
+
+          openGallery(index);
+
         }
+      );
 
-        <div class="project-image-overlay">
 
-          <span class="project-number">
-            ${String(index + 1).padStart(2, "0")}
-          </span>
+      projectList.appendChild(
+        button
+      );
 
-          <span class="project-arrow">
-            ↗
-          </span>
-
-        </div>
-
-      </div>
-
-      <div class="project-info">
-
-        <div>
-
-          <span class="project-title">
-            ${project.title}
-          </span>
-
-          <span class="project-year">
-            ${project.year || ""}
-          </span>
-
-        </div>
-
-        <span class="project-description">
-          ${project.description || ""}
-        </span>
-
-      </div>
-    `;
-
-    button.addEventListener("click", () => {
-      openGallery(index);
-    });
-
-    projectList.appendChild(button);
-  });
+    }
+  );
 }
 
 
@@ -348,21 +481,32 @@ function renderProjects(category) {
 
 function closeCategory() {
 
-  if (!categoryModal) return;
+  if (!categoryModal) {
+    return;
+  }
 
-  categoryModal.classList.remove("is-open");
+
+  categoryModal.classList.remove(
+    "is-open"
+  );
+
 
   categoryModal.setAttribute(
     "aria-hidden",
     "true"
   );
 
+
   if (
     !galleryModal ||
-    !galleryModal.classList.contains("is-open")
+    !galleryModal.classList.contains(
+      "is-open"
+    )
   ) {
 
-    document.body.classList.remove("modal-open");
+    document.body.classList.remove(
+      "modal-open"
+    );
 
   }
 }
@@ -375,43 +519,79 @@ function closeCategory() {
 function openGallery(projectIndex) {
 
   const category =
-    CATEGORIES[currentCategoryIndex];
+    CATEGORIES[
+      currentCategoryIndex
+    ];
 
-  if (!category) return;
+
+  if (!category) {
+    return;
+  }
+
 
   const project =
-    category.projects?.[projectIndex];
+    category.projects?.[
+      projectIndex
+    ];
 
-  if (!project || !galleryModal) return;
 
-  currentProjectIndex = projectIndex;
-  currentImageIndex = 0;
+  if (
+    !project ||
+    !galleryModal
+  ) {
+    return;
+  }
+
+
+  currentProjectIndex =
+    projectIndex;
+
+
+  currentImageIndex =
+    0;
+
 
   if (galleryCategoryLabel) {
+
     galleryCategoryLabel.textContent =
       category.title;
+
   }
+
 
   if (galleryTitle) {
+
     galleryTitle.textContent =
       project.title;
+
   }
 
+
   if (galleryDescription) {
+
     galleryDescription.textContent =
       project.description || "";
+
   }
+
 
   updateGallery();
 
-  galleryModal.classList.add("is-open");
+
+  galleryModal.classList.add(
+    "is-open"
+  );
+
 
   galleryModal.setAttribute(
     "aria-hidden",
     "false"
   );
 
-  document.body.classList.add("modal-open");
+
+  document.body.classList.add(
+    "modal-open"
+  );
 }
 
 
@@ -422,59 +602,123 @@ function openGallery(projectIndex) {
 function updateGallery() {
 
   const category =
-    CATEGORIES[currentCategoryIndex];
+    CATEGORIES[
+      currentCategoryIndex
+    ];
 
-  if (!category) return;
+
+  if (!category) {
+    return;
+  }
+
 
   const project =
-    category.projects?.[currentProjectIndex];
+    category.projects?.[
+      currentProjectIndex
+    ];
 
-  if (!project || !galleryImage) return;
+
+  if (
+    !project ||
+    !galleryImage
+  ) {
+    return;
+  }
+
 
   const images =
     project.images || [];
 
+
   if (!images.length) {
 
-    galleryImage.removeAttribute("src");
-    galleryImage.alt = "";
+    galleryImage.removeAttribute(
+      "src"
+    );
+
+
+    galleryImage.alt =
+      "";
+
 
     if (galleryCounter) {
-      galleryCounter.textContent = "00 / 00";
+
+      galleryCounter.textContent =
+        "00 / 00";
+
     }
+
 
     if (galleryPrev) {
-      galleryPrev.disabled = true;
+
+      galleryPrev.disabled =
+        true;
+
     }
 
+
     if (galleryNext) {
-      galleryNext.disabled = true;
+
+      galleryNext.disabled =
+        true;
+
     }
+
 
     return;
   }
 
+
+  /* =========================
+     IMAGE
+  ========================= */
+
   galleryImage.src =
     images[currentImageIndex];
+
 
   galleryImage.alt =
     project.title;
 
+
+  /* =========================
+     COUNTER
+  ========================= */
+
   if (galleryCounter) {
 
     galleryCounter.textContent =
-      `${String(currentImageIndex + 1).padStart(2, "0")} / ${String(images.length).padStart(2, "0")}`;
+      `${String(
+        currentImageIndex + 1
+      ).padStart(2, "0")} / ${String(
+        images.length
+      ).padStart(2, "0")}`;
 
   }
+
+
+  /* =========================
+     PREVIOUS
+  ========================= */
 
   if (galleryPrev) {
+
     galleryPrev.disabled =
       currentImageIndex <= 0;
+
   }
 
+
+  /* =========================
+     NEXT
+  ========================= */
+
   if (galleryNext) {
+
     galleryNext.disabled =
-      currentImageIndex >= images.length - 1;
+      currentImageIndex >=
+      images.length - 1;
+
   }
 }
 
@@ -486,15 +730,25 @@ function updateGallery() {
 function nextImage() {
 
   const category =
-    CATEGORIES[currentCategoryIndex];
+    CATEGORIES[
+      currentCategoryIndex
+    ];
+
 
   const project =
-    category?.projects?.[currentProjectIndex];
+    category?.projects?.[
+      currentProjectIndex
+    ];
 
-  if (!project) return;
+
+  if (!project) {
+    return;
+  }
+
 
   const images =
     project.images || [];
+
 
   if (
     currentImageIndex <
@@ -502,6 +756,7 @@ function nextImage() {
   ) {
 
     currentImageIndex++;
+
     updateGallery();
 
   }
@@ -514,11 +769,15 @@ function nextImage() {
 
 function previousImage() {
 
-  if (currentImageIndex <= 0) {
+  if (
+    currentImageIndex <= 0
+  ) {
     return;
   }
 
+
   currentImageIndex--;
+
 
   updateGallery();
 }
@@ -530,21 +789,32 @@ function previousImage() {
 
 function closeGallery() {
 
-  if (!galleryModal) return;
+  if (!galleryModal) {
+    return;
+  }
 
-  galleryModal.classList.remove("is-open");
+
+  galleryModal.classList.remove(
+    "is-open"
+  );
+
 
   galleryModal.setAttribute(
     "aria-hidden",
     "true"
   );
 
+
   if (
     !categoryModal ||
-    !categoryModal.classList.contains("is-open")
+    !categoryModal.classList.contains(
+      "is-open"
+    )
   ) {
 
-    document.body.classList.remove("modal-open");
+    document.body.classList.remove(
+      "modal-open"
+    );
 
   }
 }
@@ -555,27 +825,35 @@ function closeGallery() {
 ========================= */
 
 document
-  .querySelectorAll("[data-close-category]")
-  .forEach((element) => {
+  .querySelectorAll(
+    "[data-close-category]"
+  )
+  .forEach(
+    (element) => {
 
-    element.addEventListener(
-      "click",
-      closeCategory
-    );
+      element.addEventListener(
+        "click",
+        closeCategory
+      );
 
-  });
+    }
+  );
 
 
 document
-  .querySelectorAll("[data-close-gallery]")
-  .forEach((element) => {
+  .querySelectorAll(
+    "[data-close-gallery]"
+  )
+  .forEach(
+    (element) => {
 
-    element.addEventListener(
-      "click",
-      closeGallery
-    );
+      element.addEventListener(
+        "click",
+        closeGallery
+      );
 
-  });
+    }
+  );
 
 
 /* =========================
@@ -590,6 +868,7 @@ if (categoryClose) {
   );
 
 }
+
 
 if (galleryClose) {
 
@@ -614,6 +893,7 @@ if (galleryPrev) {
 
 }
 
+
 if (galleryNext) {
 
   galleryNext.addEventListener(
@@ -632,41 +912,67 @@ document.addEventListener(
   "keydown",
   (event) => {
 
-    if (event.key === "Escape") {
+
+    /* ESC */
+
+    if (
+      event.key === "Escape"
+    ) {
 
       if (
         galleryModal &&
-        galleryModal.classList.contains("is-open")
+        galleryModal.classList.contains(
+          "is-open"
+        )
       ) {
 
         closeGallery();
+
         return;
 
       }
 
+
       if (
         categoryModal &&
-        categoryModal.classList.contains("is-open")
+        categoryModal.classList.contains(
+          "is-open"
+        )
       ) {
 
         closeCategory();
+
         return;
 
       }
 
     }
 
+
+    /* GALLERY NAVIGATION */
+
     if (
       galleryModal &&
-      galleryModal.classList.contains("is-open")
+      galleryModal.classList.contains(
+        "is-open"
+      )
     ) {
 
-      if (event.key === "ArrowRight") {
+      if (
+        event.key === "ArrowRight"
+      ) {
+
         nextImage();
+
       }
 
-      if (event.key === "ArrowLeft") {
+
+      if (
+        event.key === "ArrowLeft"
+      ) {
+
         previousImage();
+
       }
 
     }
@@ -684,12 +990,16 @@ if (
   mobileNav
 ) {
 
+
   mobileMenuButton.addEventListener(
     "click",
     () => {
 
       const isOpen =
-        mobileNav.classList.toggle("is-open");
+        mobileNav.classList.toggle(
+          "is-open"
+        );
+
 
       mobileMenuButton.setAttribute(
         "aria-expanded",
@@ -699,27 +1009,61 @@ if (
     }
   );
 
+
   mobileNav
     .querySelectorAll("a")
-    .forEach((link) => {
+    .forEach(
+      (link) => {
 
-      link.addEventListener(
-        "click",
-        () => {
+        link.addEventListener(
+          "click",
+          () => {
 
-          mobileNav.classList.remove(
-            "is-open"
-          );
+            mobileNav.classList.remove(
+              "is-open"
+            );
 
-          mobileMenuButton.setAttribute(
-            "aria-expanded",
-            "false"
-          );
 
-        }
-      );
+            mobileMenuButton.setAttribute(
+              "aria-expanded",
+              "false"
+            );
 
-    });
+          }
+        );
+
+      }
+    );
+
+}
+
+
+/* =========================
+   IMAGE ERROR HANDLING
+========================= */
+
+if (galleryImage) {
+
+  galleryImage.addEventListener(
+    "error",
+    () => {
+
+      galleryImage.style.opacity =
+        "0";
+
+    }
+  );
+
+
+  galleryImage.addEventListener(
+    "load",
+    () => {
+
+      galleryImage.style.opacity =
+        "1";
+
+    }
+  );
 
 }
 
