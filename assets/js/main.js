@@ -2,26 +2,16 @@ const SITE = {
   behance: "https://www.behance.net/waterboys1"
 };
 
-
-/* =========================
-   CATEGORIES
-========================= */
-
 const CATEGORIES = [
   {
     title: "DOCUMENTATION",
-
-    description:
-      "Live performances, events, and visual documentation.",
+    description: "Live performances, events, and visual documentation.",
 
     projects: [
       {
         title: "Stereo Wall",
-
         year: "2026",
-
-        description:
-          "Visual documentation of Stereo Wall at Trilogigs 2025.",
+        description: "Visual documentation of Stereo Wall at Trilogigs 2025.",
 
         images: [
           "assets/images/documentation/stereo-wall-01.jpg",
@@ -43,318 +33,193 @@ const CATEGORIES = [
     ]
   },
 
-
   {
     title: "PRODUCT PHOTOGRAPHY",
-
-    description:
-      "Product, campaign, catalog, and commercial photography.",
-
+    description: "Product, campaign, commercial, and brand photography.",
     projects: []
   },
 
-
   {
-    title: "PORTRAIT/FASHION",
-
-    description:
-      "Portraits, fashion, creative portraits, and visual storytelling.",
-
+    title: "PORTRAIT / FASHION",
+    description: "Portraits, fashion, creative direction, and visual storytelling.",
     projects: []
   }
 ];
 
 
-/* =========================
+/* =========================================================
    STATE
-========================= */
+========================================================= */
 
 let currentCategoryIndex = 0;
 let currentProjectIndex = 0;
 let currentImageIndex = 0;
 
 
-/* =========================
+/* =========================================================
    ELEMENTS
-========================= */
+========================================================= */
 
-const categoryGrid =
-  document.getElementById("category-grid");
+const categoryGrid = document.getElementById("category-grid");
+const categoryModal = document.getElementById("category-modal");
+const categoryModalNumber = document.getElementById("category-modal-number");
+const categoryModalTitle = document.getElementById("category-modal-title");
+const categoryModalDescription = document.getElementById("category-modal-description");
+const categoryClose = document.getElementById("category-close");
 
-const categoryModal =
-  document.getElementById("category-modal");
+const projectList = document.getElementById("project-list");
 
-const categoryModalNumber =
-  document.getElementById("category-modal-number");
-
-const categoryModalTitle =
-  document.getElementById("category-modal-title");
-
-const categoryModalDescription =
-  document.getElementById(
-    "category-modal-description"
-  );
-
-const categoryClose =
-  document.getElementById("category-close");
-
-const projectList =
-  document.getElementById("project-list");
-
-
-const galleryModal =
-  document.getElementById("gallery-modal");
-
-const galleryCategoryLabel =
-  document.getElementById(
-    "gallery-category-label"
-  );
-
-const galleryTitle =
-  document.getElementById("gallery-title");
-
-const galleryClose =
-  document.getElementById("gallery-close");
-
-const galleryImage =
-  document.getElementById("gallery-image");
-
-const galleryPrev =
-  document.getElementById("gallery-prev");
-
-const galleryNext =
-  document.getElementById("gallery-next");
-
-const galleryCounter =
-  document.getElementById("gallery-counter");
-
-const galleryDescription =
-  document.getElementById(
-    "gallery-description"
-  );
-
+const galleryModal = document.getElementById("gallery-modal");
+const galleryCategoryLabel = document.getElementById("gallery-category-label");
+const galleryTitle = document.getElementById("gallery-title");
+const galleryClose = document.getElementById("gallery-close");
+const galleryImage = document.getElementById("gallery-image");
+const galleryPrev = document.getElementById("gallery-prev");
+const galleryNext = document.getElementById("gallery-next");
+const galleryCounter = document.getElementById("gallery-counter");
+const galleryDescription = document.getElementById("gallery-description");
 
 const mobileMenuButton =
-  document.querySelector(
-    ".mobile-menu-button"
-  );
+  document.querySelector(".mobile-menu-button");
 
 const mobileNav =
   document.getElementById("mobile-nav");
 
 
-/* =========================
+/* =========================================================
    RENDER CATEGORY CARDS
-========================= */
+========================================================= */
 
 function renderCategories() {
 
-  if (!categoryGrid) {
-    return;
-  }
+  if (!categoryGrid) return;
 
   categoryGrid.innerHTML = "";
 
-  CATEGORIES.forEach(
-    (category, index) => {
+  CATEGORIES.forEach((category, index) => {
 
-      const card =
-        document.createElement("article");
+    const card = document.createElement("article");
 
-      card.className =
-        "category-card";
+    card.className = "category-card";
 
-      card.setAttribute(
-        "tabindex",
-        "0"
-      );
+    card.setAttribute("tabindex", "0");
+    card.setAttribute("role", "button");
 
-      card.setAttribute(
-        "role",
-        "button"
-      );
+    const firstProject = category.projects?.[0];
+    const firstImage = firstProject?.images?.[0] || "";
 
+    card.innerHTML = `
+      ${
+        firstImage
+          ? `
+            <img
+              class="category-image"
+              src="${firstImage}"
+              alt="${category.title}"
+              loading="lazy"
+            >
+          `
+          : `
+            <div class="category-placeholder"></div>
+          `
+      }
 
-      const firstProject =
-        category.projects?.[0];
+      <div class="category-overlay">
 
-      const firstImage =
-        firstProject?.images?.[0] || "";
+        <div class="category-top">
 
+          <span class="category-number">
+            ${String(index + 1).padStart(2, "0")}
+          </span>
 
-      card.innerHTML = `
-        ${
-          firstImage
-            ? `
-              <img
-                class="category-image"
-                src="${firstImage}"
-                alt="${category.title}"
-                loading="lazy"
-              >
-            `
-            : `
-              <div
-                class="category-placeholder"
-                aria-hidden="true"
-              ></div>
-            `
-        }
-
-
-        <div class="category-overlay">
-
-          <div class="category-top">
-
-            <span class="category-number">
-              ${String(index + 1).padStart(2, "0")}
-            </span>
-
-            <span class="category-arrow">
-              ↗
-            </span>
-
-          </div>
-
-
-          <div class="category-bottom">
-
-            <div class="category-text">
-
-              <span class="category-title">
-                ${category.title}
-              </span>
-
-              <span class="category-description">
-                ${category.description}
-              </span>
-
-            </div>
-
-          </div>
+          <span class="category-arrow">
+            ↗
+          </span>
 
         </div>
-      `;
 
+        <div class="category-bottom">
 
-      /* CLICK */
+          <span class="category-title">
+            ${category.title}
+          </span>
 
-      card.addEventListener(
-        "click",
-        () => {
+        </div>
 
-          openCategory(index);
+      </div>
+    `;
 
-        }
-      );
+    card.addEventListener("click", () => {
+      openCategory(index);
+    });
 
+    card.addEventListener("keydown", (event) => {
 
-      /* KEYBOARD */
+      if (
+        event.key === "Enter" ||
+        event.key === " "
+      ) {
+        event.preventDefault();
+        openCategory(index);
+      }
 
-      card.addEventListener(
-        "keydown",
-        (event) => {
+    });
 
-          if (
-            event.key === "Enter" ||
-            event.key === " "
-          ) {
+    categoryGrid.appendChild(card);
 
-            event.preventDefault();
-
-            openCategory(index);
-
-          }
-
-        }
-      );
-
-
-      categoryGrid.appendChild(card);
-
-    }
-  );
+  });
 }
 
 
-/* =========================
+/* =========================================================
    OPEN CATEGORY
-========================= */
+========================================================= */
 
 function openCategory(index) {
 
-  const category =
-    CATEGORIES[index];
+  const category = CATEGORIES[index];
 
-  if (
-    !category ||
-    !categoryModal
-  ) {
-    return;
-  }
+  if (!category || !categoryModal) return;
 
-
-  currentCategoryIndex =
-    index;
-
+  currentCategoryIndex = index;
 
   if (categoryModalNumber) {
-
     categoryModalNumber.textContent =
       String(index + 1).padStart(2, "0");
-
   }
-
 
   if (categoryModalTitle) {
-
     categoryModalTitle.textContent =
       category.title;
-
   }
-
 
   if (categoryModalDescription) {
-
     categoryModalDescription.textContent =
       category.description;
-
   }
-
 
   renderProjects(category);
 
-
-  categoryModal.classList.add(
-    "is-open"
-  );
-
+  categoryModal.classList.add("is-open");
 
   categoryModal.setAttribute(
     "aria-hidden",
     "false"
   );
 
-
-  document.body.classList.add(
-    "modal-open"
-  );
+  document.body.classList.add("modal-open");
 }
 
 
-/* =========================
-   RENDER PROJECTS
-========================= */
+/* =========================================================
+   RENDER PROJECT CATALOG
+========================================================= */
 
 function renderProjects(category) {
 
-  if (!projectList) {
-    return;
-  }
-
+  if (!projectList) return;
 
   projectList.innerHTML = "";
-
 
   if (
     !category.projects ||
@@ -371,259 +236,174 @@ function renderProjects(category) {
   }
 
 
-  category.projects.forEach(
-    (project, index) => {
+  category.projects.forEach((project, index) => {
 
-      const button =
-        document.createElement("button");
+    const button = document.createElement("button");
 
+    button.type = "button";
+    button.className = "project-item";
 
-      button.type =
-        "button";
+    const thumbnail =
+      project.images?.[0] || "";
 
+    button.innerHTML = `
 
-      button.className =
-        "project-item";
+      <div class="project-image-wrap">
 
-
-      const thumbnail =
-        project.images?.[0] || "";
-
-
-      button.innerHTML = `
-
-        <div class="project-image-wrap">
-
-          ${
-            thumbnail
-              ? `
-                <img
-                  class="project-thumb"
-                  src="${thumbnail}"
-                  alt="${project.title}"
-                  loading="lazy"
-                >
-              `
-              : `
-                <div
-                  class="project-thumb-placeholder"
-                  aria-hidden="true"
-                ></div>
-              `
-          }
+        ${
+          thumbnail
+            ? `
+              <img
+                class="project-thumb"
+                src="${thumbnail}"
+                alt="${project.title}"
+                loading="lazy"
+              >
+            `
+            : `
+              <div class="project-thumb-placeholder"></div>
+            `
+        }
 
 
-          <div class="project-image-gradient">
-          </div>
-
-
-          <div class="project-image-top">
-
-            <span class="project-number">
-              ${String(index + 1).padStart(2, "0")}
-            </span>
-
-            <span class="project-arrow">
-              ↗
-            </span>
-
-          </div>
-
+        <div class="project-image-overlay">
 
           <div class="project-image-title">
 
-            <span>
+            <span class="project-title-overlay">
               ${project.title}
             </span>
 
-            <small>
+            <span class="project-year-overlay">
               ${project.year || ""}
-            </small>
+            </span>
 
           </div>
 
-        </div>
 
-
-        <div class="project-info">
-
-          <span class="project-description">
-            ${project.description || ""}
+          <span class="project-arrow">
+            ↗
           </span>
 
         </div>
 
-      `;
+      </div>
 
 
-      button.addEventListener(
-        "click",
-        () => {
+      <div class="project-info">
 
-          openGallery(index);
+        <span class="project-description">
+          ${project.description || ""}
+        </span>
 
-        }
-      );
+      </div>
+
+    `;
 
 
-      projectList.appendChild(
-        button
-      );
+    button.addEventListener("click", () => {
+      openGallery(index);
+    });
 
-    }
-  );
+
+    projectList.appendChild(button);
+
+  });
 }
 
 
-/* =========================
+/* =========================================================
    CLOSE CATEGORY
-========================= */
+========================================================= */
 
 function closeCategory() {
 
-  if (!categoryModal) {
-    return;
-  }
+  if (!categoryModal) return;
 
-
-  categoryModal.classList.remove(
-    "is-open"
-  );
-
+  categoryModal.classList.remove("is-open");
 
   categoryModal.setAttribute(
     "aria-hidden",
     "true"
   );
 
-
   if (
     !galleryModal ||
-    !galleryModal.classList.contains(
-      "is-open"
-    )
+    !galleryModal.classList.contains("is-open")
   ) {
-
-    document.body.classList.remove(
-      "modal-open"
-    );
-
+    document.body.classList.remove("modal-open");
   }
 }
 
 
-/* =========================
+/* =========================================================
    OPEN GALLERY
-========================= */
+========================================================= */
 
 function openGallery(projectIndex) {
 
   const category =
-    CATEGORIES[
-      currentCategoryIndex
-    ];
+    CATEGORIES[currentCategoryIndex];
 
-
-  if (!category) {
-    return;
-  }
-
+  if (!category) return;
 
   const project =
-    category.projects?.[
-      projectIndex
-    ];
+    category.projects?.[projectIndex];
 
+  if (!project || !galleryModal) return;
 
-  if (
-    !project ||
-    !galleryModal
-  ) {
-    return;
-  }
-
-
-  currentProjectIndex =
-    projectIndex;
-
-
-  currentImageIndex =
-    0;
+  currentProjectIndex = projectIndex;
+  currentImageIndex = 0;
 
 
   if (galleryCategoryLabel) {
-
     galleryCategoryLabel.textContent =
       category.title;
-
   }
 
 
   if (galleryTitle) {
-
     galleryTitle.textContent =
       project.title;
-
   }
 
 
   if (galleryDescription) {
-
     galleryDescription.textContent =
       project.description || "";
-
   }
 
 
   updateGallery();
 
 
-  galleryModal.classList.add(
-    "is-open"
-  );
-
+  galleryModal.classList.add("is-open");
 
   galleryModal.setAttribute(
     "aria-hidden",
     "false"
   );
 
-
-  document.body.classList.add(
-    "modal-open"
-  );
+  document.body.classList.add("modal-open");
 }
 
 
-/* =========================
+/* =========================================================
    UPDATE GALLERY
-========================= */
+========================================================= */
 
 function updateGallery() {
 
   const category =
-    CATEGORIES[
-      currentCategoryIndex
-    ];
+    CATEGORIES[currentCategoryIndex];
 
-
-  if (!category) {
-    return;
-  }
+  if (!category) return;
 
 
   const project =
-    category.projects?.[
-      currentProjectIndex
-    ];
+    category.projects?.[currentProjectIndex];
 
-
-  if (
-    !project ||
-    !galleryImage
-  ) {
-    return;
-  }
+  if (!project || !galleryImage) return;
 
 
   const images =
@@ -632,36 +412,24 @@ function updateGallery() {
 
   if (!images.length) {
 
-    galleryImage.removeAttribute(
-      "src"
-    );
+    galleryImage.removeAttribute("src");
 
-
-    galleryImage.alt =
-      "";
+    galleryImage.alt = "";
 
 
     if (galleryCounter) {
-
       galleryCounter.textContent =
         "00 / 00";
-
     }
 
 
     if (galleryPrev) {
-
-      galleryPrev.disabled =
-        true;
-
+      galleryPrev.disabled = true;
     }
 
 
     if (galleryNext) {
-
-      galleryNext.disabled =
-        true;
-
+      galleryNext.disabled = true;
     }
 
 
@@ -669,37 +437,20 @@ function updateGallery() {
   }
 
 
-  /* =========================
-     IMAGE
-  ========================= */
-
   galleryImage.src =
     images[currentImageIndex];
-
 
   galleryImage.alt =
     project.title;
 
 
-  /* =========================
-     COUNTER
-  ========================= */
-
   if (galleryCounter) {
 
     galleryCounter.textContent =
-      `${String(
-        currentImageIndex + 1
-      ).padStart(2, "0")} / ${String(
-        images.length
-      ).padStart(2, "0")}`;
+      `${String(currentImageIndex + 1).padStart(2, "0")} / ${String(images.length).padStart(2, "0")}`;
 
   }
 
-
-  /* =========================
-     PREVIOUS
-  ========================= */
 
   if (galleryPrev) {
 
@@ -709,41 +460,28 @@ function updateGallery() {
   }
 
 
-  /* =========================
-     NEXT
-  ========================= */
-
   if (galleryNext) {
 
     galleryNext.disabled =
-      currentImageIndex >=
-      images.length - 1;
+      currentImageIndex >= images.length - 1;
 
   }
 }
 
 
-/* =========================
+/* =========================================================
    NEXT IMAGE
-========================= */
+========================================================= */
 
 function nextImage() {
 
   const category =
-    CATEGORIES[
-      currentCategoryIndex
-    ];
-
+    CATEGORIES[currentCategoryIndex];
 
   const project =
-    category?.projects?.[
-      currentProjectIndex
-    ];
+    category?.projects?.[currentProjectIndex];
 
-
-  if (!project) {
-    return;
-  }
+  if (!project) return;
 
 
   const images =
@@ -763,41 +501,31 @@ function nextImage() {
 }
 
 
-/* =========================
+/* =========================================================
    PREVIOUS IMAGE
-========================= */
+========================================================= */
 
 function previousImage() {
 
-  if (
-    currentImageIndex <= 0
-  ) {
+  if (currentImageIndex <= 0) {
     return;
   }
 
-
   currentImageIndex--;
-
 
   updateGallery();
 }
 
 
-/* =========================
+/* =========================================================
    CLOSE GALLERY
-========================= */
+========================================================= */
 
 function closeGallery() {
 
-  if (!galleryModal) {
-    return;
-  }
+  if (!galleryModal) return;
 
-
-  galleryModal.classList.remove(
-    "is-open"
-  );
-
+  galleryModal.classList.remove("is-open");
 
   galleryModal.setAttribute(
     "aria-hidden",
@@ -807,58 +535,50 @@ function closeGallery() {
 
   if (
     !categoryModal ||
-    !categoryModal.classList.contains(
-      "is-open"
-    )
+    !categoryModal.classList.contains("is-open")
   ) {
 
-    document.body.classList.remove(
-      "modal-open"
-    );
+    document.body.classList.remove("modal-open");
 
   }
 }
 
 
-/* =========================
-   BACKDROP
-========================= */
+/* =========================================================
+   CATEGORY BACKDROP
+========================================================= */
 
 document
-  .querySelectorAll(
-    "[data-close-category]"
-  )
-  .forEach(
-    (element) => {
+  .querySelectorAll("[data-close-category]")
+  .forEach((element) => {
 
-      element.addEventListener(
-        "click",
-        closeCategory
-      );
+    element.addEventListener(
+      "click",
+      closeCategory
+    );
 
-    }
-  );
+  });
 
+
+/* =========================================================
+   GALLERY BACKDROP
+========================================================= */
 
 document
-  .querySelectorAll(
-    "[data-close-gallery]"
-  )
-  .forEach(
-    (element) => {
+  .querySelectorAll("[data-close-gallery]")
+  .forEach((element) => {
 
-      element.addEventListener(
-        "click",
-        closeGallery
-      );
+    element.addEventListener(
+      "click",
+      closeGallery
+    );
 
-    }
-  );
+  });
 
 
-/* =========================
+/* =========================================================
    CLOSE BUTTONS
-========================= */
+========================================================= */
 
 if (categoryClose) {
 
@@ -880,9 +600,9 @@ if (galleryClose) {
 }
 
 
-/* =========================
-   GALLERY BUTTONS
-========================= */
+/* =========================================================
+   GALLERY CONTROLS
+========================================================= */
 
 if (galleryPrev) {
 
@@ -904,30 +624,22 @@ if (galleryNext) {
 }
 
 
-/* =========================
+/* =========================================================
    KEYBOARD
-========================= */
+========================================================= */
 
 document.addEventListener(
   "keydown",
   (event) => {
 
-
-    /* ESC */
-
-    if (
-      event.key === "Escape"
-    ) {
+    if (event.key === "Escape") {
 
       if (
         galleryModal &&
-        galleryModal.classList.contains(
-          "is-open"
-        )
+        galleryModal.classList.contains("is-open")
       ) {
 
         closeGallery();
-
         return;
 
       }
@@ -935,13 +647,10 @@ document.addEventListener(
 
       if (
         categoryModal &&
-        categoryModal.classList.contains(
-          "is-open"
-        )
+        categoryModal.classList.contains("is-open")
       ) {
 
         closeCategory();
-
         return;
 
       }
@@ -949,30 +658,18 @@ document.addEventListener(
     }
 
 
-    /* GALLERY NAVIGATION */
-
     if (
       galleryModal &&
-      galleryModal.classList.contains(
-        "is-open"
-      )
+      galleryModal.classList.contains("is-open")
     ) {
 
-      if (
-        event.key === "ArrowRight"
-      ) {
-
+      if (event.key === "ArrowRight") {
         nextImage();
-
       }
 
 
-      if (
-        event.key === "ArrowLeft"
-      ) {
-
+      if (event.key === "ArrowLeft") {
         previousImage();
-
       }
 
     }
@@ -981,24 +678,21 @@ document.addEventListener(
 );
 
 
-/* =========================
+/* =========================================================
    MOBILE MENU
-========================= */
+========================================================= */
 
 if (
   mobileMenuButton &&
   mobileNav
 ) {
 
-
   mobileMenuButton.addEventListener(
     "click",
     () => {
 
       const isOpen =
-        mobileNav.classList.toggle(
-          "is-open"
-        );
+        mobileNav.classList.toggle("is-open");
 
 
       mobileMenuButton.setAttribute(
@@ -1012,64 +706,32 @@ if (
 
   mobileNav
     .querySelectorAll("a")
-    .forEach(
-      (link) => {
+    .forEach((link) => {
 
-        link.addEventListener(
-          "click",
-          () => {
+      link.addEventListener(
+        "click",
+        () => {
 
-            mobileNav.classList.remove(
-              "is-open"
-            );
+          mobileNav.classList.remove(
+            "is-open"
+          );
 
 
-            mobileMenuButton.setAttribute(
-              "aria-expanded",
-              "false"
-            );
+          mobileMenuButton.setAttribute(
+            "aria-expanded",
+            "false"
+          );
 
-          }
-        );
+        }
+      );
 
-      }
-    );
+    });
 
 }
 
 
-/* =========================
-   IMAGE ERROR HANDLING
-========================= */
-
-if (galleryImage) {
-
-  galleryImage.addEventListener(
-    "error",
-    () => {
-
-      galleryImage.style.opacity =
-        "0";
-
-    }
-  );
-
-
-  galleryImage.addEventListener(
-    "load",
-    () => {
-
-      galleryImage.style.opacity =
-        "1";
-
-    }
-  );
-
-}
-
-
-/* =========================
+/* =========================================================
    INIT
-========================= */
+========================================================= */
 
 renderCategories();
