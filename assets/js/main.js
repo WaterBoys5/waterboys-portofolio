@@ -1,40 +1,4 @@
-document.addEventListener("DOMContentLoaded", () => {
-
-  /* =========================
-     BASIC SITE
-  ========================= */
-
-  const year = document.getElementById("year");
-
-  if (year) {
-    year.textContent = new Date().getFullYear();
-  }
-
-  const behance = document.getElementById("behance-link");
-
-  if (behance && typeof SITE !== "undefined") {
-    behance.href = SITE.behance;
-  }
-
-  const projectGrid = document.getElementById("project-grid");
-
-  if (!projectGrid || typeof CATEGORIES === "undefined") {
-    return;
-  }
-
-
-  /* =========================
-     KEYBOARD HANDLERS
-  ========================= */
-
-  let categoryKeyboard = null;
-  let galleryKeyboard = null;
-
-
-  /* =========================
-     MAIN CATEGORY CARDS
-     ONLY THESE SLIDESHOW
-  ========================= */
+assets/js/main.js  ========================= */
 
   CATEGORIES.forEach((category, categoryIndex) => {
 
