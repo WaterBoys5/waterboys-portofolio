@@ -2,15 +2,20 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>WaterBoys — Photographer</title>
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
 
   <meta
     name="description"
-    content="Portfolio of WaterBoys, photographer specializing in commercial, portrait, and stage photography."
+    content="Zulkarnain / Waterboys Photography Portfolio"
   >
 
+  <title>Waterboys — Photography Portfolio</title>
+
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
@@ -19,73 +24,135 @@
     rel="stylesheet"
   >
 
-  <link rel="stylesheet" href="style.css">
+  <!-- MAIN CSS -->
+  <link
+    rel="stylesheet"
+    href="assets/css/style.css"
+  >
 </head>
 
 <body>
 
-  <!-- LIQUID BACKGROUND -->
-  <div class="liquid-bg">
+  <!-- =====================================================
+       LIQUID GLASS BACKGROUND
+  ====================================================== -->
+
+  <div class="liquid-bg" aria-hidden="true">
+
     <div class="blob blob-1"></div>
     <div class="blob blob-2"></div>
     <div class="blob blob-3"></div>
+
     <div class="grain"></div>
+
   </div>
 
 
-  <!-- HEADER -->
+  <!-- =====================================================
+       HEADER
+  ====================================================== -->
+
   <header class="site-header">
 
-    <a href="#top" class="brand">
+    <a
+      href="#top"
+      class="brand"
+      aria-label="Waterboys Home"
+    >
       <span class="brand-mark">W</span>
     </a>
 
-    <nav class="desktop-nav">
-      <a href="#work">Work</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
+
+    <!-- DESKTOP NAV -->
+
+    <nav
+      class="desktop-nav"
+      aria-label="Main navigation"
+    >
+
+      <a href="#projects">
+        Work
+      </a>
+
+      <a href="#about">
+        About
+      </a>
+
+      <a href="#contact">
+        Contact
+      </a>
+
       <a
         href="https://www.behance.net/waterboys1"
         target="_blank"
-        rel="noopener"
+        rel="noopener noreferrer"
         class="pill-button"
       >
         Behance ↗
       </a>
+
     </nav>
+
+
+    <!-- MOBILE MENU BUTTON -->
 
     <button
       class="mobile-menu-button"
-      id="mobileMenuButton"
       type="button"
       aria-label="Open menu"
       aria-expanded="false"
+      aria-controls="mobileNav"
     >
       <span></span>
       <span></span>
     </button>
 
-    <nav class="mobile-nav" id="mobileNav">
-      <a href="#work">Work</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
+
+    <!-- MOBILE NAV -->
+
+    <nav
+      id="mobileNav"
+      class="mobile-nav"
+      aria-label="Mobile navigation"
+    >
+
+      <a href="#projects">
+        Work
+      </a>
+
+      <a href="#about">
+        About
+      </a>
+
+      <a href="#contact">
+        Contact
+      </a>
 
       <a
         href="https://www.behance.net/waterboys1"
         target="_blank"
-        rel="noopener"
+        rel="noopener noreferrer"
         class="pill-button"
       >
         Behance ↗
       </a>
+
     </nav>
 
   </header>
 
 
+  <!-- =====================================================
+       MAIN
+  ====================================================== -->
+
   <main id="top">
 
-    <!-- HERO -->
+
+    <!-- ===================================================
+         HERO
+    ==================================================== -->
+
     <section class="hero section-shell">
 
       <div class="hero-content">
@@ -94,26 +161,32 @@
           PHOTOGRAPHER <span>/</span> VIDEOGRAPHER
         </p>
 
+
         <h1>
-          Visuals made<br>
-          with <em>intent.</em>
+          Visuals that
+          <em>stay.</em>
         </h1>
 
+
         <p class="hero-description">
-          Photographer focused on commercial, portrait, and stage
-          photography. Creating visual work for brands, artists,
-          and creative projects.
+          Photography and visual storytelling focused on
+          people, brands, performances, and creative projects.
         </p>
+
 
         <div class="hero-actions">
 
-          <a href="#work" class="text-link">
+          <a
+            href="#projects"
+            class="text-link"
+          >
             VIEW SELECTED WORK
             <span>↘</span>
           </a>
 
+
           <span class="mono-link">
-            JAKARTA / ID
+            JAKARTA / INDONESIA
           </span>
 
         </div>
@@ -121,181 +194,93 @@
       </div>
 
 
-      <div class="hero-space">
+      <!-- DECORATIVE ORBIT -->
+
+      <div
+        class="hero-space"
+        aria-hidden="true"
+      >
+
         <div class="hero-orbit"></div>
 
-        <div class="hero-coordinate">
-          06°12'S / 106°50'E
-        </div>
+        <span class="hero-coordinate">
+          06°12′S / 106°49′E
+        </span>
+
       </div>
 
     </section>
 
 
-    <!-- WORK -->
-    <section class="projects section-shell" id="work">
+
+    <!-- ===================================================
+         PROJECTS
+    ==================================================== -->
+
+    <section
+      id="projects"
+      class="projects section-shell"
+    >
 
       <div class="section-heading">
 
         <div>
-          <p class="eyebrow">01 / SELECTED WORK</p>
+
+          <p class="eyebrow">
+            01 <span>/</span> SELECTED WORK
+          </p>
 
           <h2>
             Projects
           </h2>
+
         </div>
 
+
         <p>
-          A selection of commercial, portrait,
-          and stage photography projects.
+          A selection of photography projects across
+          stage, commercial, portrait, and visual work.
         </p>
 
       </div>
 
 
-      <div class="category-grid">
+      <!--
+        JavaScript akan mengisi kategori
+        ke dalam element ini.
+      -->
 
-        <!-- STAGE -->
-        <button
-          class="category-card"
-          type="button"
-          data-category="stage"
-        >
-
-          <img
-            class="category-image"
-            src="assets/images/stage/stage.jpg"
-            alt="Stage photography"
-            onerror="this.style.display='none'"
-          >
-
-          <div class="category-placeholder"></div>
-
-          <div class="category-overlay">
-
-            <div class="category-top">
-
-              <span class="category-number">
-                01
-              </span>
-
-              <span class="category-arrow">
-                ↗
-              </span>
-
-            </div>
-
-            <div class="category-bottom">
-
-              <span class="category-title">
-                STAGE<br>PHOTOGRAPHY
-              </span>
-
-            </div>
-
-          </div>
-
-        </button>
-
-
-        <!-- COMMERCIAL -->
-        <button
-          class="category-card"
-          type="button"
-          data-category="commercial"
-        >
-
-          <img
-            class="category-image"
-            src="assets/images/portrait-commercial/peron-long-sleeve-01.jpg"
-            alt="Commercial photography"
-            onerror="this.style.display='none'"
-          >
-
-          <div class="category-placeholder"></div>
-
-          <div class="category-overlay">
-
-            <div class="category-top">
-
-              <span class="category-number">
-                02
-              </span>
-
-              <span class="category-arrow">
-                ↗
-              </span>
-
-            </div>
-
-            <div class="category-bottom">
-
-              <span class="category-title">
-                COMMERCIAL<br>PHOTOGRAPHY
-              </span>
-
-            </div>
-
-          </div>
-
-        </button>
-
-
-        <!-- PORTRAIT -->
-        <button
-          class="category-card"
-          type="button"
-          data-category="portrait"
-        >
-
-          <img
-            class="category-image"
-            src="assets/images/portrait-commercial/vishgazine-01.jpg"
-            alt="Portrait photography"
-            onerror="this.style.display='none'"
-          >
-
-          <div class="category-placeholder"></div>
-
-          <div class="category-overlay">
-
-            <div class="category-top">
-
-              <span class="category-number">
-                03
-              </span>
-
-              <span class="category-arrow">
-                ↗
-              </span>
-
-            </div>
-
-            <div class="category-bottom">
-
-              <span class="category-title">
-                PORTRAIT<br>PHOTOGRAPHY
-              </span>
-
-            </div>
-
-          </div>
-
-        </button>
-
-      </div>
+      <div
+        id="categoryGrid"
+        class="category-grid"
+      ></div>
 
     </section>
 
 
-    <!-- ABOUT -->
-    <section class="about section-shell" id="about">
+
+    <!-- ===================================================
+         ABOUT
+    ==================================================== -->
+
+    <section
+      id="about"
+      class="about section-shell"
+    >
 
       <div class="section-rule">
-        <p class="eyebrow">02 / ABOUT</p>
+
+        <p class="eyebrow">
+          02 <span>/</span> ABOUT
+        </p>
+
       </div>
 
+
       <div class="about-layout">
+
+
+        <!-- PROFILE -->
 
         <div>
 
@@ -303,11 +288,15 @@
 
             <img
               src="assets/images/profile.jpg"
-              alt="WaterBoys portrait"
-              onerror="this.style.display='none'"
+              alt="Zulkarnain / Waterboys"
+              loading="lazy"
+              onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';"
             >
 
-            <div class="profile-fallback">
+            <div
+              class="profile-fallback"
+              aria-hidden="true"
+            >
               W
             </div>
 
@@ -316,39 +305,39 @@
         </div>
 
 
+        <!-- ABOUT CONTENT -->
+
         <div>
 
           <h2 class="name">
-            WaterBoys
+            Zulkarnain
           </h2>
 
           <p class="stage-name">
-            @waterboys1
+            Waterboys
           </p>
 
           <p class="role">
-            PHOTOGRAPHER / VIDEOGRAPHER
+            PHOTOGRAPHER / VIDEOGRAPHER / EDITOR
           </p>
 
 
           <div class="about-text">
 
             <p>
-              I am a photography student and freelance
-              photographer with an interest in visual
-              communication and creative production.
+              I am a Photography student in the Communication
+              Department at Politeknik Negeri Media Kreatif.
             </p>
 
             <p>
-              My work covers commercial photography,
-              portraiture, product photography, events,
-              and stage documentation.
+              My work focuses on photography and visual
+              communication, with experience in commercial,
+              portrait, stage, product, and creative projects.
             </p>
 
             <p>
-              I focus on creating images that communicate
-              the character, atmosphere, and identity of
-              each project.
+              I enjoy working with people, brands, and creative
+              teams to turn ideas into strong visual stories.
             </p>
 
           </div>
@@ -356,12 +345,25 @@
 
           <div class="tag-list">
 
-            <span>PHOTOGRAPHY</span>
-            <span>VIDEOGRAPHY</span>
-            <span>COMMERCIAL</span>
-            <span>PORTRAIT</span>
-            <span>PRODUCT</span>
-            <span>EVENT</span>
+            <span>
+              PHOTOGRAPHY
+            </span>
+
+            <span>
+              VIDEOGRAPHY
+            </span>
+
+            <span>
+              LIGHTING
+            </span>
+
+            <span>
+              PHOTO EDITING
+            </span>
+
+            <span>
+              VISUAL COMMUNICATION
+            </span>
 
           </div>
 
@@ -372,46 +374,45 @@
     </section>
 
 
-    <!-- CONTACT -->
-    <section class="contact section-shell" id="contact">
+
+    <!-- ===================================================
+         CONTACT
+    ==================================================== -->
+
+    <section
+      id="contact"
+      class="contact section-shell"
+    >
 
       <div class="contact-inner">
 
         <p class="eyebrow">
-          03 / CONTACT
+          03 <span>/</span> CONTACT
         </p>
 
+
         <h2>
-          Let's make<br>
-          something <em>visual.</em>
+          Let's make
+          <em>something.</em>
         </h2>
+
 
         <p>
           Available for photography, videography,
-          commercial projects, creative campaigns,
-          and collaborations.
+          commercial projects, creative collaborations,
+          and selected freelance work.
         </p>
 
 
         <div class="contact-links">
 
-          <a href="mailto:your@email.com">
 
-            <span>
-              EMAIL
-            </span>
-
-            <strong>
-              your@email.com
-            </strong>
-
-          </a>
-
+          <!-- INSTAGRAM -->
 
           <a
-            href="https://www.instagram.com/waterboys1/"
+            href="https://www.instagram.com/weteerbreh"
             target="_blank"
-            rel="noopener"
+            rel="noopener noreferrer"
           >
 
             <span>
@@ -419,16 +420,18 @@
             </span>
 
             <strong>
-              @waterboys1
+              @weteerbreh ↗
             </strong>
 
           </a>
 
 
+          <!-- BEHANCE -->
+
           <a
             href="https://www.behance.net/waterboys1"
             target="_blank"
-            rel="noopener"
+            rel="noopener noreferrer"
           >
 
             <span>
@@ -437,6 +440,23 @@
 
             <strong>
               waterboys1 ↗
+            </strong>
+
+          </a>
+
+
+          <!-- EMAIL -->
+
+          <a
+            href="mailto:waterboys1@gmail.com"
+          >
+
+            <span>
+              EMAIL
+            </span>
+
+            <strong>
+              Get in touch ↗
             </strong>
 
           </a>
@@ -450,7 +470,11 @@
   </main>
 
 
-  <!-- FOOTER -->
+
+  <!-- =====================================================
+       FOOTER
+  ====================================================== -->
+
   <footer class="site-footer section-shell">
 
     <div>
@@ -458,7 +482,7 @@
     </div>
 
     <div>
-      PHOTOGRAPHER / VIDEOGRAPHER
+      PHOTOGRAPHY / VISUALS
     </div>
 
     <div>
@@ -468,10 +492,14 @@
   </footer>
 
 
-  <!-- CATEGORY MODAL -->
+
+  <!-- =====================================================
+       CATEGORY MODAL
+  ====================================================== -->
+
   <div
-    class="modal"
     id="categoryModal"
+    class="modal"
     aria-hidden="true"
   >
 
@@ -480,19 +508,25 @@
       data-close-category
     ></div>
 
-    <div class="category-modal-panel">
+
+    <div
+      class="category-modal-panel"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="categoryModalTitle"
+    >
 
       <div class="modal-topbar">
 
-        <span class="mono-label" id="categoryNumber">
-          01 / CATEGORY
+        <span class="mono-label">
+          PROJECTS
         </span>
 
         <button
           class="icon-button"
           type="button"
-          id="closeCategory"
-          aria-label="Close"
+          data-close-category
+          aria-label="Close category"
         >
           ×
         </button>
@@ -502,24 +536,24 @@
 
       <div class="category-modal-heading">
 
-        <p class="eyebrow" id="categoryEyebrow">
-          SELECTED WORK
+        <p class="eyebrow">
+          CATEGORY
         </p>
 
-        <h2 id="categoryTitle">
+        <h2 id="categoryModalTitle">
           Projects
         </h2>
 
-        <p id="categoryDescription">
-          Selected photography projects.
+        <p id="categoryModalDescription">
+          Selected projects.
         </p>
 
       </div>
 
 
       <div
-        class="project-list"
         id="projectList"
+        class="project-list"
       ></div>
 
     </div>
@@ -527,10 +561,14 @@
   </div>
 
 
-  <!-- GALLERY MODAL -->
+
+  <!-- =====================================================
+       GALLERY MODAL
+  ====================================================== -->
+
   <div
-    class="modal gallery-modal"
     id="galleryModal"
+    class="modal gallery-modal"
     aria-hidden="true"
   >
 
@@ -539,14 +577,24 @@
       data-close-gallery
     ></div>
 
-    <div class="gallery-panel">
+
+    <div
+      class="gallery-panel"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="galleryTitle"
+    >
+
+
+      <!-- GALLERY TOP -->
 
       <div class="gallery-topbar">
 
         <div>
+
           <p
-            class="mono-label"
             id="galleryCounter"
+            class="mono-label"
           >
             01 / 01
           </p>
@@ -554,13 +602,15 @@
           <h2 id="galleryTitle">
             Project
           </h2>
+
         </div>
+
 
         <button
           class="icon-button"
           type="button"
-          id="closeGallery"
-          aria-label="Close"
+          data-close-gallery
+          aria-label="Close gallery"
         >
           ×
         </button>
@@ -568,12 +618,15 @@
       </div>
 
 
+      <!-- GALLERY IMAGE -->
+
       <div class="gallery-stage">
 
+
         <button
+          id="galleryPrev"
           class="gallery-arrow"
           type="button"
-          id="galleryPrev"
           aria-label="Previous image"
         >
           ←
@@ -592,37 +645,39 @@
 
 
         <button
+          id="galleryNext"
           class="gallery-arrow"
           type="button"
-          id="galleryNext"
           aria-label="Next image"
         >
           →
         </button>
 
+
       </div>
 
+
+      <!-- GALLERY CAPTION -->
 
       <div class="gallery-caption">
 
         <div>
-          <p
+
+          <span
+            id="galleryProjectYear"
             class="mono-label"
-            id="galleryProject"
           >
-            PROJECT
-          </p>
+            2026
+          </span>
 
           <p id="galleryDescription">
             Project description.
           </p>
+
         </div>
 
-        <span
-          class="mono-label"
-          id="galleryYear"
-        >
-          2026
+        <span class="mono-label">
+          WATERBOYS
         </span>
 
       </div>
@@ -632,7 +687,12 @@
   </div>
 
 
-  <script src="main.js"></script>
+
+  <!-- =====================================================
+       MAIN JAVASCRIPT
+  ====================================================== -->
+
+  <script src="assets/js/main.js"></script>
 
 </body>
 </html>
