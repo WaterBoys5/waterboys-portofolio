@@ -25,6 +25,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const backButton =
         document.querySelector("#back-button");
 
+    const brand =
+        document.querySelector(".brand");
+
 
     /* =====================================================
        PROJECT DATA
@@ -125,6 +128,27 @@ document.addEventListener("DOMContentLoaded", () => {
                     "assets/images/portrait-commercial/wka-simpati-09.jpg",
                     "assets/images/portrait-commercial/wka-simpati-10.jpg"
                 ]
+            },
+
+
+            /* =================================================
+               UNRELEASED
+            ================================================= */
+
+            {
+                title: "Unreleased",
+
+                description:
+                    "Unreleased custom footwear project.",
+
+                images: [
+                    "assets/images/portrait-commercial/unreleased-01.jpg",
+                    "assets/images/portrait-commercial/unreleased-02.jpg",
+                    "assets/images/portrait-commercial/unreleased-03.jpg",
+                    "assets/images/portrait-commercial/unreleased-04.jpg",
+                    "assets/images/portrait-commercial/unreleased-05.jpg",
+                    "assets/images/portrait-commercial/unreleased-06.jpg"
+                ]
             }
 
         ],
@@ -168,33 +192,6 @@ document.addEventListener("DOMContentLoaded", () => {
                     "assets/images/product/titans-08.jpg",
                     "assets/images/product/titans-09.jpg"
                 ]
-            },
-
-
-            /*
-             * =================================================
-             * UNRELEASED
-             *
-             * MASUKKAN FOTO UNRELEASED LU DI SINI.
-             *
-             * Nama file di bawah harus sama persis
-             * dengan nama file yang ada di GitHub.
-             * =================================================
-             */
-
-            {
-                title: "Unreleased",
-
-                description:
-                    "Unreleased custom footwear project.",
-
-                images: [
-                    "assets/images/product/unreleased-01.jpg",
-                    "assets/images/product/unreleased-02.jpg",
-                    "assets/images/product/unreleased-03.jpg",
-                    "assets/images/product/unreleased-04.jpg",
-                    "assets/images/product/unreleased-05.jpg"
-                ]
             }
 
         ]
@@ -226,9 +223,9 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
 
-        /*
-         * Keyboard support
-         */
+        /* =================================================
+           CATEGORY KEYBOARD
+        ================================================= */
 
         card.addEventListener("keydown", event => {
 
@@ -354,40 +351,31 @@ document.addEventListener("DOMContentLoaded", () => {
                CLICK PROJECT
             ================================================= */
 
-            card.addEventListener(
-                "click",
-                event => {
+            card.addEventListener("click", () => {
 
-                    event.preventDefault();
-                    event.stopPropagation();
+                openProject(project);
 
-                    openProject(project);
-
-                }
-            );
+            });
 
 
             /* =================================================
                KEYBOARD PROJECT
             ================================================= */
 
-            card.addEventListener(
-                "keydown",
-                event => {
+            card.addEventListener("keydown", event => {
 
-                    if (
-                        event.key === "Enter" ||
-                        event.key === " "
-                    ) {
+                if (
+                    event.key === "Enter" ||
+                    event.key === " "
+                ) {
 
-                        event.preventDefault();
+                    event.preventDefault();
 
-                        openProject(project);
-
-                    }
+                    openProject(project);
 
                 }
-            );
+
+            });
 
 
             projectGrid.appendChild(card);
@@ -533,7 +521,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
         /* =================================================
-           CLOSE
+           CLOSE BUTTON
         ================================================= */
 
         viewer
@@ -545,7 +533,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
         /* =================================================
-           ESC
+           ESCAPE KEY
         ================================================= */
 
         viewer._escapeHandler =
@@ -662,7 +650,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
         /* =================================================
-           CLOSE
+           CLOSE BUTTON
         ================================================= */
 
         const closeButton =
@@ -683,6 +671,10 @@ document.addEventListener("DOMContentLoaded", () => {
         );
 
 
+        /* =================================================
+           CLICK BACKDROP
+        ================================================= */
+
         fullscreen.addEventListener(
             "click",
             event => {
@@ -700,7 +692,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
         /* =================================================
-           ESC
+           ESCAPE KEY
         ================================================= */
 
         fullscreen._escapeHandler =
@@ -754,10 +746,9 @@ document.addEventListener("DOMContentLoaded", () => {
             null;
 
 
-        /*
-         * Kalau project viewer masih terbuka,
-         * tetap lock scroll.
-         */
+        /* =================================================
+           RESTORE SCROLL STATE
+        ================================================= */
 
         if (activeViewer) {
 
@@ -806,10 +797,6 @@ document.addEventListener("DOMContentLoaded", () => {
     /* =====================================================
        NAVBAR HOME
     ===================================================== */
-
-    const brand =
-        document.querySelector(".brand");
-
 
     brand.addEventListener(
         "click",
