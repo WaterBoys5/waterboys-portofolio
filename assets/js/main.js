@@ -15,7 +15,6 @@ const CATEGORIES = [
 
   {
     title: "DOCUMENTATION",
-
     description:
       "Live performances, events, and visual documentation.",
 
@@ -23,11 +22,15 @@ const CATEGORIES = [
 
       {
         title: "Stereo Wall",
-
         year: "2026",
-
         description:
           "Visual documentation of Stereo Wall at Trilogigs 2025.",
+
+        /*
+          Posisi gambar dinaikkan sedikit agar bagian bawah
+          tidak terlalu masuk / terpotong pada thumbnail.
+        */
+        objectPosition: "50% 34%",
 
         images: [
           "assets/images/documentation/stereo-wall-01.jpg",
@@ -57,7 +60,6 @@ const CATEGORIES = [
 
   {
     title: "PRODUCT PHOTOGRAPHY",
-
     description:
       "Product, campaign, commercial, and brand photography.",
 
@@ -65,9 +67,7 @@ const CATEGORIES = [
 
       {
         title: "LV Wallet",
-
         year: "2026",
-
         description:
           "Product photography of a Louis Vuitton wallet.",
 
@@ -82,11 +82,9 @@ const CATEGORIES = [
 
       {
         title: "TITANS",
-
         year: "2026",
-
         description:
-          "Campaign documentation featuring graffiti artists and TITANS spray paint.",
+          "Campaign photography for TITANS spray paint.",
 
         images: [
           "assets/images/product/titans-01.jpg",
@@ -111,7 +109,6 @@ const CATEGORIES = [
 
   {
     title: "PORTRAIT / FASHION",
-
     description:
       "Portraits, fashion, creative direction, and visual storytelling.",
 
@@ -119,11 +116,9 @@ const CATEGORIES = [
 
       {
         title: "Long Sleeve Peron",
-
         year: "2026",
-
         description:
-          "Fashion portrait series featuring Long Sleeve Peron.",
+          "Portrait and fashion photography featuring Long Sleeve Peron.",
 
         images: [
           "assets/images/portrait/long-sleeve-peron-01.jpg",
@@ -137,11 +132,9 @@ const CATEGORIES = [
 
       {
         title: "Vishgazine",
-
         year: "2026",
-
         description:
-          "Editorial portrait and fashion series for Vishgazine.",
+          "Fashion and editorial photography for Vishgazine.",
 
         images: [
           "assets/images/portrait/vishgazine-01.jpg",
@@ -158,12 +151,10 @@ const CATEGORIES = [
 
 
       {
-        title: "WKA × Simpati",
-
+        title: "WKA x Simpati",
         year: "2026",
-
         description:
-          "Fashion campaign for the WKA collaboration with Simpati.",
+          "Fashion campaign photography for WKA x Simpati.",
 
         images: [
           "assets/images/portrait/wka-x-simpati-01.jpg",
@@ -254,6 +245,38 @@ const mobileNav =
 
 
 /* =========================================================
+   HELPER
+========================================================= */
+
+function closeAllModals() {
+
+  if (galleryModal) {
+
+    galleryModal.classList.remove("is-open");
+
+    galleryModal.setAttribute(
+      "aria-hidden",
+      "true"
+    );
+
+  }
+
+  if (categoryModal) {
+
+    categoryModal.classList.remove("is-open");
+
+    categoryModal.setAttribute(
+      "aria-hidden",
+      "true"
+    );
+
+  }
+
+  document.body.classList.remove("modal-open");
+}
+
+
+/* =========================================================
    RENDER CATEGORY CARDS
 ========================================================= */
 
@@ -281,7 +304,6 @@ function renderCategories() {
       "button"
     );
 
-
     const firstProject =
       category.projects?.[0];
 
@@ -289,26 +311,37 @@ function renderCategories() {
       firstProject?.images?.[0] || "";
 
 
+    let imageHTML = "";
+
+
+    if (firstImage) {
+
+      imageHTML = `
+        <img
+          class="category-image"
+          src="${firstImage}"
+          alt="${category.title}"
+          loading="lazy"
+          ${
+            firstProject.objectPosition
+              ? `style="object-position: ${firstProject.objectPosition};"`
+              : ""
+          }
+        >
+      `;
+
+    } else {
+
+      imageHTML = `
+        <div class="category-placeholder"></div>
+      `;
+
+    }
+
+
     card.innerHTML = `
 
-      ${
-        firstImage
-          ? `
-            <img
-              class="category-image"
-              src="${firstImage}"
-              alt="${category.title}"
-              loading="lazy"
-            >
-          `
-          : `
-            <div
-              class="category-placeholder"
-              aria-hidden="true"
-            ></div>
-          `
-      }
-
+      ${imageHTML}
 
       <div class="category-overlay">
 
@@ -340,7 +373,9 @@ function renderCategories() {
 
     card.addEventListener(
       "click",
-      () => openCategory(index)
+      () => {
+        openCategory(index);
+      }
     );
 
 
@@ -366,7 +401,6 @@ function renderCategories() {
     categoryGrid.appendChild(card);
 
   });
-
 }
 
 
@@ -422,12 +456,10 @@ function openCategory(index) {
     "is-open"
   );
 
-
   categoryModal.setAttribute(
     "aria-hidden",
     "false"
   );
-
 
   document.body.classList.add(
     "modal-open"
@@ -453,11 +485,9 @@ function renderProjects(category) {
   ) {
 
     projectList.innerHTML = `
-
       <div class="empty-projects">
         No projects available yet.
       </div>
-
     `;
 
     return;
@@ -471,7 +501,6 @@ function renderProjects(category) {
       const button =
         document.createElement("button");
 
-
       button.type =
         "button";
 
@@ -483,56 +512,56 @@ function renderProjects(category) {
         project.images?.[0] || "";
 
 
+      let thumbnailHTML = "";
+
+
+      if (thumbnail) {
+
+        thumbnailHTML = `
+          <img
+            class="project-thumb"
+            src="${thumbnail}"
+            alt="${project.title}"
+            loading="lazy"
+            ${
+              project.objectPosition
+                ? `style="object-position: ${project.objectPosition};"`
+                : ""
+            }
+          >
+        `;
+
+      } else {
+
+        thumbnailHTML = `
+          <div class="project-thumb-placeholder"></div>
+        `;
+
+      }
+
+
       button.innerHTML = `
 
         <div class="project-image-wrap">
 
-          ${
-            thumbnail
-              ? `
-                <img
-                  class="project-thumb"
-                  src="${thumbnail}"
-                  alt="${project.title}"
-                  loading="lazy"
-                >
-              `
-              : `
-                <div
-                  class="project-thumb-placeholder"
-                  aria-hidden="true"
-                ></div>
-              `
-          }
+          ${thumbnailHTML}
 
+          <div class="project-image-overlay">
 
-          <div
-            class="project-image-overlay"
-          >
+            <div class="project-image-title">
 
-            <div
-              class="project-image-title"
-            >
-
-              <span
-                class="project-title-overlay"
-              >
+              <span class="project-title-overlay">
                 ${project.title}
               </span>
 
-
-              <span
-                class="project-year-overlay"
-              >
+              <span class="project-year-overlay">
                 ${project.year || ""}
               </span>
 
             </div>
 
 
-            <span
-              class="project-arrow"
-            >
+            <span class="project-arrow">
               ↗
             </span>
 
@@ -543,9 +572,7 @@ function renderProjects(category) {
 
         <div class="project-info">
 
-          <span
-            class="project-description"
-          >
+          <span class="project-description">
             ${project.description || ""}
           </span>
 
@@ -556,7 +583,9 @@ function renderProjects(category) {
 
       button.addEventListener(
         "click",
-        () => openGallery(index)
+        () => {
+          openGallery(index);
+        }
       );
 
 
@@ -582,7 +611,6 @@ function closeCategory() {
   categoryModal.classList.remove(
     "is-open"
   );
-
 
   categoryModal.setAttribute(
     "aria-hidden",
@@ -615,15 +643,11 @@ function openGallery(projectIndex) {
   const category =
     CATEGORIES[currentCategoryIndex];
 
-
   if (!category) return;
 
 
   const project =
-    category.projects?.[
-      projectIndex
-    ];
-
+    category.projects?.[projectIndex];
 
   if (
     !project ||
@@ -671,12 +695,10 @@ function openGallery(projectIndex) {
     "is-open"
   );
 
-
   galleryModal.setAttribute(
     "aria-hidden",
     "false"
   );
-
 
   document.body.classList.add(
     "modal-open"
@@ -694,7 +716,6 @@ function updateGallery() {
   const category =
     CATEGORIES[currentCategoryIndex];
 
-
   if (!category) return;
 
 
@@ -702,7 +723,6 @@ function updateGallery() {
     category.projects?.[
       currentProjectIndex
     ];
-
 
   if (
     !project ||
@@ -755,39 +775,19 @@ function updateGallery() {
 
 
   /*
-    Pastikan index selalu valid.
-    Karena manusia suka menambah foto
-    lalu lupa bahwa index itu ada.
+    Reset transform dan positioning
+    setiap kali pindah foto.
   */
 
-  if (
-    currentImageIndex < 0
-  ) {
-
-    currentImageIndex = 0;
-
-  }
-
-
-  if (
-    currentImageIndex >
-    images.length - 1
-  ) {
-
-    currentImageIndex =
-      images.length - 1;
-
-  }
+  galleryImage.style.objectPosition =
+    "center";
 
 
   galleryImage.src =
     images[currentImageIndex];
 
-
   galleryImage.alt =
-    `${project.title} - Image ${
-      currentImageIndex + 1
-    }`;
+    project.title;
 
 
   if (galleryCounter) {
@@ -830,12 +830,10 @@ function nextImage() {
   const category =
     CATEGORIES[currentCategoryIndex];
 
-
   const project =
     category?.projects?.[
       currentProjectIndex
     ];
-
 
   if (!project) return;
 
@@ -891,19 +889,29 @@ function closeGallery() {
     "is-open"
   );
 
-
   galleryModal.setAttribute(
     "aria-hidden",
     "true"
   );
 
 
+  /*
+    Setelah gallery ditutup,
+    category modal tetap terbuka.
+  */
+
   if (
-    !categoryModal ||
-    !categoryModal.classList.contains(
+    categoryModal &&
+    categoryModal.classList.contains(
       "is-open"
     )
   ) {
+
+    document.body.classList.add(
+      "modal-open"
+    );
+
+  } else {
 
     document.body.classList.remove(
       "modal-open"
@@ -922,16 +930,14 @@ document
   .querySelectorAll(
     "[data-close-category]"
   )
-  .forEach(
-    (element) => {
+  .forEach((element) => {
 
-      element.addEventListener(
-        "click",
-        closeCategory
-      );
+    element.addEventListener(
+      "click",
+      closeCategory
+    );
 
-    }
-  );
+  });
 
 
 /* =========================================================
@@ -942,16 +948,14 @@ document
   .querySelectorAll(
     "[data-close-gallery]"
   )
-  .forEach(
-    (element) => {
+  .forEach((element) => {
 
-      element.addEventListener(
-        "click",
-        closeGallery
-      );
+    element.addEventListener(
+      "click",
+      closeGallery
+    );
 
-    }
-  );
+  });
 
 
 /* =========================================================
@@ -1011,8 +1015,28 @@ document.addEventListener(
   (event) => {
 
     /*
-      Escape
+      Jangan menjalankan shortcut
+      kalau sedang mengetik.
     */
+
+    const activeElement =
+      document.activeElement;
+
+    const isTyping =
+      activeElement &&
+      (
+        activeElement.tagName === "INPUT" ||
+        activeElement.tagName === "TEXTAREA" ||
+        activeElement.isContentEditable
+      );
+
+
+    if (isTyping) {
+      return;
+    }
+
+
+    /* ESC */
 
     if (
       event.key === "Escape"
@@ -1048,9 +1072,7 @@ document.addEventListener(
     }
 
 
-    /*
-      Gallery navigation
-    */
+    /* GALLERY NAVIGATION */
 
     if (
       galleryModal &&
@@ -1063,6 +1085,8 @@ document.addEventListener(
         event.key === "ArrowRight"
       ) {
 
+        event.preventDefault();
+
         nextImage();
 
       }
@@ -1071,6 +1095,8 @@ document.addEventListener(
       if (
         event.key === "ArrowLeft"
       ) {
+
+        event.preventDefault();
 
         previousImage();
 
@@ -1112,58 +1138,28 @@ if (
 
   mobileNav
     .querySelectorAll("a")
-    .forEach(
-      (link) => {
+    .forEach((link) => {
 
-        link.addEventListener(
-          "click",
-          () => {
+      link.addEventListener(
+        "click",
+        () => {
 
-            mobileNav.classList.remove(
-              "is-open"
-            );
-
-
-            mobileMenuButton.setAttribute(
-              "aria-expanded",
-              "false"
-            );
-
-          }
-        );
-
-      }
-    );
-
-}
+          mobileNav.classList.remove(
+            "is-open"
+          );
 
 
-/* =========================================================
-   IMAGE ERROR HANDLING
-========================================================= */
+          mobileMenuButton.setAttribute(
+            "aria-expanded",
+            "false"
+          );
 
-document.addEventListener(
-  "error",
-  (event) => {
-
-    const element =
-      event.target;
-
-
-    if (
-      element &&
-      element.tagName === "IMG"
-    ) {
-
-      element.classList.add(
-        "image-load-error"
+        }
       );
 
-    }
+    });
 
-  },
-  true
-);
+}
 
 
 /* =========================================================
