@@ -63,7 +63,24 @@ document.addEventListener("DOMContentLoaded", () => {
                     "assets/images/documentation/stereo-wall-13.jpg",
                     "assets/images/documentation/stereo-wall-14.jpg"
                 ]
-            }
+            },
+
+            {
+             title: "Jerana",
+
+             description:
+                 "Event documentation at Krapela.",
+ 
+             images: [
+                 "assets/images/documentation/jerana-01.jpg",
+                 "assets/images/documentation/jerana-02.jpg",
+                 "assets/images/documentation/jerana-03.jpg",
+                 "assets/images/documentation/jerana-04.jpg",
+                 "assets/images/documentation/jerana-05.jpg",
+                 "assets/images/documentation/jerana-06.jpg",
+                 "assets/images/documentation/jerana-07.jpg"
+       ]
+            },
 
         ],
 
