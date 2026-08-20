@@ -65,41 +65,43 @@ document.addEventListener("DOMContentLoaded", () => {
                 ]
             },
 
-            {
-             title: "Jerana",
 
-             description:
-                 "Event documentation at Krapela.",
- 
-             images: [
-                 "assets/images/documentation/jerana-01.jpg",
-                 "assets/images/documentation/jerana-02.jpg",
-                 "assets/images/documentation/jerana-03.jpg",
-                 "assets/images/documentation/jerana-04.jpg",
-                 "assets/images/documentation/jerana-05.jpg",
-                 "assets/images/documentation/jerana-06.jpg",
-                 "assets/images/documentation/jerana-07.jpg"
-       ]
+            {
+                title: "Jerana",
+
+                description:
+                    "Event documentation at Krapela.",
+
+                images: [
+                    "assets/images/documentation/jerana-01.jpg",
+                    "assets/images/documentation/jerana-02.jpg",
+                    "assets/images/documentation/jerana-03.jpg",
+                    "assets/images/documentation/jerana-04.jpg",
+                    "assets/images/documentation/jerana-05.jpg",
+                    "assets/images/documentation/jerana-06.jpg",
+                    "assets/images/documentation/jerana-07.jpg"
+                ]
             },
 
+
             {
-    title: "The Paps",
+                title: "The Paps",
 
-    description:
-        "Event documentation at Dreyy Fest bogor 2026.",
+                description:
+                    "Event documentation at Dreyy Fest bogor 2026.",
 
-    images: [
-        "assets/images/documentation/thepaps-01.jpg",
-        "assets/images/documentation/thepaps-02.jpg",
-        "assets/images/documentation/thepaps-03.jpg",
-        "assets/images/documentation/thepaps-04.jpg",
-        "assets/images/documentation/thepaps-05.jpg",
-        "assets/images/documentation/thepaps-06.jpg",
-        "assets/images/documentation/thepaps-07.jpg",
-        "assets/images/documentation/thepaps-08.jpg",
-        "assets/images/documentation/thepaps-09.jpg"
-    ]
-           }
+                images: [
+                    "assets/images/documentation/thepaps-01.jpg",
+                    "assets/images/documentation/thepaps-02.jpg",
+                    "assets/images/documentation/thepaps-03.jpg",
+                    "assets/images/documentation/thepaps-04.jpg",
+                    "assets/images/documentation/thepaps-05.jpg",
+                    "assets/images/documentation/thepaps-06.jpg",
+                    "assets/images/documentation/thepaps-07.jpg",
+                    "assets/images/documentation/thepaps-08.jpg",
+                    "assets/images/documentation/thepaps-09.jpg"
+                ]
+            }
 
         ],
 
@@ -187,7 +189,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 ]
             },
 
-              {
+
+            {
                 title: "back 2 bloom",
 
                 description:
@@ -254,33 +257,60 @@ document.addEventListener("DOMContentLoaded", () => {
                 ]
             },
 
+
             {
-    title: "Nevertoolavish Custom Shoes",
+                title: "Nevertoolavish Custom Shoes",
 
-    description:
-        "Still life product photography for custom shoes by Nevertoolavish.",
+                description:
+                    "Still life product photography for custom shoes by Nevertoolavish.",
 
-    images: [
-        "assets/images/product/nevertoolavish-shoes-01.jpg",
-        "assets/images/product/nevertoolavish-shoes-02.jpg",
-        "assets/images/product/nevertoolavish-shoes-03.jpg",
-        "assets/images/product/nevertoolavish-shoes-04.jpg",
-        "assets/images/product/nevertoolavish-shoes-05.jpg",
-        "assets/images/product/nevertoolavish-shoes-06.jpg",
-        "assets/images/product/nevertoolavish-shoes-07.jpg",
-        "assets/images/product/nevertoolavish-shoes-08.jpg",
-        "assets/images/product/nevertoolavish-shoes-09.jpg",
-        "assets/images/product/nevertoolavish-shoes-10.jpg",
-        "assets/images/product/nevertoolavish-shoes-11.jpg",
-        "assets/images/product/nevertoolavish-shoes-12.jpg",
-        "assets/images/product/nevertoolavish-shoes-13.jpg",
-        "assets/images/product/nevertoolavish-shoes-14.jpg",
-        "assets/images/product/nevertoolavish-shoes-15.jpg"
-    ]
-}
+                images: [
+                    "assets/images/product/nevertoolavish-shoes-01.jpg",
+                    "assets/images/product/nevertoolavish-shoes-02.jpg",
+                    "assets/images/product/nevertoolavish-shoes-03.jpg",
+                    "assets/images/product/nevertoolavish-shoes-04.jpg",
+                    "assets/images/product/nevertoolavish-shoes-05.jpg",
+                    "assets/images/product/nevertoolavish-shoes-06.jpg",
+                    "assets/images/product/nevertoolavish-shoes-07.jpg",
+                    "assets/images/product/nevertoolavish-shoes-08.jpg",
+                    "assets/images/product/nevertoolavish-shoes-09.jpg",
+                    "assets/images/product/nevertoolavish-shoes-10.jpg",
+                    "assets/images/product/nevertoolavish-shoes-11.jpg",
+                    "assets/images/product/nevertoolavish-shoes-12.jpg",
+                    "assets/images/product/nevertoolavish-shoes-13.jpg",
+                    "assets/images/product/nevertoolavish-shoes-14.jpg",
+                    "assets/images/product/nevertoolavish-shoes-15.jpg"
+                ]
+            }
+
         ]
 
     };
+
+
+    /* =====================================================
+       CLIENT WORK DATA
+    ===================================================== */
+
+    const CLIENT_WORK = [
+
+        {
+            client: "ORSE × KFC",
+
+            title:
+                "Pekan Raya Jakarta Campaign",
+
+            role:
+                "Video Documentation",
+
+            description:
+                "Campaign video documentation for ORSE's collaboration with KFC at Pekan Raya Jakarta.",
+
+            link:
+                "https://www.instagram.com/reel/DaNKoCJx4yC/"
+        }
+
+    ];
 
 
     /* =====================================================
@@ -289,6 +319,105 @@ document.addEventListener("DOMContentLoaded", () => {
 
     let activeViewer = null;
     let activeFullscreen = null;
+
+
+    /* =====================================================
+       CREATE CLIENT WORK SECTION
+    ===================================================== */
+
+    function createClientWorkSection() {
+
+        if (!workSection) {
+            return;
+        }
+
+        if (document.querySelector(".client-work-section")) {
+            return;
+        }
+
+
+        const section =
+            document.createElement("section");
+
+        section.className =
+            "client-work-section";
+
+
+        section.innerHTML = `
+
+            <div class="client-work-header">
+
+                <p class="client-work-label">
+                    CLIENT WORK
+                </p>
+
+                <h2 class="client-work-title">
+                    SELECTED CLIENT POSTS
+                </h2>
+
+            </div>
+
+            <div class="client-work-grid"></div>
+
+        `;
+
+
+        const grid =
+            section.querySelector(
+                ".client-work-grid"
+            );
+
+
+        CLIENT_WORK.forEach(work => {
+
+            const card =
+                document.createElement("article");
+
+            card.className =
+                "client-work-card";
+
+            card.innerHTML = `
+
+                <div class="client-work-card-content">
+
+                    <p class="client-work-client">
+                        ${work.client}
+                    </p>
+
+                    <h3>
+                        ${work.title}
+                    </h3>
+
+                    <p class="client-work-role">
+                        ${work.role}
+                    </p>
+
+                    <p class="client-work-description">
+                        ${work.description}
+                    </p>
+
+                    <a
+                        class="client-work-link"
+                        href="${work.link}"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        VIEW CLIENT POST ↗
+                    </a>
+
+                </div>
+
+            `;
+
+
+            grid.appendChild(card);
+
+        });
+
+
+        workSection.appendChild(section);
+
+    }
 
 
     /* =====================================================
@@ -910,5 +1039,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
         }
     );
+
+
+    /* =====================================================
+       INITIALIZE CLIENT WORK
+    ===================================================== */
+
+    createClientWorkSection();
 
 });
