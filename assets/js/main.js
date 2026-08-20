@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 title: "Stereo Wall",
 
                 description:
-                    "Live performance documentation.",
+                    "Live performance documentation of stereowall at trilogigs bogor.",
 
                 images: [
                     "assets/images/documentation/stereo-wall-01.jpg",
@@ -130,7 +130,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 title: "Vishgazine",
 
                 description:
-                    "Commercial portrait campaign.",
+                    "Commercial portrait campaign vishgazine for vish by nevertoolavish.",
 
                 images: [
                     "assets/images/portrait-commercial/vishgazine-01.jpg",
@@ -150,7 +150,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 title: "WKA × Simpati",
 
                 description:
-                    "Commercial campaign.",
+                    "Commercial campaign for WKA from nevertoolavish to SIMPATI.",
 
                 images: [
                     "assets/images/portrait-commercial/wka-simpati-01.jpg",
@@ -175,7 +175,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 title: "Unreleased",
 
                 description:
-                    "Unreleased custom footwear project.",
+                    "The Artist behind Unreleased custom footwear project.",
 
                 images: [
                     "assets/images/portrait-commercial/unreleased-01.jpg",
@@ -188,10 +188,10 @@ document.addEventListener("DOMContentLoaded", () => {
             },
 
               {
-                title: "WKA × Simpati",
+                title: "back 2 bloom",
 
                 description:
-                    "Commercial campaign.",
+                    "Commercial campaign photography for back 2 bloom article released.",
 
                 images: [
                     "assets/images/portrait-commercial/b2b-01.jpg",
