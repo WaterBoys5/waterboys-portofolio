@@ -99,7 +99,7 @@ document.addEventListener("DOMContentLoaded", () => {
         "assets/images/documentation/thepaps-08.jpg",
         "assets/images/documentation/thepaps-09.jpg"
     ]
-},
+           }
 
         ],
 
