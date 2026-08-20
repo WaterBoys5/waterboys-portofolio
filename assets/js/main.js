@@ -82,6 +82,25 @@ document.addEventListener("DOMContentLoaded", () => {
        ]
             },
 
+            {
+    title: "The Paps",
+
+    description:
+        "Event documentation at Dreyy Fest bogor 2026.",
+
+    images: [
+        "assets/images/documentation/thepaps-01.jpg",
+        "assets/images/documentation/thepaps-02.jpg",
+        "assets/images/documentation/thepaps-03.jpg",
+        "assets/images/documentation/thepaps-04.jpg",
+        "assets/images/documentation/thepaps-05.jpg",
+        "assets/images/documentation/thepaps-06.jpg",
+        "assets/images/documentation/thepaps-07.jpg",
+        "assets/images/documentation/thepaps-08.jpg",
+        "assets/images/documentation/thepaps-09.jpg"
+    ]
+},
+
         ],
 
 
