@@ -185,6 +185,30 @@ document.addEventListener("DOMContentLoaded", () => {
                     "assets/images/portrait-commercial/unreleased-05.jpg",
                     "assets/images/portrait-commercial/unreleased-06.jpg"
                 ]
+            },
+
+              {
+                title: "WKA × Simpati",
+
+                description:
+                    "Commercial campaign.",
+
+                images: [
+                    "assets/images/portrait-commercial/b2b-01.jpg",
+                    "assets/images/portrait-commercial/b2b-02.jpg",
+                    "assets/images/portrait-commercial/b2b-03.jpg",
+                    "assets/images/portrait-commercial/b2b-04.jpg",
+                    "assets/images/portrait-commercial/b2b-05.jpg",
+                    "assets/images/portrait-commercial/b2b-06.jpg",
+                    "assets/images/portrait-commercial/b2b-07.jpg",
+                    "assets/images/portrait-commercial/b2b-08.jpg",
+                    "assets/images/portrait-commercial/b2b-09.jpg",
+                    "assets/images/portrait-commercial/b2b-10.jpg",
+                    "assets/images/portrait-commercial/b2b-11.jpg",
+                    "assets/images/portrait-commercial/b2b-12.jpg",
+                    "assets/images/portrait-commercial/b2b-13.jpg",
+                    "assets/images/portrait-commercial/b2b-14.jpg"
+                ]
             }
 
         ],
