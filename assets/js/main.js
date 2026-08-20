@@ -192,8 +192,32 @@ document.addEventListener("DOMContentLoaded", () => {
                     "assets/images/product/titans-08.jpg",
                     "assets/images/product/titans-09.jpg"
                 ]
-            }
+            },
 
+            {
+    title: "Nevertoolavish Custom Shoes",
+
+    description:
+        "Still life product photography for custom shoes by Nevertoolavish.",
+
+    images: [
+        "assets/images/product/nevertoolavish-shoes-01.jpg",
+        "assets/images/product/nevertoolavish-shoes-02.jpg",
+        "assets/images/product/nevertoolavish-shoes-03.jpg",
+        "assets/images/product/nevertoolavish-shoes-04.jpg",
+        "assets/images/product/nevertoolavish-shoes-05.jpg",
+        "assets/images/product/nevertoolavish-shoes-06.jpg",
+        "assets/images/product/nevertoolavish-shoes-07.jpg",
+        "assets/images/product/nevertoolavish-shoes-08.jpg",
+        "assets/images/product/nevertoolavish-shoes-09.jpg",
+        "assets/images/product/nevertoolavish-shoes-10.jpg",
+        "assets/images/product/nevertoolavish-shoes-11.jpg",
+        "assets/images/product/nevertoolavish-shoes-12.jpg",
+        "assets/images/product/nevertoolavish-shoes-13.jpg",
+        "assets/images/product/nevertoolavish-shoes-14.jpg",
+        "assets/images/product/nevertoolavish-shoes-15.jpg"
+    ]
+}
         ]
 
     };
