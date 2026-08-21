@@ -28,6 +28,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const brand =
         document.querySelector(".brand");
 
+    const clientWorkGrid =
+        document.querySelector("#client-work-grid");
+
 
     /* =====================================================
        PROJECT DATA
@@ -105,7 +108,6 @@ document.addEventListener("DOMContentLoaded", () => {
             }
 
         ],
-
 
 
         /* =================================================
@@ -215,7 +217,6 @@ document.addEventListener("DOMContentLoaded", () => {
         ],
 
 
-
         /* =================================================
            PRODUCT
         ================================================= */
@@ -285,7 +286,6 @@ document.addEventListener("DOMContentLoaded", () => {
         ],
 
 
-
         /* =================================================
            ART DIRECTION
         ================================================= */
@@ -332,7 +332,6 @@ document.addEventListener("DOMContentLoaded", () => {
         ],
 
 
-
         /* =================================================
            OTHERS
         ================================================= */
@@ -340,20 +339,24 @@ document.addEventListener("DOMContentLoaded", () => {
         others: [
 
             {
-                title: "Prewedding",
+                title: "Prewedding — Hilda & Fikar",
 
                 description:
-                    "Prewedding photography.",
+                    "Prewedding photography for Hilda and Fikar.",
 
                 images: [
-                    "assets/images/others/prewedding/prewedding-01.jpg",
-                    "assets/images/others/prewedding/prewedding-02.jpg",
-                    "assets/images/others/prewedding/prewedding-03.jpg",
-                    "assets/images/others/prewedding/prewedding-04.jpg",
-                    "assets/images/others/prewedding/prewedding-05.jpg",
-                    "assets/images/others/prewedding/prewedding-06.jpg",
-                    "assets/images/others/prewedding/prewedding-07.jpg",
-                    "assets/images/others/prewedding/prewedding-08.jpg"
+                    "assets/images/others/Prewedding-hilda-and-fikar/prewed-fikar-01.jpg",
+                    "assets/images/others/Prewedding-hilda-and-fikar/prewed-fikar-02.jpg",
+                    "assets/images/others/Prewedding-hilda-and-fikar/prewed-fikar-03.jpg",
+                    "assets/images/others/Prewedding-hilda-and-fikar/prewed-fikar-04.jpg",
+                    "assets/images/others/Prewedding-hilda-and-fikar/prewed-fikar-05.jpg",
+                    "assets/images/others/Prewedding-hilda-and-fikar/prewed-fikar-06.jpg",
+                    "assets/images/others/Prewedding-hilda-and-fikar/prewed-fikar-07.jpg",
+                    "assets/images/others/Prewedding-hilda-and-fikar/prewed-fikar-08.jpg",
+                    "assets/images/others/Prewedding-hilda-and-fikar/prewed-fikar-09.jpg",
+                    "assets/images/others/Prewedding-hilda-and-fikar/prewed-fikar-10.jpg",
+                    "assets/images/others/Prewedding-hilda-and-fikar/prewed-fikar-11.jpg",
+                    "assets/images/others/Prewedding-hilda-and-fikar/prewed-fikar-12.jpg"
                 ]
             },
 
@@ -365,21 +368,20 @@ document.addEventListener("DOMContentLoaded", () => {
                     "Graduation photography for client Syahrin.",
 
                 images: [
-                    "assets/images/others/graduation/syahrin-01.jpg",
-                    "assets/images/others/graduation/syahrin-02.jpg",
-                    "assets/images/others/graduation/syahrin-03.jpg",
-                    "assets/images/others/graduation/syahrin-04.jpg",
-                    "assets/images/others/graduation/syahrin-05.jpg",
-                    "assets/images/others/graduation/syahrin-06.jpg",
-                    "assets/images/others/graduation/syahrin-07.jpg",
-                    "assets/images/others/graduation/syahrin-08.jpg"
+                    "assets/images/others/syahrin-graduation/syahrin-01.jpg",
+                    "assets/images/others/syahrin-graduation/syahrin-02.jpg",
+                    "assets/images/others/syahrin-graduation/syahrin-03.jpg",
+                    "assets/images/others/syahrin-graduation/syahrin-04.jpg",
+                    "assets/images/others/syahrin-graduation/syahrin-05.jpg",
+                    "assets/images/others/syahrin-graduation/syahrin-06.jpg",
+                    "assets/images/others/syahrin-graduation/syahrin-07.jpg",
+                    "assets/images/others/syahrin-graduation/syahrin-08.jpg"
                 ]
             }
 
         ]
 
     };
-
 
 
     /* =====================================================
@@ -389,7 +391,98 @@ document.addEventListener("DOMContentLoaded", () => {
     const CLIENT_WORK = [
 
         {
-            client: "ORSE × KFC",
+            client:
+                "WALL OF JAKARTA",
+
+            title:
+                "Video Documentation",
+
+            role:
+                "Video Documentation",
+
+            description:
+                "Video documentation for Wall of Jakarta.",
+
+            link:
+                "https://www.instagram.com/reel/Dam-Z9dpo6k/"
+        },
+
+
+        {
+            client:
+                "TITANS",
+
+            title:
+                "Friend Flash 03 — Hari Kartini",
+
+            role:
+                "Campaign / Video",
+
+            description:
+                "Friend Flash 03 campaign created for TITANS in celebration of Hari Kartini.",
+
+            link:
+                "https://www.instagram.com/reel/DXYuDpcz2Pp/"
+        },
+
+
+        {
+            client:
+                "INDO WATCH COLLECTION × HARD THIRTEEN",
+
+            title:
+                "Custom Watch Collection",
+
+            role:
+                "Photography / Documentation",
+
+            description:
+                "Indo Watch Collection featuring a custom watch by Hard Thirteen.",
+
+            link:
+                "https://www.instagram.com/p/DUGKWsqj8xM/"
+        },
+
+
+        {
+            client:
+                "ORSE",
+
+            title:
+                "Connect Happily Vol. 3",
+
+            role:
+                "Campaign / Documentation",
+
+            description:
+                "Connect Happily Volume 3 by ORSE.",
+
+            link:
+                "https://www.instagram.com/p/DSRXRRQj5U6/"
+        },
+
+
+        {
+            client:
+                "PAYPORSE",
+
+            title:
+                "Pattern Horizon",
+
+            role:
+                "Campaign / Video",
+
+            description:
+                "Pattern Horizon campaign for Payporse.",
+
+            link:
+                "https://www.instagram.com/reel/DbX9dJVRHls/"
+        },
+
+
+        {
+            client:
+                "ORSE × KFC",
 
             title:
                 "Pekan Raya Jakarta Campaign",
@@ -407,56 +500,39 @@ document.addEventListener("DOMContentLoaded", () => {
     ];
 
 
-
     /* =====================================================
        STATE
     ===================================================== */
 
     let activeViewer = null;
+
     let activeFullscreen = null;
 
 
-
     /* =====================================================
-       CREATE CLIENT WORK
+       IMAGE FALLBACK
     ===================================================== */
 
-    function createClientWorkSection() {
+    function handleImageError(image) {
 
-        if (!workSection) {
+        image.classList.add("image-error");
+
+        image.alt = "Image unavailable";
+
+    }
+
+
+    /* =====================================================
+       CLIENT WORK RENDER
+    ===================================================== */
+
+    function renderClientWork() {
+
+        if (!clientWorkGrid) {
             return;
         }
 
-        if (document.querySelector(".client-work-section")) {
-            return;
-        }
-
-        const section =
-            document.createElement("section");
-
-        section.className =
-            "client-work-section";
-
-        section.innerHTML = `
-            <div class="client-work-header">
-
-                <p class="client-work-label">
-                    CLIENT WORK
-                </p>
-
-                <h2 class="client-work-title">
-                    SELECTED CLIENT POSTS
-                </h2>
-
-            </div>
-
-            <div class="client-work-grid"></div>
-        `;
-
-        const grid =
-            section.querySelector(
-                ".client-work-grid"
-            );
+        clientWorkGrid.innerHTML = "";
 
         CLIENT_WORK.forEach(work => {
 
@@ -465,6 +541,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             card.className =
                 "client-work-card";
+
 
             card.innerHTML = `
 
@@ -499,17 +576,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
             `;
 
-            grid.appendChild(card);
+
+            clientWorkGrid.appendChild(card);
 
         });
 
-        workSection.appendChild(section);
     }
 
 
-
     /* =====================================================
-       CATEGORY CLICK
+       CATEGORY EVENTS
     ===================================================== */
 
     categoryCards.forEach(card => {
@@ -537,12 +613,36 @@ document.addEventListener("DOMContentLoaded", () => {
                     card.dataset.category;
 
                 openCategory(category);
+
             }
 
         });
 
     });
 
+
+    /* =====================================================
+       CATEGORY NAMES
+    ===================================================== */
+
+    const CATEGORY_NAMES = {
+
+        documentation:
+            "DOCUMENTATION",
+
+        "portrait-commercial":
+            "PORTRAIT / COMMERCIAL",
+
+        product:
+            "PRODUCT",
+
+        "art-direction":
+            "ART DIRECTION",
+
+        others:
+            "OTHERS"
+
+    };
 
 
     /* =====================================================
@@ -554,6 +654,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const projects =
             PROJECTS[category];
 
+
         if (!projects) {
 
             console.error(
@@ -562,31 +663,12 @@ document.addEventListener("DOMContentLoaded", () => {
             );
 
             return;
+
         }
 
 
-        const readableNames = {
-
-            documentation:
-                "DOCUMENTATION",
-
-            "portrait-commercial":
-                "PORTRAIT / COMMERCIAL",
-
-            product:
-                "PRODUCT",
-
-            "art-direction":
-                "ART DIRECTION",
-
-            others:
-                "OTHERS"
-
-        };
-
-
         projectTitle.textContent =
-            readableNames[category] ||
+            CATEGORY_NAMES[category] ||
             category.toUpperCase();
 
 
@@ -597,22 +679,21 @@ document.addEventListener("DOMContentLoaded", () => {
         projectGrid.innerHTML = "";
 
 
-        /* =================================================
-           CREATE PROJECT CARDS
-        ================================================= */
-
         projects.forEach(project => {
 
             const card =
                 document.createElement("article");
 
+
             card.className =
                 "project-card";
+
 
             card.setAttribute(
                 "tabindex",
                 "0"
             );
+
 
             card.setAttribute(
                 "role",
@@ -660,27 +741,39 @@ document.addEventListener("DOMContentLoaded", () => {
             `;
 
 
-            card.addEventListener("click", () => {
-
-                openProject(project);
-
-            });
+            const cardImage =
+                card.querySelector("img");
 
 
-            card.addEventListener("keydown", event => {
+            cardImage.addEventListener(
+                "error",
+                () => handleImageError(cardImage)
+            );
 
-                if (
-                    event.key === "Enter" ||
-                    event.key === " "
-                ) {
 
-                    event.preventDefault();
+            card.addEventListener(
+                "click",
+                () => openProject(project)
+            );
 
-                    openProject(project);
+
+            card.addEventListener(
+                "keydown",
+                event => {
+
+                    if (
+                        event.key === "Enter" ||
+                        event.key === " "
+                    ) {
+
+                        event.preventDefault();
+
+                        openProject(project);
+
+                    }
 
                 }
-
-            });
+            );
 
 
             projectGrid.appendChild(card);
@@ -688,16 +781,14 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
 
-        /* =================================================
-           CHANGE VIEW
-        ================================================= */
-
         workSection.style.display =
             "none";
+
 
         projectView.classList.remove(
             "hidden"
         );
+
 
         projectView.setAttribute(
             "aria-hidden",
@@ -706,12 +797,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
         window.scrollTo({
+
             top: 0,
+
             behavior: "smooth"
+
         });
 
     }
-
 
 
     /* =====================================================
@@ -725,6 +818,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const viewer =
             document.createElement("div");
+
 
         viewer.className =
             "project-viewer";
@@ -753,6 +847,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         ${project.title}
                     </h2>
 
+
                     ${
                         project.role
                             ? `
@@ -762,6 +857,7 @@ document.addEventListener("DOMContentLoaded", () => {
                               `
                             : ""
                     }
+
 
                     ${
                         project.photographer
@@ -776,6 +872,7 @@ document.addEventListener("DOMContentLoaded", () => {
                             : ""
                     }
 
+
                     ${
                         project.details
                             ? `
@@ -785,6 +882,7 @@ document.addEventListener("DOMContentLoaded", () => {
                               `
                             : ""
                     }
+
 
                     ${
                         project.photographerInstagram
@@ -818,7 +916,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
         /* =================================================
-           ADD PHOTOS
+           ADD PROJECT PHOTOS
         ================================================= */
 
         project.images.forEach(
@@ -826,6 +924,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 const imageCard =
                     document.createElement("div");
+
 
                 imageCard.className =
                     "viewer-image";
@@ -842,11 +941,22 @@ document.addEventListener("DOMContentLoaded", () => {
                 `;
 
 
+                const img =
+                    imageCard.querySelector("img");
+
+
+                img.addEventListener(
+                    "error",
+                    () => handleImageError(img)
+                );
+
+
                 imageCard.addEventListener(
                     "click",
                     event => {
 
                         event.preventDefault();
+
                         event.stopPropagation();
 
                         openFullscreen(
@@ -892,7 +1002,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
         /* =================================================
-           ESCAPE KEY
+           ESCAPE
         ================================================= */
 
         viewer._escapeHandler =
@@ -907,9 +1017,11 @@ document.addEventListener("DOMContentLoaded", () => {
                         closeFullscreen();
 
                         return;
+
                     }
 
                     closeProject();
+
                 }
 
             };
@@ -921,7 +1033,6 @@ document.addEventListener("DOMContentLoaded", () => {
         );
 
     }
-
 
 
     /* =====================================================
@@ -949,6 +1060,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         activeViewer.remove();
 
+
         activeViewer =
             null;
 
@@ -957,7 +1069,6 @@ document.addEventListener("DOMContentLoaded", () => {
             "";
 
     }
-
 
 
     /* =====================================================
@@ -974,6 +1085,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const fullscreen =
             document.createElement("div");
+
 
         fullscreen.className =
             "fullscreen-viewer";
@@ -994,6 +1106,16 @@ document.addEventListener("DOMContentLoaded", () => {
             >
 
         `;
+
+
+        const img =
+            fullscreen.querySelector("img");
+
+
+        img.addEventListener(
+            "error",
+            () => handleImageError(img)
+        );
 
 
         document.body.appendChild(
@@ -1036,6 +1158,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 ) {
 
                     closeFullscreen();
+
                 }
 
             }
@@ -1050,6 +1173,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 ) {
 
                     closeFullscreen();
+
                 }
 
             };
@@ -1061,7 +1185,6 @@ document.addEventListener("DOMContentLoaded", () => {
         );
 
     }
-
 
 
     /* =====================================================
@@ -1089,6 +1212,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         activeFullscreen.remove();
 
+
         activeFullscreen =
             null;
 
@@ -1108,9 +1232,8 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-
     /* =====================================================
-       BACK TO CATEGORIES
+       BACK BUTTON
     ===================================================== */
 
     if (backButton) {
@@ -1123,17 +1246,25 @@ document.addEventListener("DOMContentLoaded", () => {
                     "hidden"
                 );
 
+
                 projectView.setAttribute(
                     "aria-hidden",
                     "true"
                 );
 
+
                 workSection.style.display =
                     "";
 
+
                 window.scrollTo({
-                    top: workSection.offsetTop,
-                    behavior: "smooth"
+
+                    top:
+                        workSection.offsetTop,
+
+                    behavior:
+                        "smooth"
+
                 });
 
             }
@@ -1142,9 +1273,8 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-
     /* =====================================================
-       NAVBAR HOME
+       BRAND / HOME
     ===================================================== */
 
     if (brand) {
@@ -1155,13 +1285,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 event.preventDefault();
 
+
                 closeFullscreen();
+
                 closeProject();
 
 
                 projectView.classList.add(
                     "hidden"
                 );
+
 
                 projectView.setAttribute(
                     "aria-hidden",
@@ -1174,8 +1307,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
                 window.scrollTo({
+
                     top: 0,
+
                     behavior: "smooth"
+
                 });
 
             }
@@ -1184,11 +1320,10 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-
     /* =====================================================
-       INITIALIZE
+       INIT
     ===================================================== */
 
-    createClientWorkSection();
+    renderClientWork();
 
 });
