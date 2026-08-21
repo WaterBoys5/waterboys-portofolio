@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
            DOCUMENTATION
         ================================================= */
 
-        documentation: {
+        "documentation": {
 
             title: "DOCUMENTATION",
 
@@ -24,11 +24,27 @@ document.addEventListener("DOMContentLoaded", () => {
                         "assets/images/documentation/stereo-wall-01.jpg",
 
                     images: [
-                        "assets/images/documentation/stereo-wall-01.jpg"
+
+                        "assets/images/documentation/stereo-wall-01.jpg",
+                        "assets/images/documentation/stereo-wall-02.jpg",
+                        "assets/images/documentation/stereo-wall-03.jpg",
+                        "assets/images/documentation/stereo-wall-04.jpg",
+                        "assets/images/documentation/stereo-wall-05.jpg",
+                        "assets/images/documentation/stereo-wall-06.jpg",
+                        "assets/images/documentation/stereo-wall-07.jpg",
+                        "assets/images/documentation/stereo-wall-08.jpg",
+                        "assets/images/documentation/stereo-wall-09.jpg",
+                        "assets/images/documentation/stereo-wall-10.jpg",
+                        "assets/images/documentation/stereo-wall-11.jpg",
+                        "assets/images/documentation/stereo-wall-12.jpg",
+                        "assets/images/documentation/stereo-wall-13.jpg",
+                        "assets/images/documentation/stereo-wall-14.jpg"
+
                     ]
                 }
 
             ]
+
         },
 
 
@@ -50,15 +66,18 @@ document.addEventListener("DOMContentLoaded", () => {
                         "assets/images/portrait-commercial/peron-long-sleeve-01.jpg",
 
                     images: [
+
                         "assets/images/portrait-commercial/peron-long-sleeve-01.jpg",
                         "assets/images/portrait-commercial/peron-long-sleeve-02.jpg",
                         "assets/images/portrait-commercial/peron-long-sleeve-03.jpg",
                         "assets/images/portrait-commercial/peron-long-sleeve-04.jpg",
                         "assets/images/portrait-commercial/peron-long-sleeve-05.jpg"
+
                     ]
                 }
 
             ]
+
         },
 
 
@@ -66,7 +85,7 @@ document.addEventListener("DOMContentLoaded", () => {
            PRODUCT
         ================================================= */
 
-        product: {
+        "product": {
 
             title: "PRODUCT",
 
@@ -80,11 +99,14 @@ document.addEventListener("DOMContentLoaded", () => {
                         "assets/images/product/lv-wallet-01.jpg",
 
                     images: [
+
                         "assets/images/product/lv-wallet-01.jpg"
+
                     ]
                 }
 
             ]
+
         },
 
 
@@ -92,7 +114,7 @@ document.addEventListener("DOMContentLoaded", () => {
            OTHERS
         ================================================= */
 
-        others: {
+        "others": {
 
             title: "OTHERS",
 
@@ -112,19 +134,12 @@ document.addEventListener("DOMContentLoaded", () => {
                     images: [
 
                         "assets/images/others/syahrin-graduation/syahrin-01.jpg",
-
                         "assets/images/others/syahrin-graduation/syahrin-02.jpg",
-
                         "assets/images/others/syahrin-graduation/syahrin-03.jpg",
-
                         "assets/images/others/syahrin-graduation/syahrin-04.jpg",
-
                         "assets/images/others/syahrin-graduation/syahrin-05.jpg",
-
                         "assets/images/others/syahrin-graduation/syahrin-06.jpg",
-
                         "assets/images/others/syahrin-graduation/syahrin-07.jpg",
-
                         "assets/images/others/syahrin-graduation/syahrin-08.jpg"
 
                     ]
@@ -132,7 +147,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
                 /* -----------------------------------------
-                   HILDA & FIKAR PRE-WEDDING
+                   PREWEDDING HILDA & FIKAR
                 ----------------------------------------- */
 
                 {
@@ -145,33 +160,23 @@ document.addEventListener("DOMContentLoaded", () => {
                     images: [
 
                         "assets/images/others/prewedding-hilda-and-fikar/prewed-fikar-01.jpg",
-
                         "assets/images/others/prewedding-hilda-and-fikar/prewed-fikar-02.jpg",
-
                         "assets/images/others/prewedding-hilda-and-fikar/prewed-fikar-03.jpg",
-
                         "assets/images/others/prewedding-hilda-and-fikar/prewed-fikar-04.jpg",
-
                         "assets/images/others/prewedding-hilda-and-fikar/prewed-fikar-05.jpg",
-
                         "assets/images/others/prewedding-hilda-and-fikar/prewed-fikar-06.jpg",
-
                         "assets/images/others/prewedding-hilda-and-fikar/prewed-fikar-07.jpg",
-
                         "assets/images/others/prewedding-hilda-and-fikar/prewed-fikar-08.jpg",
-
                         "assets/images/others/prewedding-hilda-and-fikar/prewed-fikar-09.jpg",
-
                         "assets/images/others/prewedding-hilda-and-fikar/prewed-fikar-10.jpg",
-
                         "assets/images/others/prewedding-hilda-and-fikar/prewed-fikar-11.jpg",
-
                         "assets/images/others/prewedding-hilda-and-fikar/prewed-fikar-12.jpg"
 
                     ]
                 }
 
             ]
+
         },
 
 
@@ -195,39 +200,26 @@ document.addEventListener("DOMContentLoaded", () => {
                     images: [
 
                         "assets/images/art-direction/dalmention/dalmention-01.jpg",
-
                         "assets/images/art-direction/dalmention/dalmention-02.jpg",
-
                         "assets/images/art-direction/dalmention/dalmention-03.jpg",
-
                         "assets/images/art-direction/dalmention/dalmention-04.jpg",
-
                         "assets/images/art-direction/dalmention/dalmention-05.jpg",
-
                         "assets/images/art-direction/dalmention/dalmention-06.jpg",
-
                         "assets/images/art-direction/dalmention/dalmention-07.jpg",
-
                         "assets/images/art-direction/dalmention/dalmention-08.jpg",
-
                         "assets/images/art-direction/dalmention/dalmention-09.jpg",
-
                         "assets/images/art-direction/dalmention/dalmention-10.jpg",
-
                         "assets/images/art-direction/dalmention/dalmention-11.jpg",
-
                         "assets/images/art-direction/dalmention/dalmention-12.jpg",
-
                         "assets/images/art-direction/dalmention/dalmention-13.jpg",
-
                         "assets/images/art-direction/dalmention/dalmention-14.jpg",
-
                         "assets/images/art-direction/dalmention/dalmention-15.jpg"
 
                     ]
                 }
 
             ]
+
         }
 
     };
@@ -299,6 +291,7 @@ document.addEventListener("DOMContentLoaded", () => {
             ></div>
 
         </div>
+
     `;
 
     document.body.appendChild(projectViewer);
@@ -361,7 +354,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const category =
             CATEGORIES[categoryKey];
-
 
         if (!category) {
 
@@ -481,9 +473,13 @@ document.addEventListener("DOMContentLoaded", () => {
         );
 
 
-        workSection.classList.add("hidden");
+        workSection.classList.add(
+            "hidden"
+        );
 
-        projectView.classList.remove("hidden");
+        projectView.classList.remove(
+            "hidden"
+        );
 
         projectView.setAttribute(
             "aria-hidden",
@@ -493,7 +489,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         window.scrollTo({
             top: 0,
-            behavior: "instant"
+            behavior: "smooth"
         });
 
     }
@@ -505,19 +501,26 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function closeCategory() {
 
-        projectView.classList.add("hidden");
+        projectView.classList.add(
+            "hidden"
+        );
 
         projectView.setAttribute(
             "aria-hidden",
             "true"
         );
 
-        workSection.classList.remove("hidden");
+        workSection.classList.remove(
+            "hidden"
+        );
 
 
         window.scrollTo({
-            top: workSection.offsetTop - 80,
-            behavior: "instant"
+            top:
+                workSection.offsetTop - 80,
+
+            behavior:
+                "smooth"
         });
 
     }
@@ -538,8 +541,8 @@ document.addEventListener("DOMContentLoaded", () => {
         viewerTitle.textContent =
             project.title;
 
-
-        viewerGrid.innerHTML = "";
+        viewerGrid.innerHTML =
+            "";
 
 
         project.images.forEach(
@@ -626,7 +629,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* =====================================================
-       FULLSCREEN
+       OPEN FULLSCREEN
     ===================================================== */
 
     function openFullscreen(
@@ -652,6 +655,10 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
+    /* =====================================================
+       CLOSE FULLSCREEN
+    ===================================================== */
+
     function closeFullscreen() {
 
         fullscreenViewer.classList.add(
@@ -669,7 +676,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* =====================================================
-       CATEGORY EVENTS
+       CATEGORY CLICK
     ===================================================== */
 
     categoryCards.forEach(
@@ -716,7 +723,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* =====================================================
-       BACK
+       BACK BUTTON
     ===================================================== */
 
     if (backButton) {
@@ -746,7 +753,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* =====================================================
-       ESC
+       ESCAPE
     ===================================================== */
 
     document.addEventListener(
@@ -799,7 +806,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* =====================================================
-       BACKGROUND CLICK
+       CLICK OUTSIDE PROJECT VIEWER
     ===================================================== */
 
     projectViewer.addEventListener(
@@ -818,6 +825,10 @@ document.addEventListener("DOMContentLoaded", () => {
     );
 
 
+    /* =====================================================
+       CLICK OUTSIDE FULLSCREEN
+    ===================================================== */
+
     fullscreenViewer.addEventListener(
         "click",
         (event) => {
@@ -831,20 +842,6 @@ document.addEventListener("DOMContentLoaded", () => {
             }
 
         }
-    );
-
-
-    /* =====================================================
-       DEBUG
-    ===================================================== */
-
-    console.log(
-        "Waterboys portfolio loaded."
-    );
-
-    console.log(
-        "Categories:",
-        Object.keys(CATEGORIES)
     );
 
 });
