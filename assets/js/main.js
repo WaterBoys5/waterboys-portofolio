@@ -4,8 +4,8 @@ document.addEventListener("DOMContentLoaded", () => {
        ELEMENTS
     ===================================================== */
 
-    const categoryCards =
-        document.querySelectorAll(".category-card");
+    const categoryGrid =
+        document.querySelector(".category-grid");
 
     const workSection =
         document.querySelector(".work-section");
@@ -45,7 +45,10 @@ document.addEventListener("DOMContentLoaded", () => {
                 title: "Stereo Wall",
 
                 description:
-                    "Live performance documentation of stereowall at trilogigs bogor.",
+                    "Live performance documentation of Stereo Wall at Trilogigs Bogor.",
+
+                role:
+                    "PHOTOGRAPHY",
 
                 images: [
                     "assets/images/documentation/stereo-wall-01.jpg",
@@ -65,11 +68,15 @@ document.addEventListener("DOMContentLoaded", () => {
                 ]
             },
 
+
             {
                 title: "Jerana",
 
                 description:
                     "Event documentation at Krapela.",
+
+                role:
+                    "PHOTOGRAPHY",
 
                 images: [
                     "assets/images/documentation/jerana-01.jpg",
@@ -82,11 +89,15 @@ document.addEventListener("DOMContentLoaded", () => {
                 ]
             },
 
+
             {
                 title: "The Paps",
 
                 description:
-                    "Event documentation at Dreyy Fest bogor 2026.",
+                    "Event documentation at Dreyy Fest Bogor 2026.",
+
+                role:
+                    "PHOTOGRAPHY",
 
                 images: [
                     "assets/images/documentation/thepaps-01.jpg",
@@ -105,7 +116,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
         /* =================================================
-           PORTRAIT COMMERCIAL
+           PORTRAIT / COMMERCIAL
         ================================================= */
 
         "portrait-commercial": [
@@ -116,6 +127,9 @@ document.addEventListener("DOMContentLoaded", () => {
                 description:
                     "Commercial portrait campaign.",
 
+                role:
+                    "PHOTOGRAPHY",
+
                 images: [
                     "assets/images/portrait-commercial/peron-long-sleeve-01.jpg",
                     "assets/images/portrait-commercial/peron-long-sleeve-02.jpg",
@@ -125,11 +139,15 @@ document.addEventListener("DOMContentLoaded", () => {
                 ]
             },
 
+
             {
                 title: "Vishgazine",
 
                 description:
-                    "Commercial portrait campaign vishgazine for vish by nevertoolavish.",
+                    "Commercial portrait campaign for Vish by Nevertoolavish.",
+
+                role:
+                    "PHOTOGRAPHY",
 
                 images: [
                     "assets/images/portrait-commercial/vishgazine-01.jpg",
@@ -144,11 +162,15 @@ document.addEventListener("DOMContentLoaded", () => {
                 ]
             },
 
+
             {
                 title: "WKA × Simpati",
 
                 description:
-                    "Commercial campaign for WKA from nevertoolavish to SIMPATI.",
+                    "Commercial campaign for WKA from Nevertoolavish to SIMPATI.",
+
+                role:
+                    "PHOTOGRAPHY",
 
                 images: [
                     "assets/images/portrait-commercial/wka-simpati-01.jpg",
@@ -164,11 +186,15 @@ document.addEventListener("DOMContentLoaded", () => {
                 ]
             },
 
+
             {
                 title: "Unreleased",
 
                 description:
-                    "The Artist behind Unreleased custom footwear project.",
+                    "The artist behind Unreleased custom footwear project.",
+
+                role:
+                    "PHOTOGRAPHY",
 
                 images: [
                     "assets/images/portrait-commercial/unreleased-01.jpg",
@@ -180,11 +206,15 @@ document.addEventListener("DOMContentLoaded", () => {
                 ]
             },
 
+
             {
-                title: "back 2 bloom",
+                title: "Back 2 Bloom",
 
                 description:
-                    "Commercial campaign photography for back 2 bloom article released.",
+                    "Commercial campaign photography for Back 2 Bloom.",
+
+                role:
+                    "PHOTOGRAPHY",
 
                 images: [
                     "assets/images/portrait-commercial/b2b-01.jpg",
@@ -219,6 +249,9 @@ document.addEventListener("DOMContentLoaded", () => {
                 description:
                     "Luxury product photography.",
 
+                role:
+                    "PHOTOGRAPHY",
+
                 images: [
                     "assets/images/product/lv-wallet-01.jpg",
                     "assets/images/product/lv-wallet-02.jpg",
@@ -227,11 +260,15 @@ document.addEventListener("DOMContentLoaded", () => {
                 ]
             },
 
+
             {
                 title: "TITANS",
 
                 description:
                     "Commercial product campaign.",
+
+                role:
+                    "PHOTOGRAPHY",
 
                 images: [
                     "assets/images/product/titans-01.jpg",
@@ -246,11 +283,15 @@ document.addEventListener("DOMContentLoaded", () => {
                 ]
             },
 
+
             {
                 title: "Nevertoolavish Custom Shoes",
 
                 description:
                     "Still life product photography for custom shoes by Nevertoolavish.",
+
+                role:
+                    "PHOTOGRAPHY",
 
                 images: [
                     "assets/images/product/nevertoolavish-shoes-01.jpg",
@@ -271,96 +312,92 @@ document.addEventListener("DOMContentLoaded", () => {
                 ]
             }
 
+        ],
+
+
+        /* =================================================
+           ART DIRECTION
+        ================================================= */
+
+        "art-direction": [
+
+            {
+                title: "Dalmention",
+
+                description:
+                    "Fashion campaign for Dalmention, a reworked fashion brand. Art direction covering concept development, lighting setup, location selection, client communication, and directing the photographer during the shoot.",
+
+                role:
+                    "ART DIRECTION",
+
+                photographer:
+                    "Amaylia (Ayas)",
+
+                instagram:
+                    "https://www.instagram.com/am.liyas/",
+
+                images: [
+                    "assets/images/art-direction/dalmention-01.jpg",
+                    "assets/images/art-direction/dalmention-02.jpg",
+                    "assets/images/art-direction/dalmention-03.jpg",
+                    "assets/images/art-direction/dalmention-04.jpg",
+                    "assets/images/art-direction/dalmention-05.jpg",
+                    "assets/images/art-direction/dalmention-06.jpg",
+                    "assets/images/art-direction/dalmention-07.jpg",
+                    "assets/images/art-direction/dalmention-08.jpg",
+                    "assets/images/art-direction/dalmention-09.jpg",
+                    "assets/images/art-direction/dalmention-10.jpg",
+                    "assets/images/art-direction/dalmention-11.jpg",
+                    "assets/images/art-direction/dalmention-12.jpg",
+                    "assets/images/art-direction/dalmention-13.jpg",
+                    "assets/images/art-direction/dalmention-14.jpg",
+                    "assets/images/art-direction/dalmention-15.jpg"
+                ]
+            }
+
+        ],
+
+
+        /* =================================================
+           OTHER
+        ================================================= */
+
+        other: [
+
+            {
+                title: "Syahrin Graduation",
+
+                description:
+                    "Graduation portrait session for client Syahrin.",
+
+                role:
+                    "PHOTOGRAPHY",
+
+                client:
+                    "Syahrin",
+
+                images: [
+                    "assets/images/other/syahrin-01.jpg",
+                    "assets/images/other/syahrin-02.jpg",
+                    "assets/images/other/syahrin-03.jpg",
+                    "assets/images/other/syahrin-04.jpg",
+                    "assets/images/other/syahrin-05.jpg",
+                    "assets/images/other/syahrin-06.jpg",
+                    "assets/images/other/syahrin-07.jpg",
+                    "assets/images/other/syahrin-08.jpg"
+                ]
+            }
+
         ]
 
     };
 
 
     /* =====================================================
-       CLIENT WORK / EXTERNAL POSTS
+       CLIENT WORK
     ===================================================== */
 
     const CLIENT_WORK = [
-
-        {
-            client: "WALL OF JAKARTA",
-
-            title:
-                "Video Documentation",
-
-            role:
-                "Video Documentation",
-
-            description:
-                "Video documentation for Wall of Jakarta.",
-
-            link:
-                "https://www.instagram.com/reel/Dam-Z9dpo6k/"
-        },
-
-        {
-            client: "TITANS",
-
-            title:
-                "Friend Flash 03 — Hari Kartini",
-
-            role:
-                "Campaign / Video",
-
-            description:
-                "Friend Flash 03 campaign created for TITANS in celebration of Hari Kartini.",
-
-            link:
-                "https://www.instagram.com/reel/DXYuDpcz2Pp/"
-        },
-
-        {
-            client: "INDO WATCH COLLECTION × HARD THIRTEEN",
-
-            title:
-                "Custom Watch Collection",
-
-            role:
-                "Photography / Documentation",
-
-            description:
-                "Indo Watch Collection featuring a custom watch by Hard Thirteen.",
-
-            link:
-                "https://www.instagram.com/p/DUGKWsqj8xM/"
-        },
-
-        {
-            client: "ORSE",
-
-            title:
-                "Connect Happily Vol. 3",
-
-            role:
-                "Campaign / Documentation",
-
-            description:
-                "Connect Happily Volume 3 by ORSE.",
-
-            link:
-                "https://www.instagram.com/p/DSRXRRQj5U6/"
-        },
-
-        {
-            client: "PAYPORSE",
-
-            title:
-                "Pattern Horizon",
-
-            role:
-                "Campaign / Video",
-
-            description:
-                "Pattern Horizon campaign for Payporse.",
-
-            link:
-                "https://www.instagram.com/reel/DbX9dJVRHls/"
-        },
 
         {
             client: "ORSE × KFC",
@@ -369,7 +406,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 "Pekan Raya Jakarta Campaign",
 
             role:
-                "Video Documentation",
+                "VIDEO DOCUMENTATION",
 
             description:
                 "Campaign video documentation for ORSE's collaboration with KFC at Pekan Raya Jakarta.",
@@ -382,6 +419,50 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* =====================================================
+       CATEGORY INFORMATION
+    ===================================================== */
+
+    const CATEGORY_INFO = {
+
+        documentation: {
+            label: "DOCUMENTATION",
+            title: "DOCUMENTATION",
+            description:
+                "Live performances, events, and visual documentation."
+        },
+
+        "portrait-commercial": {
+            label: "PORTRAIT / COMMERCIAL",
+            title: "PORTRAIT / COMMERCIAL",
+            description:
+                "Portrait campaigns, fashion, and commercial photography."
+        },
+
+        product: {
+            label: "PRODUCT",
+            title: "PRODUCT",
+            description:
+                "Product photography, campaigns, and commercial still life."
+        },
+
+        "art-direction": {
+            label: "ART DIRECTION",
+            title: "ART DIRECTION",
+            description:
+                "Concept development, visual direction, and photography."
+        },
+
+        other: {
+            label: "OTHER",
+            title: "OTHER",
+            description:
+                "Personal work, client portraits, and projects outside the main categories."
+        }
+
+    };
+
+
+    /* =====================================================
        STATE
     ===================================================== */
 
@@ -390,133 +471,124 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* =====================================================
-       CREATE CLIENT WORK SECTION
+       CREATE CATEGORY CARD
+       Only creates cards that don't already exist in HTML.
     ===================================================== */
 
-    function createClientWorkSection() {
+    function createCategoryCard(category) {
 
-        if (!workSection) {
-            return;
+        if (!categoryGrid) {
+            return null;
         }
 
-        if (document.querySelector(".client-work-section")) {
-            return;
-        }
-
-
-        const section =
-            document.createElement("section");
-
-        section.className =
-            "client-work-section";
-
-
-        section.innerHTML = `
-
-            <div class="client-work-header">
-
-                <p class="client-work-label">
-                    CLIENT WORK
-                </p>
-
-                <h2 class="client-work-title">
-                    SELECTED CLIENT POSTS
-                </h2>
-
-            </div>
-
-            <div class="client-work-grid"></div>
-
-        `;
-
-
-        const grid =
-            section.querySelector(
-                ".client-work-grid"
+        if (
+            categoryGrid.querySelector(
+                `[data-category="${category}"]`
+            )
+        ) {
+            return categoryGrid.querySelector(
+                `[data-category="${category}"]`
             );
+        }
 
+        const projects =
+            PROJECTS[category];
 
-        CLIENT_WORK.forEach(work => {
+        if (!projects || !projects.length) {
+            return null;
+        }
 
-            const card =
-                document.createElement("article");
+        const info =
+            CATEGORY_INFO[category];
 
-            card.className =
-                "client-work-card";
+        const card =
+            document.createElement("article");
 
+        card.className =
+            "category-card";
 
-            card.innerHTML = `
+        card.dataset.category =
+            category;
 
-                <div class="client-work-card-content">
+        card.setAttribute(
+            "tabindex",
+            "0"
+        );
 
-                    <p class="client-work-client">
-                        ${work.client}
-                    </p>
+        card.setAttribute(
+            "role",
+            "button"
+        );
+
+        const thumbnail =
+            projects[0].images[0];
+
+        card.innerHTML = `
+
+            <div class="category-image">
+
+                <img
+                    src="${thumbnail}"
+                    alt="${info.title}"
+                    loading="lazy"
+                >
+
+                <div class="image-overlay"></div>
+
+                <div class="image-heading">
+
+                    <span>
+                        ${info.label}
+                    </span>
 
                     <h3>
-                        ${work.title}
+                        ${info.title}
                     </h3>
-
-                    <p class="client-work-role">
-                        ${work.role}
-                    </p>
-
-                    <p class="client-work-description">
-                        ${work.description}
-                    </p>
-
-                    <a
-                        class="client-work-link"
-                        href="${work.link}"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        VIEW CLIENT POST ↗
-                    </a>
 
                 </div>
 
-            `;
+            </div>
 
+            <div class="category-info">
 
-            grid.appendChild(card);
+                <p>
+                    ${info.description}
+                </p>
 
-        });
+            </div>
 
+        `;
 
-        workSection.appendChild(section);
+        categoryGrid.appendChild(card);
 
+        bindCategoryCard(card);
+
+        return card;
     }
 
 
     /* =====================================================
-       CATEGORY CLICK
+       BIND CATEGORY CARD
     ===================================================== */
 
-    categoryCards.forEach(card => {
+    function bindCategoryCard(card) {
 
-        card.addEventListener("click", () => {
+        if (!card) {
+            return;
+        }
 
-            const category =
-                card.dataset.category;
+        if (
+            card.dataset.bound === "true"
+        ) {
+            return;
+        }
 
-            openCategory(category);
+        card.dataset.bound =
+            "true";
 
-        });
-
-
-        /* =================================================
-           CATEGORY KEYBOARD
-        ================================================= */
-
-        card.addEventListener("keydown", event => {
-
-            if (
-                event.key === "Enter" ||
-                event.key === " "
-            ) {
-
-                event.preventDefault();
+        card.addEventListener(
+            "click",
+            () => {
 
                 const category =
                     card.dataset.category;
@@ -524,10 +596,47 @@ document.addEventListener("DOMContentLoaded", () => {
                 openCategory(category);
 
             }
+        );
 
-        });
+        card.addEventListener(
+            "keydown",
+            event => {
 
-    });
+                if (
+                    event.key === "Enter" ||
+                    event.key === " "
+                ) {
+
+                    event.preventDefault();
+
+                    const category =
+                        card.dataset.category;
+
+                    openCategory(category);
+
+                }
+
+            }
+        );
+
+    }
+
+
+    /* =====================================================
+       EXISTING CATEGORY CARDS
+    ===================================================== */
+
+    document
+        .querySelectorAll(".category-card")
+        .forEach(bindCategoryCard);
+
+
+    /* =====================================================
+       ADD NEW CATEGORIES
+    ===================================================== */
+
+    createCategoryCard("art-direction");
+    createCategoryCard("other");
 
 
     /* =====================================================
@@ -547,22 +656,16 @@ document.addEventListener("DOMContentLoaded", () => {
             );
 
             return;
-
         }
 
-
-        const readableName =
-            category
-                .replaceAll("-", " ")
-                .toUpperCase();
-
+        const info =
+            CATEGORY_INFO[category];
 
         projectTitle.textContent =
-            readableName;
+            info ? info.title : category.toUpperCase();
 
         projectLabel.textContent =
-            "SELECTED PROJECTS";
-
+            info ? info.label : "SELECTED PROJECTS";
 
         projectGrid.innerHTML = "";
 
@@ -589,10 +692,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 "button"
             );
 
-
             const thumbnail =
                 project.images[0];
-
 
             card.innerHTML = `
 
@@ -633,31 +734,37 @@ document.addEventListener("DOMContentLoaded", () => {
                CLICK PROJECT
             ================================================= */
 
-            card.addEventListener("click", () => {
+            card.addEventListener(
+                "click",
+                () => {
 
-                openProject(project);
+                    openProject(project);
 
-            });
+                }
+            );
 
 
             /* =================================================
                KEYBOARD PROJECT
             ================================================= */
 
-            card.addEventListener("keydown", event => {
+            card.addEventListener(
+                "keydown",
+                event => {
 
-                if (
-                    event.key === "Enter" ||
-                    event.key === " "
-                ) {
+                    if (
+                        event.key === "Enter" ||
+                        event.key === " "
+                    ) {
 
-                    event.preventDefault();
+                        event.preventDefault();
 
-                    openProject(project);
+                        openProject(project);
+
+                    }
 
                 }
-
-            });
+            );
 
 
             projectGrid.appendChild(card);
@@ -681,7 +788,6 @@ document.addEventListener("DOMContentLoaded", () => {
             "false"
         );
 
-
         window.scrollTo({
             top: 0,
             behavior: "smooth"
@@ -698,13 +804,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
         closeProject();
 
-
         const viewer =
             document.createElement("div");
 
         viewer.className =
             "project-viewer";
-
 
         viewer.innerHTML = `
 
@@ -728,6 +832,8 @@ document.addEventListener("DOMContentLoaded", () => {
                         ${project.title}
                     </h2>
 
+                    <div class="viewer-meta"></div>
+
                 </div>
 
                 <div class="viewer-grid"></div>
@@ -737,13 +843,98 @@ document.addEventListener("DOMContentLoaded", () => {
         `;
 
 
-        const viewerGrid =
-            viewer.querySelector(".viewer-grid");
+        /* =================================================
+           PROJECT META
+        ================================================= */
+
+        const meta =
+            viewer.querySelector(
+                ".viewer-meta"
+            );
+
+        let metaHTML = "";
+
+
+        if (project.role) {
+
+            metaHTML += `
+
+                <p>
+                    <span>ROLE</span>
+                    ${project.role}
+                </p>
+
+            `;
+
+        }
+
+
+        if (project.client) {
+
+            metaHTML += `
+
+                <p>
+                    <span>CLIENT</span>
+                    ${project.client}
+                </p>
+
+            `;
+
+        }
+
+
+        if (project.photographer) {
+
+            metaHTML += `
+
+                <p>
+                    <span>PHOTOGRAPHY</span>
+                    ${
+                        project.instagram
+                            ? `
+                                <a
+                                    href="${project.instagram}"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    ${project.photographer} ↗
+                                </a>
+                            `
+                            : project.photographer
+                    }
+                </p>
+
+            `;
+
+        }
+
+
+        if (project.description) {
+
+            metaHTML += `
+
+                <p class="viewer-description">
+                    ${project.description}
+                </p>
+
+            `;
+
+        }
+
+
+        meta.innerHTML =
+            metaHTML;
 
 
         /* =================================================
-           ADD PHOTOS
+           VIEWER GRID
         ================================================= */
+
+        const viewerGrid =
+            viewer.querySelector(
+                ".viewer-grid"
+            );
+
 
         project.images.forEach(
             (image, index) => {
@@ -753,7 +944,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 imageCard.className =
                     "viewer-image";
-
 
                 imageCard.innerHTML = `
 
@@ -796,7 +986,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
         document.body.style.overflow =
             "hidden";
-
 
         activeViewer =
             viewer;
@@ -858,7 +1047,6 @@ document.addEventListener("DOMContentLoaded", () => {
             return;
         }
 
-
         if (
             activeViewer._escapeHandler
         ) {
@@ -869,7 +1057,6 @@ document.addEventListener("DOMContentLoaded", () => {
             );
 
         }
-
 
         activeViewer.remove();
 
@@ -893,13 +1080,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
         closeFullscreen();
 
-
         const fullscreen =
             document.createElement("div");
 
         fullscreen.className =
             "fullscreen-viewer";
-
 
         fullscreen.innerHTML = `
 
@@ -917,15 +1102,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
         `;
 
-
         document.body.appendChild(
             fullscreen
         );
 
-
         activeFullscreen =
             fullscreen;
-
 
         document.body.style.overflow =
             "hidden";
@@ -939,7 +1121,6 @@ document.addEventListener("DOMContentLoaded", () => {
             fullscreen.querySelector(
                 "button"
             );
-
 
         closeButton.addEventListener(
             "click",
@@ -990,7 +1171,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
             };
 
-
         document.addEventListener(
             "keydown",
             fullscreen._escapeHandler
@@ -1009,7 +1189,6 @@ document.addEventListener("DOMContentLoaded", () => {
             return;
         }
 
-
         if (
             activeFullscreen._escapeHandler
         ) {
@@ -1021,16 +1200,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
         }
 
-
         activeFullscreen.remove();
 
         activeFullscreen =
             null;
 
-
-        /* =================================================
-           RESTORE SCROLL STATE
-        ================================================= */
 
         if (activeViewer) {
 
@@ -1111,7 +1285,106 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* =====================================================
-       INITIALIZE CLIENT WORK
+       CLIENT WORK SECTION
+    ===================================================== */
+
+    function createClientWorkSection() {
+
+        if (!workSection) {
+            return;
+        }
+
+        if (
+            document.querySelector(
+                ".client-work-section"
+            )
+        ) {
+            return;
+        }
+
+        const section =
+            document.createElement("section");
+
+        section.className =
+            "client-work-section";
+
+        section.innerHTML = `
+
+            <div class="client-work-header">
+
+                <p class="client-work-label">
+                    CLIENT WORK
+                </p>
+
+                <h2 class="client-work-title">
+                    SELECTED CLIENT POSTS
+                </h2>
+
+            </div>
+
+            <div class="client-work-grid"></div>
+
+        `;
+
+        const grid =
+            section.querySelector(
+                ".client-work-grid"
+            );
+
+        CLIENT_WORK.forEach(work => {
+
+            const card =
+                document.createElement("article");
+
+            card.className =
+                "client-work-card";
+
+            card.innerHTML = `
+
+                <div class="client-work-card-content">
+
+                    <p class="client-work-client">
+                        ${work.client}
+                    </p>
+
+                    <h3>
+                        ${work.title}
+                    </h3>
+
+                    <p class="client-work-role">
+                        ${work.role}
+                    </p>
+
+                    <p class="client-work-description">
+                        ${work.description}
+                    </p>
+
+                    <a
+                        class="client-work-link"
+                        href="${work.link}"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        VIEW CLIENT POST ↗
+                    </a>
+
+                </div>
+
+            `;
+
+            grid.appendChild(card);
+
+        });
+
+        workSection.appendChild(
+            section
+        );
+
+    }
+
+
+    /* =====================================================
+       INITIALIZE
     ===================================================== */
 
     createClientWorkSection();
