@@ -1976,3 +1976,123 @@ footer {
     }
 
 }
+/* =====================================================
+   VISIBILITY
+===================================================== */
+
+.hidden {
+    display: none !important;
+}
+
+
+/* =====================================================
+   BODY VIEWER STATE
+===================================================== */
+
+body.viewer-open {
+    overflow: hidden;
+}
+
+body.fullscreen-open {
+    overflow: hidden;
+}
+
+
+/* =====================================================
+   PROJECT VIEWER
+===================================================== */
+
+.project-viewer.hidden {
+    display: none !important;
+}
+
+
+/* =====================================================
+   FULLSCREEN VIEWER
+===================================================== */
+
+.fullscreen-viewer.hidden {
+    display: none !important;
+}
+
+
+/* =====================================================
+   PROJECT CARD ACCESSIBILITY
+===================================================== */
+
+.category-card:focus-visible,
+.project-card:focus-visible {
+    outline: 2px solid rgba(255,255,255,0.65);
+    outline-offset: 6px;
+}
+
+
+/* =====================================================
+   VIEWER CLOSE BUTTON
+===================================================== */
+
+.viewer-close:hover,
+.fullscreen-viewer button:hover {
+    background: rgba(255,255,255,0.15);
+    border-color: rgba(255,255,255,0.30);
+}
+
+
+/* =====================================================
+   MOBILE VIEWER
+===================================================== */
+
+@media (max-width: 650px) {
+
+    .project-viewer {
+        padding:
+            75px
+            20px
+            40px;
+    }
+
+    .viewer-heading {
+        margin-bottom: 28px;
+    }
+
+    .viewer-heading h2 {
+        font-size: 42px;
+    }
+
+    .viewer-grid {
+        gap: 12px;
+    }
+
+    .viewer-image {
+        border-radius: 13px;
+    }
+
+    .viewer-close {
+        top: 15px;
+        right: 17px;
+
+        width: 36px;
+        height: 36px;
+
+        font-size: 20px;
+    }
+
+    .fullscreen-viewer {
+        padding: 20px;
+    }
+
+    .fullscreen-viewer img {
+        max-width: 96vw;
+        max-height: 88vh;
+    }
+
+    .fullscreen-viewer button {
+        top: 15px;
+        right: 17px;
+
+        width: 36px;
+        height: 36px;
+
+        font-size: 20px;
+    }
+}
