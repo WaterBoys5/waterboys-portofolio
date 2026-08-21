@@ -1,269 +1,245 @@
-document.addEventListener("DOMContentLoaded", () => {
+/* =====================================================
+   PROJECT DATA
+===================================================== */
+
+const CATEGORIES = {
+
 
     /* =====================================================
-       DATA
+       DOCUMENTATION
     ===================================================== */
 
-    const CATEGORIES = {
+    documentation: {
 
-        documentation: {
-            title: "DOCUMENTATION",
-            description:
-                "Visual documentation of performances, events, concerts, and creative projects.",
+        title: "DOCUMENTATION",
 
-            projects: [
+        projects: [
 
-                {
-                    title: "STEREO WALL",
-                    year: "2026",
+            {
+                title: "Stereo Wall",
+                year: "2026",
 
-                    cover:
-                        "assets/images/documentation/stereo-wall-01.jpg",
+                cover:
+                    "assets/images/documentation/stereo-wall-01.jpg",
 
-                    images: [
-                        "assets/images/documentation/stereo-wall-01.jpg",
-                        "assets/images/documentation/stereo-wall-02.jpg",
-                        "assets/images/documentation/stereo-wall-03.jpg",
-                        "assets/images/documentation/stereo-wall-04.jpg",
-                        "assets/images/documentation/stereo-wall-05.jpg",
-                        "assets/images/documentation/stereo-wall-06.jpg",
-                        "assets/images/documentation/stereo-wall-07.jpg",
-                        "assets/images/documentation/stereo-wall-08.jpg",
-                        "assets/images/documentation/stereo-wall-09.jpg",
-                        "assets/images/documentation/stereo-wall-10.jpg",
-                        "assets/images/documentation/stereo-wall-11.jpg",
-                        "assets/images/documentation/stereo-wall-12.jpg",
-                        "assets/images/documentation/stereo-wall-13.jpg",
-                        "assets/images/documentation/stereo-wall-14.jpg"
-                    ]
-                },
+                images: [
+                    "assets/images/documentation/stereo-wall-01.jpg",
+                    "assets/images/documentation/stereo-wall-02.jpg",
+                    "assets/images/documentation/stereo-wall-03.jpg",
+                    "assets/images/documentation/stereo-wall-04.jpg",
+                    "assets/images/documentation/stereo-wall-05.jpg",
+                    "assets/images/documentation/stereo-wall-06.jpg",
+                    "assets/images/documentation/stereo-wall-07.jpg",
+                    "assets/images/documentation/stereo-wall-08.jpg",
+                    "assets/images/documentation/stereo-wall-09.jpg",
+                    "assets/images/documentation/stereo-wall-10.jpg",
+                    "assets/images/documentation/stereo-wall-11.jpg",
+                    "assets/images/documentation/stereo-wall-12.jpg",
+                    "assets/images/documentation/stereo-wall-13.jpg",
+                    "assets/images/documentation/stereo-wall-14.jpg"
+                ]
+            },
 
-                {
-                    title: "JERANA",
-                    year: "2026",
+            {
+                title: "The Paps",
+                year: "2026",
 
-                    cover:
-                        "assets/images/documentation/jerana-01.jpg",
+                cover:
+                    "assets/images/documentation/thepaps-01.jpg",
 
-                    images: [
-                        "assets/images/documentation/jerana-01.jpg",
-                        "assets/images/documentation/jerana-02.jpg",
-                        "assets/images/documentation/jerana-03.jpg",
-                        "assets/images/documentation/jerana-04.jpg",
-                        "assets/images/documentation/jerana-05.jpg",
-                        "assets/images/documentation/jerana-06.jpg",
-                        "assets/images/documentation/jerana-07.jpg"
-                    ]
-                },
+                images: [
+                    "assets/images/documentation/thepaps-01.jpg",
+                    "assets/images/documentation/thepaps-02.jpg",
+                    "assets/images/documentation/thepaps-03.jpg",
+                    "assets/images/documentation/thepaps-04.jpg",
+                    "assets/images/documentation/thepaps-05.jpg",
+                    "assets/images/documentation/thepaps-06.jpg",
+                    "assets/images/documentation/thepaps-07.jpg",
+                    "assets/images/documentation/thepaps-08.jpg",
+                    "assets/images/documentation/thepaps-09.jpg"
+                ]
+            }
 
-                {
-                    title: "THE PAPS",
-                    year: "2026",
+        ]
 
-                    cover:
-                        "assets/images/documentation/thepaps-01.jpg",
-
-                    images: [
-                        "assets/images/documentation/thepaps-01.jpg",
-                        "assets/images/documentation/thepaps-02.jpg",
-                        "assets/images/documentation/thepaps-03.jpg",
-                        "assets/images/documentation/thepaps-04.jpg",
-                        "assets/images/documentation/thepaps-05.jpg",
-                        "assets/images/documentation/thepaps-06.jpg",
-                        "assets/images/documentation/thepaps-07.jpg",
-                        "assets/images/documentation/thepaps-08.jpg",
-                        "assets/images/documentation/thepaps-09.jpg"
-                    ]
-                }
-
-            ]
-        },
+    },
 
 
-        "portrait-commercial": {
-            title: "PORTRAIT COMMERCIAL",
-            description:
-                "Portrait and campaign imagery created for brands and creative projects.",
+    /* =====================================================
+       PORTRAIT COMMERCIAL
+    ===================================================== */
 
-            projects: [
+    "portrait-commercial": {
 
-                {
-                    title: "PERON.ID LONG SLEEVE T-SHIRT",
-                    year: "2026",
+        title: "PORTRAIT COMMERCIAL",
 
-                    cover:
-                        "assets/images/portrait-commercial/peron-long-sleeve-01.jpg",
+        projects: [
 
-                    images: [
-                        "assets/images/portrait-commercial/peron-long-sleeve-01.jpg",
-                        "assets/images/portrait-commercial/peron-long-sleeve-02.jpg",
-                        "assets/images/portrait-commercial/peron-long-sleeve-03.jpg",
-                        "assets/images/portrait-commercial/peron-long-sleeve-04.jpg",
-                        "assets/images/portrait-commercial/peron-long-sleeve-05.jpg"
-                    ]
-                },
+            {
+                title: "Peron Long Sleeve",
+                year: "2026",
 
-                {
-                    title: "WKA × SIMPATI",
-                    year: "2026",
+                cover:
+                    "assets/images/portrait-commercial/peron-long-sleeve-01.jpg",
 
-                    cover:
-                        "assets/images/portrait-commercial/wka-simpati-01.jpg",
+                images: [
+                    "assets/images/portrait-commercial/peron-long-sleeve-01.jpg",
+                    "assets/images/portrait-commercial/peron-long-sleeve-02.jpg",
+                    "assets/images/portrait-commercial/peron-long-sleeve-03.jpg",
+                    "assets/images/portrait-commercial/peron-long-sleeve-04.jpg",
+                    "assets/images/portrait-commercial/peron-long-sleeve-05.jpg"
+                ]
+            }
 
-                    images: [
-                        "assets/images/portrait-commercial/wka-simpati-01.jpg",
-                        "assets/images/portrait-commercial/wka-simpati-02.jpg",
-                        "assets/images/portrait-commercial/wka-simpati-03.jpg",
-                        "assets/images/portrait-commercial/wka-simpati-04.jpg",
-                        "assets/images/portrait-commercial/wka-simpati-05.jpg",
-                        "assets/images/portrait-commercial/wka-simpati-06.jpg",
-                        "assets/images/portrait-commercial/wka-simpati-07.jpg",
-                        "assets/images/portrait-commercial/wka-simpati-08.jpg",
-                        "assets/images/portrait-commercial/wka-simpati-09.jpg",
-                        "assets/images/portrait-commercial/wka-simpati-10.jpg"
-                    ]
-                },
+        ]
 
-                {
-                    title: "VISHGAZINE ISSUE",
-                    year: "2026",
-
-                    cover:
-                        "assets/images/portrait-commercial/vishgazine-01.jpg",
-
-                    images: [
-                        "assets/images/portrait-commercial/vishgazine-01.jpg",
-                        "assets/images/portrait-commercial/vishgazine-02.jpg",
-                        "assets/images/portrait-commercial/vishgazine-03.jpg",
-                        "assets/images/portrait-commercial/vishgazine-04.jpg",
-                        "assets/images/portrait-commercial/vishgazine-05.jpg",
-                        "assets/images/portrait-commercial/vishgazine-06.jpg",
-                        "assets/images/portrait-commercial/vishgazine-07.jpg",
-                        "assets/images/portrait-commercial/vishgazine-08.jpg",
-                        "assets/images/portrait-commercial/vishgazine-09.jpg"
-                    ]
-                }
-
-            ]
-        },
+    },
 
 
-        product: {
-            title: "PRODUCT",
-            description:
-                "Product photography for catalogs, campaigns, and commercial use.",
+    /* =====================================================
+       PRODUCT
+    ===================================================== */
 
-            projects: [
+    product: {
 
-                {
-                    title: "HARDTHIRTEEN FROM NEVERTOOLAVISH",
-                    year: "2026",
+        title: "PRODUCT",
 
-                    cover:
-                        "assets/images/product/lv-wallet-01.jpg",
+        projects: [
 
-                    images: [
-                        "assets/images/product/lv-wallet-01.jpg",
-                        "assets/images/product/lv-wallet-02.jpg",
-                        "assets/images/product/lv-wallet-03.jpg",
-                        "assets/images/product/lv-wallet-04.jpg"
-                    ]
-                }
+            {
+                title: "LV Wallet",
+                year: "2026",
 
-            ]
-        },
+                cover:
+                    "assets/images/product/lv-wallet-01.jpg",
 
+                images: [
+                    "assets/images/product/lv-wallet-01.jpg",
+                    "assets/images/product/lv-wallet-02.jpg",
+                    "assets/images/product/lv-wallet-03.jpg",
+                    "assets/images/product/lv-wallet-04.jpg"
+                ]
+            }
 
-        others: {
-            title: "OTHERS",
-            description:
-                "Personal, lifestyle, graduation, wedding, and other commissioned photography projects.",
+        ]
 
-            projects: [
-
-                {
-                    title: "SYAHRIN GRADUATION",
-                    year: "2026",
-
-                    cover:
-                        "assets/images/others/syahrin-graduation/syahrin-01.jpg",
-
-                    images: [
-                        "assets/images/others/syahrin-graduation/syahrin-01.jpg",
-                        "assets/images/others/syahrin-graduation/syahrin-02.jpg",
-                        "assets/images/others/syahrin-graduation/syahrin-03.jpg",
-                        "assets/images/others/syahrin-graduation/syahrin-04.jpg",
-                        "assets/images/others/syahrin-graduation/syahrin-05.jpg",
-                        "assets/images/others/syahrin-graduation/syahrin-06.jpg",
-                        "assets/images/others/syahrin-graduation/syahrin-07.jpg",
-                        "assets/images/others/syahrin-graduation/syahrin-08.jpg"
-                    ]
-                },
-
-                {
-                    title: "PREWEDDING HILDA & FIKAR",
-                    year: "2026",
-
-                    cover:
-                        "assets/images/others/prewedding-hilda-and-fikar/prewed-fikar-01.jpg",
-
-                    images: [
-                        "assets/images/others/prewedding-hilda-and-fikar/prewed-fikar-01.jpg",
-                        "assets/images/others/prewedding-hilda-and-fikar/prewed-fikar-02.jpg",
-                        "assets/images/others/prewedding-hilda-and-fikar/prewed-fikar-03.jpg",
-                        "assets/images/others/prewedding-hilda-and-fikar/prewed-fikar-04.jpg",
-                        "assets/images/others/prewedding-hilda-and-fikar/prewed-fikar-05.jpg",
-                        "assets/images/others/prewedding-hilda-and-fikar/prewed-fikar-06.jpg",
-                        "assets/images/others/prewedding-hilda-and-fikar/prewed-fikar-07.jpg",
-                        "assets/images/others/prewedding-hilda-and-fikar/prewed-fikar-08.jpg",
-                        "assets/images/others/prewedding-hilda-and-fikar/prewed-fikar-09.jpg",
-                        "assets/images/others/prewedding-hilda-and-fikar/prewed-fikar-10.jpg",
-                        "assets/images/others/prewedding-hilda-and-fikar/prewed-fikar-11.jpg",
-                        "assets/images/others/prewedding-hilda-and-fikar/prewed-fikar-12.jpg"
-                    ]
-                }
-
-            ]
-        },
+    },
 
 
-        "art-direction": {
-            title: "ART DIRECTION",
-            description:
-                "Creative direction, visual concepts, campaigns, and collaborative projects.",
+    /* =====================================================
+       OTHERS
+    ===================================================== */
 
-            projects: [
+    others: {
 
-                {
-                    title: "DALMENTION",
-                    year: "2026",
+        title: "OTHERS",
 
-                    cover:
-                        "assets/images/art-direction/dalmention/dalmention-1.jpg",
+        projects: [
 
-                    images: [
-                        "assets/images/art-direction/dalmention/dalmention-1.jpg",
-                        "assets/images/art-direction/dalmention/dalmention-2.jpg",
-                        "assets/images/art-direction/dalmention/dalmention-3.jpg",
-                        "assets/images/art-direction/dalmention/dalmention-4.jpg",
-                        "assets/images/art-direction/dalmention/dalmention-5.jpg",
-                        "assets/images/art-direction/dalmention/dalmention-6.jpg",
-                        "assets/images/art-direction/dalmention/dalmention-7.jpg",
-                        "assets/images/art-direction/dalmention/dalmention-8.jpg",
-                        "assets/images/art-direction/dalmention/dalmention-9.jpg",
-                        "assets/images/art-direction/dalmention/dalmention-10.jpg",
-                        "assets/images/art-direction/dalmention/dalmention-11.jpg",
-                        "assets/images/art-direction/dalmention/dalmention-12.jpg",
-                        "assets/images/art-direction/dalmention/dalmention-13.jpg",
-                        "assets/images/art-direction/dalmention/dalmention-14.jpg",
-                        "assets/images/art-direction/dalmention/dalmention-15.jpg"
-                    ]
-                }
+            /* ---------------------------------------------
+               SYAHRIN GRADUATION
+            --------------------------------------------- */
 
-            ]
-        }
+            {
+                title: "Syahrin Graduation",
+                year: "2026",
 
-    };
+                cover:
+                    "assets/images/others/syahrin-graduation/syahrin-01.jpg",
+
+                images: [
+                    "assets/images/others/syahrin-graduation/syahrin-01.jpg",
+                    "assets/images/others/syahrin-graduation/syahrin-02.jpg",
+                    "assets/images/others/syahrin-graduation/syahrin-03.jpg",
+                    "assets/images/others/syahrin-graduation/syahrin-04.jpg",
+                    "assets/images/others/syahrin-graduation/syahrin-05.jpg",
+                    "assets/images/others/syahrin-graduation/syahrin-06.jpg",
+                    "assets/images/others/syahrin-graduation/syahrin-07.jpg",
+                    "assets/images/others/syahrin-graduation/syahrin-08.jpg"
+                ]
+            },
+
+
+            /* ---------------------------------------------
+               PREWEDDING HILDA & FIKAR
+            --------------------------------------------- */
+
+            {
+                title: "Prewedding Hilda & Fikar",
+                year: "2026",
+
+                cover:
+                    "assets/images/others/Prewedding-hilda-and-fikar/prewed-fikar-01.jpg",
+
+                images: [
+                    "assets/images/others/Prewedding-hilda-and-fikar/prewed-fikar-01.jpg",
+                    "assets/images/others/Prewedding-hilda-and-fikar/prewed-fikar-02.jpg",
+                    "assets/images/others/Prewedding-hilda-and-fikar/prewed-fikar-03.jpg",
+                    "assets/images/others/Prewedding-hilda-and-fikar/prewed-fikar-04.jpg",
+                    "assets/images/others/Prewedding-hilda-and-fikar/prewed-fikar-05.jpg",
+                    "assets/images/others/Prewedding-hilda-and-fikar/prewed-fikar-06.jpg",
+                    "assets/images/others/Prewedding-hilda-and-fikar/prewed-fikar-07.jpg",
+                    "assets/images/others/Prewedding-hilda-and-fikar/prewed-fikar-08.jpg",
+                    "assets/images/others/Prewedding-hilda-and-fikar/prewed-fikar-09.jpg",
+                    "assets/images/others/Prewedding-hilda-and-fikar/prewed-fikar-10.jpg",
+                    "assets/images/others/Prewedding-hilda-and-fikar/prewed-fikar-11.jpg",
+                    "assets/images/others/Prewedding-hilda-and-fikar/prewed-fikar-12.jpg"
+                ]
+            }
+
+        ]
+
+    },
+
+
+    /* =====================================================
+       ART DIRECTION
+    ===================================================== */
+
+    "art-direction": {
+
+        title: "ART DIRECTION",
+
+        projects: [
+
+            {
+                title: "Dalmention",
+                year: "2026",
+
+                cover:
+                    "assets/images/art-direction/dalmention/dalmention-1.jpg",
+
+                images: [
+                    "assets/images/art-direction/dalmention/dalmention-1.jpg",
+                    "assets/images/art-direction/dalmention/dalmention-2.jpg",
+                    "assets/images/art-direction/dalmention/dalmention-3.jpg",
+                    "assets/images/art-direction/dalmention/dalmention-4.jpg",
+                    "assets/images/art-direction/dalmention/dalmention-5.jpg",
+                    "assets/images/art-direction/dalmention/dalmention-6.jpg",
+                    "assets/images/art-direction/dalmention/dalmention-7.jpg",
+                    "assets/images/art-direction/dalmention/dalmention-8.jpg",
+                    "assets/images/art-direction/dalmention/dalmention-9.jpg",
+                    "assets/images/art-direction/dalmention/dalmention-10.jpg",
+                    "assets/images/art-direction/dalmention/dalmention-11.jpg",
+                    "assets/images/art-direction/dalmention/dalmention-12.jpg",
+                    "assets/images/art-direction/dalmention/dalmention-13.jpg",
+                    "assets/images/art-direction/dalmention/dalmention-14.jpg",
+                    "assets/images/art-direction/dalmention/dalmention-15.jpg"
+                ]
+            }
+
+        ]
+
+    }
+
+};
+
+
+/* =====================================================
+   MAIN
+===================================================== */
+
+document.addEventListener("DOMContentLoaded", () => {
 
 
     /* =====================================================
@@ -275,9 +251,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const workSection =
         document.querySelector(".work-section");
-
-    const categoryGrid =
-        document.querySelector(".category-grid");
 
     const projectView =
         document.querySelector("#project-view");
@@ -296,125 +269,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* =====================================================
-       ADD NEW CATEGORY CARDS
-       OTHERS + ART DIRECTION
-    ===================================================== */
-
-    function createCategoryCard(
-        categoryKey,
-        number
-    ) {
-
-        const category =
-            CATEGORIES[categoryKey];
-
-        if (!category) {
-            return;
-        }
-
-        const firstProject =
-            category.projects[0];
-
-        if (!firstProject) {
-            return;
-        }
-
-        const card =
-            document.createElement("article");
-
-        card.className =
-            "category-card";
-
-        card.dataset.category =
-            categoryKey;
-
-        card.tabIndex = 0;
-
-        card.setAttribute(
-            "role",
-            "button"
-        );
-
-        card.innerHTML = `
-            <div class="category-image">
-
-                <img
-                    src="${firstProject.cover}"
-                    alt="${category.title}"
-                    loading="lazy"
-                >
-
-                <div class="image-overlay"></div>
-
-                <div class="image-heading">
-
-                    <span>
-                        ${number}
-                    </span>
-
-                    <h3>
-                        ${category.title}
-                    </h3>
-
-                </div>
-
-            </div>
-
-            <div class="category-info">
-
-                <p>
-                    ${category.description}
-                </p>
-
-            </div>
-        `;
-
-        categoryGrid.appendChild(card);
-
-        card.addEventListener(
-            "click",
-            () => {
-                openCategory(categoryKey);
-            }
-        );
-
-        card.addEventListener(
-            "keydown",
-            (event) => {
-
-                if (
-                    event.key === "Enter" ||
-                    event.key === " "
-                ) {
-
-                    event.preventDefault();
-
-                    openCategory(categoryKey);
-                }
-
-            }
-        );
-    }
-
-
-    /*
-       IMPORTANT:
-       HTML sudah punya 3 category cards.
-       Kita hanya membuat 2 tambahan.
-    */
-
-    createCategoryCard(
-        "others",
-        "04"
-    );
-
-    createCategoryCard(
-        "art-direction",
-        "05"
-    );
-
-
-    /* =====================================================
        CREATE PROJECT VIEWER
     ===================================================== */
 
@@ -425,6 +279,7 @@ document.addEventListener("DOMContentLoaded", () => {
         "project-viewer hidden";
 
     projectViewer.innerHTML = `
+
         <button
             class="viewer-close"
             type="button"
@@ -455,30 +310,20 @@ document.addEventListener("DOMContentLoaded", () => {
         </div>
     `;
 
-    document.body.appendChild(
-        projectViewer
-    );
+    document.body.appendChild(projectViewer);
 
 
     const viewerClose =
-        projectViewer.querySelector(
-            ".viewer-close"
-        );
+        projectViewer.querySelector(".viewer-close");
 
     const viewerCategory =
-        projectViewer.querySelector(
-            "#viewer-category"
-        );
+        projectViewer.querySelector("#viewer-category");
 
     const viewerTitle =
-        projectViewer.querySelector(
-            "#viewer-title"
-        );
+        projectViewer.querySelector("#viewer-title");
 
     const viewerGrid =
-        projectViewer.querySelector(
-            "#viewer-grid"
-        );
+        projectViewer.querySelector("#viewer-grid");
 
 
     /* =====================================================
@@ -492,6 +337,7 @@ document.addEventListener("DOMContentLoaded", () => {
         "fullscreen-viewer hidden";
 
     fullscreenViewer.innerHTML = `
+
         <button
             type="button"
             aria-label="Close image"
@@ -503,34 +349,28 @@ document.addEventListener("DOMContentLoaded", () => {
             src=""
             alt=""
         >
+
     `;
 
-    document.body.appendChild(
-        fullscreenViewer
-    );
+    document.body.appendChild(fullscreenViewer);
 
 
     const fullscreenImage =
-        fullscreenViewer.querySelector(
-            "img"
-        );
+        fullscreenViewer.querySelector("img");
 
     const fullscreenClose =
-        fullscreenViewer.querySelector(
-            "button"
-        );
+        fullscreenViewer.querySelector("button");
 
 
     /* =====================================================
        OPEN CATEGORY
     ===================================================== */
 
-    function openCategory(
-        categoryKey
-    ) {
+    function openCategory(categoryKey) {
 
         const category =
             CATEGORIES[categoryKey];
+
 
         if (!category) {
 
@@ -553,18 +393,33 @@ document.addEventListener("DOMContentLoaded", () => {
         projectGrid.innerHTML = "";
 
 
+        if (
+            !Array.isArray(category.projects) ||
+            category.projects.length === 0
+        ) {
+
+            console.warn(
+                "Category tidak memiliki project:",
+                categoryKey
+            );
+
+            return;
+        }
+
+
         category.projects.forEach(
             (project) => {
 
                 const card =
-                    document.createElement(
-                        "article"
-                    );
+                    document.createElement("article");
 
                 card.className =
                     "project-card";
 
-                card.tabIndex = 0;
+                card.setAttribute(
+                    "tabindex",
+                    "0"
+                );
 
                 card.setAttribute(
                     "role",
@@ -573,6 +428,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
                 card.innerHTML = `
+
                     <div class="project-card-image">
 
                         <img
@@ -584,13 +440,13 @@ document.addEventListener("DOMContentLoaded", () => {
                         <div class="project-card-overlay">
 
                             <span>
-                                ${project.images.length}
-                                PHOTOS
+                                ${project.images.length} PHOTOS
                             </span>
 
                         </div>
 
                     </div>
+
 
                     <div class="project-card-info">
 
@@ -603,6 +459,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         </p>
 
                     </div>
+
                 `;
 
 
@@ -641,9 +498,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 );
 
 
-                projectGrid.appendChild(
-                    card
-                );
+                projectGrid.appendChild(card);
 
             }
         );
@@ -667,6 +522,7 @@ document.addEventListener("DOMContentLoaded", () => {
             top: 0,
             behavior: "smooth"
         });
+
     }
 
 
@@ -696,6 +552,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             behavior: "smooth"
         });
+
     }
 
 
@@ -721,18 +578,14 @@ document.addEventListener("DOMContentLoaded", () => {
             (imagePath, index) => {
 
                 const imageWrapper =
-                    document.createElement(
-                        "div"
-                    );
+                    document.createElement("div");
 
                 imageWrapper.className =
                     "viewer-image";
 
 
                 const image =
-                    document.createElement(
-                        "img"
-                    );
+                    document.createElement("img");
 
                 image.src =
                     imagePath;
@@ -783,6 +636,7 @@ document.addEventListener("DOMContentLoaded", () => {
             top: 0,
             behavior: "instant"
         });
+
     }
 
 
@@ -799,6 +653,7 @@ document.addEventListener("DOMContentLoaded", () => {
         document.body.classList.remove(
             "viewer-open"
         );
+
     }
 
 
@@ -824,8 +679,13 @@ document.addEventListener("DOMContentLoaded", () => {
         document.body.classList.add(
             "fullscreen-open"
         );
+
     }
 
+
+    /* =====================================================
+       CLOSE FULLSCREEN
+    ===================================================== */
 
     function closeFullscreen() {
 
@@ -839,11 +699,12 @@ document.addEventListener("DOMContentLoaded", () => {
         document.body.classList.remove(
             "fullscreen-open"
         );
+
     }
 
 
     /* =====================================================
-       EXISTING CATEGORY EVENTS
+       CATEGORY EVENTS
     ===================================================== */
 
     categoryCards.forEach(
@@ -851,19 +712,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
             const categoryKey =
                 card.dataset.category;
-
-
-            if (
-                !CATEGORIES[categoryKey]
-            ) {
-
-                console.warn(
-                    "Category tidak tersedia:",
-                    categoryKey
-                );
-
-                return;
-            }
 
 
             card.addEventListener(
@@ -917,7 +765,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* =====================================================
-       VIEWER CLOSE
+       PROJECT VIEWER CLOSE
     ===================================================== */
 
     viewerClose.addEventListener(
@@ -925,6 +773,10 @@ document.addEventListener("DOMContentLoaded", () => {
         closeProject
     );
 
+
+    /* =====================================================
+       FULLSCREEN CLOSE
+    ===================================================== */
 
     fullscreenClose.addEventListener(
         "click",
@@ -972,7 +824,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
             if (
-                projectView &&
                 !projectView.classList.contains(
                     "hidden"
                 )
@@ -987,7 +838,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* =====================================================
-       BACKGROUND CLICK
+       PROJECT VIEWER BACKGROUND CLICK
     ===================================================== */
 
     projectViewer.addEventListener(
@@ -1005,6 +856,10 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     );
 
+
+    /* =====================================================
+       FULLSCREEN BACKGROUND CLICK
+    ===================================================== */
 
     fullscreenViewer.addEventListener(
         "click",
