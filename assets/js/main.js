@@ -68,7 +68,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 ]
             },
 
-
             {
                 title: "Jerana",
 
@@ -88,7 +87,6 @@ document.addEventListener("DOMContentLoaded", () => {
                     "assets/images/documentation/jerana-07.jpg"
                 ]
             },
-
 
             {
                 title: "The Paps",
@@ -139,7 +137,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 ]
             },
 
-
             {
                 title: "Vishgazine",
 
@@ -161,7 +158,6 @@ document.addEventListener("DOMContentLoaded", () => {
                     "assets/images/portrait-commercial/vishgazine-09.jpg"
                 ]
             },
-
 
             {
                 title: "WKA × Simpati",
@@ -186,7 +182,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 ]
             },
 
-
             {
                 title: "Unreleased",
 
@@ -205,7 +200,6 @@ document.addEventListener("DOMContentLoaded", () => {
                     "assets/images/portrait-commercial/unreleased-06.jpg"
                 ]
             },
-
 
             {
                 title: "Back 2 Bloom",
@@ -260,7 +254,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 ]
             },
 
-
             {
                 title: "TITANS",
 
@@ -282,7 +275,6 @@ document.addEventListener("DOMContentLoaded", () => {
                     "assets/images/product/titans-09.jpg"
                 ]
             },
-
 
             {
                 title: "Nevertoolavish Custom Shoes",
@@ -337,21 +329,21 @@ document.addEventListener("DOMContentLoaded", () => {
                     "https://www.instagram.com/am.liyas/",
 
                 images: [
-                    "assets/images/art-direction/dalmention-01.jpg",
-                    "assets/images/art-direction/dalmention-02.jpg",
-                    "assets/images/art-direction/dalmention-03.jpg",
-                    "assets/images/art-direction/dalmention-04.jpg",
-                    "assets/images/art-direction/dalmention-05.jpg",
-                    "assets/images/art-direction/dalmention-06.jpg",
-                    "assets/images/art-direction/dalmention-07.jpg",
-                    "assets/images/art-direction/dalmention-08.jpg",
-                    "assets/images/art-direction/dalmention-09.jpg",
-                    "assets/images/art-direction/dalmention-10.jpg",
-                    "assets/images/art-direction/dalmention-11.jpg",
-                    "assets/images/art-direction/dalmention-12.jpg",
-                    "assets/images/art-direction/dalmention-13.jpg",
-                    "assets/images/art-direction/dalmention-14.jpg",
-                    "assets/images/art-direction/dalmention-15.jpg"
+                    "assets/images/art-direction/dalmention/dalmention-01.jpg",
+                    "assets/images/art-direction/dalmention/dalmention-02.jpg",
+                    "assets/images/art-direction/dalmention/dalmention-03.jpg",
+                    "assets/images/art-direction/dalmention/dalmention-04.jpg",
+                    "assets/images/art-direction/dalmention/dalmention-05.jpg",
+                    "assets/images/art-direction/dalmention/dalmention-06.jpg",
+                    "assets/images/art-direction/dalmention/dalmention-07.jpg",
+                    "assets/images/art-direction/dalmention/dalmention-08.jpg",
+                    "assets/images/art-direction/dalmention/dalmention-09.jpg",
+                    "assets/images/art-direction/dalmention/dalmention-10.jpg",
+                    "assets/images/art-direction/dalmention/dalmention-11.jpg",
+                    "assets/images/art-direction/dalmention/dalmention-12.jpg",
+                    "assets/images/art-direction/dalmention/dalmention-13.jpg",
+                    "assets/images/art-direction/dalmention/dalmention-14.jpg",
+                    "assets/images/art-direction/dalmention/dalmention-15.jpg"
                 ]
             }
 
@@ -377,14 +369,31 @@ document.addEventListener("DOMContentLoaded", () => {
                     "Syahrin",
 
                 images: [
-                    "assets/images/other/syahrin-01.jpg",
-                    "assets/images/other/syahrin-02.jpg",
-                    "assets/images/other/syahrin-03.jpg",
-                    "assets/images/other/syahrin-04.jpg",
-                    "assets/images/other/syahrin-05.jpg",
-                    "assets/images/other/syahrin-06.jpg",
-                    "assets/images/other/syahrin-07.jpg",
-                    "assets/images/other/syahrin-08.jpg"
+                    "assets/images/other/syahrin-graduation/syahrin-01.jpg",
+                    "assets/images/other/syahrin-graduation/syahrin-02.jpg",
+                    "assets/images/other/syahrin-graduation/syahrin-03.jpg",
+                    "assets/images/other/syahrin-graduation/syahrin-04.jpg",
+                    "assets/images/other/syahrin-graduation/syahrin-05.jpg",
+                    "assets/images/other/syahrin-graduation/syahrin-06.jpg",
+                    "assets/images/other/syahrin-graduation/syahrin-07.jpg",
+                    "assets/images/other/syahrin-graduation/syahrin-08.jpg"
+                ]
+            },
+
+            {
+                title: "Prewedding",
+
+                description:
+                    "Prewedding photography session.",
+
+                role:
+                    "PHOTOGRAPHY",
+
+                images: [
+                    "assets/images/other/prewedding/prewedding-01.jpg",
+                    "assets/images/other/prewedding/prewedding-02.jpg",
+                    "assets/images/other/prewedding/prewedding-03.jpg",
+                    "assets/images/other/prewedding/prewedding-04.jpg"
                 ]
             }
 
@@ -468,11 +477,48 @@ document.addEventListener("DOMContentLoaded", () => {
 
     let activeViewer = null;
     let activeFullscreen = null;
+    let activeCategory = null;
 
 
     /* =====================================================
-       CREATE CATEGORY CARD
-       Only creates cards that don't already exist in HTML.
+       HELPERS
+    ===================================================== */
+
+    function lockBody() {
+        document.body.style.overflow = "hidden";
+    }
+
+
+    function unlockBody() {
+        if (!activeViewer && !activeFullscreen) {
+            document.body.style.overflow = "";
+        }
+    }
+
+
+    function scrollToTop() {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+    }
+
+
+    function safeImages(images) {
+        if (!Array.isArray(images)) {
+            return [];
+        }
+
+        return images.filter(
+            image =>
+                typeof image === "string" &&
+                image.trim() !== ""
+        );
+    }
+
+
+    /* =====================================================
+       CATEGORY CARD
     ===================================================== */
 
     function createCategoryCard(category) {
@@ -481,25 +527,47 @@ document.addEventListener("DOMContentLoaded", () => {
             return null;
         }
 
-        if (
+        const existing =
             categoryGrid.querySelector(
                 `[data-category="${category}"]`
-            )
-        ) {
-            return categoryGrid.querySelector(
-                `[data-category="${category}"]`
             );
+
+        if (existing) {
+            return existing;
         }
 
         const projects =
             PROJECTS[category];
 
-        if (!projects || !projects.length) {
+        const info =
+            CATEGORY_INFO[category];
+
+        if (
+            !projects ||
+            !projects.length ||
+            !info
+        ) {
+            console.warn(
+                "Category tidak dapat dibuat:",
+                category
+            );
+
             return null;
         }
 
-        const info =
-            CATEGORY_INFO[category];
+        const firstImages =
+            safeImages(
+                projects[0].images
+            );
+
+        if (!firstImages.length) {
+            console.warn(
+                "Category tidak memiliki thumbnail:",
+                category
+            );
+
+            return null;
+        }
 
         const card =
             document.createElement("article");
@@ -520,15 +588,17 @@ document.addEventListener("DOMContentLoaded", () => {
             "button"
         );
 
-        const thumbnail =
-            projects[0].images[0];
+        card.setAttribute(
+            "aria-label",
+            `Open ${info.title} projects`
+        );
 
         card.innerHTML = `
 
             <div class="category-image">
 
                 <img
-                    src="${thumbnail}"
+                    src="${firstImages[0]}"
                     alt="${info.title}"
                     loading="lazy"
                 >
@@ -538,7 +608,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 <div class="image-heading">
 
                     <span>
-                        ${info.label}
+                        ${getCategoryNumber(category)}
                     </span>
 
                     <h3>
@@ -567,8 +637,22 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
+    function getCategoryNumber(category) {
+
+        const numbers = {
+            documentation: "01",
+            "portrait-commercial": "02",
+            product: "03",
+            "art-direction": "04",
+            other: "05"
+        };
+
+        return numbers[category] || "00";
+    }
+
+
     /* =====================================================
-       BIND CATEGORY CARD
+       BIND CATEGORY
     ===================================================== */
 
     function bindCategoryCard(card) {
@@ -586,16 +670,20 @@ document.addEventListener("DOMContentLoaded", () => {
         card.dataset.bound =
             "true";
 
+        const activate = () => {
+
+            const category =
+                card.dataset.category;
+
+            if (category) {
+                openCategory(category);
+            }
+
+        };
+
         card.addEventListener(
             "click",
-            () => {
-
-                const category =
-                    card.dataset.category;
-
-                openCategory(category);
-
-            }
+            activate
         );
 
         card.addEventListener(
@@ -609,10 +697,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
                     event.preventDefault();
 
-                    const category =
-                        card.dataset.category;
-
-                    openCategory(category);
+                    activate();
 
                 }
 
@@ -623,17 +708,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* =====================================================
-       EXISTING CATEGORY CARDS
+       INITIAL CATEGORY CARDS
     ===================================================== */
 
     document
         .querySelectorAll(".category-card")
         .forEach(bindCategoryCard);
-
-
-    /* =====================================================
-       ADD NEW CATEGORIES
-    ===================================================== */
 
     createCategoryCard("art-direction");
     createCategoryCard("other");
@@ -648,7 +728,10 @@ document.addEventListener("DOMContentLoaded", () => {
         const projects =
             PROJECTS[category];
 
-        if (!projects) {
+        if (
+            !projects ||
+            !projects.length
+        ) {
 
             console.error(
                 "Category tidak ditemukan:",
@@ -661,137 +744,168 @@ document.addEventListener("DOMContentLoaded", () => {
         const info =
             CATEGORY_INFO[category];
 
-        projectTitle.textContent =
-            info ? info.title : category.toUpperCase();
+        activeCategory =
+            category;
 
-        projectLabel.textContent =
-            info ? info.label : "SELECTED PROJECTS";
+        if (projectTitle) {
+
+            projectTitle.textContent =
+                info
+                    ? info.title
+                    : category.toUpperCase();
+
+        }
+
+        if (projectLabel) {
+
+            projectLabel.textContent =
+                info
+                    ? info.label
+                    : "SELECTED PROJECTS";
+
+        }
+
+        if (!projectGrid) {
+            return;
+        }
 
         projectGrid.innerHTML = "";
 
+        projects.forEach(
+            project => {
 
-        /* =================================================
-           CREATE PROJECT CARDS
-        ================================================= */
+                createProjectCard(
+                    project
+                );
 
-        projects.forEach(project => {
+            }
+        );
 
-            const card =
-                document.createElement("article");
+        if (workSection) {
+            workSection.style.display =
+                "none";
+        }
 
-            card.className =
-                "project-card";
+        if (projectView) {
 
-            card.setAttribute(
-                "tabindex",
-                "0"
+            projectView.classList.remove(
+                "hidden"
             );
 
-            card.setAttribute(
-                "role",
-                "button"
+            projectView.setAttribute(
+                "aria-hidden",
+                "false"
             );
 
-            const thumbnail =
-                project.images[0];
+        }
 
-            card.innerHTML = `
+        closeFullscreen();
 
-                <div class="project-card-image">
+        scrollToTop();
 
-                    <img
-                        src="${thumbnail}"
-                        alt="${project.title}"
-                        loading="lazy"
-                    >
+    }
 
-                    <div class="project-card-overlay">
 
-                        <span>
-                            ${project.images.length} IMAGES
-                        </span>
+    /* =====================================================
+       PROJECT CARD
+    ===================================================== */
 
-                    </div>
+    function createProjectCard(project) {
+
+        if (!projectGrid) {
+            return;
+        }
+
+        const images =
+            safeImages(project.images);
+
+        if (!images.length) {
+            return;
+        }
+
+        const card =
+            document.createElement("article");
+
+        card.className =
+            "project-card";
+
+        card.setAttribute(
+            "tabindex",
+            "0"
+        );
+
+        card.setAttribute(
+            "role",
+            "button"
+        );
+
+        card.setAttribute(
+            "aria-label",
+            `Open ${project.title}`
+        );
+
+        card.innerHTML = `
+
+            <div class="project-card-image">
+
+                <img
+                    src="${images[0]}"
+                    alt="${project.title}"
+                    loading="lazy"
+                >
+
+                <div class="project-card-overlay">
+
+                    <span>
+                        ${images.length} IMAGES
+                    </span>
 
                 </div>
 
-                <div class="project-card-info">
+            </div>
 
-                    <h3>
-                        ${project.title}
-                    </h3>
+            <div class="project-card-info">
 
-                    <p>
-                        ${project.description}
-                    </p>
+                <h3>
+                    ${project.title}
+                </h3>
 
-                </div>
+                <p>
+                    ${project.description || ""}
+                </p>
 
-            `;
+            </div>
 
+        `;
 
-            /* =================================================
-               CLICK PROJECT
-            ================================================= */
+        const activate = () => {
+            openProject(project);
+        };
 
-            card.addEventListener(
-                "click",
-                () => {
-
-                    openProject(project);
-
-                }
-            );
-
-
-            /* =================================================
-               KEYBOARD PROJECT
-            ================================================= */
-
-            card.addEventListener(
-                "keydown",
-                event => {
-
-                    if (
-                        event.key === "Enter" ||
-                        event.key === " "
-                    ) {
-
-                        event.preventDefault();
-
-                        openProject(project);
-
-                    }
-
-                }
-            );
-
-
-            projectGrid.appendChild(card);
-
-        });
-
-
-        /* =================================================
-           CHANGE VIEW
-        ================================================= */
-
-        workSection.style.display =
-            "none";
-
-        projectView.classList.remove(
-            "hidden"
+        card.addEventListener(
+            "click",
+            activate
         );
 
-        projectView.setAttribute(
-            "aria-hidden",
-            "false"
+        card.addEventListener(
+            "keydown",
+            event => {
+
+                if (
+                    event.key === "Enter" ||
+                    event.key === " "
+                ) {
+
+                    event.preventDefault();
+
+                    activate();
+
+                }
+
+            }
         );
 
-        window.scrollTo({
-            top: 0,
-            behavior: "smooth"
-        });
+        projectGrid.appendChild(card);
 
     }
 
@@ -802,13 +916,41 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function openProject(project) {
 
+        if (!project) {
+            return;
+        }
+
+        closeFullscreen();
         closeProject();
+
+        const images =
+            safeImages(project.images);
+
+        if (!images.length) {
+
+            console.warn(
+                "Project tidak memiliki gambar:",
+                project.title
+            );
+
+            return;
+        }
 
         const viewer =
             document.createElement("div");
 
         viewer.className =
             "project-viewer";
+
+        viewer.setAttribute(
+            "role",
+            "dialog"
+        );
+
+        viewer.setAttribute(
+            "aria-modal",
+            "true"
+        );
 
         viewer.innerHTML = `
 
@@ -844,7 +986,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
         /* =================================================
-           PROJECT META
+           META
         ================================================= */
 
         const meta =
@@ -889,6 +1031,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 <p>
                     <span>PHOTOGRAPHY</span>
+
                     ${
                         project.instagram
                             ? `
@@ -902,6 +1045,7 @@ document.addEventListener("DOMContentLoaded", () => {
                             `
                             : project.photographer
                     }
+
                 </p>
 
             `;
@@ -922,12 +1066,14 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
 
-        meta.innerHTML =
-            metaHTML;
+        if (meta) {
+            meta.innerHTML =
+                metaHTML;
+        }
 
 
         /* =================================================
-           VIEWER GRID
+           IMAGE GRID
         ================================================= */
 
         const viewerGrid =
@@ -935,8 +1081,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 ".viewer-grid"
             );
 
-
-        project.images.forEach(
+        images.forEach(
             (image, index) => {
 
                 const imageCard =
@@ -955,7 +1100,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 `;
 
-
                 imageCard.addEventListener(
                     "click",
                     event => {
@@ -971,7 +1115,6 @@ document.addEventListener("DOMContentLoaded", () => {
                     }
                 );
 
-
                 viewerGrid.appendChild(
                     imageCard
                 );
@@ -984,50 +1127,60 @@ document.addEventListener("DOMContentLoaded", () => {
             viewer
         );
 
-        document.body.style.overflow =
-            "hidden";
-
         activeViewer =
             viewer;
+
+        lockBody();
 
 
         /* =================================================
            CLOSE BUTTON
         ================================================= */
 
-        viewer
-            .querySelector(".viewer-close")
-            .addEventListener(
+        const closeButton =
+            viewer.querySelector(
+                ".viewer-close"
+            );
+
+        if (closeButton) {
+
+            closeButton.addEventListener(
                 "click",
                 closeProject
             );
 
+            setTimeout(
+                () => closeButton.focus(),
+                50
+            );
+
+        }
+
 
         /* =================================================
-           ESCAPE KEY
+           ESCAPE
         ================================================= */
 
         viewer._escapeHandler =
             event => {
 
                 if (
-                    event.key === "Escape"
+                    event.key !== "Escape"
                 ) {
+                    return;
+                }
 
-                    if (activeFullscreen) {
+                if (activeFullscreen) {
 
-                        closeFullscreen();
+                    closeFullscreen();
 
-                        return;
-
-                    }
+                } else {
 
                     closeProject();
 
                 }
 
             };
-
 
         document.addEventListener(
             "keydown",
@@ -1063,20 +1216,23 @@ document.addEventListener("DOMContentLoaded", () => {
         activeViewer =
             null;
 
-        document.body.style.overflow =
-            "";
+        unlockBody();
 
     }
 
 
     /* =====================================================
-       FULLSCREEN IMAGE
+       FULLSCREEN
     ===================================================== */
 
     function openFullscreen(
         image,
         title
     ) {
+
+        if (!image) {
+            return;
+        }
 
         closeFullscreen();
 
@@ -1085,6 +1241,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
         fullscreen.className =
             "fullscreen-viewer";
+
+        fullscreen.setAttribute(
+            "role",
+            "dialog"
+        );
+
+        fullscreen.setAttribute(
+            "aria-modal",
+            "true"
+        );
 
         fullscreen.innerHTML = `
 
@@ -1097,7 +1263,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             <img
                 src="${image}"
-                alt="${title}"
+                alt="${title || "Project image"}"
             >
 
         `;
@@ -1109,34 +1275,29 @@ document.addEventListener("DOMContentLoaded", () => {
         activeFullscreen =
             fullscreen;
 
-        document.body.style.overflow =
-            "hidden";
+        lockBody();
 
-
-        /* =================================================
-           CLOSE BUTTON
-        ================================================= */
 
         const closeButton =
             fullscreen.querySelector(
                 "button"
             );
 
-        closeButton.addEventListener(
-            "click",
-            event => {
+        if (closeButton) {
 
-                event.stopPropagation();
+            closeButton.addEventListener(
+                "click",
+                event => {
 
-                closeFullscreen();
+                    event.stopPropagation();
 
-            }
-        );
+                    closeFullscreen();
 
+                }
+            );
 
-        /* =================================================
-           CLICK BACKDROP
-        ================================================= */
+        }
+
 
         fullscreen.addEventListener(
             "click",
@@ -1153,10 +1314,6 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         );
 
-
-        /* =================================================
-           ESCAPE KEY
-        ================================================= */
 
         fullscreen._escapeHandler =
             event => {
@@ -1205,17 +1362,10 @@ document.addEventListener("DOMContentLoaded", () => {
         activeFullscreen =
             null;
 
-
         if (activeViewer) {
-
-            document.body.style.overflow =
-                "hidden";
-
+            lockBody();
         } else {
-
-            document.body.style.overflow =
-                "";
-
+            unlockBody();
         }
 
     }
@@ -1225,72 +1375,194 @@ document.addEventListener("DOMContentLoaded", () => {
        BACK TO CATEGORIES
     ===================================================== */
 
-    backButton.addEventListener(
-        "click",
-        () => {
+    if (backButton) {
 
-            projectView.classList.add(
-                "hidden"
-            );
+        backButton.addEventListener(
+            "click",
+            () => {
 
-            projectView.setAttribute(
-                "aria-hidden",
-                "true"
-            );
+                closeFullscreen();
+                closeProject();
 
-            workSection.style.display =
-                "";
+                if (projectView) {
 
-            window.scrollTo({
-                top: workSection.offsetTop,
-                behavior: "smooth"
-            });
+                    projectView.classList.add(
+                        "hidden"
+                    );
 
-        }
-    );
+                    projectView.setAttribute(
+                        "aria-hidden",
+                        "true"
+                    );
+
+                }
+
+                if (workSection) {
+
+                    workSection.style.display =
+                        "";
+
+                }
+
+                activeCategory =
+                    null;
+
+                unlockBody();
+
+                if (workSection) {
+
+                    window.scrollTo({
+                        top: workSection.offsetTop,
+                        behavior: "smooth"
+                    });
+
+                }
+
+            }
+        );
+
+    }
 
 
     /* =====================================================
-       NAVBAR HOME
+       HOME
     ===================================================== */
 
-    brand.addEventListener(
-        "click",
-        event => {
+    if (brand) {
 
-            event.preventDefault();
+        brand.addEventListener(
+            "click",
+            event => {
 
-            closeFullscreen();
-            closeProject();
+                event.preventDefault();
 
-            projectView.classList.add(
-                "hidden"
-            );
+                closeFullscreen();
+                closeProject();
 
-            projectView.setAttribute(
-                "aria-hidden",
-                "true"
-            );
+                if (projectView) {
 
-            workSection.style.display =
-                "";
+                    projectView.classList.add(
+                        "hidden"
+                    );
 
-            window.scrollTo({
-                top: 0,
-                behavior: "smooth"
-            });
+                    projectView.setAttribute(
+                        "aria-hidden",
+                        "true"
+                    );
 
-        }
-    );
+                }
+
+                if (workSection) {
+
+                    workSection.style.display =
+                        "";
+
+                }
+
+                activeCategory =
+                    null;
+
+                unlockBody();
+
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth"
+                });
+
+            }
+        );
+
+    }
 
 
     /* =====================================================
-       CLIENT WORK SECTION
+       NAVIGATION
+    ===================================================== */
+
+    document
+        .querySelectorAll(
+            '.navbar nav a[href^="#"]'
+        )
+        .forEach(
+            link => {
+
+                link.addEventListener(
+                    "click",
+                    event => {
+
+                        const targetID =
+                            link.getAttribute(
+                                "href"
+                            );
+
+                        if (
+                            !targetID ||
+                            targetID === "#"
+                        ) {
+                            return;
+                        }
+
+                        const target =
+                            document.querySelector(
+                                targetID
+                            );
+
+                        if (!target) {
+                            return;
+                        }
+
+                        event.preventDefault();
+
+                        closeFullscreen();
+                        closeProject();
+
+                        if (projectView) {
+
+                            projectView.classList.add(
+                                "hidden"
+                            );
+
+                            projectView.setAttribute(
+                                "aria-hidden",
+                                "true"
+                            );
+
+                        }
+
+                        if (workSection) {
+
+                            workSection.style.display =
+                                "";
+
+                        }
+
+                        activeCategory =
+                            null;
+
+                        unlockBody();
+
+                        target.scrollIntoView({
+                            behavior: "smooth"
+                        });
+
+                    }
+                );
+
+            }
+        );
+
+
+    /* =====================================================
+       CLIENT WORK
     ===================================================== */
 
     function createClientWorkSection() {
 
         if (!workSection) {
+            return;
+        }
+
+        if (!CLIENT_WORK.length) {
             return;
         }
 
@@ -1331,50 +1603,60 @@ document.addEventListener("DOMContentLoaded", () => {
                 ".client-work-grid"
             );
 
-        CLIENT_WORK.forEach(work => {
+        CLIENT_WORK.forEach(
+            work => {
 
-            const card =
-                document.createElement("article");
+                if (
+                    !work ||
+                    !work.title ||
+                    !work.link
+                ) {
+                    return;
+                }
 
-            card.className =
-                "client-work-card";
+                const card =
+                    document.createElement("article");
 
-            card.innerHTML = `
+                card.className =
+                    "client-work-card";
 
-                <div class="client-work-card-content">
+                card.innerHTML = `
 
-                    <p class="client-work-client">
-                        ${work.client}
-                    </p>
+                    <div class="client-work-card-content">
 
-                    <h3>
-                        ${work.title}
-                    </h3>
+                        <p class="client-work-client">
+                            ${work.client || ""}
+                        </p>
 
-                    <p class="client-work-role">
-                        ${work.role}
-                    </p>
+                        <h3>
+                            ${work.title}
+                        </h3>
 
-                    <p class="client-work-description">
-                        ${work.description}
-                    </p>
+                        <p class="client-work-role">
+                            ${work.role || ""}
+                        </p>
 
-                    <a
-                        class="client-work-link"
-                        href="${work.link}"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        VIEW CLIENT POST ↗
-                    </a>
+                        <p class="client-work-description">
+                            ${work.description || ""}
+                        </p>
 
-                </div>
+                        <a
+                            class="client-work-link"
+                            href="${work.link}"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            VIEW CLIENT POST ↗
+                        </a>
 
-            `;
+                    </div>
 
-            grid.appendChild(card);
+                `;
 
-        });
+                grid.appendChild(card);
+
+            }
+        );
 
         workSection.appendChild(
             section
