@@ -9,6 +9,11 @@
         content="width=device-width, initial-scale=1.0"
     >
 
+    <meta
+        name="description"
+        content="Waterboys photography and visual portfolio."
+    >
+
     <title>Waterboys — Photography Portfolio</title>
 
     <link
@@ -20,17 +25,17 @@
 <body>
 
     <!-- =========================================
-         ABSTRACT BACKGROUND
+         BACKGROUND
     ========================================== -->
 
-    <div class="background">
+    <div class="background" aria-hidden="true">
         <div class="blob blob-1"></div>
         <div class="blob blob-2"></div>
         <div class="blob blob-3"></div>
         <div class="blob blob-4"></div>
     </div>
 
-    <div class="glass"></div>
+    <div class="glass" aria-hidden="true"></div>
 
 
     <!-- =========================================
@@ -50,10 +55,20 @@
             >
         </a>
 
-        <nav>
-            <a href="#work">WORK</a>
-            <a href="#about">ABOUT</a>
-            <a href="#contact">CONTACT</a>
+        <nav aria-label="Main navigation">
+
+            <a href="#work">
+                WORK
+            </a>
+
+            <a href="#about">
+                ABOUT
+            </a>
+
+            <a href="#contact">
+                CONTACT
+            </a>
+
         </nav>
 
     </header>
@@ -104,7 +119,7 @@
 
 
         <!-- =====================================
-             WORK / CATEGORIES
+             WORK
         ====================================== -->
 
         <section
@@ -124,7 +139,6 @@
 
             </div>
 
-
             <div class="category-grid">
 
                 <!-- DOCUMENTATION -->
@@ -134,6 +148,7 @@
                     data-category="documentation"
                     tabindex="0"
                     role="button"
+                    aria-label="Open Documentation projects"
                 >
 
                     <div class="category-image">
@@ -148,7 +163,9 @@
 
                         <div class="image-heading">
 
-                            <span>01</span>
+                            <span>
+                                01
+                            </span>
 
                             <h3>
                                 DOCUMENTATION
@@ -170,13 +187,14 @@
                 </article>
 
 
-                <!-- PORTRAIT COMMERCIAL -->
+                <!-- PORTRAIT / COMMERCIAL -->
 
                 <article
                     class="category-card"
                     data-category="portrait-commercial"
                     tabindex="0"
                     role="button"
+                    aria-label="Open Portrait Commercial projects"
                 >
 
                     <div class="category-image">
@@ -191,10 +209,12 @@
 
                         <div class="image-heading">
 
-                            <span>02</span>
+                            <span>
+                                02
+                            </span>
 
                             <h3>
-                                PORTRAIT COMMERCIAL
+                                PORTRAIT / COMMERCIAL
                             </h3>
 
                         </div>
@@ -220,6 +240,7 @@
                     data-category="product"
                     tabindex="0"
                     role="button"
+                    aria-label="Open Product projects"
                 >
 
                     <div class="category-image">
@@ -234,7 +255,9 @@
 
                         <div class="image-heading">
 
-                            <span>03</span>
+                            <span>
+                                03
+                            </span>
 
                             <h3>
                                 PRODUCT
@@ -261,7 +284,7 @@
 
 
         <!-- =====================================
-             PROJECT VIEW
+             PROJECT CATEGORY VIEW
         ====================================== -->
 
         <section
@@ -315,6 +338,10 @@
                 <p class="eyebrow">
                     CLIENTS
                 </p>
+
+                <h2>
+                    SELECTED CLIENTS
+                </h2>
 
             </div>
 
@@ -442,7 +469,6 @@
 
             </div>
 
-
             <div class="about-content">
 
                 <div class="about-photo">
@@ -454,7 +480,6 @@
                     >
 
                 </div>
-
 
                 <div class="about-text">
 
@@ -518,7 +543,7 @@
 
             <div class="contact-links">
 
-                <a href="mailto:your@email.com">
+                <a href="mailto:waterboys.work@gmail.com">
                     EMAIL
                 </a>
 
