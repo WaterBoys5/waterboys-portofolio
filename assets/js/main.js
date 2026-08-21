@@ -1,245 +1,236 @@
-/* =====================================================
-   PROJECT DATA
-===================================================== */
-
-const CATEGORIES = {
-
-
-    /* =====================================================
-       DOCUMENTATION
-    ===================================================== */
-
-    documentation: {
-
-        title: "DOCUMENTATION",
-
-        projects: [
-
-            {
-                title: "Stereo Wall",
-                year: "2026",
-
-                cover:
-                    "assets/images/documentation/stereo-wall-01.jpg",
-
-                images: [
-                    "assets/images/documentation/stereo-wall-01.jpg",
-                    "assets/images/documentation/stereo-wall-02.jpg",
-                    "assets/images/documentation/stereo-wall-03.jpg",
-                    "assets/images/documentation/stereo-wall-04.jpg",
-                    "assets/images/documentation/stereo-wall-05.jpg",
-                    "assets/images/documentation/stereo-wall-06.jpg",
-                    "assets/images/documentation/stereo-wall-07.jpg",
-                    "assets/images/documentation/stereo-wall-08.jpg",
-                    "assets/images/documentation/stereo-wall-09.jpg",
-                    "assets/images/documentation/stereo-wall-10.jpg",
-                    "assets/images/documentation/stereo-wall-11.jpg",
-                    "assets/images/documentation/stereo-wall-12.jpg",
-                    "assets/images/documentation/stereo-wall-13.jpg",
-                    "assets/images/documentation/stereo-wall-14.jpg"
-                ]
-            },
-
-            {
-                title: "The Paps",
-                year: "2026",
-
-                cover:
-                    "assets/images/documentation/thepaps-01.jpg",
-
-                images: [
-                    "assets/images/documentation/thepaps-01.jpg",
-                    "assets/images/documentation/thepaps-02.jpg",
-                    "assets/images/documentation/thepaps-03.jpg",
-                    "assets/images/documentation/thepaps-04.jpg",
-                    "assets/images/documentation/thepaps-05.jpg",
-                    "assets/images/documentation/thepaps-06.jpg",
-                    "assets/images/documentation/thepaps-07.jpg",
-                    "assets/images/documentation/thepaps-08.jpg",
-                    "assets/images/documentation/thepaps-09.jpg"
-                ]
-            }
-
-        ]
-
-    },
-
-
-    /* =====================================================
-       PORTRAIT COMMERCIAL
-    ===================================================== */
-
-    "portrait-commercial": {
-
-        title: "PORTRAIT COMMERCIAL",
-
-        projects: [
-
-            {
-                title: "Peron Long Sleeve",
-                year: "2026",
-
-                cover:
-                    "assets/images/portrait-commercial/peron-long-sleeve-01.jpg",
-
-                images: [
-                    "assets/images/portrait-commercial/peron-long-sleeve-01.jpg",
-                    "assets/images/portrait-commercial/peron-long-sleeve-02.jpg",
-                    "assets/images/portrait-commercial/peron-long-sleeve-03.jpg",
-                    "assets/images/portrait-commercial/peron-long-sleeve-04.jpg",
-                    "assets/images/portrait-commercial/peron-long-sleeve-05.jpg"
-                ]
-            }
-
-        ]
-
-    },
-
-
-    /* =====================================================
-       PRODUCT
-    ===================================================== */
-
-    product: {
-
-        title: "PRODUCT",
-
-        projects: [
-
-            {
-                title: "LV Wallet",
-                year: "2026",
-
-                cover:
-                    "assets/images/product/lv-wallet-01.jpg",
-
-                images: [
-                    "assets/images/product/lv-wallet-01.jpg",
-                    "assets/images/product/lv-wallet-02.jpg",
-                    "assets/images/product/lv-wallet-03.jpg",
-                    "assets/images/product/lv-wallet-04.jpg"
-                ]
-            }
-
-        ]
-
-    },
-
-
-    /* =====================================================
-       OTHERS
-    ===================================================== */
-
-    others: {
-
-        title: "OTHERS",
-
-        projects: [
-
-            /* ---------------------------------------------
-               SYAHRIN GRADUATION
-            --------------------------------------------- */
-
-            {
-                title: "Syahrin Graduation",
-                year: "2026",
-
-                cover:
-                    "assets/images/others/syahrin-graduation/syahrin-01.jpg",
-
-                images: [
-                    "assets/images/others/syahrin-graduation/syahrin-01.jpg",
-                    "assets/images/others/syahrin-graduation/syahrin-02.jpg",
-                    "assets/images/others/syahrin-graduation/syahrin-03.jpg",
-                    "assets/images/others/syahrin-graduation/syahrin-04.jpg",
-                    "assets/images/others/syahrin-graduation/syahrin-05.jpg",
-                    "assets/images/others/syahrin-graduation/syahrin-06.jpg",
-                    "assets/images/others/syahrin-graduation/syahrin-07.jpg",
-                    "assets/images/others/syahrin-graduation/syahrin-08.jpg"
-                ]
-            },
-
-
-            /* ---------------------------------------------
-               PREWEDDING HILDA & FIKAR
-            --------------------------------------------- */
-
-            {
-                title: "Prewedding Hilda & Fikar",
-                year: "2026",
-
-                cover:
-                    "assets/images/others/Prewedding-hilda-and-fikar/prewed-fikar-01.jpg",
-
-                images: [
-                    "assets/images/others/Prewedding-hilda-and-fikar/prewed-fikar-01.jpg",
-                    "assets/images/others/Prewedding-hilda-and-fikar/prewed-fikar-02.jpg",
-                    "assets/images/others/Prewedding-hilda-and-fikar/prewed-fikar-03.jpg",
-                    "assets/images/others/Prewedding-hilda-and-fikar/prewed-fikar-04.jpg",
-                    "assets/images/others/Prewedding-hilda-and-fikar/prewed-fikar-05.jpg",
-                    "assets/images/others/Prewedding-hilda-and-fikar/prewed-fikar-06.jpg",
-                    "assets/images/others/Prewedding-hilda-and-fikar/prewed-fikar-07.jpg",
-                    "assets/images/others/Prewedding-hilda-and-fikar/prewed-fikar-08.jpg",
-                    "assets/images/others/Prewedding-hilda-and-fikar/prewed-fikar-09.jpg",
-                    "assets/images/others/Prewedding-hilda-and-fikar/prewed-fikar-10.jpg",
-                    "assets/images/others/Prewedding-hilda-and-fikar/prewed-fikar-11.jpg",
-                    "assets/images/others/Prewedding-hilda-and-fikar/prewed-fikar-12.jpg"
-                ]
-            }
-
-        ]
-
-    },
-
-
-    /* =====================================================
-       ART DIRECTION
-    ===================================================== */
-
-    "art-direction": {
-
-        title: "ART DIRECTION",
-
-        projects: [
-
-            {
-                title: "Dalmention",
-                year: "2026",
-
-                cover:
-                    "assets/images/art-direction/dalmention/dalmention-1.jpg",
-
-                images: [
-                    "assets/images/art-direction/dalmention/dalmention-1.jpg",
-                    "assets/images/art-direction/dalmention/dalmention-2.jpg",
-                    "assets/images/art-direction/dalmention/dalmention-3.jpg",
-                    "assets/images/art-direction/dalmention/dalmention-4.jpg",
-                    "assets/images/art-direction/dalmention/dalmention-5.jpg",
-                    "assets/images/art-direction/dalmention/dalmention-6.jpg",
-                    "assets/images/art-direction/dalmention/dalmention-7.jpg",
-                    "assets/images/art-direction/dalmention/dalmention-8.jpg",
-                    "assets/images/art-direction/dalmention/dalmention-9.jpg",
-                    "assets/images/art-direction/dalmention/dalmention-10.jpg",
-                    "assets/images/art-direction/dalmention/dalmention-11.jpg",
-                    "assets/images/art-direction/dalmention/dalmention-12.jpg",
-                    "assets/images/art-direction/dalmention/dalmention-13.jpg",
-                    "assets/images/art-direction/dalmention/dalmention-14.jpg",
-                    "assets/images/art-direction/dalmention/dalmention-15.jpg"
-                ]
-            }
-
-        ]
-
-    }
-
-};
-
-
-/* =====================================================
-   MAIN
-===================================================== */
-
 document.addEventListener("DOMContentLoaded", () => {
+
+    /* =====================================================
+       PROJECT DATA
+    ===================================================== */
+
+    const CATEGORIES = {
+
+        /* =================================================
+           DOCUMENTATION
+        ================================================= */
+
+        documentation: {
+
+            title: "DOCUMENTATION",
+
+            projects: [
+
+                {
+                    title: "Stereo Wall",
+                    year: "2026",
+
+                    cover:
+                        "assets/images/documentation/stereo-wall-01.jpg",
+
+                    images: [
+                        "assets/images/documentation/stereo-wall-01.jpg"
+                    ]
+                }
+
+            ]
+        },
+
+
+        /* =================================================
+           PORTRAIT COMMERCIAL
+        ================================================= */
+
+        "portrait-commercial": {
+
+            title: "PORTRAIT COMMERCIAL",
+
+            projects: [
+
+                {
+                    title: "Peron Long Sleeve T-Shirt",
+                    year: "2026",
+
+                    cover:
+                        "assets/images/portrait-commercial/peron-long-sleeve-01.jpg",
+
+                    images: [
+                        "assets/images/portrait-commercial/peron-long-sleeve-01.jpg",
+                        "assets/images/portrait-commercial/peron-long-sleeve-02.jpg",
+                        "assets/images/portrait-commercial/peron-long-sleeve-03.jpg",
+                        "assets/images/portrait-commercial/peron-long-sleeve-04.jpg",
+                        "assets/images/portrait-commercial/peron-long-sleeve-05.jpg"
+                    ]
+                }
+
+            ]
+        },
+
+
+        /* =================================================
+           PRODUCT
+        ================================================= */
+
+        product: {
+
+            title: "PRODUCT",
+
+            projects: [
+
+                {
+                    title: "LV Wallet",
+                    year: "2026",
+
+                    cover:
+                        "assets/images/product/lv-wallet-01.jpg",
+
+                    images: [
+                        "assets/images/product/lv-wallet-01.jpg"
+                    ]
+                }
+
+            ]
+        },
+
+
+        /* =================================================
+           OTHERS
+        ================================================= */
+
+        others: {
+
+            title: "OTHERS",
+
+            projects: [
+
+                /* -----------------------------------------
+                   SYAHRIN GRADUATION
+                ----------------------------------------- */
+
+                {
+                    title: "Syahrin Graduation",
+                    year: "2026",
+
+                    cover:
+                        "assets/images/others/syahrin-graduation/syahrin-01.jpg",
+
+                    images: [
+
+                        "assets/images/others/syahrin-graduation/syahrin-01.jpg",
+
+                        "assets/images/others/syahrin-graduation/syahrin-02.jpg",
+
+                        "assets/images/others/syahrin-graduation/syahrin-03.jpg",
+
+                        "assets/images/others/syahrin-graduation/syahrin-04.jpg",
+
+                        "assets/images/others/syahrin-graduation/syahrin-05.jpg",
+
+                        "assets/images/others/syahrin-graduation/syahrin-06.jpg",
+
+                        "assets/images/others/syahrin-graduation/syahrin-07.jpg",
+
+                        "assets/images/others/syahrin-graduation/syahrin-08.jpg"
+
+                    ]
+                },
+
+
+                /* -----------------------------------------
+                   HILDA & FIKAR PRE-WEDDING
+                ----------------------------------------- */
+
+                {
+                    title: "Prewedding Hilda & Fikar",
+                    year: "2026",
+
+                    cover:
+                        "assets/images/others/prewedding-hilda-and-fikar/prewed-fikar-01.jpg",
+
+                    images: [
+
+                        "assets/images/others/prewedding-hilda-and-fikar/prewed-fikar-01.jpg",
+
+                        "assets/images/others/prewedding-hilda-and-fikar/prewed-fikar-02.jpg",
+
+                        "assets/images/others/prewedding-hilda-and-fikar/prewed-fikar-03.jpg",
+
+                        "assets/images/others/prewedding-hilda-and-fikar/prewed-fikar-04.jpg",
+
+                        "assets/images/others/prewedding-hilda-and-fikar/prewed-fikar-05.jpg",
+
+                        "assets/images/others/prewedding-hilda-and-fikar/prewed-fikar-06.jpg",
+
+                        "assets/images/others/prewedding-hilda-and-fikar/prewed-fikar-07.jpg",
+
+                        "assets/images/others/prewedding-hilda-and-fikar/prewed-fikar-08.jpg",
+
+                        "assets/images/others/prewedding-hilda-and-fikar/prewed-fikar-09.jpg",
+
+                        "assets/images/others/prewedding-hilda-and-fikar/prewed-fikar-10.jpg",
+
+                        "assets/images/others/prewedding-hilda-and-fikar/prewed-fikar-11.jpg",
+
+                        "assets/images/others/prewedding-hilda-and-fikar/prewed-fikar-12.jpg"
+
+                    ]
+                }
+
+            ]
+        },
+
+
+        /* =================================================
+           ART DIRECTION
+        ================================================= */
+
+        "art-direction": {
+
+            title: "ART DIRECTION",
+
+            projects: [
+
+                {
+                    title: "Dalmention",
+                    year: "2026",
+
+                    cover:
+                        "assets/images/art-direction/dalmention/dalmention-01.jpg",
+
+                    images: [
+
+                        "assets/images/art-direction/dalmention/dalmention-01.jpg",
+
+                        "assets/images/art-direction/dalmention/dalmention-02.jpg",
+
+                        "assets/images/art-direction/dalmention/dalmention-03.jpg",
+
+                        "assets/images/art-direction/dalmention/dalmention-04.jpg",
+
+                        "assets/images/art-direction/dalmention/dalmention-05.jpg",
+
+                        "assets/images/art-direction/dalmention/dalmention-06.jpg",
+
+                        "assets/images/art-direction/dalmention/dalmention-07.jpg",
+
+                        "assets/images/art-direction/dalmention/dalmention-08.jpg",
+
+                        "assets/images/art-direction/dalmention/dalmention-09.jpg",
+
+                        "assets/images/art-direction/dalmention/dalmention-10.jpg",
+
+                        "assets/images/art-direction/dalmention/dalmention-11.jpg",
+
+                        "assets/images/art-direction/dalmention/dalmention-12.jpg",
+
+                        "assets/images/art-direction/dalmention/dalmention-13.jpg",
+
+                        "assets/images/art-direction/dalmention/dalmention-14.jpg",
+
+                        "assets/images/art-direction/dalmention/dalmention-15.jpg"
+
+                    ]
+                }
+
+            ]
+        }
+
+    };
 
 
     /* =====================================================
@@ -269,7 +260,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* =====================================================
-       CREATE PROJECT VIEWER
+       PROJECT VIEWER
     ===================================================== */
 
     const projectViewer =
@@ -393,20 +384,6 @@ document.addEventListener("DOMContentLoaded", () => {
         projectGrid.innerHTML = "";
 
 
-        if (
-            !Array.isArray(category.projects) ||
-            category.projects.length === 0
-        ) {
-
-            console.warn(
-                "Category tidak memiliki project:",
-                categoryKey
-            );
-
-            return;
-        }
-
-
         category.projects.forEach(
             (project) => {
 
@@ -504,13 +481,9 @@ document.addEventListener("DOMContentLoaded", () => {
         );
 
 
-        workSection.classList.add(
-            "hidden"
-        );
+        workSection.classList.add("hidden");
 
-        projectView.classList.remove(
-            "hidden"
-        );
+        projectView.classList.remove("hidden");
 
         projectView.setAttribute(
             "aria-hidden",
@@ -520,7 +493,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         window.scrollTo({
             top: 0,
-            behavior: "smooth"
+            behavior: "instant"
         });
 
     }
@@ -532,25 +505,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function closeCategory() {
 
-        projectView.classList.add(
-            "hidden"
-        );
+        projectView.classList.add("hidden");
 
         projectView.setAttribute(
             "aria-hidden",
             "true"
         );
 
-        workSection.classList.remove(
-            "hidden"
-        );
+        workSection.classList.remove("hidden");
 
 
         window.scrollTo({
-            top:
-                workSection.offsetTop - 80,
-
-            behavior: "smooth"
+            top: workSection.offsetTop - 80,
+            behavior: "instant"
         });
 
     }
@@ -570,6 +537,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         viewerTitle.textContent =
             project.title;
+
 
         viewerGrid.innerHTML = "";
 
@@ -658,7 +626,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* =====================================================
-       FULLSCREEN IMAGE
+       FULLSCREEN
     ===================================================== */
 
     function openFullscreen(
@@ -672,6 +640,7 @@ document.addEventListener("DOMContentLoaded", () => {
         fullscreenImage.alt =
             title;
 
+
         fullscreenViewer.classList.remove(
             "hidden"
         );
@@ -682,10 +651,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     }
 
-
-    /* =====================================================
-       CLOSE FULLSCREEN
-    ===================================================== */
 
     function closeFullscreen() {
 
@@ -751,7 +716,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* =====================================================
-       BACK BUTTON
+       BACK
     ===================================================== */
 
     if (backButton) {
@@ -765,7 +730,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* =====================================================
-       PROJECT VIEWER CLOSE
+       VIEWER CLOSE
     ===================================================== */
 
     viewerClose.addEventListener(
@@ -774,10 +739,6 @@ document.addEventListener("DOMContentLoaded", () => {
     );
 
 
-    /* =====================================================
-       FULLSCREEN CLOSE
-    ===================================================== */
-
     fullscreenClose.addEventListener(
         "click",
         closeFullscreen
@@ -785,16 +746,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* =====================================================
-       ESC KEY
+       ESC
     ===================================================== */
 
     document.addEventListener(
         "keydown",
         (event) => {
 
-            if (
-                event.key !== "Escape"
-            ) {
+            if (event.key !== "Escape") {
                 return;
             }
 
@@ -808,6 +767,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 closeFullscreen();
 
                 return;
+
             }
 
 
@@ -820,6 +780,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 closeProject();
 
                 return;
+
             }
 
 
@@ -838,7 +799,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* =====================================================
-       PROJECT VIEWER BACKGROUND CLICK
+       BACKGROUND CLICK
     ===================================================== */
 
     projectViewer.addEventListener(
@@ -857,10 +818,6 @@ document.addEventListener("DOMContentLoaded", () => {
     );
 
 
-    /* =====================================================
-       FULLSCREEN BACKGROUND CLICK
-    ===================================================== */
-
     fullscreenViewer.addEventListener(
         "click",
         (event) => {
@@ -874,6 +831,20 @@ document.addEventListener("DOMContentLoaded", () => {
             }
 
         }
+    );
+
+
+    /* =====================================================
+       DEBUG
+    ===================================================== */
+
+    console.log(
+        "Waterboys portfolio loaded."
+    );
+
+    console.log(
+        "Categories:",
+        Object.keys(CATEGORIES)
     );
 
 });
