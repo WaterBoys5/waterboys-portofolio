@@ -65,7 +65,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 ]
             },
 
-
             {
                 title: "Jerana",
 
@@ -82,7 +81,6 @@ document.addEventListener("DOMContentLoaded", () => {
                     "assets/images/documentation/jerana-07.jpg"
                 ]
             },
-
 
             {
                 title: "The Paps",
@@ -127,7 +125,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 ]
             },
 
-
             {
                 title: "Vishgazine",
 
@@ -146,7 +143,6 @@ document.addEventListener("DOMContentLoaded", () => {
                     "assets/images/portrait-commercial/vishgazine-09.jpg"
                 ]
             },
-
 
             {
                 title: "WKA × Simpati",
@@ -168,11 +164,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 ]
             },
 
-
-            /* =================================================
-               UNRELEASED
-            ================================================= */
-
             {
                 title: "Unreleased",
 
@@ -188,7 +179,6 @@ document.addEventListener("DOMContentLoaded", () => {
                     "assets/images/portrait-commercial/unreleased-06.jpg"
                 ]
             },
-
 
             {
                 title: "back 2 bloom",
@@ -237,7 +227,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 ]
             },
 
-
             {
                 title: "TITANS",
 
@@ -256,7 +245,6 @@ document.addEventListener("DOMContentLoaded", () => {
                     "assets/images/product/titans-09.jpg"
                 ]
             },
-
 
             {
                 title: "Nevertoolavish Custom Shoes",
@@ -289,10 +277,90 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* =====================================================
-       CLIENT WORK DATA
+       CLIENT WORK / EXTERNAL POSTS
     ===================================================== */
 
     const CLIENT_WORK = [
+
+        {
+            client: "WALL OF JAKARTA",
+
+            title:
+                "Video Documentation",
+
+            role:
+                "Video Documentation",
+
+            description:
+                "Video documentation for Wall of Jakarta.",
+
+            link:
+                "https://www.instagram.com/reel/Dam-Z9dpo6k/"
+        },
+
+        {
+            client: "TITANS",
+
+            title:
+                "Friend Flash 03 — Hari Kartini",
+
+            role:
+                "Campaign / Video",
+
+            description:
+                "Friend Flash 03 campaign created for TITANS in celebration of Hari Kartini.",
+
+            link:
+                "https://www.instagram.com/reel/DXYuDpcz2Pp/"
+        },
+
+        {
+            client: "INDO WATCH COLLECTION × HARD THIRTEEN",
+
+            title:
+                "Custom Watch Collection",
+
+            role:
+                "Photography / Documentation",
+
+            description:
+                "Indo Watch Collection featuring a custom watch by Hard Thirteen.",
+
+            link:
+                "https://www.instagram.com/p/DUGKWsqj8xM/"
+        },
+
+        {
+            client: "ORSE",
+
+            title:
+                "Connect Happily Vol. 3",
+
+            role:
+                "Campaign / Documentation",
+
+            description:
+                "Connect Happily Volume 3 by ORSE.",
+
+            link:
+                "https://www.instagram.com/p/DSRXRRQj5U6/"
+        },
+
+        {
+            client: "PAYPORSE",
+
+            title:
+                "Pattern Horizon",
+
+            role:
+                "Campaign / Video",
+
+            description:
+                "Pattern Horizon campaign for Payporse.",
+
+            link:
+                "https://www.instagram.com/reel/DbX9dJVRHls/"
+        },
 
         {
             client: "ORSE × KFC",
@@ -375,6 +443,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             card.className =
                 "client-work-card";
+
 
             card.innerHTML = `
 
