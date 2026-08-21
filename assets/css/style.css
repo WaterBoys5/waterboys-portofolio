@@ -223,7 +223,8 @@ a {
 .project-view,
 .clients-section,
 .about-section,
-.contact-section {
+.contact-section,
+.client-work-section {
     position: relative;
 }
 
@@ -508,6 +509,245 @@ a {
 
 
 /* =====================================================
+   CLIENT WORK
+===================================================== */
+
+.client-work-section {
+    width: 100%;
+
+    margin-top: 120px;
+    padding-top: 95px;
+
+    border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+
+/* =====================================================
+   CLIENT WORK HEADER
+===================================================== */
+
+.client-work-header {
+    margin-bottom: 42px;
+}
+
+.client-work-label {
+    color: rgba(255,255,255,0.40);
+
+    font-size: 9px;
+    font-weight: 600;
+
+    letter-spacing: 0.22em;
+}
+
+.client-work-title {
+    margin-top: 12px;
+
+    color: #ffffff;
+
+    font-size: clamp(38px, 5vw, 68px);
+
+    line-height: 0.92;
+
+    letter-spacing: -0.065em;
+
+    font-weight: 800;
+}
+
+
+/* =====================================================
+   CLIENT WORK GRID
+===================================================== */
+
+.client-work-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 18px;
+}
+
+
+/* =====================================================
+   CLIENT WORK CARD
+===================================================== */
+
+.client-work-card {
+    position: relative;
+
+    min-width: 0;
+
+    padding: 28px 28px 30px;
+
+    border-radius: 20px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,0.045),
+            rgba(255,255,255,0.018)
+        );
+
+    border:
+        1px solid rgba(255,255,255,0.09);
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    box-shadow:
+        0 18px 55px rgba(0,0,0,0.20);
+
+    overflow: hidden;
+
+    transition:
+        transform 0.35s cubic-bezier(.2,.7,.2,1),
+        background 0.35s ease,
+        border-color 0.35s ease;
+}
+
+.client-work-card::before {
+    content: "";
+
+    position: absolute;
+
+    width: 180px;
+    height: 180px;
+
+    top: -110px;
+    right: -80px;
+
+    border-radius: 50%;
+
+    background: rgba(255,255,255,0.055);
+
+    filter: blur(40px);
+
+    pointer-events: none;
+}
+
+.client-work-card:hover {
+    transform: translateY(-6px);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,0.065),
+            rgba(255,255,255,0.022)
+        );
+
+    border-color:
+        rgba(255,255,255,0.15);
+}
+
+
+/* =====================================================
+   CLIENT WORK CONTENT
+===================================================== */
+
+.client-work-card-content {
+    position: relative;
+    z-index: 2;
+}
+
+.client-work-client {
+    color: rgba(255,255,255,0.40);
+
+    font-size: 8px;
+    font-weight: 600;
+
+    letter-spacing: 0.20em;
+
+    text-transform: uppercase;
+
+    margin-bottom: 10px;
+}
+
+.client-work-card h3 {
+    color: #ffffff;
+
+    font-size: clamp(19px, 2vw, 27px);
+
+    line-height: 1.05;
+
+    letter-spacing: -0.035em;
+
+    font-weight: 700;
+}
+
+.client-work-role {
+    margin-top: 9px;
+
+    color: rgba(255,255,255,0.62);
+
+    font-size: 9px;
+    font-weight: 600;
+
+    letter-spacing: 0.10em;
+
+    text-transform: uppercase;
+}
+
+.client-work-description {
+    max-width: 470px;
+
+    margin-top: 14px;
+
+    color: rgba(255,255,255,0.40);
+
+    font-size: 11px;
+
+    line-height: 1.65;
+}
+
+
+/* =====================================================
+   CLIENT WORK LINK
+===================================================== */
+
+.client-work-link {
+    display: inline-flex;
+
+    align-items: center;
+
+    margin-top: 22px;
+
+    padding: 9px 14px;
+
+    color: rgba(255,255,255,0.70);
+
+    background: rgba(255,255,255,0.035);
+
+    border:
+        1px solid rgba(255,255,255,0.12);
+
+    border-radius: 999px;
+
+    text-decoration: none;
+
+    font-size: 8px;
+    font-weight: 600;
+
+    letter-spacing: 0.14em;
+
+    transition:
+        color 0.25s ease,
+        background 0.25s ease,
+        border-color 0.25s ease,
+        transform 0.25s ease;
+}
+
+.client-work-link:hover {
+    color: #050505;
+
+    background: #ffffff;
+
+    border-color: #ffffff;
+
+    transform: translateY(-2px);
+}
+
+
+/* =====================================================
    PROJECT VIEW
 ===================================================== */
 
@@ -520,16 +760,6 @@ a {
     position: relative;
     z-index: 5;
 }
-
-
-/*
-   IMPORTANT:
-   Jangan pakai:
-   .project-view\.hidden
-
-   Yang benar:
-   .project-view.hidden
-*/
 
 .project-view.hidden {
     display: none !important;
@@ -1196,6 +1426,10 @@ footer {
             repeat(2, minmax(0, 1fr));
     }
 
+    .client-work-grid {
+        grid-template-columns: 1fr;
+    }
+
     .clients-grid {
         grid-template-columns:
             repeat(3, minmax(0, 1fr));
@@ -1269,6 +1503,40 @@ footer {
     .category-image,
     .project-card-image {
         aspect-ratio: 4 / 5;
+    }
+
+    /* CLIENT WORK MOBILE */
+
+    .client-work-section {
+        margin-top: 90px;
+        padding-top: 70px;
+    }
+
+    .client-work-title {
+        font-size: 13vw;
+    }
+
+    .client-work-grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .client-work-card {
+        padding: 23px 21px 25px;
+
+        border-radius: 17px;
+    }
+
+    .client-work-card h3 {
+        font-size: 21px;
+    }
+
+    .client-work-description {
+        font-size: 10px;
+    }
+
+    .client-work-link {
+        margin-top: 18px;
     }
 
     .project-header {
