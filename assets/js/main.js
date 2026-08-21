@@ -1,231 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
 
     /* =====================================================
-       PROJECT DATA
-    ===================================================== */
-
-    const CATEGORIES = {
-
-        /* =================================================
-           DOCUMENTATION
-        ================================================= */
-
-        "documentation": {
-
-            title: "DOCUMENTATION",
-
-            projects: [
-
-                {
-                    title: "Stereo Wall",
-                    year: "2026",
-
-                    cover:
-                        "assets/images/documentation/stereo-wall-01.jpg",
-
-                    images: [
-
-                        "assets/images/documentation/stereo-wall-01.jpg",
-                        "assets/images/documentation/stereo-wall-02.jpg",
-                        "assets/images/documentation/stereo-wall-03.jpg",
-                        "assets/images/documentation/stereo-wall-04.jpg",
-                        "assets/images/documentation/stereo-wall-05.jpg",
-                        "assets/images/documentation/stereo-wall-06.jpg",
-                        "assets/images/documentation/stereo-wall-07.jpg",
-                        "assets/images/documentation/stereo-wall-08.jpg",
-                        "assets/images/documentation/stereo-wall-09.jpg",
-                        "assets/images/documentation/stereo-wall-10.jpg",
-                        "assets/images/documentation/stereo-wall-11.jpg",
-                        "assets/images/documentation/stereo-wall-12.jpg",
-                        "assets/images/documentation/stereo-wall-13.jpg",
-                        "assets/images/documentation/stereo-wall-14.jpg"
-
-                    ]
-                }
-
-            ]
-
-        },
-
-
-        /* =================================================
-           PORTRAIT COMMERCIAL
-        ================================================= */
-
-        "portrait-commercial": {
-
-            title: "PORTRAIT COMMERCIAL",
-
-            projects: [
-
-                {
-                    title: "Peron Long Sleeve T-Shirt",
-                    year: "2026",
-
-                    cover:
-                        "assets/images/portrait-commercial/peron-long-sleeve-01.jpg",
-
-                    images: [
-
-                        "assets/images/portrait-commercial/peron-long-sleeve-01.jpg",
-                        "assets/images/portrait-commercial/peron-long-sleeve-02.jpg",
-                        "assets/images/portrait-commercial/peron-long-sleeve-03.jpg",
-                        "assets/images/portrait-commercial/peron-long-sleeve-04.jpg",
-                        "assets/images/portrait-commercial/peron-long-sleeve-05.jpg"
-
-                    ]
-                }
-
-            ]
-
-        },
-
-
-        /* =================================================
-           PRODUCT
-        ================================================= */
-
-        "product": {
-
-            title: "PRODUCT",
-
-            projects: [
-
-                {
-                    title: "LV Wallet",
-                    year: "2026",
-
-                    cover:
-                        "assets/images/product/lv-wallet-01.jpg",
-
-                    images: [
-
-                        "assets/images/product/lv-wallet-01.jpg"
-
-                    ]
-                }
-
-            ]
-
-        },
-
-
-        /* =================================================
-           OTHERS
-        ================================================= */
-
-        "others": {
-
-            title: "OTHERS",
-
-            projects: [
-
-                /* -----------------------------------------
-                   SYAHRIN GRADUATION
-                ----------------------------------------- */
-
-                {
-                    title: "Syahrin Graduation",
-                    year: "2026",
-
-                    cover:
-                        "assets/images/others/syahrin-graduation/syahrin-01.jpg",
-
-                    images: [
-
-                        "assets/images/others/syahrin-graduation/syahrin-01.jpg",
-                        "assets/images/others/syahrin-graduation/syahrin-02.jpg",
-                        "assets/images/others/syahrin-graduation/syahrin-03.jpg",
-                        "assets/images/others/syahrin-graduation/syahrin-04.jpg",
-                        "assets/images/others/syahrin-graduation/syahrin-05.jpg",
-                        "assets/images/others/syahrin-graduation/syahrin-06.jpg",
-                        "assets/images/others/syahrin-graduation/syahrin-07.jpg",
-                        "assets/images/others/syahrin-graduation/syahrin-08.jpg"
-
-                    ]
-                },
-
-
-                /* -----------------------------------------
-                   PREWEDDING HILDA & FIKAR
-                ----------------------------------------- */
-
-                {
-                    title: "Prewedding Hilda & Fikar",
-                    year: "2026",
-
-                    cover:
-                        "assets/images/others/prewedding-hilda-and-fikar/prewed-fikar-01.jpg",
-
-                    images: [
-
-                        "assets/images/others/prewedding-hilda-and-fikar/prewed-fikar-01.jpg",
-                        "assets/images/others/prewedding-hilda-and-fikar/prewed-fikar-02.jpg",
-                        "assets/images/others/prewedding-hilda-and-fikar/prewed-fikar-03.jpg",
-                        "assets/images/others/prewedding-hilda-and-fikar/prewed-fikar-04.jpg",
-                        "assets/images/others/prewedding-hilda-and-fikar/prewed-fikar-05.jpg",
-                        "assets/images/others/prewedding-hilda-and-fikar/prewed-fikar-06.jpg",
-                        "assets/images/others/prewedding-hilda-and-fikar/prewed-fikar-07.jpg",
-                        "assets/images/others/prewedding-hilda-and-fikar/prewed-fikar-08.jpg",
-                        "assets/images/others/prewedding-hilda-and-fikar/prewed-fikar-09.jpg",
-                        "assets/images/others/prewedding-hilda-and-fikar/prewed-fikar-10.jpg",
-                        "assets/images/others/prewedding-hilda-and-fikar/prewed-fikar-11.jpg",
-                        "assets/images/others/prewedding-hilda-and-fikar/prewed-fikar-12.jpg"
-
-                    ]
-                }
-
-            ]
-
-        },
-
-
-        /* =================================================
-           ART DIRECTION
-        ================================================= */
-
-        "art-direction": {
-
-            title: "ART DIRECTION",
-
-            projects: [
-
-                {
-                    title: "Dalmention",
-                    year: "2026",
-
-                    cover:
-                        "assets/images/art-direction/dalmention/dalmention-01.jpg",
-
-                    images: [
-
-                        "assets/images/art-direction/dalmention/dalmention-01.jpg",
-                        "assets/images/art-direction/dalmention/dalmention-02.jpg",
-                        "assets/images/art-direction/dalmention/dalmention-03.jpg",
-                        "assets/images/art-direction/dalmention/dalmention-04.jpg",
-                        "assets/images/art-direction/dalmention/dalmention-05.jpg",
-                        "assets/images/art-direction/dalmention/dalmention-06.jpg",
-                        "assets/images/art-direction/dalmention/dalmention-07.jpg",
-                        "assets/images/art-direction/dalmention/dalmention-08.jpg",
-                        "assets/images/art-direction/dalmention/dalmention-09.jpg",
-                        "assets/images/art-direction/dalmention/dalmention-10.jpg",
-                        "assets/images/art-direction/dalmention/dalmention-11.jpg",
-                        "assets/images/art-direction/dalmention/dalmention-12.jpg",
-                        "assets/images/art-direction/dalmention/dalmention-13.jpg",
-                        "assets/images/art-direction/dalmention/dalmention-14.jpg",
-                        "assets/images/art-direction/dalmention/dalmention-15.jpg"
-
-                    ]
-                }
-
-            ]
-
-        }
-
-    };
-
-
-    /* =====================================================
        ELEMENTS
     ===================================================== */
 
@@ -241,241 +16,684 @@ document.addEventListener("DOMContentLoaded", () => {
     const projectGrid =
         document.querySelector("#project-grid");
 
+    const projectTitle =
+        document.querySelector("#project-category-title");
+
+    const projectLabel =
+        document.querySelector("#project-category-label");
+
     const backButton =
         document.querySelector("#back-button");
 
-    const categoryTitle =
-        document.querySelector("#project-category-title");
-
-    const categoryLabel =
-        document.querySelector("#project-category-label");
+    const brand =
+        document.querySelector(".brand");
 
 
     /* =====================================================
-       PROJECT VIEWER
+       PROJECT DATA
     ===================================================== */
 
-    const projectViewer =
-        document.createElement("div");
+    const PROJECTS = {
 
-    projectViewer.className =
-        "project-viewer hidden";
 
-    projectViewer.innerHTML = `
+        /* =================================================
+           DOCUMENTATION
+        ================================================= */
 
-        <button
-            class="viewer-close"
-            type="button"
-            aria-label="Close project"
-        >
-            ×
-        </button>
+        documentation: [
 
-        <div class="project-viewer-inner">
+            {
+                title: "Stereo Wall",
 
-            <div class="viewer-heading">
+                description:
+                    "Live performance documentation of Stereowall at Trilogigs Bogor.",
 
-                <p id="viewer-category">
-                    PROJECT
+                images: [
+                    "assets/images/documentation/stereo-wall-01.jpg",
+                    "assets/images/documentation/stereo-wall-02.jpg",
+                    "assets/images/documentation/stereo-wall-03.jpg",
+                    "assets/images/documentation/stereo-wall-04.jpg",
+                    "assets/images/documentation/stereo-wall-05.jpg",
+                    "assets/images/documentation/stereo-wall-06.jpg",
+                    "assets/images/documentation/stereo-wall-07.jpg",
+                    "assets/images/documentation/stereo-wall-08.jpg",
+                    "assets/images/documentation/stereo-wall-09.jpg",
+                    "assets/images/documentation/stereo-wall-10.jpg",
+                    "assets/images/documentation/stereo-wall-11.jpg",
+                    "assets/images/documentation/stereo-wall-12.jpg",
+                    "assets/images/documentation/stereo-wall-13.jpg",
+                    "assets/images/documentation/stereo-wall-14.jpg"
+                ]
+            },
+
+
+            {
+                title: "Jerana",
+
+                description:
+                    "Event documentation at Krapela.",
+
+                images: [
+                    "assets/images/documentation/jerana-01.jpg",
+                    "assets/images/documentation/jerana-02.jpg",
+                    "assets/images/documentation/jerana-03.jpg",
+                    "assets/images/documentation/jerana-04.jpg",
+                    "assets/images/documentation/jerana-05.jpg",
+                    "assets/images/documentation/jerana-06.jpg",
+                    "assets/images/documentation/jerana-07.jpg"
+                ]
+            },
+
+
+            {
+                title: "The Paps",
+
+                description:
+                    "Event documentation at Dreyy Fest Bogor 2026.",
+
+                images: [
+                    "assets/images/documentation/thepaps-01.jpg",
+                    "assets/images/documentation/thepaps-02.jpg",
+                    "assets/images/documentation/thepaps-03.jpg",
+                    "assets/images/documentation/thepaps-04.jpg",
+                    "assets/images/documentation/thepaps-05.jpg",
+                    "assets/images/documentation/thepaps-06.jpg",
+                    "assets/images/documentation/thepaps-07.jpg",
+                    "assets/images/documentation/thepaps-08.jpg",
+                    "assets/images/documentation/thepaps-09.jpg"
+                ]
+            }
+
+        ],
+
+
+
+        /* =================================================
+           PORTRAIT / COMMERCIAL
+        ================================================= */
+
+        "portrait-commercial": [
+
+            {
+                title: "Peron Long Sleeve",
+
+                description:
+                    "Commercial portrait campaign.",
+
+                images: [
+                    "assets/images/portrait-commercial/peron-long-sleeve-01.jpg",
+                    "assets/images/portrait-commercial/peron-long-sleeve-02.jpg",
+                    "assets/images/portrait-commercial/peron-long-sleeve-03.jpg",
+                    "assets/images/portrait-commercial/peron-long-sleeve-04.jpg",
+                    "assets/images/portrait-commercial/peron-long-sleeve-05.jpg"
+                ]
+            },
+
+
+            {
+                title: "Vishgazine",
+
+                description:
+                    "Commercial portrait campaign for Vish by Nevertoolavish.",
+
+                images: [
+                    "assets/images/portrait-commercial/vishgazine-01.jpg",
+                    "assets/images/portrait-commercial/vishgazine-02.jpg",
+                    "assets/images/portrait-commercial/vishgazine-03.jpg",
+                    "assets/images/portrait-commercial/vishgazine-04.jpg",
+                    "assets/images/portrait-commercial/vishgazine-05.jpg",
+                    "assets/images/portrait-commercial/vishgazine-06.jpg",
+                    "assets/images/portrait-commercial/vishgazine-07.jpg",
+                    "assets/images/portrait-commercial/vishgazine-08.jpg",
+                    "assets/images/portrait-commercial/vishgazine-09.jpg"
+                ]
+            },
+
+
+            {
+                title: "WKA × Simpati",
+
+                description:
+                    "Commercial campaign for WKA from Nevertoolavish to SIMPATI.",
+
+                images: [
+                    "assets/images/portrait-commercial/wka-simpati-01.jpg",
+                    "assets/images/portrait-commercial/wka-simpati-02.jpg",
+                    "assets/images/portrait-commercial/wka-simpati-03.jpg",
+                    "assets/images/portrait-commercial/wka-simpati-04.jpg",
+                    "assets/images/portrait-commercial/wka-simpati-05.jpg",
+                    "assets/images/portrait-commercial/wka-simpati-06.jpg",
+                    "assets/images/portrait-commercial/wka-simpati-07.jpg",
+                    "assets/images/portrait-commercial/wka-simpati-08.jpg",
+                    "assets/images/portrait-commercial/wka-simpati-09.jpg",
+                    "assets/images/portrait-commercial/wka-simpati-10.jpg"
+                ]
+            },
+
+
+            {
+                title: "Unreleased",
+
+                description:
+                    "The artist behind an unreleased custom footwear project.",
+
+                images: [
+                    "assets/images/portrait-commercial/unreleased-01.jpg",
+                    "assets/images/portrait-commercial/unreleased-02.jpg",
+                    "assets/images/portrait-commercial/unreleased-03.jpg",
+                    "assets/images/portrait-commercial/unreleased-04.jpg",
+                    "assets/images/portrait-commercial/unreleased-05.jpg",
+                    "assets/images/portrait-commercial/unreleased-06.jpg"
+                ]
+            },
+
+
+            {
+                title: "Back 2 Bloom",
+
+                description:
+                    "Commercial campaign photography for Back 2 Bloom.",
+
+                images: [
+                    "assets/images/portrait-commercial/b2b-01.jpg",
+                    "assets/images/portrait-commercial/b2b-02.jpg",
+                    "assets/images/portrait-commercial/b2b-03.jpg",
+                    "assets/images/portrait-commercial/b2b-04.jpg",
+                    "assets/images/portrait-commercial/b2b-05.jpg",
+                    "assets/images/portrait-commercial/b2b-06.jpg",
+                    "assets/images/portrait-commercial/b2b-07.jpg",
+                    "assets/images/portrait-commercial/b2b-08.jpg",
+                    "assets/images/portrait-commercial/b2b-09.jpg",
+                    "assets/images/portrait-commercial/b2b-10.jpg",
+                    "assets/images/portrait-commercial/b2b-11.jpg",
+                    "assets/images/portrait-commercial/b2b-12.jpg",
+                    "assets/images/portrait-commercial/b2b-13.jpg",
+                    "assets/images/portrait-commercial/b2b-14.jpg"
+                ]
+            }
+
+        ],
+
+
+
+        /* =================================================
+           PRODUCT
+        ================================================= */
+
+        product: [
+
+            {
+                title: "LV Wallet",
+
+                description:
+                    "Luxury product photography.",
+
+                images: [
+                    "assets/images/product/lv-wallet-01.jpg",
+                    "assets/images/product/lv-wallet-02.jpg",
+                    "assets/images/product/lv-wallet-03.jpg",
+                    "assets/images/product/lv-wallet-04.jpg"
+                ]
+            },
+
+
+            {
+                title: "TITANS",
+
+                description:
+                    "Commercial product campaign.",
+
+                images: [
+                    "assets/images/product/titans-01.jpg",
+                    "assets/images/product/titans-02.jpg",
+                    "assets/images/product/titans-03.jpg",
+                    "assets/images/product/titans-04.jpg",
+                    "assets/images/product/titans-05.jpg",
+                    "assets/images/product/titans-06.jpg",
+                    "assets/images/product/titans-07.jpg",
+                    "assets/images/product/titans-08.jpg",
+                    "assets/images/product/titans-09.jpg"
+                ]
+            },
+
+
+            {
+                title: "Nevertoolavish Custom Shoes",
+
+                description:
+                    "Still life product photography for custom shoes by Nevertoolavish.",
+
+                images: [
+                    "assets/images/product/nevertoolavish-shoes-01.jpg",
+                    "assets/images/product/nevertoolavish-shoes-02.jpg",
+                    "assets/images/product/nevertoolavish-shoes-03.jpg",
+                    "assets/images/product/nevertoolavish-shoes-04.jpg",
+                    "assets/images/product/nevertoolavish-shoes-05.jpg",
+                    "assets/images/product/nevertoolavish-shoes-06.jpg",
+                    "assets/images/product/nevertoolavish-shoes-07.jpg",
+                    "assets/images/product/nevertoolavish-shoes-08.jpg",
+                    "assets/images/product/nevertoolavish-shoes-09.jpg",
+                    "assets/images/product/nevertoolavish-shoes-10.jpg",
+                    "assets/images/product/nevertoolavish-shoes-11.jpg",
+                    "assets/images/product/nevertoolavish-shoes-12.jpg",
+                    "assets/images/product/nevertoolavish-shoes-13.jpg",
+                    "assets/images/product/nevertoolavish-shoes-14.jpg",
+                    "assets/images/product/nevertoolavish-shoes-15.jpg"
+                ]
+            }
+
+        ],
+
+
+
+        /* =================================================
+           ART DIRECTION
+        ================================================= */
+
+        "art-direction": [
+
+            {
+                title: "Dalmention",
+
+                description:
+                    "Fashion rework campaign. Art direction by WaterBoys, photography by Amaylia (Ayas).",
+
+                role:
+                    "Art Direction",
+
+                photographer:
+                    "Amaylia (Ayas)",
+
+                photographerInstagram:
+                    "https://www.instagram.com/am.liyas/",
+
+                details:
+                    "Concept development, lighting setup, location selection, client communication, and photographer direction.",
+
+                images: [
+                    "assets/images/art-direction/dalmention/dalmention-01.jpg",
+                    "assets/images/art-direction/dalmention/dalmention-02.jpg",
+                    "assets/images/art-direction/dalmention/dalmention-03.jpg",
+                    "assets/images/art-direction/dalmention/dalmention-04.jpg",
+                    "assets/images/art-direction/dalmention/dalmention-05.jpg",
+                    "assets/images/art-direction/dalmention/dalmention-06.jpg",
+                    "assets/images/art-direction/dalmention/dalmention-07.jpg",
+                    "assets/images/art-direction/dalmention/dalmention-08.jpg",
+                    "assets/images/art-direction/dalmention/dalmention-09.jpg",
+                    "assets/images/art-direction/dalmention/dalmention-10.jpg",
+                    "assets/images/art-direction/dalmention/dalmention-11.jpg",
+                    "assets/images/art-direction/dalmention/dalmention-12.jpg",
+                    "assets/images/art-direction/dalmention/dalmention-13.jpg",
+                    "assets/images/art-direction/dalmention/dalmention-14.jpg",
+                    "assets/images/art-direction/dalmention/dalmention-15.jpg"
+                ]
+            }
+
+        ],
+
+
+
+        /* =================================================
+           OTHERS
+        ================================================= */
+
+        others: [
+
+            {
+                title: "Prewedding",
+
+                description:
+                    "Prewedding photography.",
+
+                images: [
+                    "assets/images/others/prewedding/prewedding-01.jpg",
+                    "assets/images/others/prewedding/prewedding-02.jpg",
+                    "assets/images/others/prewedding/prewedding-03.jpg",
+                    "assets/images/others/prewedding/prewedding-04.jpg",
+                    "assets/images/others/prewedding/prewedding-05.jpg",
+                    "assets/images/others/prewedding/prewedding-06.jpg",
+                    "assets/images/others/prewedding/prewedding-07.jpg",
+                    "assets/images/others/prewedding/prewedding-08.jpg"
+                ]
+            },
+
+
+            {
+                title: "Syahrin — Graduation",
+
+                description:
+                    "Graduation photography for client Syahrin.",
+
+                images: [
+                    "assets/images/others/graduation/syahrin-01.jpg",
+                    "assets/images/others/graduation/syahrin-02.jpg",
+                    "assets/images/others/graduation/syahrin-03.jpg",
+                    "assets/images/others/graduation/syahrin-04.jpg",
+                    "assets/images/others/graduation/syahrin-05.jpg",
+                    "assets/images/others/graduation/syahrin-06.jpg",
+                    "assets/images/others/graduation/syahrin-07.jpg",
+                    "assets/images/others/graduation/syahrin-08.jpg"
+                ]
+            }
+
+        ]
+
+    };
+
+
+
+    /* =====================================================
+       CLIENT WORK
+    ===================================================== */
+
+    const CLIENT_WORK = [
+
+        {
+            client: "ORSE × KFC",
+
+            title:
+                "Pekan Raya Jakarta Campaign",
+
+            role:
+                "Video Documentation",
+
+            description:
+                "Campaign video documentation for ORSE's collaboration with KFC at Pekan Raya Jakarta.",
+
+            link:
+                "https://www.instagram.com/reel/DaNKoCJx4yC/"
+        }
+
+    ];
+
+
+
+    /* =====================================================
+       STATE
+    ===================================================== */
+
+    let activeViewer = null;
+    let activeFullscreen = null;
+
+
+
+    /* =====================================================
+       CREATE CLIENT WORK
+    ===================================================== */
+
+    function createClientWorkSection() {
+
+        if (!workSection) {
+            return;
+        }
+
+        if (document.querySelector(".client-work-section")) {
+            return;
+        }
+
+        const section =
+            document.createElement("section");
+
+        section.className =
+            "client-work-section";
+
+        section.innerHTML = `
+            <div class="client-work-header">
+
+                <p class="client-work-label">
+                    CLIENT WORK
                 </p>
 
-                <h2 id="viewer-title">
-                    PROJECT
+                <h2 class="client-work-title">
+                    SELECTED CLIENT POSTS
                 </h2>
 
             </div>
 
-            <div
-                class="viewer-grid"
-                id="viewer-grid"
-            ></div>
+            <div class="client-work-grid"></div>
+        `;
 
-        </div>
+        const grid =
+            section.querySelector(
+                ".client-work-grid"
+            );
 
-    `;
+        CLIENT_WORK.forEach(work => {
 
-    document.body.appendChild(projectViewer);
+            const card =
+                document.createElement("article");
 
+            card.className =
+                "client-work-card";
 
-    const viewerClose =
-        projectViewer.querySelector(".viewer-close");
+            card.innerHTML = `
 
-    const viewerCategory =
-        projectViewer.querySelector("#viewer-category");
+                <div class="client-work-card-content">
 
-    const viewerTitle =
-        projectViewer.querySelector("#viewer-title");
+                    <p class="client-work-client">
+                        ${work.client}
+                    </p>
 
-    const viewerGrid =
-        projectViewer.querySelector("#viewer-grid");
+                    <h3>
+                        ${work.title}
+                    </h3>
+
+                    <p class="client-work-role">
+                        ${work.role}
+                    </p>
+
+                    <p class="client-work-description">
+                        ${work.description}
+                    </p>
+
+                    <a
+                        class="client-work-link"
+                        href="${work.link}"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        VIEW CLIENT POST ↗
+                    </a>
+
+                </div>
+
+            `;
+
+            grid.appendChild(card);
+
+        });
+
+        workSection.appendChild(section);
+    }
+
 
 
     /* =====================================================
-       FULLSCREEN VIEWER
+       CATEGORY CLICK
     ===================================================== */
 
-    const fullscreenViewer =
-        document.createElement("div");
+    categoryCards.forEach(card => {
 
-    fullscreenViewer.className =
-        "fullscreen-viewer hidden";
+        card.addEventListener("click", () => {
 
-    fullscreenViewer.innerHTML = `
+            const category =
+                card.dataset.category;
 
-        <button
-            type="button"
-            aria-label="Close image"
-        >
-            ×
-        </button>
+            openCategory(category);
 
-        <img
-            src=""
-            alt=""
-        >
-
-    `;
-
-    document.body.appendChild(fullscreenViewer);
+        });
 
 
-    const fullscreenImage =
-        fullscreenViewer.querySelector("img");
+        card.addEventListener("keydown", event => {
 
-    const fullscreenClose =
-        fullscreenViewer.querySelector("button");
+            if (
+                event.key === "Enter" ||
+                event.key === " "
+            ) {
+
+                event.preventDefault();
+
+                const category =
+                    card.dataset.category;
+
+                openCategory(category);
+            }
+
+        });
+
+    });
+
 
 
     /* =====================================================
        OPEN CATEGORY
     ===================================================== */
 
-    function openCategory(categoryKey) {
+    function openCategory(category) {
 
-        const category =
-            CATEGORIES[categoryKey];
+        const projects =
+            PROJECTS[category];
 
-        if (!category) {
+        if (!projects) {
 
             console.error(
                 "Category tidak ditemukan:",
-                categoryKey
+                category
             );
 
             return;
         }
 
 
-        categoryTitle.textContent =
-            category.title;
+        const readableNames = {
 
-        categoryLabel.textContent =
+            documentation:
+                "DOCUMENTATION",
+
+            "portrait-commercial":
+                "PORTRAIT / COMMERCIAL",
+
+            product:
+                "PRODUCT",
+
+            "art-direction":
+                "ART DIRECTION",
+
+            others:
+                "OTHERS"
+
+        };
+
+
+        projectTitle.textContent =
+            readableNames[category] ||
+            category.toUpperCase();
+
+
+        projectLabel.textContent =
             "SELECTED PROJECTS";
 
 
         projectGrid.innerHTML = "";
 
 
-        category.projects.forEach(
-            (project) => {
+        /* =================================================
+           CREATE PROJECT CARDS
+        ================================================= */
 
-                const card =
-                    document.createElement("article");
+        projects.forEach(project => {
 
-                card.className =
-                    "project-card";
+            const card =
+                document.createElement("article");
 
-                card.setAttribute(
-                    "tabindex",
-                    "0"
-                );
+            card.className =
+                "project-card";
 
-                card.setAttribute(
-                    "role",
-                    "button"
-                );
+            card.setAttribute(
+                "tabindex",
+                "0"
+            );
 
-
-                card.innerHTML = `
-
-                    <div class="project-card-image">
-
-                        <img
-                            src="${project.cover}"
-                            alt="${project.title}"
-                            loading="lazy"
-                        >
-
-                        <div class="project-card-overlay">
-
-                            <span>
-                                ${project.images.length} PHOTOS
-                            </span>
-
-                        </div>
-
-                    </div>
+            card.setAttribute(
+                "role",
+                "button"
+            );
 
 
-                    <div class="project-card-info">
+            const thumbnail =
+                project.images[0];
 
-                        <h3>
-                            ${project.title}
-                        </h3>
 
-                        <p>
-                            ${project.year}
-                        </p>
+            card.innerHTML = `
+
+                <div class="project-card-image">
+
+                    <img
+                        src="${thumbnail}"
+                        alt="${project.title}"
+                        loading="lazy"
+                    >
+
+                    <div class="project-card-overlay">
+
+                        <span>
+                            ${project.images.length} IMAGES
+                        </span>
 
                     </div>
 
-                `;
+                </div>
 
 
-                card.addEventListener(
-                    "click",
-                    () => {
+                <div class="project-card-info">
 
-                        openProject(
-                            category,
-                            project
-                        );
+                    <h3>
+                        ${project.title}
+                    </h3>
 
-                    }
-                );
+                    <p>
+                        ${project.description}
+                    </p>
 
+                </div>
 
-                card.addEventListener(
-                    "keydown",
-                    (event) => {
-
-                        if (
-                            event.key === "Enter" ||
-                            event.key === " "
-                        ) {
-
-                            event.preventDefault();
-
-                            openProject(
-                                category,
-                                project
-                            );
-
-                        }
-
-                    }
-                );
+            `;
 
 
-                projectGrid.appendChild(card);
+            card.addEventListener("click", () => {
 
-            }
-        );
+                openProject(project);
+
+            });
 
 
-        workSection.classList.add(
-            "hidden"
-        );
+            card.addEventListener("keydown", event => {
+
+                if (
+                    event.key === "Enter" ||
+                    event.key === " "
+                ) {
+
+                    event.preventDefault();
+
+                    openProject(project);
+
+                }
+
+            });
+
+
+            projectGrid.appendChild(card);
+
+        });
+
+
+        /* =================================================
+           CHANGE VIEW
+        ================================================= */
+
+        workSection.style.display =
+            "none";
 
         projectView.classList.remove(
             "hidden"
@@ -495,90 +713,144 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-    /* =====================================================
-       CLOSE CATEGORY
-    ===================================================== */
-
-    function closeCategory() {
-
-        projectView.classList.add(
-            "hidden"
-        );
-
-        projectView.setAttribute(
-            "aria-hidden",
-            "true"
-        );
-
-        workSection.classList.remove(
-            "hidden"
-        );
-
-
-        window.scrollTo({
-            top:
-                workSection.offsetTop - 80,
-
-            behavior:
-                "smooth"
-        });
-
-    }
-
 
     /* =====================================================
        OPEN PROJECT
     ===================================================== */
 
-    function openProject(
-        category,
-        project
-    ) {
+    function openProject(project) {
 
-        viewerCategory.textContent =
-            category.title;
+        closeProject();
 
-        viewerTitle.textContent =
-            project.title;
 
-        viewerGrid.innerHTML =
-            "";
+        const viewer =
+            document.createElement("div");
 
+        viewer.className =
+            "project-viewer";
+
+
+        viewer.innerHTML = `
+
+            <div class="project-viewer-inner">
+
+                <button
+                    class="viewer-close"
+                    type="button"
+                    aria-label="Close project"
+                >
+                    ×
+                </button>
+
+
+                <div class="viewer-heading">
+
+                    <p>
+                        PROJECT
+                    </p>
+
+                    <h2>
+                        ${project.title}
+                    </h2>
+
+                    ${
+                        project.role
+                            ? `
+                                <p class="viewer-project-role">
+                                    ${project.role}
+                                </p>
+                              `
+                            : ""
+                    }
+
+                    ${
+                        project.photographer
+                            ? `
+                                <p class="viewer-project-photographer">
+                                    PHOTOGRAPHY BY
+                                    <strong>
+                                        ${project.photographer}
+                                    </strong>
+                                </p>
+                              `
+                            : ""
+                    }
+
+                    ${
+                        project.details
+                            ? `
+                                <p class="viewer-project-details">
+                                    ${project.details}
+                                </p>
+                              `
+                            : ""
+                    }
+
+                    ${
+                        project.photographerInstagram
+                            ? `
+                                <a
+                                    class="viewer-project-link"
+                                    href="${project.photographerInstagram}"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    PHOTOGRAPHER INSTAGRAM ↗
+                                </a>
+                              `
+                            : ""
+                    }
+
+                </div>
+
+
+                <div class="viewer-grid"></div>
+
+            </div>
+
+        `;
+
+
+        const viewerGrid =
+            viewer.querySelector(
+                ".viewer-grid"
+            );
+
+
+        /* =================================================
+           ADD PHOTOS
+        ================================================= */
 
         project.images.forEach(
-            (imagePath, index) => {
+            (image, index) => {
 
-                const imageWrapper =
+                const imageCard =
                     document.createElement("div");
 
-                imageWrapper.className =
+                imageCard.className =
                     "viewer-image";
 
 
-                const image =
-                    document.createElement("img");
+                imageCard.innerHTML = `
 
-                image.src =
-                    imagePath;
+                    <img
+                        src="${image}"
+                        alt="${project.title} ${index + 1}"
+                        loading="lazy"
+                    >
 
-                image.alt =
-                    `${project.title} ${index + 1}`;
-
-                image.loading =
-                    "lazy";
+                `;
 
 
-                imageWrapper.appendChild(
-                    image
-                );
-
-
-                imageWrapper.addEventListener(
+                imageCard.addEventListener(
                     "click",
-                    () => {
+                    event => {
+
+                        event.preventDefault();
+                        event.stopPropagation();
 
                         openFullscreen(
-                            imagePath,
+                            image,
                             project.title
                         );
 
@@ -587,28 +859,69 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
                 viewerGrid.appendChild(
-                    imageWrapper
+                    imageCard
                 );
 
             }
         );
 
 
-        projectViewer.classList.remove(
-            "hidden"
-        );
-
-        document.body.classList.add(
-            "viewer-open"
+        document.body.appendChild(
+            viewer
         );
 
 
-        window.scrollTo({
-            top: 0,
-            behavior: "instant"
-        });
+        document.body.style.overflow =
+            "hidden";
+
+
+        activeViewer =
+            viewer;
+
+
+        /* =================================================
+           CLOSE BUTTON
+        ================================================= */
+
+        viewer
+            .querySelector(".viewer-close")
+            .addEventListener(
+                "click",
+                closeProject
+            );
+
+
+        /* =================================================
+           ESCAPE KEY
+        ================================================= */
+
+        viewer._escapeHandler =
+            event => {
+
+                if (
+                    event.key === "Escape"
+                ) {
+
+                    if (activeFullscreen) {
+
+                        closeFullscreen();
+
+                        return;
+                    }
+
+                    closeProject();
+                }
+
+            };
+
+
+        document.addEventListener(
+            "keydown",
+            viewer._escapeHandler
+        );
 
     }
+
 
 
     /* =====================================================
@@ -617,42 +930,138 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function closeProject() {
 
-        projectViewer.classList.add(
-            "hidden"
-        );
+        if (!activeViewer) {
+            return;
+        }
 
-        document.body.classList.remove(
-            "viewer-open"
-        );
+
+        if (
+            activeViewer._escapeHandler
+        ) {
+
+            document.removeEventListener(
+                "keydown",
+                activeViewer._escapeHandler
+            );
+
+        }
+
+
+        activeViewer.remove();
+
+        activeViewer =
+            null;
+
+
+        document.body.style.overflow =
+            "";
 
     }
+
 
 
     /* =====================================================
-       OPEN FULLSCREEN
+       FULLSCREEN IMAGE
     ===================================================== */
 
     function openFullscreen(
-        imagePath,
+        image,
         title
     ) {
 
-        fullscreenImage.src =
-            imagePath;
-
-        fullscreenImage.alt =
-            title;
+        closeFullscreen();
 
 
-        fullscreenViewer.classList.remove(
-            "hidden"
+        const fullscreen =
+            document.createElement("div");
+
+        fullscreen.className =
+            "fullscreen-viewer";
+
+
+        fullscreen.innerHTML = `
+
+            <button
+                type="button"
+                aria-label="Close image"
+            >
+                ×
+            </button>
+
+            <img
+                src="${image}"
+                alt="${title}"
+            >
+
+        `;
+
+
+        document.body.appendChild(
+            fullscreen
         );
 
-        document.body.classList.add(
-            "fullscreen-open"
+
+        activeFullscreen =
+            fullscreen;
+
+
+        document.body.style.overflow =
+            "hidden";
+
+
+        const closeButton =
+            fullscreen.querySelector(
+                "button"
+            );
+
+
+        closeButton.addEventListener(
+            "click",
+            event => {
+
+                event.stopPropagation();
+
+                closeFullscreen();
+
+            }
+        );
+
+
+        fullscreen.addEventListener(
+            "click",
+            event => {
+
+                if (
+                    event.target === fullscreen
+                ) {
+
+                    closeFullscreen();
+                }
+
+            }
+        );
+
+
+        fullscreen._escapeHandler =
+            event => {
+
+                if (
+                    event.key === "Escape"
+                ) {
+
+                    closeFullscreen();
+                }
+
+            };
+
+
+        document.addEventListener(
+            "keydown",
+            fullscreen._escapeHandler
         );
 
     }
+
 
 
     /* =====================================================
@@ -661,187 +1070,125 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function closeFullscreen() {
 
-        fullscreenViewer.classList.add(
-            "hidden"
-        );
+        if (!activeFullscreen) {
+            return;
+        }
 
-        fullscreenImage.src =
-            "";
 
-        document.body.classList.remove(
-            "fullscreen-open"
-        );
+        if (
+            activeFullscreen._escapeHandler
+        ) {
+
+            document.removeEventListener(
+                "keydown",
+                activeFullscreen._escapeHandler
+            );
+
+        }
+
+
+        activeFullscreen.remove();
+
+        activeFullscreen =
+            null;
+
+
+        if (activeViewer) {
+
+            document.body.style.overflow =
+                "hidden";
+
+        } else {
+
+            document.body.style.overflow =
+                "";
+
+        }
 
     }
 
 
-    /* =====================================================
-       CATEGORY CLICK
-    ===================================================== */
-
-    categoryCards.forEach(
-        (card) => {
-
-            const categoryKey =
-                card.dataset.category;
-
-
-            card.addEventListener(
-                "click",
-                () => {
-
-                    openCategory(
-                        categoryKey
-                    );
-
-                }
-            );
-
-
-            card.addEventListener(
-                "keydown",
-                (event) => {
-
-                    if (
-                        event.key === "Enter" ||
-                        event.key === " "
-                    ) {
-
-                        event.preventDefault();
-
-                        openCategory(
-                            categoryKey
-                        );
-
-                    }
-
-                }
-            );
-
-        }
-    );
-
 
     /* =====================================================
-       BACK BUTTON
+       BACK TO CATEGORIES
     ===================================================== */
 
     if (backButton) {
 
         backButton.addEventListener(
             "click",
-            closeCategory
+            () => {
+
+                projectView.classList.add(
+                    "hidden"
+                );
+
+                projectView.setAttribute(
+                    "aria-hidden",
+                    "true"
+                );
+
+                workSection.style.display =
+                    "";
+
+                window.scrollTo({
+                    top: workSection.offsetTop,
+                    behavior: "smooth"
+                });
+
+            }
         );
 
     }
 
 
-    /* =====================================================
-       VIEWER CLOSE
-    ===================================================== */
-
-    viewerClose.addEventListener(
-        "click",
-        closeProject
-    );
-
-
-    fullscreenClose.addEventListener(
-        "click",
-        closeFullscreen
-    );
-
 
     /* =====================================================
-       ESCAPE
+       NAVBAR HOME
     ===================================================== */
 
-    document.addEventListener(
-        "keydown",
-        (event) => {
+    if (brand) {
 
-            if (event.key !== "Escape") {
-                return;
-            }
+        brand.addEventListener(
+            "click",
+            event => {
 
-
-            if (
-                !fullscreenViewer.classList.contains(
-                    "hidden"
-                )
-            ) {
+                event.preventDefault();
 
                 closeFullscreen();
-
-                return;
-
-            }
-
-
-            if (
-                !projectViewer.classList.contains(
-                    "hidden"
-                )
-            ) {
-
                 closeProject();
 
-                return;
 
-            }
-
-
-            if (
-                !projectView.classList.contains(
+                projectView.classList.add(
                     "hidden"
-                )
-            ) {
+                );
 
-                closeCategory();
+                projectView.setAttribute(
+                    "aria-hidden",
+                    "true"
+                );
+
+
+                workSection.style.display =
+                    "";
+
+
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth"
+                });
 
             }
+        );
 
-        }
-    );
+    }
+
 
 
     /* =====================================================
-       CLICK OUTSIDE PROJECT VIEWER
+       INITIALIZE
     ===================================================== */
 
-    projectViewer.addEventListener(
-        "click",
-        (event) => {
-
-            if (
-                event.target === projectViewer
-            ) {
-
-                closeProject();
-
-            }
-
-        }
-    );
-
-
-    /* =====================================================
-       CLICK OUTSIDE FULLSCREEN
-    ===================================================== */
-
-    fullscreenViewer.addEventListener(
-        "click",
-        (event) => {
-
-            if (
-                event.target === fullscreenViewer
-            ) {
-
-                closeFullscreen();
-
-            }
-
-        }
-    );
+    createClientWorkSection();
 
 });
