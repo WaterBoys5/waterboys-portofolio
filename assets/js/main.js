@@ -409,6 +409,22 @@ document.addEventListener("DOMContentLoaded", () => {
                     "assets/images/others/syahrin-graduation/syahrin-07.jpg",
                     "assets/images/others/syahrin-graduation/syahrin-08.jpg"
                 ]
+            },
+
+                {
+                title: "Svacasa Sawangan",
+
+                description:
+                    "Architecture Photography fot Svacasa Sawangan",
+
+                images: [
+                    "assets/images/others/svacasa-sawangan/svacasa-01.jpg",
+                    "assets/images/others/svacasa-sawangan/svacasa-02.jpg",
+                    "assets/images/others/svacasa-sawangan/svacasa-03.jpg",
+                    "assets/images/others/svacasa-sawangan/svacasa-04.jpg",
+                    "assets/images/others/svacasa-sawangan/svacasa-05.jpg",
+                    "assets/images/others/svacasa-sawangan/svacasa-06.jpg"
+                ]
             }
 
         ]
