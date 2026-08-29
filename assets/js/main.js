@@ -105,7 +105,35 @@ document.addEventListener("DOMContentLoaded", () => {
                     "assets/images/documentation/thepaps-08.jpg",
                     "assets/images/documentation/thepaps-09.jpg"
                 ]
+            },
+
+            {
+                title: "Dongker at MS1200 bekasi",
+
+                description:
+                    "Live performance Dongker di acara MS1200 rooftop gor chandrabhaga",
+
+                images: [
+                    "assets/images/documentation/dongker-ms-bekasi-10.jpg",
+                    "assets/images/documentation/dongker-ms-bekasi-12.jpg",
+                    "assets/images/documentation/dongker-ms-bekasi-15.jpg",
+                    "assets/images/documentation/dongker-ms-bekasi-16.jpg",
+                    "assets/images/documentation/dongker-ms-bekasi-17.jpg",
+                    "assets/images/documentation/dongker-ms-bekasi-18.jpg",
+                    "assets/images/documentation/dongker-ms-bekasi-21.jpg",
+                    "assets/images/documentation/dongker-ms-bekasi-23.jpg",
+                    "assets/images/documentation/dongker-ms-bekasi-25.jpg",
+                    "assets/images/documentation/dongker-ms-bekasi-27.jpg",
+                    "assets/images/documentation/dongker-ms-bekasi-3.jpg",
+                    "assets/images/documentation/dongker-ms-bekasi-31.jpg",
+                    "assets/images/documentation/dongker-ms-bekasi-32.jpg",
+                    "assets/images/documentation/dongker-ms-bekasi-4.jpg",
+                    "assets/images/documentation/dongker-ms-bekasi-6.jpg",
+                    "assets/images/documentation/dongker-ms-bekasi-8.jpg",
+                    "assets/images/documentation/dongker-ms-bekasi-9.jpg"
+                ]
             }
+
 
         ],
 
