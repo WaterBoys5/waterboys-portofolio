@@ -212,7 +212,39 @@ document.addEventListener("DOMContentLoaded", () => {
                     "assets/images/portrait-commercial/b2b-13.jpg",
                     "assets/images/portrait-commercial/b2b-14.jpg"
                 ]
+            },
+
+             {
+                title: "bynsa wear",
+
+                description:
+                    "Photo-shoot for bynsa wear campaign 2021",
+
+                images: [
+                    "assets/images/portrait-commercial/bynsaa-1.jpg",
+                    "assets/images/portrait-commercial/bynsaa-2.jpg",
+                    "assets/images/portrait-commercial/bynsaa-3.jpg",
+                    "assets/images/portrait-commercial/bynsaa-4.jpg",
+                    "assets/images/portrait-commercial/bynsaa-5.jpg",
+                    "assets/images/portrait-commercial/bynsaa-6.jpg",
+                    "assets/images/portrait-commercial/bynsaa-7.jpg"
+                ]
+            },
+
+            {
+                title: "Haelum by Rizki Nazar",
+
+                description:
+                    "Photo-shoot for Haelum by Rizki Nazar campaign 2021",
+
+                images: [
+                    "assets/images/portrait-commercial/haelum-1.jpg",
+                    "assets/images/portrait-commercial/haelum-2.jpg",
+                    "assets/images/portrait-commercial/haelum-3.jpg",
+                    "assets/images/portrait-commercial/haelum-4.jpg"
+                ]
             }
+
 
         ],
 
