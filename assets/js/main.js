@@ -108,10 +108,10 @@ document.addEventListener("DOMContentLoaded", () => {
             },
 
             {
-                title: "Dongker at MM2100 Skateboard bekasi",
+                title: "Dongker at MM2100 Skateboard Bekasi",
 
                 description:
-                    "Live performance Dongker di acara MM2100 Skateboard rooftop gor chandrabhaga",
+                    "Live performance Dongker di acara MM2100 Skateboard rooftop gor Chandrabhaga Bekasi",
 
                 images: [
                     "assets/images/documentation/dongker-ms-bekasi-10.jpg",
