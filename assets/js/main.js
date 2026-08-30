@@ -74,7 +74,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 title: "Jerana",
 
                 description:
-                    "Event documentation at Krapela.",
+                    "Event documentation for jerana party at Krapela 2024.",
 
                 images: [
                     "assets/images/documentation/jerana-01.jpg",
