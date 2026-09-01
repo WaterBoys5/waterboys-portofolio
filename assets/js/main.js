@@ -132,6 +132,35 @@ document.addEventListener("DOMContentLoaded", () => {
                     "assets/images/documentation/dongker-ms-bekasi-8.jpg",
                     "assets/images/documentation/dongker-ms-bekasi-9.jpg"
                 ]
+            },
+
+              {
+                title: "Bubblegum Core : One Last Time",
+
+                description:
+                    "Documentation of Bubblefum Core : One Last Time Party at krapela 2024",
+
+                images: [
+                    "assets/images/documentation/BUBBLEGUM-1-.jpg",
+                    "assets/images/documentation/BUBBLEGUM-10.jpg",
+                    "assets/images/documentation/BUBBLEGUM-11.jpg",
+                    "assets/images/documentation/BUBBLEGUM-12.jpg",
+                    "assets/images/documentation/BUBBLEGUM-13.jpg",
+                    "assets/images/documentation/BUBBLEGUM-14.jpg",
+                    "assets/images/documentation/BUBBLEGUM-15.jpg",
+                    "assets/images/documentation/BUBBLEGUM-16.jpg",
+                    "assets/images/documentation/BUBBLEGUM-17.jpg",
+                    "assets/images/documentation/BUBBLEGUM-18.jpg",
+                    "assets/images/documentation/BUBBLEGUM-19.jpg",
+                    "assets/images/documentation/BUBBLEGUM-2.jpg",
+                    "assets/images/documentation/BUBBLEGUM-3.jpg",
+                    "assets/images/documentation/BUBBLEGUM-4.jpg",
+                    "assets/images/documentation/BUBBLEGUM-5.jpg",
+                    "assets/images/documentation/BUBBLEGUM-6.jpg",
+                    "assets/images/documentation/BUBBLEGUM-7.jpg",
+                    "assets/images/documentation/BUBBLEGUM-8.jpg",
+                    "assets/images/documentation/BUBBLEGUM-9.jpg"
+                ]
             }
 
 
