@@ -161,6 +161,43 @@ document.addEventListener("DOMContentLoaded", () => {
                     "assets/images/documentation/BUBBLEGUM-8.jpg",
                     "assets/images/documentation/BUBBLEGUM-9.jpg"
                 ]
+            },
+
+            {
+                title: "Jakarta Wall",
+
+                description:
+                    "Beberapa foto di kegiatan event Jakarta Wall yang terselenggarakan di M Bloc",
+
+                images: [
+                    "assets/images/documentation/jakarta-1-.jpg",
+                    "assets/images/documentation/jakarta-10.jpg",
+                    "assets/images/documentation/jakarta-11.jpg",
+                    "assets/images/documentation/jakarta-12.jpg",
+                    "assets/images/documentation/jakarta-13.jpg",
+                    "assets/images/documentation/jakarta-14.jpg",
+                    "assets/images/documentation/jakarta-15.jpg",
+                    "assets/images/documentation/jakarta-16.jpg",
+                    "assets/images/documentation/jakarta-17.jpg",
+                    "assets/images/documentation/jakarta-18.jpg",
+                    "assets/images/documentation/jakarta-19.jpg",
+                    "assets/images/documentation/jakarta-2.jpg",
+                    "assets/images/documentation/jakarta-20.jpg",
+                    "assets/images/documentation/jakarta-21.jpg",
+                    "assets/images/documentation/jakarta-22jpg",
+                    "assets/images/documentation/jakarta-23.jpg",
+                    "assets/images/documentation/jakarta-24.jpg",
+                    "assets/images/documentation/jakarta-25.jpg",
+                    "assets/images/documentation/jakarta-26.jpg",
+                    "assets/images/documentation/jakarta-27.jpg",
+                    "assets/images/documentation/jakarta-3.jpg",
+                    "assets/images/documentation/jakarta-4.jpg",
+                    "assets/images/documentation/jakarta-5.jpg",
+                    "assets/images/documentation/jakarta-6.jpg",
+                    "assets/images/documentation/jakarta-7.jpg",
+                    "assets/images/documentation/jakarta-8.jpg",
+                    "assets/images/documentation/jakarta-9.jpg"
+                ]
             }
 
 
