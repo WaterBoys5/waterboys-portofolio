@@ -170,7 +170,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     "Beberapa foto di kegiatan event Jakarta Wall yang terselenggarakan di M Bloc",
 
                 images: [
-                    "assets/images/documentation/jakarta-1-.jpg",
+                    "assets/images/documentation/jakarta-1.jpg",
                     "assets/images/documentation/jakarta-10.jpg",
                     "assets/images/documentation/jakarta-11.jpg",
                     "assets/images/documentation/jakarta-12.jpg",
