@@ -184,7 +184,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     "assets/images/documentation/jakarta-2.jpg",
                     "assets/images/documentation/jakarta-20.jpg",
                     "assets/images/documentation/jakarta-21.jpg",
-                    "assets/images/documentation/jakarta-22jpg",
+                    "assets/images/documentation/jakarta-22.jpg",
                     "assets/images/documentation/jakarta-23.jpg",
                     "assets/images/documentation/jakarta-24.jpg",
                     "assets/images/documentation/jakarta-25.jpg",
